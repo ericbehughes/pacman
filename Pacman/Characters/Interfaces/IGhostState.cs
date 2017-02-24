@@ -8,5 +8,6 @@ namespace Pacman.Characters.Interfaces
 {
     public interface IGhostState
     {
+        void Move();
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pacman.Game.Classes.Map;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,19 @@ namespace Pacman.Characters.Classes
 {
     public class Chase
     {
+        private Ghost ghost;
+        private Maze maze;
+        private Pacman pacman;
+        //private Target target //???
+
+
+        public Chase(Ghost g, Maze m, Pacman p /*,Target t */)
+        {
+            this.ghost = g;
+            this.maze = m;
+            this.pacman = p;
+        }
+
+
     }
 }

@@ -8,5 +8,9 @@ namespace Pacman.Characters.Interfaces
 {
     public interface ICollidable
     {
+        event EventHandler Collisiion;
+
+        int Points{get;set;}
+        void Collide();
     }
 }
