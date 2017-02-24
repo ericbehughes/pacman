@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Pacman.Characters.Classes
 {
-    public class Pen
+    public class Pen : Ghost
     {
         Queue<Ghost> ghosts;
         List<Timer> timers;
