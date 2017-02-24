@@ -9,15 +9,16 @@ namespace Pacman.Game.Classes.Map
 {
     public class Maze
     {
-        private Tile[,] maze;
 
-        public void SetTiles(Tile[,] maze) // is this method void?
+        public delegate bool won();
+        private Tile[,] maze;
+        public event won PacmanWon;
+        public void SetTiles(Tile[,] tiles)
         {
-            
+            this.maze = tiles;
         }
 
-        public delegate string MyDel(string str);
-        event MyDel PacmanWon;
+
         /* notes on events 
          * 
          * Events are user actions such as key press, clicks, mouse movements, etc., or some occurrence such as system
@@ -75,12 +76,46 @@ namespace Pacman.Game.Classes.Map
                 }
             }
         }
-
+        /*
         public List<Tile> GetAvailableNeighbours(Vector2 position, Vector2 Direction)
         {
-            return null;
-        }
-
+            
+            List<Tile> available_tiles = new List<Tile>();
+            string positionx = "" + position.X;
+            int x = Int32.Parse(positionx);
+            string positiony = "" + position.Y;
+            int y = Int32.Parse(positiony);
+            switch (dir)
+            {
+                case Direction.Down:
+                    if (!(maze[x, y + 1].Member() is Wall))
+                    {
+                        available_tiles.Add(maze[1, 1]);
+                    }
+                    break;
+                case Direction.Up:
+                    if (maze[x, y - 1].Member() is Wall)
+                    {
+                        available_tiles.Add(maze[1, 1]);
+                    }
+                    break;
+                case Direction.Left:
+                    /* if (maze[(int)(position.Y + 1), position.X] != maze[1, 1])
+                     {
+                         available_tiles.Add(maze[1, 1]);
+                     } 
+                    break;
+                case Direction.Right:
+                    /* if (maze[(int)(position.Y + 1), position.X] != maze[1, 1])
+                     {
+                         available_tiles.Add(maze[1, 1]);
+                     } 
+                    break;
+            }
+            return available_tiles;
+          
+            */
+              
         public void CheckMembersLeft()
         {
 
