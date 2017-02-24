@@ -19,3 +19,23 @@ C:\Users\ehugh\OneDrive\c#\Visual Studio 2015\Visual Studio\Projects\PacManGithu
 C:\Users\ehugh\OneDrive\c#\Visual Studio 2015\Visual Studio\Projects\PacManGithub\Pacman\bin\Debug\SharpDX.MediaFoundation.xml
 C:\Users\ehugh\OneDrive\c#\Visual Studio 2015\Visual Studio\Projects\PacManGithub\Pacman\obj\Debug\Pacman.dll
 C:\Users\ehugh\OneDrive\c#\Visual Studio 2015\Visual Studio\Projects\PacManGithub\Pacman\obj\Debug\Pacman.pdb
+C:\Users\1232983\Source\Repos\pacman\Pacman\bin\Debug\Pacman.dll
+C:\Users\1232983\Source\Repos\pacman\Pacman\bin\Debug\Pacman.pdb
+C:\Users\1232983\Source\Repos\pacman\Pacman\bin\Debug\SharpDX.XAudio2.dll
+C:\Users\1232983\Source\Repos\pacman\Pacman\bin\Debug\SharpDX.dll
+C:\Users\1232983\Source\Repos\pacman\Pacman\bin\Debug\SharpDX.Direct3D11.dll
+C:\Users\1232983\Source\Repos\pacman\Pacman\bin\Debug\SharpDX.Direct2D1.dll
+C:\Users\1232983\Source\Repos\pacman\Pacman\bin\Debug\SharpDX.DXGI.dll
+C:\Users\1232983\Source\Repos\pacman\Pacman\bin\Debug\SharpDX.XInput.dll
+C:\Users\1232983\Source\Repos\pacman\Pacman\bin\Debug\SharpDX.MediaFoundation.dll
+C:\Users\1232983\Source\Repos\pacman\Pacman\bin\Debug\MonoGame.Framework.xml
+C:\Users\1232983\Source\Repos\pacman\Pacman\bin\Debug\SharpDX.XAudio2.xml
+C:\Users\1232983\Source\Repos\pacman\Pacman\bin\Debug\SharpDX.xml
+C:\Users\1232983\Source\Repos\pacman\Pacman\bin\Debug\SharpDX.Direct3D11.xml
+C:\Users\1232983\Source\Repos\pacman\Pacman\bin\Debug\SharpDX.Direct2D1.xml
+C:\Users\1232983\Source\Repos\pacman\Pacman\bin\Debug\SharpDX.DXGI.xml
+C:\Users\1232983\Source\Repos\pacman\Pacman\bin\Debug\SharpDX.XInput.xml
+C:\Users\1232983\Source\Repos\pacman\Pacman\bin\Debug\SharpDX.MediaFoundation.xml
+C:\Users\1232983\Source\Repos\pacman\Pacman\obj\Debug\Pacman.csprojResolveAssemblyReference.cache
+C:\Users\1232983\Source\Repos\pacman\Pacman\obj\Debug\Pacman.dll
+C:\Users\1232983\Source\Repos\pacman\Pacman\obj\Debug\Pacman.pdb

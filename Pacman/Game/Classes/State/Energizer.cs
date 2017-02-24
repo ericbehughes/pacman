@@ -20,7 +20,10 @@ namespace Pacman.Game.Classes.State
             this.ghosts = ghosts; // i think
         }
 
-      
+        public Energizer()
+        {
+
+        }
 
         public int Points
         {

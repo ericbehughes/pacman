@@ -1,4 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
+using Pacman.Characters.Classes;
+using Pacman.Game.Classes.State;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,6 +16,12 @@ namespace Pacman.Game.Classes.Map
         public delegate bool won();
         private Tile[,] maze;
         public event won PacmanWon;
+        private int size;
+
+        public Maze()
+        {
+            drawMaze();
+        }
         public void SetTiles(Tile[,] tiles)
         {
             this.maze = tiles;
@@ -65,57 +73,58 @@ namespace Pacman.Game.Classes.Map
         {
             get
             {
-                return maze.Length;
+                return size;
             }
 
             set
             {
-                if (maze.Length >= 0)
+                if (size >= 0)
                 {
                     // also needs to be coded
-                    maze = new Tile[value, value];
+                    size = value;
                 }
             }
         }
-        /*
-        public List<Tile> GetAvailableNeighbours(Vector2 position, Vector2 Direction)
+
+        public List<Tile> GetAvailableNeighbours(Vector2 position, Direction Direction)
         {
-            
-            List<Tile> available_tiles = new List<Tile>();
+
+            List<Tile> EmptyTiles = new List<Tile>();
             string positionx = "" + position.X;
             int x = Int32.Parse(positionx);
             string positiony = "" + position.Y;
             int y = Int32.Parse(positiony);
-            switch (dir)
+            switch (Direction)
             {
                 case Direction.Down:
-                    if (!(maze[x, y + 1].Member() is Wall))
+                    if (!(maze[x, y + 1] is Wall))
                     {
-                        available_tiles.Add(maze[1, 1]);
+                        EmptyTiles.Add(maze[1, 1]);
                     }
                     break;
                 case Direction.Up:
-                    if (maze[x, y - 1].Member() is Wall)
+                    if (maze[x, y - 1] is Wall)
                     {
-                        available_tiles.Add(maze[1, 1]);
+                        EmptyTiles.Add(maze[1, 1]);
                     }
                     break;
                 case Direction.Left:
-                    /* if (maze[(int)(position.Y + 1), position.X] != maze[1, 1])
-                     {
-                         available_tiles.Add(maze[1, 1]);
-                     } 
+                    if (maze[(int)(position.Y + 1), (int)position.X] != maze[1, 1])
+                    {
+                        EmptyTiles.Add(maze[1, 1]);
+                    }
                     break;
                 case Direction.Right:
-                    /* if (maze[(int)(position.Y + 1), position.X] != maze[1, 1])
-                     {
-                         available_tiles.Add(maze[1, 1]);
-                     } 
+                    if (maze[(int)((position.Y + 1)), (int)position.X] != maze[1, 1])
+                    {
+                        EmptyTiles.Add(maze[1, 1]);
+                    }
                     break;
             }
-            return available_tiles;
-          
-            */
+            return EmptyTiles;
+
+        }
+            
               
         public void CheckMembersLeft()
         {
@@ -124,8 +133,53 @@ namespace Pacman.Game.Classes.Map
 
         public void drawMaze()
         {
-            var lineCount = File.ReadLines(@"Maze\levels.txt").Count();
-            Console.WriteLine("Line number: " + lineCount);
+            size = File.ReadLines(@"level.txt").Count();
+            this.maze = new Tile[size, size];
+            String[,] strMaze = new String[size, size];
+            String line;
+            StreamReader file = new StreamReader("level.txt");
+            while ((line = file.ReadLine()) != null)
+            {
+                String[] str = line.Split(',');
+                for (int i = 0; i < maze.Length; i++)
+                {
+                    for (int j = 0; j < maze.Length; j++)
+                    {
+                        // build wall object
+                        if (str[j].ToLower().Equals("w"))
+                        {
+                            Tile tile = new Wall(i, j);
+                            maze[i, j] = tile;
+
+                        }
+                        // build pellet or empty object for path
+                        else if (str[j].ToLower().Equals("p"))
+                        {
+                            Tile tile = new Path(i, j, new Pellet());
+                            maze[i, j] = tile;
+                        }
+                        else if (str[j].ToLower().Equals("e"))
+                        {
+                            Tile tile = new Path(i, j, new Energizer());
+                            maze[i, j] = tile;
+                        }
+                        // empty path 
+                        else if (str[j].ToLower().Equals("m"))
+                        {
+                            Tile tile = new Path(i, j, null);
+                            maze[i, j] = tile;
+                        }
+
+
+                    }
+                }
+            }
+
+            file.Close();
+
+           
+           
+
         }
 
     }
