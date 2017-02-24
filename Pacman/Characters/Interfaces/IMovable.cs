@@ -11,7 +11,7 @@ namespace Pacman.Characters.Interfaces
     {
         Vector2 Direction { get; set; }
         Vector2 Position { get; set; }
-        void Move()
+        void Move();
 
     }
 }

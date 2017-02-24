@@ -1,4 +1,5 @@
-﻿using Pacman.Game.Classes.Map;
+﻿using Pacman.Characters.Interfaces;
+using Pacman.Game.Classes.Map;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Pacman.Characters.Classes
 {
-    public class Scared
+    public class Scared : IGhostState
     {
         private Ghost ghost;
         private Maze maze;
@@ -15,6 +16,11 @@ namespace Pacman.Characters.Classes
         public Scared(Ghost g, Maze m)
         {
 
+        }
+
+        public void Move()
+        {
+            throw new NotImplementedException();
         }
     }
 }

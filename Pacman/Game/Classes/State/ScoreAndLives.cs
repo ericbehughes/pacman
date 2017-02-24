@@ -8,5 +8,9 @@ namespace Pacman.Game.Classes.State
 {
     public class ScoreAndLives
     {
+        public ScoreAndLives(GameState gt)
+        {
+
+        }
     }
 }
