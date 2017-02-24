@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pacman.Game.Classes.State
+namespace Pacman.Characters.Classes
 {
-    public class Maze
+    class Color
     {
     }
 }
