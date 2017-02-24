@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Pacman.Characters.Classes
 {
-    public class Color
+    public enum Direction
     {
-    }
+        Up, Down, Left, Right
+    };
 }

@@ -19,4 +19,3 @@ C:\Users\ehugh\OneDrive\c#\Visual Studio 2015\Visual Studio\Projects\PacManGithu
 C:\Users\ehugh\OneDrive\c#\Visual Studio 2015\Visual Studio\Projects\PacManGithub\Pacman\bin\Debug\SharpDX.MediaFoundation.xml
 C:\Users\ehugh\OneDrive\c#\Visual Studio 2015\Visual Studio\Projects\PacManGithub\Pacman\obj\Debug\Pacman.dll
 C:\Users\ehugh\OneDrive\c#\Visual Studio 2015\Visual Studio\Projects\PacManGithub\Pacman\obj\Debug\Pacman.pdb
-C:\Users\ehugh\OneDrive\c#\Visual Studio 2015\Visual Studio\Projects\PacManGithub\Pacman\obj\Debug\Pacman.csprojResolveAssemblyReference.cache

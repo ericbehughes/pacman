@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Characters\Classes\Chase.cs" />
     <Compile Include="Characters\Classes\Color.cs" />
+    <Compile Include="Characters\Classes\Direction.cs" />
     <Compile Include="Characters\Classes\Scared.cs" />
     <Compile Include="Characters\Classes\Pen.cs" />
     <Compile Include="Characters\Classes\Pacman.cs" />

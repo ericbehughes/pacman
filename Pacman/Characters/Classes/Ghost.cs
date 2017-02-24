@@ -18,43 +18,73 @@ namespace Pacman.Characters.Classes
             Scared,
             Chase
         };
+
         private Pacman pacman;
         private Vector2 target;
         private Pen pen;
         private Maze maze;
-        //private Direction direction;
+        private Direction direction;
         private Color colour;
         private IGhostState currentState;
         private Timer scared;
 
-        public Vector2 Direction
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
+        public delegate void PacmanDied();
+        public event PacmanDied deadPacman;
 
-            set
-            {
-                throw new NotImplementedException();
-            }
+        public delegate void Collision(ICollidable obj);
+        public event Collision collide;
+        public event EventHandler Collisiion;
+
+       
+
+        /*!!!!!*/
+        public Ghost(GameState g, int x, int y, Vector2 target, IGhostState start, Color colour)
+        {
+            pacman = new Pacman(g);
+            maze = new Maze();
+            direction = new Direction();
+            this.target = new Vector2(target.X, target.Y);
+            currentState = start;
+            this.colour = colour;
+        }
+
+      
+
+        /*!!!!!!!! ref*/
+        public IGhostState CurrenState
+        {
+            get { return currentState; }
+        }
+
+        public Color Color
+        {
+            get { return colour; }
+        }
+
+        public Direction Direction
+        {
+            get { return direction; }
+
+            set { direction = value; }
         }
 
         public Vector2 Position
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            get { return new Vector2(target.X, target.Y); }
 
-            set
-            {
-                throw new NotImplementedException();
-            }
+            set { target = new Vector2(value.X, value.Y); }
         }
 
+        /*!!!!*/
         public int Points
         {
+            get { return 100; }
+
+            set { }
+        }
+
+        Vector2 IMovable.Direction
+        {
             get
             {
                 throw new NotImplementedException();
@@ -65,39 +95,6 @@ namespace Pacman.Characters.Classes
                 throw new NotImplementedException();
             }
         }
-
-        public Ghost() { }
-        // need to figure out where gamestate is
-
-        public Ghost(GameState gamestate, int x, int y, Vector2 t, GhostState ghostState)
-        {
-
-        }
-
-        event EventHandler PacmanDied;
-        event EventHandler Collision;
-        public event EventHandler Collisiion;
-
-        /*
-public GhostState CurrentState
-{
-get
-{
-if (currentState is Scared)
-return GhostState.Scared;
-else if (currentState is Chase)
-return GhostState.Chase;
-else
-return 0;  // have to check this
-}
-set
-{
-if (currentState != null)
-if (value is Scared)
-currentState(GhostState) = value;
-}
-}
-*/
 
         public void Move()
         {
@@ -108,6 +105,24 @@ currentState(GhostState) = value;
         {
             throw new NotImplementedException();
         }
+
+        public void Reset()
+        {
+
+        }
+
+        public void ChangeState(IGhostState state)
+        {
+            if (state is Chase)
+            {
+
+            }
+            else if (state is Scared)
+            {
+                //timer
+            }
+        }
+
     }
 
 }
