@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -119,6 +120,12 @@ namespace Pacman.Game.Classes.Map
         public void CheckMembersLeft()
         {
 
+        }
+
+        public void drawMaze()
+        {
+            var lineCount = File.ReadLines(@"Maze\levels.txt").Count();
+            Console.WriteLine("Line number: " + lineCount);
         }
 
     }
