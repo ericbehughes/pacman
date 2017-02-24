@@ -8,5 +8,9 @@ namespace Pacman.Characters.Classes
 {
     public class Pacman
     {
+        public Pacman()
+        {
+
+        }
     }
 }

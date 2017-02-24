@@ -13,7 +13,9 @@ namespace Pacman.Game.Classes.Map
         public Tile(int x, int y) { }
         public Vector2 Position;
         public ICollidable Member;
-        public Boolean CanEnter();
-        public void Collide();
+        abstract public Boolean CanEnter();
+        abstract public void Collide();
+        abstract public float GetDistance(Vector2 goal);
+
     }
 }
