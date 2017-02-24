@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Pacman.Game.Classes.Map
@@ -51,7 +52,7 @@ namespace Pacman.Game.Classes.Map
          * */
 
         // indexers
-        public Tile this[int index]
+        public Tile this[int x, int y]
         {
             get
             {
@@ -61,10 +62,9 @@ namespace Pacman.Game.Classes.Map
             }
             set
             {   //needs to be coded as it is 2d array
-                if (index >= 0 && index <= maze.Length- 1)
-                {
-                    maze[index, index] = value;
-                }
+                
+                    maze[x, y] = value;
+                
             }
         }
 
@@ -73,7 +73,7 @@ namespace Pacman.Game.Classes.Map
         {
             get
             {
-                return size;
+                return this.maze.GetLength(0);
             }
 
             set
@@ -136,51 +136,52 @@ namespace Pacman.Game.Classes.Map
             size = File.ReadLines(@"level.txt").Count();
             this.maze = new Tile[size, size];
             String[,] strMaze = new String[size, size];
-            String line;
-            StreamReader file = new StreamReader("level.txt");
-            while ((line = file.ReadLine()) != null)
-            {
+            string line = Regex.Replace(File.ReadAllText(@"level.txt"), @"[\r\n\t]+", ",");
+               
                 String[] str = line.Split(',');
-                for (int i = 0; i < maze.Length; i++)
+            int counter = 0;
+                for (int i = 0; i < size ; i++)
                 {
-                    for (int j = 0; j < maze.Length; j++)
+
+
+                for (int j = 0; j < size; j++)
+                {
+                    // build wall object
+                    if (str[counter].ToLower().Equals("w"))
                     {
-                        // build wall object
-                        if (str[j].ToLower().Equals("w"))
-                        {
-                            Tile tile = new Wall(i, j);
-                            maze[i, j] = tile;
+                        Wall tile = new Wall(i, j);
 
-                        }
-                        // build pellet or empty object for path
-                        else if (str[j].ToLower().Equals("p"))
-                        {
-                            Tile tile = new Path(i, j, new Pellet());
-                            maze[i, j] = tile;
-                        }
-                        else if (str[j].ToLower().Equals("e"))
-                        {
-                            Tile tile = new Path(i, j, new Energizer());
-                            maze[i, j] = tile;
-                        }
-                        // empty path 
-                        else if (str[j].ToLower().Equals("m"))
-                        {
-                            Tile tile = new Path(i, j, null);
-                            maze[i, j] = tile;
-                        }
-
+                        maze[i, j] = tile;
 
                     }
+                    // build pellet or empty object for path
+                    else if (str[counter].ToLower().Equals("p"))
+                    {
+                        Path tile = new Path(i, j, new Pellet());
+                        maze[i, j] = tile;
+                    }
+                    else if (str[counter].ToLower().Equals("e"))
+                    {
+                        Path tile = new Path(i, j, new Energizer());
+                        maze[i, j] = tile;
+                    }
+                    // empty path 
+                    else if (str[counter].ToLower().Equals("m"))
+                    {
+                        Path tile = new Path(i, j, null);
+                        maze[i, j] = tile;
+                    }
+                    counter++;
                 }
+                    
+                
             }
 
-            file.Close();
-
-           
-           
+      
 
         }
+
+      
 
     }
 }

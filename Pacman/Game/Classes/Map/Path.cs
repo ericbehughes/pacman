@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Pacman.Characters.Interfaces;
+using Pacman.Game.Classes.State;
 
 namespace Pacman.Game.Classes.Map
 {
@@ -29,6 +30,16 @@ namespace Pacman.Game.Classes.Map
         public override float GetDistance(Vector2 goal)
         {
             throw new NotImplementedException();
+        }
+
+        public string toString()
+        {
+            if (this.member is Energizer)
+                return "o";
+            else if (this.member is Pellet)
+                return "*";
+            else
+                return "neither";
         }
     }
 }

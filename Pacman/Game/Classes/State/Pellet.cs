@@ -11,6 +11,10 @@ namespace Pacman.Game.Classes.State
     {
         private int points;
 
+        public Pellet()
+        {
+
+        }
         public int Points
         {
             get

@@ -14,6 +14,13 @@ namespace PacmanConsoleApp
             Maze maze = new Maze();
             maze.drawMaze();
             Console.WriteLine(maze.Size);
+            for (int i = 0; i < maze.Size; i++)
+            {
+                for (int j = 0; j < maze.Size; j++)
+                {
+                    
+                }
+            }
         }
     }
 }

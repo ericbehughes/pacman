@@ -46,6 +46,11 @@ namespace Pacman.Game.Classes.State
 
         }
 
-       
+        public string toString()
+        {
+            return "o";
+        }
+
+
     }
 }

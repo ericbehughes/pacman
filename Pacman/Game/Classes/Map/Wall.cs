@@ -27,5 +27,10 @@ namespace Pacman.Game.Classes.Map
         {
             throw new NotImplementedException();
         }
+
+        public string toString()
+        {
+            return "|_|";
+        }
     }
 }
