@@ -13,23 +13,14 @@ namespace Pacman.Game.Classes.State
         private int points;
         private GhostPack ghosts;
 
+        public event EventHandler Collisiion;
+
         public Energizer(GhostPack ghosts)
         {
             this.ghosts = ghosts; // i think
         }
 
-        event EventHandler ICollidable.Collisiion
-        {
-            add
-            {
-                throw new NotImplementedException();
-            }
-
-            remove
-            {
-                throw new NotImplementedException();
-            }
-        }
+      
 
         public int Points
         {
@@ -45,27 +36,13 @@ namespace Pacman.Game.Classes.State
             }
         }
 
-        int ICollidable.Points
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+       
 
         public void Collide()
         {
 
         }
 
-        void ICollidable.Collide()
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

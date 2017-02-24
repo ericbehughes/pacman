@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Pacman.Characters.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace Pacman.Characters.Interfaces
 {
     public interface IMovable
     {
-        Vector2 Direction { get; set; }
+        Direction Direction { get; set; }
         Vector2 Position { get; set; }
         void Move();
 

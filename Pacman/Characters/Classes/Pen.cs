@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace Pacman.Characters.Classes
 {
+    // this class needs alot of work
     public class Pen //: Ghost
     {
         Queue<Ghost> ghosts;

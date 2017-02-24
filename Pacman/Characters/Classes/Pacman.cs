@@ -22,8 +22,8 @@ namespace Pacman.Characters.Classes
         }
         public Vector2 Position
         {
-            set { position = new Vector2(value.X, value.Y); }
             get { return new Vector2(position.X, position.Y); }
+            set { position = new Vector2(value.X, value.Y); }
         }
         public void Move(Direction dir)
         {

@@ -37,7 +37,7 @@ namespace Pacman.Characters.Classes
 
        
 
-        /*!!!!!*/
+     
         public Ghost(GameState g, int x, int y, Vector2 target, IGhostState start, Color colour)
         {
             pacman = new Pacman(g);
@@ -48,9 +48,7 @@ namespace Pacman.Characters.Classes
             this.colour = colour;
         }
 
-      
-
-        /*!!!!!!!! ref*/
+  // need to check how this works its an enum in the class diagram
         public IGhostState CurrenState
         {
             get { return currentState; }
@@ -75,7 +73,6 @@ namespace Pacman.Characters.Classes
             set { target = new Vector2(value.X, value.Y); }
         }
 
-        /*!!!!*/
         public int Points
         {
             get { return 100; }
@@ -83,18 +80,7 @@ namespace Pacman.Characters.Classes
             set { }
         }
 
-        Vector2 IMovable.Direction
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+       // need direction here
 
         public void Move()
         {
