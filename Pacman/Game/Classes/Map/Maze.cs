@@ -1,4 +1,4 @@
-﻿using Microsoft.Xna.Framework;
+﻿ using Microsoft.Xna.Framework;
 using Pacman.Characters.Classes;
 using Pacman.Game.Classes.State;
 using System;
@@ -11,12 +11,12 @@ using System.Threading.Tasks;
 
 namespace Pacman.Game.Classes.Map
 {
+    public delegate void PacmanWonEventHandler();
     public class Maze
     {
 
         public delegate bool won();
         private Tile[,] maze;
-        public event won PacmanWon;
         private int size;
 
         public Maze()
@@ -29,27 +29,7 @@ namespace Pacman.Game.Classes.Map
         }
 
 
-        /* notes on events 
-         * 
-         * Events are user actions such as key press, clicks, mouse movements, etc., or some occurrence such as system
-         *  generated notifications. Applications need to respond to events when they occur. For example, interrupts. 
-         *  Events are used for inter-process communication.
-
-            Using Delegates with Events
-            The events are declared and raised in a class and associated with the event handlers using delegates within the same
-            class or some other class. The class containing the event is used to publish the event. This is called the publisher class.
-            Some other class that accepts this event is called the subscriber class. Events use the publisher-subscriber model.
-
-            A publisher is an object that contains the definition of the event and the delegate. The event-delegate association is 
-            also defined in this object. A publisher class object invokes the event and it is notified to other objects.
-
-            A subscriber is an object that accepts the event and provides an event handler. The delegate in the publisher class 
-            invokes the method (event handler) of the subscriber class.
-         * 
-         * 
-         * 
-         * events
-         * */
+        public event PacmanWonEventHandler PacmanWonEvent;
 
         // indexers
         public Tile this[int x, int y]
@@ -124,11 +104,29 @@ namespace Pacman.Game.Classes.Map
             return EmptyTiles;
 
         }
-            
-              
+
+        protected virtual void PacmanWon()
+        {
+            if (PacmanWonEvent != null)
+                PacmanWonEvent();
+        }
+
+
         public void CheckMembersLeft()
         {
+            int count = 0;
+            foreach (Tile item in this.maze)
+            {
+                if (item is Path /*item.IsEmpty() == false*/)
+                {
+                    count++;
+                }
+            }
 
+            if (count == 0)
+            {
+                PacmanWon();
+            }
         }
 
         public void drawMaze()

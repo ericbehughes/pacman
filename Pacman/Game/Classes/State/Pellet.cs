@@ -29,7 +29,7 @@ namespace Pacman.Game.Classes.State
             }
         }
 
-        public event EventHandler Collisiion;
+        public event CollisionEventHandler CollisionEvent;
 
         public void Collide()
         {

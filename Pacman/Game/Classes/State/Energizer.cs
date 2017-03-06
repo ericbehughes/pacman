@@ -13,11 +13,11 @@ namespace Pacman.Game.Classes.State
         private int points;
         private GhostPack ghosts;
 
-        public event EventHandler Collisiion;
+        public event CollisionEventHandler CollisionEvent;
 
         public Energizer(GhostPack ghosts)
         {
-            this.ghosts = ghosts; // i think
+            this.ghosts = ghosts;
         }
 
         public Energizer()
@@ -39,13 +39,18 @@ namespace Pacman.Game.Classes.State
             }
         }
 
-       
 
+        protected virtual void OnCollisionEvent(Energizer x)
+        {
+            CollisionEvent?.Invoke(x);
+        }
+        /// <summary>
+        /// The Collide method will call the OnCollisionEvent method.
+        /// </summary>
         public void Collide()
         {
-
+            OnCollisionEvent(this);
         }
-
         public string toString()
         {
             return "o";

@@ -11,6 +11,7 @@ using Pacman.Game.Classes.State;
 
 namespace Pacman.Characters.Classes
 {
+    public delegate void PacmanDiedEventHandler();
     public class Ghost : IGhostState, IMovable, ICollidable
     {
         public enum GhostState
@@ -26,14 +27,14 @@ namespace Pacman.Characters.Classes
         private Direction direction;
         private Color colour;
         private IGhostState currentState;
-        private Timer scared;
 
-        public delegate void PacmanDied();
-        public event PacmanDied deadPacman;
+        public static Timer scared;
+        public static Vector2 ReleasePosition;
+        public event CollisionEventHandler CollisionEvent; //event to encapsulate collision event
+        public event PacmanDiedEventHandler PacmanDiedEvent; //event encapsulating pacman died event
+
 
         public delegate void Collision(ICollidable obj);
-        public event Collision collide;
-        public event EventHandler Collisiion;
 
        
 
@@ -89,8 +90,28 @@ namespace Pacman.Characters.Classes
 
         public void Collide()
         {
-            throw new NotImplementedException();
+            if (this.CurrentState == GhostState.Scared)
+            {
+                CollisionEvent(this); //raise collision event to increment score of pacman
+                this.pen.AddToPen(this); //add ghost back to pen 
+            }
+            if (this.CurrentState == GhostState.Chase)
+            {
+                PacmanDiedEvent(); //raise pacman died event
+            }
         }
+
+        public GhostState CurrentState
+        {
+            get
+            {
+                if (this.currentState is Scared)
+                    return GhostState.Scared;
+
+                return GhostState.Chase;
+            }
+        }
+
 
         public void Reset()
         {
