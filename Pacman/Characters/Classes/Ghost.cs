@@ -130,6 +130,14 @@ namespace Pacman.Characters.Classes
             }
         }
 
+        public void CheckCollisions(Vector2 target)
+        {
+            if (this.Position == target)
+            {
+                Collide();
+            }
+        }
+
     }
 
 }

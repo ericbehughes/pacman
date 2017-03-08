@@ -17,9 +17,12 @@ namespace Pacman.Characters.Classes
 
         }
 
-        public bool CheckCollideGhosts(Vector2 target)
+        public void CheckCollideGhosts(Vector2 target)
         {
-            return false;
+            foreach (var monster in ghosts)
+            {
+                monster.CheckCollisions(target);
+            }
         }
 
         public void ResetGhosts()
