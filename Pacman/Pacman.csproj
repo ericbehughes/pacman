@@ -49,6 +49,7 @@
     <Compile Include="Characters\Classes\Pacman.cs" />
     <Compile Include="Characters\Classes\GhostPack.cs" />
     <Compile Include="Characters\Classes\Ghost.cs" />
+    <Compile Include="Characters\Classes\ScoreAndLives.cs" />
     <Compile Include="Characters\Interfaces\ICollidable.cs" />
     <Compile Include="Characters\Interfaces\IMovable.cs" />
     <Compile Include="Characters\Interfaces\IGhostState.cs" />
