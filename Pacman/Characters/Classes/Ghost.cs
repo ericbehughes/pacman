@@ -8,6 +8,7 @@ using Pacman.Game.Classes.Map;
 using Pacman.Characters.Interfaces;
 using System.Threading;
 using Pacman.Game.Classes.State;
+using PacManLib;
 
 namespace Pacman.Characters.Classes
 {
@@ -17,7 +18,9 @@ namespace Pacman.Characters.Classes
         public enum GhostState
         {
             Scared,
-            Chase
+            Chase,
+            Penned,
+            Released
         };
 
         private Pacman pacman;
