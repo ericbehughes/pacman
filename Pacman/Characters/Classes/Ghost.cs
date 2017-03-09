@@ -42,7 +42,7 @@ namespace Pacman.Characters.Classes
        
 
      
-        public Ghost(GameState g, int x, int y, Vector2 target, IGhostState start, Color colour)
+        public Ghost(GameState g, int x, int y, Vector2 target, GhostState start, Color colour)
         {
             pacman = new Pacman(g);
             maze = new Maze();

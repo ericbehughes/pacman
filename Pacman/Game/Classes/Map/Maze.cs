@@ -1,5 +1,6 @@
-﻿ using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Pacman.Characters.Classes;
+using Pacman.Characters.Interfaces;
 using Pacman.Game.Classes.State;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using static Pacman.Characters.Classes.Ghost;
 
 namespace Pacman.Game.Classes.Map
 {
@@ -74,6 +76,44 @@ namespace Pacman.Game.Classes.Map
             int x = Int32.Parse(positionx);
             string positiony = "" + position.Y;
             int y = Int32.Parse(positiony);
+
+            switch (Direction)
+            {
+                case Direction.Down:
+                    if (!(maze[x, y + 1] is Wall))
+                    {
+                        EmptyTiles.Add(maze[x, y + 1]);
+                    }
+                    break;
+
+                case Direction.Up:
+                    if (!(maze[x, y - 1] is Wall))
+                    {
+                        EmptyTiles.Add(maze[x, y - 1]);
+                    }
+                    break;
+                    
+                case Direction.Left:
+                    Tile testTileLeft = maze[(int)(position.Y + 1), (int)position.X];
+
+                    if (testTileLeft != maze[0, 0] && !(testTileLeft is Wall))
+                    {
+                        EmptyTiles.Add(testTileLeft);
+                    }
+                    break;
+
+                case Direction.Right:
+                    Tile testTileRight = maze[(int)((position.Y + 1)), (int)position.X];
+                    if (!(testTileRight is Wall))
+                    {
+                        EmptyTiles.Add(maze[(int)((position.Y + 1)), (int)position.X]);
+                    }
+                    break;
+            }
+
+
+
+            /*
             switch (Direction)
             {
                 case Direction.Down:
@@ -83,7 +123,7 @@ namespace Pacman.Game.Classes.Map
                     }
                     break;
                 case Direction.Up:
-                    if (maze[x, y - 1] is Wall)
+                    if (!(maze[x, y - 1] is Wall))
                     {
                         EmptyTiles.Add(maze[x, y - 1]);
                     }
@@ -101,6 +141,7 @@ namespace Pacman.Game.Classes.Map
                     }
                     break;
             }
+            */
             return EmptyTiles;
 
         }
@@ -135,15 +176,17 @@ namespace Pacman.Game.Classes.Map
             this.maze = new Tile[size, size];
             String[,] strMaze = new String[size, size];
             string line = Regex.Replace(File.ReadAllText(@"level.txt"), @"[\r\n\t]+", ",");
-               
-                String[] str = line.Split(',');
+            String[] str = line.Split(',');
+            String mazeChar = "";
+            Pacman.Characters.Classes.Pacman pacman = new Pacman.Characters.Classes.Pacman(new GameState());
             int counter = 0;
                 for (int i = 0; i < size ; i++)
             {
                 for (int j = 0; j < size; j++)
                 {
+                    mazeChar = str[counter].ToLower();
                     // build wall object
-                    if (str[counter].ToLower().Equals("w"))
+                    if (mazeChar.Equals("w"))
                     {
                         Wall tile = new Wall(i, j);
 
@@ -151,20 +194,54 @@ namespace Pacman.Game.Classes.Map
 
                     }
                     // build pellet or empty object for path
-                    else if (str[counter].ToLower().Equals("p"))
+                    else if (mazeChar.Equals("p"))
                     {
                         Path tile = new Path(i, j, new Pellet());
                         maze[i, j] = tile;
                     }
-                    else if (str[counter].ToLower().Equals("e"))
+                    else if (mazeChar.Equals("e"))
                     {
                         Path tile = new Path(i, j, new Energizer());
                         maze[i, j] = tile;
                     }
                     // empty path 
-                    else if (str[counter].ToLower().Equals("m"))
+                    else if (mazeChar.Equals("m"))
                     {
                         Path tile = new Path(i, j, null);
+                        maze[i, j] = tile;
+                    }
+                    else if (mazeChar.Equals("1"))
+                    {
+                        Ghost ghost = new Ghost(new GameState(),10, 11, new Vector2(8,11), Ghost.GhostState.Released ,new Characters.Classes.Color());
+                        Path tile = new Path(10, 11, ghost);
+                        maze[i, j] = tile;
+                    }
+
+                    else if (mazeChar.Equals("2"))
+                    {
+                        Ghost ghost = new Ghost(new GameState(), 10, 10, new Vector2(10, 10), Ghost.GhostState.Penned, new Characters.Classes.Color());
+                        Path tile = new Path(10, 11, ghost);
+                        maze[i, j] = tile;
+                    }
+
+                    else if (mazeChar.Equals("3"))
+                    {
+                        Ghost ghost = new Ghost(new GameState(), 10, 11, new Vector2(10, 11), Ghost.GhostState.Penned, new Characters.Classes.Color());
+                        Path tile = new Path(10, 11, ghost);
+                        maze[i, j] = tile;
+                    }
+
+                    else if (mazeChar.Equals("4"))
+                    {
+                        Ghost ghost = new Ghost(new GameState(), 10, 12, new Vector2(10, 12), Ghost.GhostState.Penned, new Characters.Classes.Color());
+                        Path tile = new Path(10, 11, ghost);
+                        maze[i, j] = tile;
+                    }
+
+                    else if (mazeChar.Equals("P"))
+                    {
+                        Pacman.Characters.Classes.Pacman pacman = new Pacman.Characters.Classes.Pacman(new GameState());
+                        Path tile = new Path(10, 11, ghost);
                         maze[i, j] = tile;
                     }
                     counter++;
