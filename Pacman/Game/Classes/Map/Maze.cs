@@ -79,25 +79,25 @@ namespace Pacman.Game.Classes.Map
                 case Direction.Down:
                     if (!(maze[x, y + 1] is Wall))
                     {
-                        EmptyTiles.Add(maze[1, 1]);
+                        EmptyTiles.Add(maze[x, y + 1]);
                     }
                     break;
                 case Direction.Up:
                     if (maze[x, y - 1] is Wall)
                     {
-                        EmptyTiles.Add(maze[1, 1]);
+                        EmptyTiles.Add(maze[x, y - 1]);
                     }
                     break;
                 case Direction.Left:
-                    if (maze[(int)(position.Y + 1), (int)position.X] != maze[1, 1])
+                    if (maze[(int)(position.Y + 1), (int)position.X] != maze[0, 0])
                     {
-                        EmptyTiles.Add(maze[1, 1]);
+                        EmptyTiles.Add(maze[(int)(position.Y + 1), (int)position.X]);
                     }
                     break;
                 case Direction.Right:
-                    if (maze[(int)((position.Y + 1)), (int)position.X] != maze[1, 1])
+                    if (maze[(int)((position.Y + 1)), (int)position.X] != maze[0, 0])
                     {
-                        EmptyTiles.Add(maze[1, 1]);
+                        EmptyTiles.Add(maze[(int)((position.Y + 1)), (int)position.X]);
                     }
                     break;
             }
@@ -139,9 +139,7 @@ namespace Pacman.Game.Classes.Map
                 String[] str = line.Split(',');
             int counter = 0;
                 for (int i = 0; i < size ; i++)
-                {
-
-
+            {
                 for (int j = 0; j < size; j++)
                 {
                     // build wall object
