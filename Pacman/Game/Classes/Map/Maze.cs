@@ -23,7 +23,7 @@ namespace Pacman.Game.Classes.Map
 
         public Maze()
         {
-          
+          // check what should go in here
         }
         public void SetTiles(Tile[,] tiles)
         {
@@ -70,110 +70,46 @@ namespace Pacman.Game.Classes.Map
 
         public List<Tile> GetAvailableNeighbours(Vector2 position, Direction Direction)
         {
-            List<Tile> EmptyTiles = new List<Tile>(),
-                       tilesLeft = new List<Tile>(),
-                       tilesRight = new List<Tile>(),
-                       tilesUp = new List<Tile>(),
-                       tilesDown = new List<Tile>();
-            int x = (int)position.X,
-                y = (int)position.Y;
 
-            for (int i = 1; i <= 10; i++)
+            List<Tile> EmptyTiles = new List<Tile>();
+            string positionx = "" + position.X;
+            int x = Int32.Parse(positionx);
+            string positiony = "" + position.Y;
+            int y = Int32.Parse(positiony);
+
+            switch (Direction)
             {
-                if (i <= 5)
-                {
-                    if (!(maze[x - i, y] is Wall))
+                case Direction.Down:
+                    if (!(maze[x, y + 1] is Wall))
                     {
-                        tilesLeft.Add(maze[x - i, y]);
+                        EmptyTiles.Add(maze[x, y + 1]);
                     }
+                    break;
 
-                    if (!(maze[x, y - i] is Wall))
+                case Direction.Up:
+                    if (!(maze[x, y - 1] is Wall))
                     {
-                        tilesUp.Add(maze[x, y - i]);
+                        EmptyTiles.Add(maze[x, y - 1]);
                     }
-                }
-                else if (i >= 6)
-                {
-                    if (!(maze[x + (i - 5), y] is Wall))
-                    {
-                        tilesRight.Add(maze[x + (i - 5), y]);
-                    }
+                    break;
+                    
+                case Direction.Left:
+                    Tile testTileLeft = maze[(int)(position.Y + 1), (int)position.X];
 
-                    if (!(maze[x, y + (i - 5)] is Wall))
+                    if (testTileLeft != maze[0, 0] && !(testTileLeft is Wall))
                     {
-                        tilesDown.Add(maze[x, y + (i - 5)]);
+                        EmptyTiles.Add(testTileLeft);
                     }
-                }
+                    break;
+
+                case Direction.Right:
+                    Tile testTileRight = maze[(int)((position.Y + 1)), (int)position.X];
+                    if (!(testTileRight is Wall))
+                    {
+                        EmptyTiles.Add(maze[(int)((position.Y + 1)), (int)position.X]);
+                    }
+                    break;
             }
-
-
-            /* List<Tile> EmptyTiles = new List<Tile>();
-             string positionx = "" + position.X;
-             int x = Int32.Parse(positionx);
-             string positiony = "" + position.Y;
-             int y = Int32.Parse(positiony);
-
-             switch (Direction)
-             {
-                 case Direction.Down:
-                     if (!(maze[x, y + 1] is Wall))
-                     {
-                         EmptyTiles.Add(maze[x, y + 1]);
-                     }
-                     break;
-
-                 case Direction.Up:
-                     if (!(maze[x, y - 1] is Wall))
-                     {
-                         EmptyTiles.Add(maze[x, y - 1]);
-                     }
-                     break;
-
-                 case Direction.Left:
-                     Tile testTileLeft = maze[(int)(position.Y + 1), (int)position.X];
-
-                     if (testTileLeft != maze[0, 0] && !(testTileLeft is Wall))
-                     {
-                         EmptyTiles.Add(testTileLeft);
-                     }
-                     break;
-
-                 case Direction.Right:
-                     Tile testTileRight = maze[(int)((position.Y + 1)), (int)position.X];
-                     if (!(testTileRight is Wall))
-                     {
-                         EmptyTiles.Add(maze[(int)((position.Y + 1)), (int)position.X]);
-                     }
-                     break;
-             }
-             switch (Direction)
-             {
-                 case Direction.Down:
-                     if (!(maze[x, y + 1] is Wall))
-                     {
-                         EmptyTiles.Add(maze[x, y + 1]);
-                     }
-                     break;
-                 case Direction.Up:
-                     if (!(maze[x, y - 1] is Wall))
-                     {
-                         EmptyTiles.Add(maze[x, y - 1]);
-                     }
-                     break;
-                 case Direction.Left:
-                     if (maze[(int)(position.Y + 1), (int)position.X] != maze[0, 0])
-                     {
-                         EmptyTiles.Add(maze[(int)(position.Y + 1), (int)position.X]);
-                     }
-                     break;
-                 case Direction.Right:
-                     if (maze[(int)((position.Y + 1)), (int)position.X] != maze[0, 0])
-                     {
-                         EmptyTiles.Add(maze[(int)((position.Y + 1)), (int)position.X]);
-                     }
-                     break;
-             }
-             */
             return EmptyTiles;
 
         }

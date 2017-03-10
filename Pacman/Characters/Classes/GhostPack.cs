@@ -33,20 +33,6 @@ namespace Pacman.Characters.Classes
                 ghosts.ElementAt(i).Reset();
         }
 
-        public void ScareGhosts()
-        {
-            foreach (Ghost g in ghosts)
-            {
-                
-                if (g.CurrentState == GhostState.Scared)
-                    return;
-
-                g.ChangeState(GhostState.Scared);
-            }
-
-         
-        }
-
         public void Move()
         {
             for (int i = 0; i < ghosts.Count; i++)
@@ -56,6 +42,15 @@ namespace Pacman.Characters.Classes
         public void Add(Ghost g)
         {
             ghosts.Add(g);
+        }
+
+        public void ScareGhosts()
+        {
+            foreach (Ghost ghost in ghosts)
+            {
+                if (ghost.CurrentState != GhostState.Scared)
+                    ghost.ChangeState(GhostState.Scared);
+            }
         }
     }
 }

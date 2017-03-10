@@ -33,15 +33,14 @@ namespace Pacman.Characters.Classes
 
         public static Timer scared;
         public static Vector2 ReleasePosition;
-        public event CollisionEventHandler CollisionEvent; //event to encapsulate collision event
-        public event PacmanDiedEventHandler PacmanDiedEvent; //event encapsulating pacman died event
+        public event CollisionEventHandler CollisionEvent;
+        public event PacmanDiedEventHandler PacmanDiedEvent; 
 
 
         public delegate void Collision(ICollidable obj);
 
         public Ghost(GameState g, int x, int y, Vector2 target, GhostState start, Color colour)
         {
-   
             maze = new Maze();
             direction = new Direction();
             this.target = new Vector2(target.X, target.Y);
@@ -100,12 +99,12 @@ namespace Pacman.Characters.Classes
         {
             if (this.CurrentState == GhostState.Scared)
             {
-                CollisionEvent(this); //raise collision event to increment score of pacman
-                this.pen.AddToPen(this); //add ghost back to pen 
+                CollisionEvent(this); 
+                this.pen.AddToPen(this); 
             }
             if (this.CurrentState == GhostState.Chase)
             {
-                PacmanDiedEvent(); //raise pacman died event
+                PacmanDiedEvent(); 
             }
         }
 
