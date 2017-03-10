@@ -30,7 +30,7 @@ namespace Pacman.Characters.Classes
         private Direction direction;
         private Color colour;
         private IGhostState currentState;
-
+        private double points;
         public static Timer scared;
         public static Vector2 ReleasePosition;
         public event CollisionEventHandler CollisionEvent;
@@ -81,18 +81,20 @@ namespace Pacman.Characters.Classes
             set { target = new Vector2(value.X, value.Y); }
         }
 
-        public int Points
-        {
-            get { return 100; }
-
-            set { }
-        }
-
-       // need direction here
+        public int Points { get; set; }
 
         public void Move()
         {
-            throw new NotImplementedException();
+            this.currentState.Move();
+            CheckCollisions(this.pacman.Position);
+        }
+
+        public void CheckCollisions(Vector2 target)
+        {
+            if (this.Position == target)
+            {
+                Collide();
+            }
         }
 
         public void Collide()
@@ -150,13 +152,7 @@ namespace Pacman.Characters.Classes
             }
         }
 
-        public void CheckCollisions(Vector2 target)
-        {
-            if (this.Position == target)
-            {
-                Collide();
-            }
-        }
+     
 
     }
 

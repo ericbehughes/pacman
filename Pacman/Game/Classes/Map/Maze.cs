@@ -100,11 +100,11 @@ namespace Pacman.Game.Classes.Map
 
         }
 
-protected virtual void PacmanWon()
-{
-    if (PacmanWonEvent != null)
-        PacmanWonEvent();
-}
+    protected virtual void PacmanWon()
+    {
+        if (PacmanWonEvent != null)
+            PacmanWonEvent();
+    }
 
 
 public void CheckMembersLeft()
@@ -112,7 +112,7 @@ public void CheckMembersLeft()
     int count = 0;
     foreach (Tile item in this.maze)
     {
-        if (item is Path /*item.IsEmpty() == false*/)
+        if (item is Path)
         {
             count++;
         }
@@ -122,11 +122,6 @@ public void CheckMembersLeft()
     {
         PacmanWon();
     }
-}
-
-        
-
-      
-
     }
+  }
 }

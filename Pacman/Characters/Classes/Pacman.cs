@@ -12,16 +12,17 @@ namespace Pacman.Characters.Classes
 {
     public class Pacman : ICollidable
     {
-        private GameState controller;
+        private GameState gamestate;
         private Maze maze;
         private Vector2 position;
 
         public event CollisionEventHandler CollisionEvent;
 
-        public Pacman(GameState gameState)
+        public Pacman(GameState gs)
         {
-            controller = gameState;
-
+            this.gamestate = gs;
+            this.maze = this.gamestate.Maze;
+       
         }
         public Vector2 Position
         {
@@ -80,7 +81,7 @@ namespace Pacman.Characters.Classes
 
         public void Collide()
         {
-            throw new NotImplementedException();
+            
         }
     }
 }
