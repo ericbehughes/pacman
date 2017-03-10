@@ -44,7 +44,28 @@ namespace Pacman.Characters.Classes
 
         public void Move(Direction dir)
         {
-          // jon will code this
+          switch (dir)
+            {
+                case Direction.Up:
+                    if (this.Position.Y != 0)
+                        this.Position = new Vector2(this.Position.X, this.Position.Y - 1);
+                    break;
+
+                case Direction.Down:
+                    if (this.Position.Y != (maze.Size - 1))
+                        this.Position = new Vector2(this.Position.X, this.Position.Y + 1);
+                    break;
+
+                case Direction.Left:
+                    if (this.Position.X != 0)
+                        this.Position = new Vector2(this.Position.X - 1, this.Position.Y);
+                    break;
+
+                case Direction.Right:
+                    if (this.Position.X != (maze.Size - 1))
+                        this.Position = new Vector2(this.Position.X + 1, this.Position.Y);
+                    break;
+            }
         }
         public void CheckCollisions(Vector2 v)
         {
