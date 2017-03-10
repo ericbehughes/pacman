@@ -1,4 +1,5 @@
-﻿using Pacman.Characters.Interfaces;
+﻿using Microsoft.Xna.Framework;
+using Pacman.Characters.Interfaces;
 using Pacman.Game.Classes.Map;
 using System;
 using System.Collections.Generic;
@@ -13,11 +14,14 @@ namespace Pacman.Characters.Classes
         private Ghost ghost;
         private Maze maze;
         private Pacman pacman;
-        public Chase(Ghost g, Maze m, Pacman p /*,Target t */)
+        private Vector2 target;
+        public Chase(Ghost g, Maze m, Pacman p , Vector2 t )
         {
             this.ghost = g;
             this.maze = m;
             this.pacman = p;
+            this.target = target;
+
         }
 
         public void Move()
