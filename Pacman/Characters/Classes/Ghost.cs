@@ -50,7 +50,7 @@ namespace Pacman.Characters.Classes
             }
             if (start == GhostState.Chase)
             {
-                currentState = new Chase(this, this.maze, pacman);
+                currentState = new Chase(this, this.maze, pacman, target);
             }
          
             this.colour = colour;
@@ -130,15 +130,23 @@ namespace Pacman.Characters.Classes
 
         }
 
-        public void ChangeState(GhostState state)
+        public void ChangeState(GhostState g)
         {
-            if (state is Chase)
+            switch (g)
             {
-
-            }
-            else if (state is Scared)
-            {
-                //timer
+                case GhostState.Scared:
+                    this.currentState = new Scared(this, this.maze);
+                    break;
+                case GhostState.Chase:
+                    this.currentState = new Chase(this, this.maze, this.pacman,this.target);
+                    break;
+                case GhostState.Released:
+                    this.Position = new Vector2(8, 11);
+                    this.currentState = new Chase(this, this.maze, this.pacman, this.target);
+                    break;
+                default:
+                    this.currentState = new Chase(this, this.maze, this.pacman, this.target);
+                    break;
             }
         }
 

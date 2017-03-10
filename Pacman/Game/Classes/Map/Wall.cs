@@ -20,12 +20,12 @@ namespace Pacman.Game.Classes.Map
 
         public override void Collide()
         {
-            throw new NotImplementedException();
+           
         }
 
         public override float GetDistance(Vector2 goal)
         {
-            throw new NotImplementedException();
+            return 0.0f;
         }
 
         public string toString()

@@ -27,17 +27,17 @@ namespace Pacman.Characters.Classes
         }
         public void Move(Direction dir)
         {
-            if (dir.Equals(Direction.Down))
-            {
-
-            }
+          // jon will code this
         }
         public void CheckCollisions(Vector2 v)
         {
-           if (this.Position == v)
+            //check non empty tile collision
+            if (this.maze[(int)this.position.X, (int)this.position.Y] != null)
             {
-               // Collide();
+                this.maze[(int)this.position.X, (int)this.position.Y].Collide();
             }
+            
+       
         }
     }
 }
