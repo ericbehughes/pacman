@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
+using static Pacman.Characters.Classes.Ghost;
 
 namespace Pacman.Characters.Classes
 {
@@ -33,9 +35,16 @@ namespace Pacman.Characters.Classes
 
         public void ScareGhosts()
         {
-            for (int i = 0; i < ghosts.Count; i++)
-                ghosts.ElementAt(i).ChangeState(
-                    ghosts.ElementAt(i).CurrenState);
+            foreach (Ghost g in ghosts)
+            {
+                
+                if (g.CurrentState == GhostState.Scared)
+                    return;
+
+                g.ChangeState(GhostState.Scared);
+            }
+
+         
         }
 
         public void Move()

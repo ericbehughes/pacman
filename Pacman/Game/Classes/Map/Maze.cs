@@ -212,21 +212,24 @@ namespace Pacman.Game.Classes.Map
                     }
                     else if (mazeChar.Equals("1"))
                     {
-                        Ghost ghost = new Ghost(new GameState(),10, 11, new Vector2(8,11), Ghost.GhostState.Released ,new Characters.Classes.Color());
+                        Ghost ghost = new Ghost(new GameState(),10, 11, new Vector2(8,11), GhostState.Penned ,new Characters.Classes.Color());
+                        ghost.Pacman = pacman;
                         Path tile = new Path(10, 11, ghost);
                         maze[i, j] = tile;
                     }
 
                     else if (mazeChar.Equals("2"))
                     {
-                        Ghost ghost = new Ghost(new GameState(), 10, 10, new Vector2(10, 10), Ghost.GhostState.Penned, new Characters.Classes.Color());
+                        Ghost ghost = new Ghost(new GameState(), 10, 10, new Vector2(10, 10), GhostState.Penned, new Characters.Classes.Color());
+                        ghost.Pacman = pacman;
                         Path tile = new Path(10, 11, ghost);
                         maze[i, j] = tile;
                     }
 
                     else if (mazeChar.Equals("3"))
                     {
-                        Ghost ghost = new Ghost(new GameState(), 10, 11, new Vector2(10, 11), Ghost.GhostState.Penned, new Characters.Classes.Color());
+                        Ghost ghost = new Ghost(new GameState(), 10, 11, new Vector2(10, 11), GhostState.Penned, new Characters.Classes.Color());
+                        ghost.Pacman = pacman;
                         Path tile = new Path(10, 11, ghost);
                         maze[i, j] = tile;
                     }
@@ -234,14 +237,15 @@ namespace Pacman.Game.Classes.Map
                     else if (mazeChar.Equals("4"))
                     {
                         Ghost ghost = new Ghost(new GameState(), 10, 12, new Vector2(10, 12), Ghost.GhostState.Penned, new Characters.Classes.Color());
+                        ghost.Pacman = pacman;
                         Path tile = new Path(10, 11, ghost);
                         maze[i, j] = tile;
                     }
 
                     else if (mazeChar.Equals("P"))
                     {
-                        Pacman.Characters.Classes.Pacman pacman = new Pacman.Characters.Classes.Pacman(new GameState());
-                        Path tile = new Path(10, 11, ghost);
+                       
+                        Path tile = new Path(10, 11, null);
                         maze[i, j] = tile;
                     }
                     counter++;

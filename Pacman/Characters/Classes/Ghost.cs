@@ -39,16 +39,21 @@ namespace Pacman.Characters.Classes
 
         public delegate void Collision(ICollidable obj);
 
-       
-
-     
         public Ghost(GameState g, int x, int y, Vector2 target, GhostState start, Color colour)
         {
-            pacman = new Pacman(g);
+   
             maze = new Maze();
             direction = new Direction();
             this.target = new Vector2(target.X, target.Y);
-            currentState = start;
+            if (start == GhostState.Scared)
+            {
+                currentState = new Scared(this, this.maze);
+            }
+            if (start == GhostState.Chase)
+            {
+                currentState = new Chase(this, this.maze, pacman);
+            }
+         
             this.colour = colour;
         }
 
@@ -115,13 +120,18 @@ namespace Pacman.Characters.Classes
             }
         }
 
+        public Pacman Pacman
+        {
+            get; set;
+        }
+
 
         public void Reset()
         {
 
         }
 
-        public void ChangeState(IGhostState state)
+        public void ChangeState(GhostState state)
         {
             if (state is Chase)
             {

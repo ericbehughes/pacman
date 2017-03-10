@@ -24,9 +24,19 @@ namespace Pacman.Game.Classes.State
             Pen pen = new Pen();
             Maze maze = new Maze();
             GhostPack gpack = new GhostPack();
+            Pacman.Characters.Classes.Pacman pacman = new Pacman.Characters.Classes.Pacman(g);
 
+          try
+            {
+                maze.drawMaze();
+            }
+            catch (Exception)
+            {
 
-            return null;
+               
+            }
+
+            return g;
         }
         
         /// <summary>

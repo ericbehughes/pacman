@@ -13,8 +13,8 @@ namespace Pacman.Characters.Classes
         private Ghost ghost;
         private Maze maze;
         private Pacman pacman;
-        //private Target target //???
 
+  
 
         public Chase(Ghost g, Maze m, Pacman p /*,Target t */)
         {
