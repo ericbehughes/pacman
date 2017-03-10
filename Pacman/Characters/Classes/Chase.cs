@@ -20,13 +20,24 @@ namespace Pacman.Characters.Classes
             this.ghost = g;
             this.maze = m;
             this.pacman = p;
-            this.target = target;
+            this.target = t;
 
         }
 
+
+        /* During Chase mode, each ghost has a different target location, which can be expressed as a Vector2. 
+         * For example, a target of (0, 2), means the ghost will try to get to the tile that has the same x-coordinate 
+         * but is two tiles below. The ghost chooses from all the available tiles from his location (except the tile where he 
+         * just was) – the choice is based on the tile which is closest to the target coordinates. The Vector2 struct has a static 
+         * method: Vector2.Distance(vectorA, vectorB) that returns a float. Use this to find the closest Tile.
+         */
         public void Move()
         {
-            throw new NotImplementedException();
+            Pacman pacman = ghost.Pacman;
+            float currentDistance = 0;
+            Vector2 currentPos = ghost.Position;
+            Direction currentDir = ghost.Direction;
+
         }
     }
 }

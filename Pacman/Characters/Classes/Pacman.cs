@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Pacman.Characters.Interfaces;
 using Pacman.Game.Classes.Map;
 using Pacman.Game.Classes.State;
 using System;
@@ -9,11 +10,13 @@ using System.Threading.Tasks;
 
 namespace Pacman.Characters.Classes
 {
-    public class Pacman
+    public class Pacman : ICollidable
     {
         private GameState controller;
         private Maze maze;
         private Vector2 position;
+
+        public event CollisionEventHandler CollisionEvent;
 
         public Pacman(GameState gameState)
         {
@@ -25,6 +28,20 @@ namespace Pacman.Characters.Classes
             get { return new Vector2(position.X, position.Y); }
             set { position = new Vector2(value.X, value.Y); }
         }
+
+        public int Points
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
         public void Move(Direction dir)
         {
           // jon will code this
@@ -38,6 +55,11 @@ namespace Pacman.Characters.Classes
             }
             
        
+        }
+
+        public void Collide()
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Pacman.Game.Classes.Map
 
         public Maze()
         {
-          // check what should go in here
+            // check what should go in here
         }
         public void SetTiles(Tile[,] tiles)
         {
@@ -44,9 +44,9 @@ namespace Pacman.Game.Classes.Map
             }
             set
             {   //needs to be coded as it is 2d array
-                
-                    maze[x, y] = value;
-                
+
+                maze[x, y] = value;
+
             }
         }
 
@@ -71,82 +71,58 @@ namespace Pacman.Game.Classes.Map
         public List<Tile> GetAvailableNeighbours(Vector2 position, Direction Direction)
         {
 
-            List<Tile> EmptyTiles = new List<Tile>(),
-                       tilesLeft = new List<Tile>(),
-                       tilesDown = new List<Tile>(),
-                       tilesRight = new List<Tile>(),
-                       tilesUp = new List<Tile>();
+            List<Tile> emptyTiles = new List<Tile>();
 
             int x = (int)position.X,
                 y = (int)position.Y;
 
-            for (int i = 1; i <= 10; i++)
-            {
-                if (i <= 5)
-                {
-                    if (!(maze[x - i, y] is Wall))
-                        tilesLeft.Add(maze[x - i, y]);
+            /* Check left */
+            if (!(maze[x - 1, y] is Wall))
+                if (Direction != Direction.Left)
+                    emptyTiles.Add(maze[x - 1, y]);
 
-                    if (!(maze[x, y - i] is Wall))
-                        tilesUp.Add(maze[x, y - i]);
-                }
+            /* check right */
+            if (!(maze[x - 1, y] is Wall))
+                if (Direction != Direction.Right)
+                    emptyTiles.Add(maze[x + 1, y]);
 
-                if (i >= 6)
-                {
-                    if (!(maze[x + (i - 5), y] is Wall))
-                        tilesRight.Add(maze[x + (i - 5), y]);
+            /* Check up */
+            if (!(maze[x, y - 1] is Wall))
+                if (Direction != Direction.Up)
+                    emptyTiles.Add(maze[x, y - 1]);
 
-                    if (!(maze[x, y + (i - 5)] is Wall))
-                        tilesDown.Add(maze[x, y + (i - 5)]);
-                }
-            }
-
-            switch (Direction)
-            {
-                case Direction.Left:
-                    EmptyTiles = tilesLeft;
-                    break;
-                case Direction.Down:
-                    EmptyTiles = tilesDown;
-                    break;
-
-                case Direction.Right:
-                    EmptyTiles = tilesRight;
-                    break;
-
-                case Direction.Up:
-                    EmptyTiles = tilesUp;
-                    break;
-
-            }
-
-            return EmptyTiles;
+            /* Check down */
+            if (!(maze[x, y] is Wall))
+                if (Direction != Direction.Down)
+                    emptyTiles.Add(maze[x, y + 1]);
+            
+            return emptyTiles;
 
         }
 
-        protected virtual void PacmanWon()
+protected virtual void PacmanWon()
+{
+    if (PacmanWonEvent != null)
+        PacmanWonEvent();
+}
+
+
+public void CheckMembersLeft()
+{
+    int count = 0;
+    foreach (Tile item in this.maze)
+    {
+        if (item is Path /*item.IsEmpty() == false*/)
         {
-            if (PacmanWonEvent != null)
-                PacmanWonEvent();
+            count++;
         }
+    }
 
-
-        public void CheckMembersLeft()
-        {
-            int count = 0;
-            foreach (Tile item in this.maze)
-            {
-                if (item is Path /*item.IsEmpty() == false*/)
-                {
-                    count++;
-                }
-            }
-
-            if (count == 0)
-            {
-                PacmanWon();
-            }
-        }
+    if (count == 0)
+    {
+        PacmanWon();
+    }
+}
 
         
 
