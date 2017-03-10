@@ -7,7 +7,6 @@ using Pacman.Characters.Classes;
 using Pacman.Game.Classes.Map;
 using PacManLib;
 using System.IO;
-using Pacman.Game.Classes.Map;
 using System.Text.RegularExpressions;
 using Microsoft.Xna.Framework;
 using static Pacman.Characters.Classes.Ghost;
@@ -16,8 +15,6 @@ namespace Pacman.Game.Classes.State
 {
     public class GameState
     {
-
-
         public GameState Parse(string filecontent)
         {
             //Setting GameState Object to hold the state of the game and its properties
@@ -90,7 +87,6 @@ namespace Pacman.Game.Classes.State
                     if (mazeChar.Equals("w"))
                     {
                         Wall tile = new Wall(i, j);
-
                         g.Maze[i, j] = tile;
 
                     }
@@ -116,6 +112,8 @@ namespace Pacman.Game.Classes.State
                         Ghost ghost = new Ghost(new GameState(), 10, 11, new Vector2(8, 11), GhostState.Penned, new Characters.Classes.Color());
                         ghost.Pacman = pacman;
                         g.GhostPack.Add(ghost);
+                        ghost.CollisionEvent += g.Score.incrementScore;
+                        ghost.PacmanDiedEvent += g.Score.deadPacman;
                         // all the events 
                         //  ghost.CollisionEvent += 
                         Map.Path tile = new Map.Path(10, 11, ghost);
@@ -127,6 +125,9 @@ namespace Pacman.Game.Classes.State
                         Ghost ghost = new Ghost(new GameState(), 10, 10, new Vector2(10, 10), GhostState.Penned, new Characters.Classes.Color());
                         ghost.Pacman = pacman;
                         g.GhostPack.Add(ghost);
+                        g.Pen.AddToPen(ghost);
+                        ghost.CollisionEvent += g.Score.incrementScore;
+                        ghost.PacmanDiedEvent += g.Score.deadPacman;
                         Map.Path tile = new Map.Path(10, 11, ghost);
                         g.Maze[i, j] = tile;
                     }
@@ -136,6 +137,9 @@ namespace Pacman.Game.Classes.State
                         Ghost ghost = new Ghost(new GameState(), 10, 11, new Vector2(10, 11), GhostState.Penned, new Characters.Classes.Color());
                         ghost.Pacman = pacman;
                         g.GhostPack.Add(ghost);
+                        g.Pen.AddToPen(ghost);
+                        ghost.CollisionEvent += g.Score.incrementScore;
+                        ghost.PacmanDiedEvent += g.Score.deadPacman;
                         Map.Path tile = new Map.Path(10, 11, ghost);
                         g.Maze[i, j] = tile;
                     }
@@ -145,6 +149,9 @@ namespace Pacman.Game.Classes.State
                         Ghost ghost = new Ghost(new GameState(), 10, 12, new Vector2(10, 12), Ghost.GhostState.Penned, new Characters.Classes.Color());
                         ghost.Pacman = pacman;
                         g.GhostPack.Add(ghost);
+                        g.Pen.AddToPen(ghost);
+                        ghost.CollisionEvent += g.Score.incrementScore;
+                        ghost.PacmanDiedEvent += g.Score.deadPacman;
                         Map.Path tile = new Map.Path(10, 11, ghost);
                         g.Maze[i, j] = tile;
                     }

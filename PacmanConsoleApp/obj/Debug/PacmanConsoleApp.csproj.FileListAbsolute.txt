@@ -50,8 +50,6 @@ C:\Users\J\Source\Repos\pacman\PacmanConsoleApp\bin\Debug\PacmanConsoleApp.exe.c
 C:\Users\J\Source\Repos\pacman\PacmanConsoleApp\obj\Debug\PacmanConsoleApp.exe
 C:\Users\J\Source\Repos\pacman\PacmanConsoleApp\obj\Debug\PacmanConsoleApp.pdb
 C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\PacmanConsoleApp\bin\Debug\PacmanConsoleApp.exe.config
-C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\PacmanConsoleApp\obj\Debug\PacmanConsoleApp.exe
-C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\PacmanConsoleApp\obj\Debug\PacmanConsoleApp.pdb
 C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\PacmanConsoleApp\bin\Debug\PacmanConsoleApp.exe
 C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\PacmanConsoleApp\bin\Debug\PacmanConsoleApp.pdb
 C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\PacmanConsoleApp\bin\Debug\Pacman.dll
@@ -73,3 +71,5 @@ C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\PacmanConsoleApp\bin\Debug\Shar
 C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\PacmanConsoleApp\bin\Debug\SharpDX.XInput.xml
 C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\PacmanConsoleApp\bin\Debug\SharpDX.MediaFoundation.xml
 C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\PacmanConsoleApp\obj\Debug\PacmanConsoleApp.csprojResolveAssemblyReference.cache
+C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\PacmanConsoleApp\obj\Debug\PacmanConsoleApp.exe
+C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\PacmanConsoleApp\obj\Debug\PacmanConsoleApp.pdb

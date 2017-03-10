@@ -49,7 +49,7 @@
     <Compile Include="Characters\Classes\Pacman.cs" />
     <Compile Include="Characters\Classes\GhostPack.cs" />
     <Compile Include="Characters\Classes\Ghost.cs" />
-    <Compile Include="Characters\Classes\ScoreAndLives.cs" />
+    <Compile Include="Game\Classes\State\ScoreAndLives.cs" />
     <Compile Include="Characters\Interfaces\ICollidable.cs" />
     <Compile Include="Characters\Interfaces\IMovable.cs" />
     <Compile Include="Characters\Interfaces\IGhostState.cs" />
@@ -60,7 +60,6 @@
     <Compile Include="Game\Classes\State\Energizer.cs" />
     <Compile Include="Game\Classes\State\GameState.cs" />
     <Compile Include="Game\Classes\State\Pellet.cs" />
-    <Compile Include="Game\Classes\State\ScoreAndLives.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
