@@ -95,33 +95,43 @@ namespace Pacman.Game.Classes.Map
             if (!(maze[x, y] is Wall))
                 if (Direction != Direction.Down)
                     emptyTiles.Add(maze[x, y + 1]);
-            
+
             return emptyTiles;
 
         }
 
-    protected virtual void PacmanWon()
-    {
-        if (PacmanWonEvent != null)
-            PacmanWonEvent();
-    }
-
-
-public void CheckMembersLeft()
-{
-    int count = 0;
-    foreach (Tile item in this.maze)
-    {
-        if (item is Path)
+        protected virtual void PacmanWon()
         {
-            count++;
+            if (PacmanWonEvent != null)
+                PacmanWonEvent();
+        }
+
+
+        public void CheckMembersLeft()
+        {
+            int count = 0;
+            foreach (Tile item in this.maze)
+            {
+                if (item.Member == null)
+                {
+                    count++;
+                }
+            }
+
+            if (count == MemberCount())
+            {
+                PacmanWon();
+            }
+        }
+
+        public int MemberCount()
+        {
+            int members = 0;
+            foreach (Tile tile in maze){
+                if (tile.Member == null || tile.Member is Pellet || tile.Member is Energizer)
+                    members++;
+            }
+            return members;
         }
     }
-
-    if (count == 0)
-    {
-        PacmanWon();
-    }
-    }
-  }
 }
