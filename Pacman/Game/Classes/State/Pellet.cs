@@ -9,6 +9,7 @@ namespace Pacman.Game.Classes.State
 {
     public class Pellet : ICollidable
     {
+        public event CollisionEventHandler CollisionEvent;
         private int points;
 
         public Pellet()
@@ -29,11 +30,18 @@ namespace Pacman.Game.Classes.State
             }
         }
 
-        public event CollisionEventHandler CollisionEvent;
-
+        // check how these events work
+        protected virtual void OnCollisionEvent()
+        {
+           if (CollisionEvent != null)
+            {
+                CollisionEvent(this);
+            }
+        }
         public void Collide()
         {
-            throw new NotImplementedException();
+            // runs increment score
+            OnCollisionEvent();
         }
     }
 }

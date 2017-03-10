@@ -11,7 +11,6 @@ namespace Pacman.Game.Classes.Map
 {
     public class Path : Tile
     {
-
         private ICollidable member;
         public Path(int x, int y, ICollidable member) : base(x, y)
         {

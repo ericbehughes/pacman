@@ -8,8 +8,7 @@ using System.Threading.Tasks;
 
 namespace Pacman.Characters.Classes
 {
-    // game over delegate over these 2
-    
+
     public delegate void GameOverHandler();
     public class ScoreAndLives
     {
@@ -44,8 +43,6 @@ namespace Pacman.Characters.Classes
             {
                 GameOver();
             }
-
-
         }
 
         public void incrementScore(ICollidable m)
