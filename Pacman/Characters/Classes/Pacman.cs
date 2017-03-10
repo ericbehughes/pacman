@@ -18,6 +18,7 @@ namespace Pacman.Characters.Classes
 
         public event CollisionEventHandler CollisionEvent;
 
+        /*Told where to move and gets a direction for the objects move method*/
         public Pacman(GameState gs)
         {
             this.gamestate = gs;

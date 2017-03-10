@@ -22,7 +22,7 @@ namespace Pacman.Game.Classes.Map
 
             return true;
         }
-
+        /*Invoked each time pacman moves to the tile*/
         public override void Collide()
         {
         }

@@ -15,6 +15,8 @@ namespace Pacman.Characters.Classes
         private Maze maze;
         private Pacman pacman;
         private Vector2 target;
+
+        /*The chase object chooses the neighbor whos distance to the target is the smallest*/
         public Chase(Ghost g, Maze m, Pacman p , Vector2 t )
         {
             this.ghost = g;

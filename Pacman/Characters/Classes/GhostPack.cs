@@ -13,6 +13,7 @@ namespace Pacman.Characters.Classes
     {
         private List<Ghost> ghosts;
 
+        /*Centralizes where they're asked to move, collision checks, reset to starting point and change to scared mode*/
         public GhostPack()
         {
             ghosts = new List<Ghost>();

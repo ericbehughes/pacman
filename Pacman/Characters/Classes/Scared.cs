@@ -14,6 +14,7 @@ namespace Pacman.Characters.Classes
     {
         private Ghost ghost;
         private Maze maze;
+        /*The scared object chooses randomly among the neighbors return by the mazes getAvailableNeighbors() method*/
         public Scared(Ghost ghost, Maze maze)
         {
             //change direction - make a 180 degree turn

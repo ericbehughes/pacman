@@ -68,6 +68,9 @@ namespace Pacman.Game.Classes.Map
             }
         }
 
+        /* The function will check the tiles to the left, right, down and up from the parameter's position and save them to a list (Omitting the same direction)
+         * if and only if the tiles are not a wall
+         */
         public List<Tile> GetAvailableNeighbours(Vector2 position, Direction Direction)
         {
 
@@ -106,7 +109,9 @@ namespace Pacman.Game.Classes.Map
                 PacmanWonEvent();
         }
 
-
+        /* The funciton throws an event (PacmanWon()) when all the Path tiles (excluding ghosts)
+         * Are empty and have no members
+         */
         public void CheckMembersLeft()
         {
             int count = 0;
@@ -124,6 +129,7 @@ namespace Pacman.Game.Classes.Map
             }
         }
 
+        /* The function will iterate through each tile in the maze and count all that aren't ghosts or Pacman */
         public int MemberCount()
         {
             int members = 0;

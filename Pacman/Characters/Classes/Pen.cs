@@ -48,6 +48,8 @@ namespace PacManLib
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        /// 
+        /*This is an event*/
         private void Release(object sender, ElapsedEventArgs e)
         {
             Timer t = (Timer)sender;

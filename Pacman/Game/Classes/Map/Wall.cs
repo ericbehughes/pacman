@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
+using Pacman.Characters.Interfaces;
 
 namespace Pacman.Game.Classes.Map
 {
@@ -13,6 +14,7 @@ namespace Pacman.Game.Classes.Map
         {
         }
 
+      
         public override bool CanEnter()
         {
             return false;
@@ -22,11 +24,11 @@ namespace Pacman.Game.Classes.Map
         {
            
         }
-
         public override float GetDistance(Vector2 goal)
         {
-            return 0.0f;
+            return Vector2.Distance(this.Position, goal);
         }
+
 
         public string toString()
         {
