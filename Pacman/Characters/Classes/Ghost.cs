@@ -99,12 +99,12 @@ namespace Pacman.Characters.Classes
         {
             if (this.CurrentState == GhostState.Scared)
             {
-                CollisionEvent(this); //raise collision event to increment score of pacman
-                this.pen.AddToPen(this); //add ghost back to pen 
+                CollisionEvent(this); 
+                this.pen.AddToPen(this); 
             }
             if (this.CurrentState == GhostState.Chase)
             {
-                PacmanDiedEvent(); //raise pacman died event
+                PacmanDiedEvent(); 
             }
         }
 

@@ -48,10 +48,15 @@ namespace Pacman.Characters.Classes
 
         }
 
-        public void incrementScore(ICollidable member)
+        public void incrementScore(ICollidable m)
         {
-            this.score += member.Points; //increment score
+            this.score += m.Points; //increment score
 
+            // check if member is an energizer and scare ghosts
+            if (m is Energizer)
+            {
+                this.gamestate.GhostPack.ScareGhosts();
+            }
         }
     }
     }

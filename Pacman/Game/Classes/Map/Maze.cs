@@ -23,7 +23,7 @@ namespace Pacman.Game.Classes.Map
 
         public Maze()
         {
-          
+          // check what should go in here
         }
         public void SetTiles(Tile[,] tiles)
         {
@@ -110,38 +110,6 @@ namespace Pacman.Game.Classes.Map
                     }
                     break;
             }
-
-
-
-            /*
-            switch (Direction)
-            {
-                case Direction.Down:
-                    if (!(maze[x, y + 1] is Wall))
-                    {
-                        EmptyTiles.Add(maze[x, y + 1]);
-                    }
-                    break;
-                case Direction.Up:
-                    if (!(maze[x, y - 1] is Wall))
-                    {
-                        EmptyTiles.Add(maze[x, y - 1]);
-                    }
-                    break;
-                case Direction.Left:
-                    if (maze[(int)(position.Y + 1), (int)position.X] != maze[0, 0])
-                    {
-                        EmptyTiles.Add(maze[(int)(position.Y + 1), (int)position.X]);
-                    }
-                    break;
-                case Direction.Right:
-                    if (maze[(int)((position.Y + 1)), (int)position.X] != maze[0, 0])
-                    {
-                        EmptyTiles.Add(maze[(int)((position.Y + 1)), (int)position.X]);
-                    }
-                    break;
-            }
-            */
             return EmptyTiles;
 
         }
