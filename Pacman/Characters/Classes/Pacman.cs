@@ -32,9 +32,12 @@ namespace Pacman.Characters.Classes
 
             }
         }
-        public bool CheckCollisions()
+        public void CheckCollisions(Vector2 v)
         {
-            return false;
+           if (this.Position == v)
+            {
+               // Collide();
+            }
         }
     }
 }

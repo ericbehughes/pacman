@@ -15,16 +15,17 @@ namespace Pacman.Game.Classes.Map
         private ICollidable member;
         public Path(int x, int y, ICollidable member) : base(x, y)
         {
+            this.member = member;
         }
 
         public override bool CanEnter()
         {
-            throw new NotImplementedException();
+
+            return true;
         }
 
         public override void Collide()
         {
-            throw new NotImplementedException();
         }
 
         public override float GetDistance(Vector2 goal)

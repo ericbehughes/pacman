@@ -15,7 +15,7 @@ namespace Pacman.Game.Classes.Map
 
         public override bool CanEnter()
         {
-            throw new NotImplementedException();
+            return false;
         }
 
         public override void Collide()

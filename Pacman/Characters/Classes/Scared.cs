@@ -15,12 +15,12 @@ namespace Pacman.Characters.Classes
 
         public Scared(Ghost g, Maze m)
         {
-
+            // 
         }
 
         public void Move()
         {
-            throw new NotImplementedException();
+            
         }
     }
 }

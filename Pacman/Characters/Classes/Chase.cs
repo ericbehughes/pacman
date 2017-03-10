@@ -13,9 +13,6 @@ namespace Pacman.Characters.Classes
         private Ghost ghost;
         private Maze maze;
         private Pacman pacman;
-
-  
-
         public Chase(Ghost g, Maze m, Pacman p /*,Target t */)
         {
             this.ghost = g;
