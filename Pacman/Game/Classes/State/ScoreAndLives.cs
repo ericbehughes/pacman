@@ -56,7 +56,8 @@ namespace Pacman.Characters.Classes
         public void incrementScore(ICollidable m)
         {
             this.score += m.Points; //increment score
-            
+
+            this.gamestate.Maze.CheckMembersLeft(); 
             // check if member is an energizer and scare ghosts
             if (m is Energizer)
             {

@@ -13,7 +13,8 @@ namespace Pacman.Characters.Classes
     {
         private List<Ghost> ghosts;
 
-        /*Centralizes where they're asked to move, collision checks, reset to starting point and change to scared mode*/
+        /*Centralizes where they're asked to move, collision checks, 
+         * reset to starting point and change to scared mode*/
         public GhostPack()
         {
             ghosts = new List<Ghost>();
@@ -22,9 +23,9 @@ namespace Pacman.Characters.Classes
 
         public void CheckCollideGhosts(Vector2 target)
         {
-            foreach (var monster in ghosts)
+            foreach (var g in ghosts)
             {
-                monster.CheckCollisions(target);
+                g.CheckCollisions(target);
             }
         }
 
@@ -47,11 +48,16 @@ namespace Pacman.Characters.Classes
 
         public void ScareGhosts()
         {
-            foreach (Ghost ghost in ghosts)
+            foreach (Ghost g in ghosts)
             {
-                if (ghost.CurrentState != GhostState.Scared)
-                    ghost.ChangeState(GhostState.Scared);
+                if (g.CurrentState != GhostState.Scared)
+                    g.ChangeState(GhostState.Scared);
             }
+            /* go over this timer for scared ghsot
+            Ghost.scared = new Timer(6000);
+            Ghost.scared.Enabled = true;
+            Ghost.scared.Elapsed += OnScareGhostDisable;
+            */
         }
     }
 }
