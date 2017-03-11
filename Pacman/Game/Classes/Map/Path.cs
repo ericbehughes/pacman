@@ -11,11 +11,11 @@ namespace Pacman.Game.Classes.Map
 {
     public class Path : Tile
     {
-        private ICollidable member;
+        //private ICollidable member;
         public event CollisionEventHandler CollisionEvent;
         public Path(int x, int y, ICollidable member) : base(x, y)
         {
-            this.member = member;
+            this.Member = member;
         }
 
         public override bool CanEnter() { return true; }
@@ -24,8 +24,8 @@ namespace Pacman.Game.Classes.Map
         {
             if (!this.IsEmpty())
             {
-                member.Collide();
-                this.member = null;
+                Member.Collide();
+                this.Member = null;
             }
         }
 
@@ -36,6 +36,10 @@ namespace Pacman.Game.Classes.Map
             return false;
         }
 
-        public override ICollidable Member { get; set; }
+        public override ICollidable Member
+        {
+            get;
+            set;
+        }
     }
 }

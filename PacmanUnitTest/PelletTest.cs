@@ -11,7 +11,6 @@ namespace PacmanUnitTest
         [TestMethod]
         public void TestPelletValidConstructor()
         {
-            /* Test Pellet */
             Pellet p = new Pellet();
             int points = p.Points;
             Assert.AreEqual(10, points);

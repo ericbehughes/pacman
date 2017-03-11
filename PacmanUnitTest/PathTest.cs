@@ -4,6 +4,7 @@ using Pacman.Characters.Classes;
 using Pacman.Game.Classes.State;
 using Microsoft.Xna.Framework;
 using Pacman.Game.Classes.Map;
+using static Pacman.Characters.Classes.Ghost;
 
 namespace PacmanUnitTest
 {
@@ -28,21 +29,17 @@ namespace PacmanUnitTest
         [ExpectedException(typeof(ArgumentException))]
         public void TestPathInValidConstructor()
         {
-            GhostPack gPack = new GhostPack();
-            Energizer e = new Energizer(gPack);
             int x = -1,
                 y = -1;
-            Path p = new Path(x, y, e);
+            Path p = new Path(x, y, null);
         }
 
         [TestMethod]
         public void TestPathCanEnter()
         {
-            GhostPack gPack = new GhostPack();
-            Energizer e = new Energizer(gPack);
             int x = 10,
                 y = 10;
-            Path p = new Path(x, y, e);
+            Path p = new Path(x, y, null);
 
             Assert.AreEqual(true, p.CanEnter());
         }
@@ -55,7 +52,6 @@ namespace PacmanUnitTest
             int x = 10,
                 y = 10;
             Path p = new Path(x, y, e);
-            p.IsEmpty();
             Assert.AreEqual(false, p.IsEmpty());
             p.Member = null;
             Assert.AreEqual(true, p.IsEmpty());
@@ -94,11 +90,9 @@ namespace PacmanUnitTest
         [TestMethod]
         public void TestPathCollide()
         {
-            GhostPack gPack = new GhostPack();
-            Energizer e = new Energizer(gPack);
             int x = 10,
                 y = 10;
-            Path p = new Path(x, y, e);
+            Path p = new Path(x, y, null);
             bool actualVal = false;
             bool expectedVal = true;
             p.CollisionEvent += (z) =>
