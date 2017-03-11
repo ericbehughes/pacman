@@ -18,7 +18,7 @@ namespace PacmanUnitTest
             int x = 10,
                 y = 10;
             Vector2 v2 = new Vector2(x, y);
-            Path p = Path(x, y, e);
+            Path p = new Path(x, y, e);
         }
     }
 }
