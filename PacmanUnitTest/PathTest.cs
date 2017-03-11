@@ -4,7 +4,6 @@ using Pacman.Characters.Classes;
 using Pacman.Game.Classes.State;
 using Microsoft.Xna.Framework;
 using Pacman.Game.Classes.Map;
-using Pacman.Characters.Interfaces;
 
 namespace PacmanUnitTest
 {
@@ -43,7 +42,6 @@ namespace PacmanUnitTest
             Energizer e = new Energizer(gPack);
             int x = 10,
                 y = 10;
- 
             Path p = new Path(x, y, e);
 
             Assert.AreEqual(true, p.CanEnter());
@@ -96,17 +94,18 @@ namespace PacmanUnitTest
         [TestMethod]
         public void TestPathCollide()
         {
-            Pellet pellet = new Pellet();
+            GhostPack gPack = new GhostPack();
+            Energizer e = new Energizer(gPack);
             int x = 10,
                 y = 10;
-            Path path = new Path(x, y, pellet);
+            Path p = new Path(x, y, e);
             bool actualVal = false;
             bool expectedVal = true;
-            pellet.CollisionEvent += (z) =>
+            p.CollisionEvent += (z) =>
             {
                 actualVal = true;
             };
-            path.Collide();
+            p.Collide();
             Assert.AreEqual(expectedVal, actualVal);
         }
     }
