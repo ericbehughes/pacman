@@ -17,29 +17,20 @@ namespace Pacman.Game.Classes.Map
             this.member = member;
         }
 
-        public override bool CanEnter()
-        {
-
-            return true;
-        }
+        public override bool CanEnter(){  return true; }
         /*Invoked each time pacman moves to the tile*/
         public override void Collide()
         {
+            if (this.member != null)
+                Collide();
+            this.member = null;
         }
 
-        public override float GetDistance(Vector2 goal)
+        public override bool IsEmpty()
         {
             throw new NotImplementedException();
         }
 
-        public string toString()
-        {
-            if (this.member is Energizer)
-                return "o";
-            else if (this.member is Pellet)
-                return "*";
-            else
-                return "neither";
-        }
+        public override ICollidable Member { get;set; }
     }
 }

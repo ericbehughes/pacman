@@ -163,11 +163,6 @@ namespace Pacman.Game.Classes.State
 
 
             }
-
-
-
-        }
-
-
+        } // end of method
     }
 }

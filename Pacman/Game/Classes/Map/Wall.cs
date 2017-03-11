@@ -22,17 +22,18 @@ namespace Pacman.Game.Classes.Map
 
         public override void Collide()
         {
-           
-        }
-        public override float GetDistance(Vector2 goal)
-        {
-            return Vector2.Distance(this.Position, goal);
+            throw new NotSupportedException("wall collide exception");
         }
 
-
-        public string toString()
+        public override bool IsEmpty()
         {
-            return "|_|";
+            throw new NotImplementedException("walls cant be empty exception");
+        }
+
+        public override ICollidable Member
+        {
+            get { throw new NotSupportedException(); }
+            set { throw new NotSupportedException(); }
         }
     }
 }

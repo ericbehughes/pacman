@@ -12,8 +12,8 @@ namespace Pacman.Characters.Classes
     public delegate void GameOverHandler();
     public class ScoreAndLives
     {
-        private GameState gamestate;
         public event GameOverHandler GameOver;
+        private GameState gamestate;
         private int lives;
         private int score;
         public ScoreAndLives(GameState gs)
@@ -24,7 +24,7 @@ namespace Pacman.Characters.Classes
         public int Lives
         {
             get { return this.lives; }
-            set { this.lives = value; }
+            set { this.lives = value; }  // might need validation here
         }
         public int Score
         {
@@ -34,14 +34,22 @@ namespace Pacman.Characters.Classes
 
         protected virtual void OnGameOver()
         {
-            OnGameOver();
+            GameOver();
         }
 
         public void deadPacman()
         {
+            this.lives--;
             if (lives <= 0)
             {
-                GameOver();
+                // if this GameOver event is not null then call OnGameOver() 
+                // helper method which invokes GameOver event pointing to incrementscore method
+                if (GameOver != null)
+                    OnGameOver();
+            }
+            else
+            {
+               this.gamestate.GhostPack.ResetGhosts();
             }
         }
 

@@ -117,12 +117,12 @@ namespace Pacman.Game.Classes.Map
             int count = 0;
             foreach (Tile item in this.maze)
             {
-                if (item.Member == null)
+                if (!item.IsEmpty())
                 {
                     count++;
                 }
             }
-
+            // check if member count works for the end game
             if (count == MemberCount())
             {
                 PacmanWon();

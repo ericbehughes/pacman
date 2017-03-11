@@ -22,23 +22,14 @@ namespace Pacman.Game.Classes.State
 
         public Energizer(){ }
 
-        public int Points
-        {
-            get
-            {
-                return points;
-            }
-
-            set
-            {
-                if (value >= 0) // whatever goes here
-                    points = value;
-            }
-        }
+        public int Points {
+            get { return points; }
+            set { if (value < 0) throw new ArgumentException("points must be > 0"); } }
 
         // check how these events work
         protected virtual void OnCollisionEvent()
         {
+            // i want the longer invoke of delegate, easier to read
             if (CollisionEvent != null)
             {
                 CollisionEvent(this);
@@ -46,15 +37,10 @@ namespace Pacman.Game.Classes.State
         }
         public void Collide()
         {
-            // runs increment score
+            // runs increment score for energizer
+            // assigned in gamestate
             OnCollisionEvent();
         }
-
-        public string toString()
-        {
-            return "o";
-        }
-
 
     }
 }

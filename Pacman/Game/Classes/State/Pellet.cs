@@ -18,21 +18,13 @@ namespace Pacman.Game.Classes.State
         }
         public int Points
         {
-            get
-            {
-                return points;
-            }
-
-            set
-            {
-                if (value >= 0) // whatever goes here
-                    points = value;
-            }
+            get{ return points;}
+            set{ if (value >= 0) points = value;}
         }
-
         // check how these events work
         protected virtual void OnCollisionEvent()
         {
+            // same invoke as energizer
            if (CollisionEvent != null)
             {
                 CollisionEvent(this);
@@ -40,7 +32,8 @@ namespace Pacman.Game.Classes.State
         }
         public void Collide()
         {
-            // runs increment score
+            // runs increment score for pellet
+            // assigned in gamestate
             OnCollisionEvent();
         }
     }
