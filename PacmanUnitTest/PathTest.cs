@@ -7,7 +7,7 @@ namespace PacmanUnitTest
     public class PathTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestValidConstructor()
         {
         }
     }
