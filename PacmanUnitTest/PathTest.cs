@@ -99,10 +99,14 @@ namespace PacmanUnitTest
             int x = 10,
                 y = 10;
             Path p = new Path(x, y, e);
-            p.Collide += (x) =>
+            bool actualVal = false;
+            bool expectedVal = true;
+            p.CollisionEvent += (z) =>
             {
-
-            }
+                actualVal = true;
+            };
+            p.Collide();
+            Assert.AreEqual(actualVal, expectedVal);
         }
     }
 }
