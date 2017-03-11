@@ -3,13 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Timers;
 using static Pacman.Characters.Classes.Ghost;
+using System.Collections;
 
 namespace Pacman.Characters.Classes
 {
-    public class GhostPack
+    public class GhostPack : IEnumerable<Ghost>
     {
         private List<Ghost> ghosts;
 
@@ -46,13 +46,6 @@ namespace Pacman.Characters.Classes
             ghosts.Add(g);
         }
 
-        public Ghost GetAtIndex(int index)
-        {
-            if (index > ghosts.Count)
-                throw new ArgumentOutOfRangeException("GhostPack.cs - The index is greater than the size of the list");
-            return ghosts.ElementAt(index);
-        }
-
         public void ScareGhosts()
         {
             foreach (Ghost g in ghosts)
@@ -60,11 +53,31 @@ namespace Pacman.Characters.Classes
                 if (g.CurrentState != GhostState.Scared)
                     g.ChangeState(GhostState.Scared);
             }
-            /* go over this timer for scared ghsot
-            Ghost.scared = new Timer(6000);
-            Ghost.scared.Enabled = true;
-            Ghost.scared.Elapsed += OnScareGhostDisable;
-            */
+            // update ghost public scared timer field
+            scared.Interval = 9000;
+            scared.Enabled = true;
+            scared.Elapsed += OnPauseScaredTimer;
+        }
+
+        private void OnPauseScaredTimer(object sender, ElapsedEventArgs e)
+        {
+            Timer t = (Timer)sender;
+            t.Enabled = false;
+            foreach (var item in ghosts)
+            {
+                item.ChangeState(GhostState.Chase);
+            }
+        }
+
+
+        public IEnumerator<Ghost> GetEnumerator()
+        {
+            return ghosts.GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return ghosts.GetEnumerator();
         }
     }
 }

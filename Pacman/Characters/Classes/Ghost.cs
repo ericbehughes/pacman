@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Pacman.Game.Classes.Map;
 using Pacman.Characters.Interfaces;
-using System.Threading;
+using System.Timers;
 using Pacman.Game.Classes.State;
-using PacManLib;
 
 namespace Pacman.Characters.Classes
 {
@@ -30,11 +29,10 @@ namespace Pacman.Characters.Classes
         private Direction direction;
         private Color colour;
         private IGhostState currentState;
-        private double points;
         public static Timer scared;
         public static Vector2 ReleasePosition;
         public event CollisionEventHandler CollisionEvent;
-        public event PacmanDiedEventHandler PacmanDiedEvent; 
+        public event PacmanDiedEventHandler PacmanDiedEvent;
 
 
         public delegate void Collision(ICollidable obj);
@@ -52,11 +50,11 @@ namespace Pacman.Characters.Classes
             {
                 currentState = new Chase(this, this.maze, pacman, target);
             }
-         
+
             this.colour = colour;
         }
 
-  // need to check how this works its an enum in the class diagram
+        // need to check how this works its an enum in the class diagram
         public IGhostState CurrenState
         {
             get { return currentState; }
@@ -101,12 +99,12 @@ namespace Pacman.Characters.Classes
         {
             if (this.CurrentState == GhostState.Scared)
             {
-                CollisionEvent(this); 
-                this.pen.AddToPen(this); 
+                CollisionEvent(this);
+                this.pen.AddToPen(this);
             }
             if (this.CurrentState == GhostState.Chase)
             {
-                PacmanDiedEvent(); 
+                PacmanDiedEvent();
             }
         }
 
@@ -140,7 +138,7 @@ namespace Pacman.Characters.Classes
                     this.currentState = new Scared(this, this.maze);
                     break;
                 case GhostState.Chase:
-                    this.currentState = new Chase(this, this.maze, this.pacman,this.target);
+                    this.currentState = new Chase(this, this.maze, this.pacman, this.target);
                     break;
                 case GhostState.Released:
                     this.Position = new Vector2(8, 11);
@@ -152,7 +150,8 @@ namespace Pacman.Characters.Classes
             }
         }
 
-     
+
+
 
     }
 
