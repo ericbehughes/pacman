@@ -20,7 +20,7 @@ namespace Pacman.Game.Classes.State
         {
             get{ return points;}
             set{
-                if (value < 0) throw new ArgumentException("The pellet must have a value > 0");
+                if (value < 0) throw new ArgumentException("Pellet.cs - The pellet must have a value > 0");
                 if (value >= 0) points = value;
             }
         }

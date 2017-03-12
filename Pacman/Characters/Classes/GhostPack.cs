@@ -46,6 +46,13 @@ namespace Pacman.Characters.Classes
             ghosts.Add(g);
         }
 
+        public Ghost GetAtIndex(int index)
+        {
+            if (index > ghosts.Count)
+                throw new ArgumentOutOfRangeException("GhostPack.cs - The index is greater than the size of the list");
+            return ghosts.ElementAt(index);
+        }
+
         public void ScareGhosts()
         {
             foreach (Ghost g in ghosts)

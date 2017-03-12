@@ -11,7 +11,7 @@ namespace Pacman.Characters.Interfaces
     {
         event CollisionEventHandler CollisionEvent;
 
-        int Points{get;set;}
+        int Points{ get; set; }
         void Collide();
     }
 }

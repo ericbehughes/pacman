@@ -11,63 +11,70 @@ namespace PacmanUnitTest
     public class EnergizerTest
     {
         [TestMethod]
-        public void TestValidConstructor()
+        public void TestValidParameterConstructor()
         {
-            /* Test points*/
-            Energizer e = new Energizer();
-            int points = e.Points;
-            Assert.AreEqual(100, points);
-
-            /* Test Ghosts*/
-
+            /* Test Points Ghosts*/
+            /*
             GhostState gs = new GhostState();
             GameState gameState = new GameState();
             Pacman.Characters.Classes.Color c = new Pacman.Characters.Classes.Color();
             Vector2 v2 = new Vector2(10, 10);
             Ghost g = new Ghost(gameState, 10, 10, v2, gs, c);
-            
+            */
+            GhostPack gPack = new GhostPack();
+            Energizer e = new Energizer(gPack);
+            int points = e.Points;
+            Assert.AreEqual(100, points); 
 
+        }
+
+        [TestMethod]
+        public void TestValidNoParameterConstructor()
+        {
+            Energizer e = new Energizer();
+            int points = e.Points;
+            Assert.AreEqual(100, points);
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void TestInvalidPointsMutator()
         {
-            Pellet p = new Pellet();
-            p.Points = -1;
+            Energizer e = new Energizer();
+            e.Points = -1;
         }
 
         [TestMethod]
         public void TestPointsAccessor()
         {
-            Pellet p = new Pellet();
-            int points = p.Points;
-            Assert.AreEqual(10, points);
+            Energizer e = new Energizer();
+            int points = e.Points;
+            Assert.AreEqual(100, points);
         }
-
+        
         [TestMethod]
         public void TestValidPointsMutator()
         {
-            Pellet p = new Pellet();
-            p.Points += 500;
-            int points = p.Points;
-            Assert.AreEqual(510, points);
+            Energizer e = new Energizer();
+            e.Points += 500;
+            int points = e.Points;
+            Assert.AreEqual(600, points);
         }
-
+        
         [TestMethod]
         public void TestCollideEvent()
         {
-            Boolean eventRaised = false;
-            Pellet p = new Pellet();
-            int points = p.Points;
-            Assert.AreEqual(10, points);
-            p.CollisionEvent += (x) =>
+            Energizer e = new Energizer();
+            int points = e.Points;
+            Assert.AreEqual(100, points);
+            e.CollisionEvent += (x) =>
             {
                 x.Points += 300;
             };
-            p.Collide();
-            points = p.Points;
-            Assert.AreEqual(310, points);
+            e.Collide();
+            points = e.Points;
+            Assert.AreEqual(400, points);
         }
+        
     }
 }

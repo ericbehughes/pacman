@@ -45,7 +45,6 @@ namespace PacmanUnitTest
         [TestMethod]
         public void TestCollideEvent()
         {
-            Boolean eventRaised = false;
             Pellet p = new Pellet();
             int points = p.Points;
             Assert.AreEqual(10, points);

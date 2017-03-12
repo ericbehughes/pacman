@@ -10,7 +10,7 @@ namespace Pacman.Game.Classes.State
 {
     public class Energizer : ICollidable
     {
-        private int points;
+        private int points = 100;
         private GhostPack ghosts;
 
         public event CollisionEventHandler CollisionEvent;
@@ -18,14 +18,23 @@ namespace Pacman.Game.Classes.State
         public Energizer(GhostPack ghosts)
         {
             this.ghosts = ghosts;
-            this.points = 100;
         }
 
-        public Energizer(){ }
+        public Energizer()
+        {
+            
+        }
 
         public int Points {
             get { return points; }
-            set { if (value < 0) throw new ArgumentException("points must be > 0"); } }
+            set
+            {
+                if (value < 0)
+                    throw new ArgumentException("Energizer.cs - Points value must be > 0");
+                points = value;
+            }
+        }
+
 
         // check how these events work
         protected virtual void OnCollisionEvent()
