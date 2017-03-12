@@ -39,9 +39,10 @@ namespace Pacman.Characters.Classes
 
         public Ghost(GameState g, int x, int y, Vector2 target, GhostState start, Color colour)
         {
+            this.Position = new Vector2(x, y);
             maze = new Maze();
             direction = new Direction();
-            this.target = new Vector2(target.X, target.Y);
+            this.target = target;
             if (start == GhostState.Scared)
             {
                 currentState = new Scared(this, this.maze);
