@@ -41,8 +41,11 @@ namespace Pacman.Characters.Classes
         public Ghost(GameState g, int x, int y, Vector2 target, GhostState start, Color colour)
         {
             this.Position = new Vector2(x, y);
-            maze = new Maze();
-            direction = new Direction();
+            this.maze = g.Maze;
+            Random r = new Random();
+            var enums = Enum.GetValues(typeof(Direction));
+            var enumchosen = enums.GetValue(r.Next(0, 3));
+            direction = (Direction)enumchosen;
             this.target = target;
             if (start == GhostState.Scared)
             {

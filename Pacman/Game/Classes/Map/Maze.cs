@@ -75,8 +75,8 @@ namespace Pacman.Game.Classes.Map
 
             List<Tile> emptyTiles = new List<Tile>();
 
-            int y = (int)position.X,
-                x = (int)position.Y;
+            int x = (int)position.X,
+                y = (int)position.Y;
 
             if (x - 1 < 0 || y - 1 < 0)
                 throw new ArgumentException("Maze.cs - The X or Y position cannot be 0");

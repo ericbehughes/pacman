@@ -83,9 +83,9 @@ namespace Pacman.Game.Classes.State
             String mazeChar = "";
             Pacman.Characters.Classes.Pacman pacman = new Pacman.Characters.Classes.Pacman(new GameState());
             int counter = 0;
-            for (int i = 0; i < size; i++)
+            for (int j = 0; j < size; j++)
             {
-                for (int j = 0; j < size; j++)
+                for (int i = 0; i < size; i++)
                 {
                     // mazeChar = str[counter].ToLower(); This gave me a headache 
                     mazeChar = str[counter];
