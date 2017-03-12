@@ -15,30 +15,22 @@ namespace PacmanUnitTest
         [TestMethod]
         public void TestMazeGetAvailableNeighboursLeft()
         {
-            GameState gs = GameState.Parse("map.csv");
-            Maze maze = gs.Maze;
-            Vector2 v2 = new Vector2(1, 2);
-            Pacman.Game.Classes.Map.Path testPath = new Pacman.Game.Classes.Map.Path(1, 2, new Energizer());
-            List<Tile> testTiles = new List<Tile>();
-            testTiles.Add(testPath);
-            List<Tile> testNeighbors = maze.GetAvailableNeighbours(v2, Direction.Left);
+            GameState gameState = GameState.Parse("map.csv");
+            List<Tile> testNeighbors = gameState.Maze.GetAvailableNeighbours(new Vector2(1, 2), Direction.Left);
             Assert.AreEqual(1, testNeighbors[0].Position.X);
             Assert.AreEqual(1, testNeighbors[0].Position.Y);
-            Assert.AreEqual(1, testNeighbors.Count);
+            Assert.AreEqual(2, testNeighbors[1].Position.X);
+            Assert.AreEqual(2, testNeighbors[1].Position.Y);
+            Assert.AreEqual(2, testNeighbors.Count);
         }
 
         [TestMethod]
         public void TestMazeGetAvailableNeighboursRight()
         {
-            GameState gs = GameState.Parse("map.csv");
-            Maze maze = gs.Maze;
-            Vector2 v2 = new Vector2(1, 2);
-            Pacman.Game.Classes.Map.Path testPath = new Pacman.Game.Classes.Map.Path(1, 2, new Energizer());
-            List<Tile> testTiles = new List<Tile>();
-            testTiles.Add(testPath);
-            List<Tile> testNeighbors = maze.GetAvailableNeighbours(v2, Direction.Right);
+            GameState gameState = GameState.Parse("map.csv");
+            List<Tile> testNeighbors = gameState.Maze.GetAvailableNeighbours(new Vector2(1,2), Direction.Right);
             Assert.AreEqual(1, testNeighbors[0].Position.X);
-            Assert.AreEqual(1, testNeighbors[0].Position.Y);
+            Assert.AreEqual(3, testNeighbors[0].Position.Y);
             Assert.AreEqual(2, testNeighbors[1].Position.X);
             Assert.AreEqual(2, testNeighbors[1].Position.Y);
             Assert.AreEqual(2, testNeighbors.Count);
@@ -47,33 +39,27 @@ namespace PacmanUnitTest
         [TestMethod]
         public void TestMazeGetAvailableNeighboursUp()
         {
-            GameState gs = GameState.Parse("map.csv");
-            Maze maze = gs.Maze;
-            Vector2 v2 = new Vector2(1, 2);
-            Pacman.Game.Classes.Map.Path testPath = new Pacman.Game.Classes.Map.Path(1, 2, new Energizer());
-            List<Tile> testTiles = new List<Tile>();
-            testTiles.Add(testPath);
-            List<Tile> testNeighbors = maze.GetAvailableNeighbours(v2, Direction.Up);
+            GameState gameState = GameState.Parse("map.csv");
+            List<Tile> testNeighbors = gameState.Maze.GetAvailableNeighbours(new Vector2(1,2), Direction.Up);
             Assert.AreEqual(1, testNeighbors[0].Position.X);
             Assert.AreEqual(1, testNeighbors[0].Position.Y);
-            Assert.AreEqual(2, testNeighbors[1].Position.X);
-            Assert.AreEqual(2, testNeighbors[1].Position.Y);
+            Assert.AreEqual(1, testNeighbors[1].Position.X);
+            Assert.AreEqual(3, testNeighbors[1].Position.Y);
             Assert.AreEqual(2, testNeighbors.Count);
         }
 
         [TestMethod]
         public void TestMazeGetAvailableNeighboursDown()
         {
-            GameState gs = GameState.Parse("map.csv");
-            Maze maze = gs.Maze;
-            Vector2 v2 = new Vector2(1, 2);
-            Pacman.Game.Classes.Map.Path testPath = new Pacman.Game.Classes.Map.Path(1, 2, new Energizer());
-            List<Tile> testTiles = new List<Tile>();
-            testTiles.Add(testPath);
-            List<Tile> testNeighbors = maze.GetAvailableNeighbours(v2, Direction.Down);
-            Assert.AreEqual(2, testNeighbors[0].Position.X);
-            Assert.AreEqual(2, testNeighbors[0].Position.Y);
-            Assert.AreEqual(1, testNeighbors.Count);
+            GameState gameState = GameState.Parse("map.csv");
+            List<Tile> testNeighbors = gameState.Maze.GetAvailableNeighbours(new Vector2(1, 2), Direction.Down);
+            Assert.AreEqual(1, testNeighbors[0].Position.X);
+            Assert.AreEqual(1, testNeighbors[0].Position.Y);
+            Assert.AreEqual(1, testNeighbors[1].Position.X);
+            Assert.AreEqual(3, testNeighbors[1].Position.Y);
+            Assert.AreEqual(2, testNeighbors[2].Position.X);
+            Assert.AreEqual(2, testNeighbors[2].Position.Y);
+            Assert.AreEqual(3, testNeighbors.Count);
         }
 
         [TestMethod]
@@ -81,8 +67,6 @@ namespace PacmanUnitTest
         {
             GameState gs = GameState.Parse("map.csv");
             Maze maze = gs.Maze;
-            maze[1, 1].Member = null;
-            maze[2, 1].Member = null;
             Boolean val = false;
             maze.PacmanWonEvent += () =>
             {

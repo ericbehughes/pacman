@@ -3,6 +3,7 @@ using Pacman.Characters.Interfaces;
 using Pacman.Game.Classes.Map;
 using Pacman.Game.Classes.State;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,6 @@ namespace Pacman.Characters.Classes
         private GameState gamestate;
         private Maze maze;
         private Vector2 position;
-
         public event CollisionEventHandler CollisionEvent;
 
         /*Told where to move and gets a direction for the objects move method*/
@@ -40,21 +40,27 @@ namespace Pacman.Characters.Classes
         {
             get
             {
-                //throw new NotImplementedException();
-                return Points;
+                throw new NotImplementedException();
             }
 
             set
             {
-                if (value == 10 || value == 100 || value == 200)
-                    Points = value;
+                throw new NotImplementedException();
             }
         }
 
         public void Move(Direction dir)
         {
-            int x = (int)this.Position.Y,
-                y = (int)this.Position.X;
+            int x = (int)this.Position.X,
+                y = (int)this.Position.Y;
+
+
+
+
+
+
+
+
 
             switch (dir)
             {
@@ -62,37 +68,41 @@ namespace Pacman.Characters.Classes
                  * Either change the way the maze is stored or use this for positions
                  */
                 // case Direction.Up:
-                case Direction.Left:
-                    if (this.Position.Y != 0)
-                        //this.Position = new Vector2(this.Position.X, this.Position.Y - 1);
-                        //this.Position = new Vector2(x - 1, y);
-                        this.Position = new Vector2(y, x - 1);
+                case Direction.Up:
+                    if (CanEnter(new Vector2(x - 1, y), Direction.Up))
+                        this.Position = new Vector2(x - 1, y);
                     break;
 
                 //   case Direction.Down:
-                case Direction.Right:
-                    if (this.Position.Y != (maze.Size - 1))
-                        //this.Position = new Vector2(this.Position.X, this.Position.Y + 1);
-                        //this.Position = new Vector2(x + 1, y);
-                        this.Position = new Vector2(y, x + 1);
+                case Direction.Down:
+                    if (CanEnter(new Vector2(x + 1, y), Direction.Down))
+                        this.Position = new Vector2(x + 1, y);
                     break;
 
                 //  case Direction.Left:
-                case Direction.Up:
-                    if (this.Position.X != 0)
-                        //this.Position = new Vector2(this.Position.X - 1, this.Position.Y);
-                        // this.Position = new Vector2(x, y - 1);
-                        this.Position = new Vector2(y - 1, x);
+                case Direction.Left:
+                    if (CanEnter(new Vector2(x, y - 1), Direction.Left))
+                        this.Position = new Vector2(x, y - 1);
                     break;
 
                 //   case Direction.Right:
-                case Direction.Down:
-                    if (this.Position.X != (maze.Size - 1))
-                        //this.Position = new Vector2(this.Position.X + 1, this.Position.Y);
-                        //  this.Position = new Vector2(x, y + 1);
-                        this.Position = new Vector2(y + 1, x);
+                case Direction.Right:
+                    if (CanEnter(new Vector2(x, y + 1), Direction.Right))
+                        this.Position = new Vector2(x, y + 1);
                     break;
             }
+        }
+
+        public Boolean CanEnter(Vector2 position, Direction dir)
+        {
+            List<Tile> freeTiles = this.maze.GetAvailableNeighbours(this.Position, dir);
+            foreach (Tile tile in freeTiles)
+            {
+                if ((tile.Position.X == position.X) && (tile.Position.Y == position.Y))
+                    return true;
+            }
+            return false;
+
         }
         public void CheckCollisions(Vector2 v)
         {

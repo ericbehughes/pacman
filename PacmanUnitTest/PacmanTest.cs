@@ -14,28 +14,27 @@ namespace PacmanUnitTest
             GameState gameState = GameState.Parse("map.csv");
             int x = (int)gameState.Pacman.Position.X,
                y = (int)gameState.Pacman.Position.Y;
-            //Assert.AreEqual(null, gameState.Pacman);
-            Assert.AreEqual(2, x);
-            Assert.AreEqual(3, y);
+            Assert.AreEqual(3, x);
+            Assert.AreEqual(1, y);
         }
 
         [TestMethod]
         public void TestPacmanMoveUp()
         {
             GameState gameState = GameState.Parse("map.csv");
+            Pacman.Characters.Classes.Pacman pacman = gameState.Pacman;
             int x = (int)gameState.Pacman.Position.X,
                y = (int)gameState.Pacman.Position.Y;
-            Color c = Color.Blue;
             /* Make sure start position is correct */
-            Assert.AreEqual(2, x);
-            Assert.AreEqual(3, y);
+            Assert.AreEqual(3, x);
+            Assert.AreEqual(1, y);
 
             gameState.Pacman.Move(Pacman.Characters.Classes.Direction.Up);
             x = (int)gameState.Pacman.Position.X;
             y = (int)gameState.Pacman.Position.Y;
-            /* New position should be x, y - 1 */
+            /* New position should be x - 1*/
             Assert.AreEqual(2, x);
-            Assert.AreEqual(2, y);
+            Assert.AreEqual(1, y);
         }
 
         [TestMethod]

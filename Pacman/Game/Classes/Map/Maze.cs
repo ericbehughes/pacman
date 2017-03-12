@@ -118,7 +118,10 @@ namespace Pacman.Game.Classes.Map
             int counter = 0;
             foreach (Tile tile in maze)
             {
-                if ((tile is Path) && (!tile.IsEmpty()))
+                if (tile is Path && tile.Member is Characters.Classes.Pacman)
+                    continue;
+
+                else if ((tile is Path) && (!tile.IsEmpty()))
                 {
                     counter++;
                 }
