@@ -37,17 +37,15 @@ namespace Pacman.Game.Classes.Map
         // indexers
         public Tile this[int x, int y]
         {
-            get
-            {
-                //needs to be coded
-                Tile temp = null;
-                return temp;
-            }
+            get { return this.maze[x, y]; }
             set
-            {   //needs to be coded as it is 2d array
+            {
+                if (x < 0 || y < 0)
+                    throw new ArgumentException("Cannot access maze element with negative x and y positions");
+                if (x >= this.Size || y >= this.Size)
+                    throw new ArgumentException("Cannot access maze element with the input x and y positions");
 
-                maze[x, y] = value;
-
+                this.maze[x, y] = value;
             }
         }
 
