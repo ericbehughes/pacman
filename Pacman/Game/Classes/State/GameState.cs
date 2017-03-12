@@ -163,7 +163,6 @@ namespace Pacman.Game.Classes.State
                     else if (mazeChar.Equals("P"))
                     {
                         g.Maze[j, i] = new Map.Path(j, i, g.Pacman);
-                        g.Pacman = g.Pacman;
                         g.Pacman.Position = new Vector2(j, i);
                     }
 
