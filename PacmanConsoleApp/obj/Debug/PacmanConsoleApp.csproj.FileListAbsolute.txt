@@ -46,9 +46,6 @@ C:\Users\ehugh\OneDrive\c#\Visual Studio 2015\Visual Studio\Projects\PacManGithu
 C:\Users\ehugh\OneDrive\c#\Visual Studio 2015\Visual Studio\Projects\PacManGithub\PacmanConsoleApp\bin\Debug\SharpDX.XInput.xml
 C:\Users\ehugh\OneDrive\c#\Visual Studio 2015\Visual Studio\Projects\PacManGithub\PacmanConsoleApp\bin\Debug\SharpDX.MediaFoundation.xml
 C:\Users\ehugh\OneDrive\c#\Visual Studio 2015\Visual Studio\Projects\PacManGithub\PacmanConsoleApp\obj\Debug\PacmanConsoleApp.csprojResolveAssemblyReference.cache
-C:\Users\J\Source\Repos\pacman\PacmanConsoleApp\bin\Debug\PacmanConsoleApp.exe.config
-C:\Users\J\Source\Repos\pacman\PacmanConsoleApp\obj\Debug\PacmanConsoleApp.exe
-C:\Users\J\Source\Repos\pacman\PacmanConsoleApp\obj\Debug\PacmanConsoleApp.pdb
 C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\PacmanConsoleApp\bin\Debug\PacmanConsoleApp.exe.config
 C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\PacmanConsoleApp\bin\Debug\PacmanConsoleApp.exe
 C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\PacmanConsoleApp\bin\Debug\PacmanConsoleApp.pdb
@@ -73,6 +70,7 @@ C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\PacmanConsoleApp\bin\Debug\Shar
 C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\PacmanConsoleApp\obj\Debug\PacmanConsoleApp.csprojResolveAssemblyReference.cache
 C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\PacmanConsoleApp\obj\Debug\PacmanConsoleApp.exe
 C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\PacmanConsoleApp\obj\Debug\PacmanConsoleApp.pdb
+C:\Users\J\Source\Repos\pacman\PacmanConsoleApp\bin\Debug\PacmanConsoleApp.exe.config
 C:\Users\J\Source\Repos\pacman\PacmanConsoleApp\bin\Debug\PacmanConsoleApp.exe
 C:\Users\J\Source\Repos\pacman\PacmanConsoleApp\bin\Debug\PacmanConsoleApp.pdb
 C:\Users\J\Source\Repos\pacman\PacmanConsoleApp\bin\Debug\Pacman.dll
@@ -94,3 +92,5 @@ C:\Users\J\Source\Repos\pacman\PacmanConsoleApp\bin\Debug\SharpDX.DXGI.xml
 C:\Users\J\Source\Repos\pacman\PacmanConsoleApp\bin\Debug\SharpDX.XInput.xml
 C:\Users\J\Source\Repos\pacman\PacmanConsoleApp\bin\Debug\SharpDX.MediaFoundation.xml
 C:\Users\J\Source\Repos\pacman\PacmanConsoleApp\obj\Debug\PacmanConsoleApp.csprojResolveAssemblyReference.cache
+C:\Users\J\Source\Repos\pacman\PacmanConsoleApp\obj\Debug\PacmanConsoleApp.exe
+C:\Users\J\Source\Repos\pacman\PacmanConsoleApp\obj\Debug\PacmanConsoleApp.pdb
