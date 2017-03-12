@@ -115,19 +115,17 @@ namespace Pacman.Game.Classes.Map
          */
         public void CheckMembersLeft()
         {
-            int count = 0;
-            foreach (Tile item in this.maze)
+            int counter = 0;
+            foreach (Tile tile in maze)
             {
-                if (!item.IsEmpty())
+                if ((tile is Path) && (!tile.IsEmpty()))
                 {
-                    count++;
+                    counter++;
                 }
             }
-            // check if member count works for the end game
-            if (count == MemberCount())
-            {
-                PacmanWon();
-            }
+
+            if (counter == 0)
+                OnWin();
         }
 
         /* The function will iterate through each tile in the maze and count all that aren't ghosts or Pacman */
@@ -140,5 +138,11 @@ namespace Pacman.Game.Classes.Map
             }
             return members;
         }
+
+        public virtual void OnWin()
+        {
+            if (PacmanWonEvent != null)
+                PacmanWonEvent.Invoke();
+        }   
     }
 }
