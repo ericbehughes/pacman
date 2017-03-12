@@ -53,15 +53,6 @@ namespace Pacman.Characters.Classes
         {
             int x = (int)this.Position.X,
                 y = (int)this.Position.Y;
-
-
-
-
-
-
-
-
-
             switch (dir)
             {
                 /* The maze is drawn sideways because vector2(x,y) = array[y,x] (instead of array[x,y])
@@ -95,7 +86,7 @@ namespace Pacman.Characters.Classes
 
         public Boolean CanEnter(Vector2 position, Direction dir)
         {
-            List<Tile> freeTiles = this.maze.GetAvailableNeighbours(this.Position, dir);
+            var freeTiles = this.maze.GetAvailableNeighbours(position, dir);
             foreach (Tile tile in freeTiles)
             {
                 if ((tile.Position.X == position.X) && (tile.Position.Y == position.Y))

@@ -79,5 +79,6 @@ C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\Pacman\bin\Debug\SharpDX.Direct
 C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\Pacman\bin\Debug\SharpDX.DXGI.xml
 C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\Pacman\bin\Debug\SharpDX.XInput.xml
 C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\Pacman\bin\Debug\SharpDX.MediaFoundation.xml
+C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\Pacman\obj\Debug\Pacman.csprojResolveAssemblyReference.cache
 C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\Pacman\obj\Debug\Pacman.dll
 C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\Pacman\obj\Debug\Pacman.pdb
