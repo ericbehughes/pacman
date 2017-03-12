@@ -44,11 +44,12 @@
     <Compile Include="Characters\Classes\Chase.cs" />
     <Compile Include="Characters\Classes\Color.cs" />
     <Compile Include="Characters\Classes\Direction.cs" />
+    <Compile Include="Characters\Classes\Pacman.cs" />
     <Compile Include="Characters\Classes\Scared.cs" />
     <Compile Include="Characters\Classes\Pen.cs" />
-    <Compile Include="Characters\Classes\Pacman.cs" />
     <Compile Include="Characters\Classes\GhostPack.cs" />
     <Compile Include="Characters\Classes\Ghost.cs" />
+    <Compile Include="Game\Classes\State\GameState.cs" />
     <Compile Include="Game\Classes\State\ScoreAndLives.cs" />
     <Compile Include="Characters\Interfaces\ICollidable.cs" />
     <Compile Include="Characters\Interfaces\IMovable.cs" />
@@ -58,7 +59,6 @@
     <Compile Include="Game\Classes\Map\Tile.cs" />
     <Compile Include="Game\Classes\Map\Wall.cs" />
     <Compile Include="Game\Classes\State\Energizer.cs" />
-    <Compile Include="Game\Classes\State\GameState.cs" />
     <Compile Include="Game\Classes\State\Pellet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

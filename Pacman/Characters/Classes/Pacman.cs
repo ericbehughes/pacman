@@ -23,7 +23,7 @@ namespace Pacman.Characters.Classes
         {
             this.gamestate = gs;
             this.maze = this.gamestate.Maze;
-       
+
         }
         public Vector2 Position
         {
@@ -56,7 +56,7 @@ namespace Pacman.Characters.Classes
             int x = (int)this.Position.Y,
                 y = (int)this.Position.X;
 
-          switch (dir)
+            switch (dir)
             {
                 /* The maze is drawn sideways because vector2(x,y) = array[y,x] (instead of array[x,y])
                  * Either change the way the maze is stored or use this for positions
@@ -77,8 +77,8 @@ namespace Pacman.Characters.Classes
                         this.Position = new Vector2(y, x + 1);
                     break;
 
-              //  case Direction.Left:
-                 case Direction.Up:
+                //  case Direction.Left:
+                case Direction.Up:
                     if (this.Position.X != 0)
                         //this.Position = new Vector2(this.Position.X - 1, this.Position.Y);
                         // this.Position = new Vector2(x, y - 1);
@@ -101,13 +101,13 @@ namespace Pacman.Characters.Classes
             {
                 this.maze[(int)this.position.X, (int)this.position.Y].Collide();
             }
-            
-       
+
+
         }
 
         public void Collide()
         {
-            
+
         }
     }
 }

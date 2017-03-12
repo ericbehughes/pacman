@@ -21,7 +21,6 @@ C:\Users\J\Source\Repos\pacman\PacmanUnitTest\bin\Debug\SharpDX.MediaFoundation.
 C:\Users\J\Source\Repos\pacman\PacmanUnitTest\obj\Debug\PacmanUnitTest.csprojResolveAssemblyReference.cache
 C:\Users\J\Source\Repos\pacman\PacmanUnitTest\obj\Debug\PacmanUnitTest.dll
 C:\Users\J\Source\Repos\pacman\PacmanUnitTest\obj\Debug\PacmanUnitTest.pdb
-C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\PacmanUnitTest\obj\Debug\PacmanUnitTest.csprojResolveAssemblyReference.cache
 C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\PacmanUnitTest\bin\Debug\PacmanUnitTest.dll
 C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\PacmanUnitTest\bin\Debug\PacmanUnitTest.pdb
 C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\PacmanUnitTest\bin\Debug\MonoGame.Framework.dll
@@ -42,5 +41,6 @@ C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\PacmanUnitTest\bin\Debug\SharpD
 C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\PacmanUnitTest\bin\Debug\SharpDX.DXGI.xml
 C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\PacmanUnitTest\bin\Debug\SharpDX.XInput.xml
 C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\PacmanUnitTest\bin\Debug\SharpDX.MediaFoundation.xml
+C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\PacmanUnitTest\obj\Debug\PacmanUnitTest.csprojResolveAssemblyReference.cache
 C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\PacmanUnitTest\obj\Debug\PacmanUnitTest.dll
 C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\PacmanUnitTest\obj\Debug\PacmanUnitTest.pdb
