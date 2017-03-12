@@ -14,7 +14,7 @@ namespace Pacman.Game.Classes.State
 {
     public class GameState
     {
-        public GameState Parse(string filecontent)
+        public static GameState Parse(string filecontent)
         {
             //Setting GameState Object to hold the state of the game and its properties
             GameState g = new GameState();
