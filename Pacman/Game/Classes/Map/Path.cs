@@ -12,6 +12,7 @@ namespace Pacman.Game.Classes.Map
     public class Path : Tile
     {
         private ICollidable member;
+        public event CollisionEventHandler CollisionEvent;
         public Path(int x, int y, ICollidable member) : base(x, y)
         {
             this.member = member;
@@ -21,14 +22,18 @@ namespace Pacman.Game.Classes.Map
         /*Invoked each time pacman moves to the tile*/
         public override void Collide()
         {
-            if (this.member != null)
-                Collide();
-            this.member = null;
+            if (!this.IsEmpty())
+            {
+                member.Collide();
+                this.member = null;
+            }
         }
 
         public override bool IsEmpty()
         {
-            throw new NotImplementedException();
+            if (Member == null)
+                return true;
+            return false;
         }
 
         public override ICollidable Member { get; set; }
