@@ -35,14 +35,13 @@ namespace Pacman.Characters.Classes
          */
         public void Move()
         {
-            Pacman pacman = ghost.Pacman;
-            Vector2 ghostPos = ghost.Position;
+  
             Direction ghostDir = ghost.Direction;
-            float index = 0, counter = 0, shortestDistance = Vector2.Distance(pacman.Position, ghostPos);
-            List<Tile> freeTiles = maze.GetAvailableNeighbours(ghostPos, ghostDir);
+            float index = 0, counter = 0, shortestDistance = Vector2.Distance(target, ghost.Position);
+            List<Tile> freeTiles = maze.GetAvailableNeighbours(ghost.Position, ghost.Direction);
 
             foreach (Tile tile in freeTiles){
-                if (Vector2.Distance(pacman.Position, tile.Position) < shortestDistance)
+                if (Vector2.Distance(target, tile.Position) < shortestDistance)
                 {
                     index = counter;
                     shortestDistance = Vector2.Distance(pacman.Position, tile.Position);
