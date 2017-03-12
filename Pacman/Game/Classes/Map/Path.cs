@@ -12,8 +12,7 @@ namespace Pacman.Game.Classes.Map
     public class Path : Tile
     {
         //private ICollidable member;
-        public event CollisionEventHandler CollisionEvent;
-        public Path(int x, int y, ICollidable member) : base(x, y)
+         public Path(int x, int y, ICollidable member) : base(x, y)
         {
             this.Member = member;
         }
