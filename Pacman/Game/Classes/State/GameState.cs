@@ -8,7 +8,6 @@ using Pacman.Game.Classes.Map;
 using System.IO;
 using System.Text.RegularExpressions;
 using Microsoft.Xna.Framework;
-using static Pacman.Characters.Classes.Ghost;
 
 namespace Pacman.Game.Classes.State
 {
@@ -150,7 +149,7 @@ namespace Pacman.Game.Classes.State
 
                     else if (mazeChar.Equals("4"))
                     {
-                        Ghost ghost = new Ghost(g, j, i, new Vector2(j, i), Ghost.GhostState.Penned, new Characters.Classes.Color());
+                        Ghost ghost = new Ghost(g, j, i, new Vector2(j, i), GhostState.Penned, new Characters.Classes.Color());
                         ghost.Pacman = g.Pacman;
                         g.GhostPack.Add(ghost);
                         g.Pen.AddToPen(ghost);

@@ -14,13 +14,6 @@ namespace Pacman.Characters.Classes
     public delegate void PacmanDiedEventHandler();
     public class Ghost : IGhostState, IMovable, ICollidable
     {
-        public enum GhostState
-        {
-            Scared,
-            Chase,
-            Penned,
-            Released
-        };
 
         private Pacman pacman;
         private Vector2 target;
@@ -119,7 +112,7 @@ namespace Pacman.Characters.Classes
             }
             if (this.CurrentState == GhostState.Chase)
             {
-                PacmanDiedEvent();
+                //PacmanDiedEvent();
             }
         }
 

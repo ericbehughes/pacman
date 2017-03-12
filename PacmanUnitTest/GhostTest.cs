@@ -25,7 +25,6 @@ namespace PacmanUnitTest
             Pacman.Characters.Classes.Color c = Pacman.Characters.Classes.Color.Red;
             Ghost ghost = new Ghost(gameState, 1, 3, target, state, c);
             ghost.Direction = Direction.Left;
-
             Assert.AreEqual(1, ghost.Position.X);
             Assert.AreEqual(3, ghost.Position.Y);
             Assert.AreEqual(Direction.Left, ghost.Direction);

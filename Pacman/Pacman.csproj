@@ -7,7 +7,7 @@
     <ProjectGuid>{8CF54A81-C9E0-4C51-AC75-4C592CE9968F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PacmanApp</RootNamespace>
+    <RootNamespace>Pacman</RootNamespace>
     <AssemblyName>Pacman</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -44,6 +44,7 @@
     <Compile Include="Characters\Classes\Chase.cs" />
     <Compile Include="Characters\Classes\Color.cs" />
     <Compile Include="Characters\Classes\Direction.cs" />
+    <Compile Include="Characters\Classes\GhostState.cs" />
     <Compile Include="Characters\Classes\Pacman.cs" />
     <Compile Include="Characters\Classes\Scared.cs" />
     <Compile Include="Characters\Classes\Pen.cs" />

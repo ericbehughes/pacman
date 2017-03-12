@@ -117,7 +117,7 @@ namespace Pacman.Characters.Classes
 
         public void Collide()
         {
-
+            CollisionEvent(this);
         }
     }
 }
