@@ -24,6 +24,7 @@ namespace Pacman.Characters.Classes
 
         private Pacman pacman;
         private Vector2 target;
+        private Vector2 position;
         private Pen pen;
         private Maze maze;
         private Direction direction;
@@ -75,10 +76,18 @@ namespace Pacman.Characters.Classes
 
         public Vector2 Position
         {
-            get { return new Vector2(target.X, target.Y); }
+            get { return this.position; }
 
-            set { target = new Vector2(value.X, value.Y); }
+            set
+            {
+                Vector2 pos = value;
+                if (pos.X < 0 || pos.Y < 0)
+                    throw new ArgumentException("The X and Y position of a ghost must not be negative");
+                this.position = pos;
+            }
+
         }
+
 
         public int Points { get; set; }
 
