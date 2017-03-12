@@ -18,6 +18,7 @@ namespace Pacman.Game.Classes.State
         public Energizer(GhostPack ghosts)
         {
             this.ghosts = ghosts;
+            this.points = 100;
         }
 
         public Energizer(){ }

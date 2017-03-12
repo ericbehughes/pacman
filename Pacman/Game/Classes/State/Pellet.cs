@@ -14,12 +14,15 @@ namespace Pacman.Game.Classes.State
 
         public Pellet()
         {
-
+            points = 10;
         }
         public int Points
         {
             get{ return points;}
-            set{ if (value >= 0) points = value;}
+            set{
+                if (value < 0) throw new ArgumentException("The pellet must have a value > 0");
+                if (value >= 0) points = value;
+            }
         }
         // check how these events work
         protected virtual void OnCollisionEvent()

@@ -23,11 +23,12 @@ namespace Pacman.Game.Classes.Map
 
         public Maze()
         {
-            // check what should go in here
+            
         }
         public void SetTiles(Tile[,] tiles)
         {
             this.maze = tiles;
+            size = maze.Length;
         }
 
 
@@ -55,7 +56,7 @@ namespace Pacman.Game.Classes.Map
         {
             get
             {
-                return this.maze.GetLength(0);
+                return size;
             }
 
             set

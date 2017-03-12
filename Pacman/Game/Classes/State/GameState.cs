@@ -158,7 +158,6 @@ namespace Pacman.Game.Classes.State
                     {
                         g.Maze[i, j] = new Map.Path(i, j, pacman);   
                     }
-                    counter++;
                 }
 
 
