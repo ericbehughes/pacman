@@ -22,12 +22,12 @@ namespace Pacman.Game.Classes.Map
 
         public override void Collide()
         {
-            throw new NotSupportedException("wall collide exception");
+            throw new NotSupportedException("Wall.cs - Wall collide exception");
         }
 
         public override bool IsEmpty()
         {
-            throw new NotImplementedException("walls cant be empty exception");
+            throw new NotImplementedException("Wall.cs - Walls cant be empty exception");
         }
 
         public override ICollidable Member

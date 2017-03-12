@@ -14,7 +14,7 @@ namespace Pacman.Game.Classes.Map
         public Tile(int x, int y)
         {
             if (x < 0 || y < 0)
-                throw new ArgumentException("The x and y position have a value of 0 or above.");
+                throw new ArgumentException("Tile.cs - The x and y position must have a value of 0 or above.");
 
             this.position.X = x;
             this.position.Y = y;
@@ -27,8 +27,7 @@ namespace Pacman.Game.Classes.Map
             {
                 Vector2 pos = value;
                 if (pos.X < 0 || pos.Y < 0)
-                    throw new ArgumentException("The Tile object's position x and y must " +
-                       "be positive");
+                    throw new ArgumentException("Tile.cs - The Tile object's position x and y must have a value of 0 or above.");
                 position = pos;
             }
         }
