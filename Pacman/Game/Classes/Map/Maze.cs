@@ -80,6 +80,9 @@ namespace Pacman.Game.Classes.Map
             int y = (int)position.X,
                 x = (int)position.Y;
 
+            if (x - 1 < 0 || y - 1 < 0)
+                throw new ArgumentException("Maze.cs - The X or Y position cannot be 0");
+
             /* check up  */
             if (!(maze[x - 1, y] is Wall))
                 if (Direction != Direction.Down)
