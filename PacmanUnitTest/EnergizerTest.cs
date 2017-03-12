@@ -22,9 +22,10 @@ namespace PacmanUnitTest
 
             GhostState gs = new GhostState();
             GameState gameState = new GameState();
-            Color c = new Color();
-            Vector2 v2
-            Ghost g = new Ghost(gameState, 10, 10, new Vector2(10, 10), gs, c);
+            Pacman.Characters.Classes.Color c = new Pacman.Characters.Classes.Color();
+            Vector2 v2 = new Vector2(10, 10);
+            Ghost g = new Ghost(gameState, 10, 10, v2, gs, c);
+            
 
         }
 

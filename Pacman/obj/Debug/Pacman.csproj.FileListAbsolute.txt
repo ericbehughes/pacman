@@ -81,3 +81,4 @@ C:\Users\J\Source\Repos\pacman\Pacman\bin\Debug\SharpDX.MediaFoundation.xml
 C:\Users\J\Source\Repos\pacman\Pacman\obj\Debug\Pacman.csprojResolveAssemblyReference.cache
 C:\Users\J\Source\Repos\pacman\Pacman\obj\Debug\Pacman.dll
 C:\Users\J\Source\Repos\pacman\Pacman\obj\Debug\Pacman.pdb
+C:\Users\J\Source\Repos\pacman\Pacman\bin\Debug\MonoGame.Framework.dll
