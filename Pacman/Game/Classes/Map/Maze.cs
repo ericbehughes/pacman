@@ -81,24 +81,24 @@ namespace Pacman.Game.Classes.Map
             if (x - 1 < 0 || y - 1 < 0)
                 throw new ArgumentException("Maze.cs - The X or Y position cannot be 0");
 
-            /* check up  *///
+            /* check Left  *///
             if (!(maze[x, y - 1] is Wall))
-                if (Direction != Direction.Down)
+                if (Direction != Direction.Right)
                     emptyTiles.Add(maze[x, y - 1]);
 
-            /* check Down */
+            /* check Right */
             if (!(maze[x, y + 1] is Wall))
-                if (Direction != Direction.Up)
+                if (Direction != Direction.Left)
                     emptyTiles.Add(maze[x, y + 1]);
 
-            /* Check left */
+            /* Check Up */
             if (!(maze[x - 1, y] is Wall))
-                if (Direction != Direction.Right)
+                if (Direction != Direction.Down)
                     emptyTiles.Add(maze[x - 1, y]);
 
-            /* Check right */
+            /* Check Down */
             if (!(maze[x + 1, y] is Wall))
-                if (Direction != Direction.Left)
+                if (Direction != Direction.Up)
                     emptyTiles.Add(maze[x + 1, y]);
 
             return emptyTiles;
