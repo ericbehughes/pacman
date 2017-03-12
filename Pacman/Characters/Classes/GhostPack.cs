@@ -20,7 +20,7 @@ namespace Pacman.Characters.Classes
             ghosts = new List<Ghost>();
 
         }
-
+        // changed ghostpack comment
         public void CheckCollideGhosts(Vector2 target)
         {
             foreach (var g in ghosts)
