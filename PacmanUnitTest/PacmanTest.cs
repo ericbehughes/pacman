@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Pacman.Game.Classes.State;
+using Pacman.Characters.Classes;
 
 namespace PacmanUnitTest
 {
@@ -24,6 +25,7 @@ namespace PacmanUnitTest
             GameState gameState = GameState.Parse("map.csv");
             int x = (int)gameState.Pacman.Position.X,
                y = (int)gameState.Pacman.Position.Y;
+            Color c = Color.Blue;
             /* Make sure start position is correct */
             Assert.AreEqual(2, x);
             Assert.AreEqual(3, y);
