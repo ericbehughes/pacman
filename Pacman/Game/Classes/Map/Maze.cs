@@ -69,7 +69,7 @@ namespace Pacman.Game.Classes.Map
             }
         }
 
-        /* The function will check the tiles to the left, right, down and up from the parameter's position and save them to a list (Omitting the same direction)
+        /* The function will check the tiles to the left, right, down and up from the parameter's position and save them to a list
          * if and only if the tiles are not a wall
          */
         public List<Tile> GetAvailableNeighbours(Vector2 position, Direction Direction)
@@ -82,22 +82,22 @@ namespace Pacman.Game.Classes.Map
 
             /* Check left */
             if (!(maze[x - 1, y] is Wall))
-                if (Direction != Direction.Left)
+                if (Direction != Direction.right)
                     emptyTiles.Add(maze[x - 1, y]);
 
             /* check right */
-            if (!(maze[x - 1, y] is Wall))
-                if (Direction != Direction.Right)
+            if (!(maze[x + 1, y] is Wall))
+                if (Direction != Direction.left)
                     emptyTiles.Add(maze[x + 1, y]);
 
             /* Check up */
             if (!(maze[x, y - 1] is Wall))
-                if (Direction != Direction.Up)
+                if (Direction != Direction.Down)
                     emptyTiles.Add(maze[x, y - 1]);
 
             /* Check down */
-            if (!(maze[x, y] is Wall))
-                if (Direction != Direction.Down)
+            if (!(maze[x, y + 1] is Wall))
+                if (Direction != Direction.Up)
                     emptyTiles.Add(maze[x, y + 1]);
 
             return emptyTiles;

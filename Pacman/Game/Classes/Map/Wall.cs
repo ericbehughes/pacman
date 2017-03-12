@@ -27,13 +27,13 @@ namespace Pacman.Game.Classes.Map
 
         public override bool IsEmpty()
         {
-            throw new NotImplementedException("Wall.cs - Walls cant be empty exception");
+            throw new NotImplementedException("Wall.cs - Walls cannot be empty");
         }
 
         public override ICollidable Member
         {
-            get { throw new NotSupportedException(); }
-            set { throw new NotSupportedException(); }
+            get { throw new NotSupportedException("Wall.cs - Walls cannot contain members"); }
+            set { throw new NotSupportedException("Wall.cs - Walls cannot contain members"); }
         }
     }
 }
