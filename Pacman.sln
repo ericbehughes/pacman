@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pacman", "Pacman\Pacman.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PacmanConsoleApp", "PacmanConsoleApp\PacmanConsoleApp.csproj", "{A40FC693-5C03-47BE-B4A6-5E71EE376397}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PacmanUnitTest", "PacmanUnitTest\PacmanUnitTest.csproj", "{5EE0D5A6-3F24-4DB0-9DEA-76EBE0B1E92A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A40FC693-5C03-47BE-B4A6-5E71EE376397}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A40FC693-5C03-47BE-B4A6-5E71EE376397}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A40FC693-5C03-47BE-B4A6-5E71EE376397}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EE0D5A6-3F24-4DB0-9DEA-76EBE0B1E92A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EE0D5A6-3F24-4DB0-9DEA-76EBE0B1E92A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EE0D5A6-3F24-4DB0-9DEA-76EBE0B1E92A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EE0D5A6-3F24-4DB0-9DEA-76EBE0B1E92A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
