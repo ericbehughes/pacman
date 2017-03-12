@@ -19,6 +19,15 @@ namespace PacmanUnitTest
         }
 
         [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void TestInValidConstructor()
+        {
+            int x = -1,
+                y = -1;
+            Wall w = new Wall(x, y);
+        }
+
+        [TestMethod]
         public void TestCanEnter()
         {
             Wall w = new Wall(10, 10);

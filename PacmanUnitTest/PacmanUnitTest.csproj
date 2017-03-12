@@ -56,6 +56,7 @@
     <Compile Include="PelletTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="EnergizerTest.cs" />
+    <Compile Include="PathTest.cs" />
     <Compile Include="WallTest.cs" />
   </ItemGroup>
   <ItemGroup>
