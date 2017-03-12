@@ -18,7 +18,21 @@ namespace PacmanUnitTest
             int x = 10,
                 y = 10;
             Vector2 v2 = new Vector2(x, y);
-            Path p = Path(x, y, e);
+            Path p = new Path(x, y, e);
+
+            Assert.AreEqual(v2, p.Position);
+            Assert.AreEqual(e, p.Member);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void TestInValidConstructor()
+        {
+            GhostPack gPack = new GhostPack();
+            Energizer e = new Energizer(gPack);
+            int x = -1,
+                y = -1;
+            Path p = new Path(x, y, e);
         }
     }
 }
