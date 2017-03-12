@@ -77,31 +77,30 @@ namespace Pacman.Game.Classes.Map
 
             List<Tile> emptyTiles = new List<Tile>();
 
-            int x = (int)position.X,
-                y = (int)position.Y;
+            int y = (int)position.X,
+                x = (int)position.Y;
 
-            /* Check left */
+            /* check up  */
             if (!(maze[x - 1, y] is Wall))
-                if (Direction != Direction.Right)
+                if (Direction != Direction.Down)
                     emptyTiles.Add(maze[x - 1, y]);
 
-            /* check right */
+            /* check Down */
             if (!(maze[x + 1, y] is Wall))
-                if (Direction != Direction.Left)
+                if (Direction != Direction.Up)
                     emptyTiles.Add(maze[x + 1, y]);
 
-            /* Check up */
+            /* Check left */
             if (!(maze[x, y - 1] is Wall))
-                if (Direction != Direction.Down)
+                if (Direction != Direction.Right)
                     emptyTiles.Add(maze[x, y - 1]);
 
-            /* Check down */
+            /* Check right */
             if (!(maze[x, y + 1] is Wall))
-                if (Direction != Direction.Up)
+                if (Direction != Direction.Left)
                     emptyTiles.Add(maze[x, y + 1]);
 
             return emptyTiles;
-
         }
 
         protected virtual void PacmanWon()

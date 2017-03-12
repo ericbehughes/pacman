@@ -16,20 +16,17 @@ namespace PacmanUnitTest
         public void TestMazeValidConstructor()
         {
             GameState gs = GameState.Parse("map.csv");
-
-        }
-
-        [TestMethod]
-        public void TestMazeGetAvailableNeighbours()
-        {
-            
-            GameState gs =  GameState.Parse("map.csv");
             Maze maze = gs.Maze;
-            Vector2 v2 = new Vector2(0, 0);
+            Vector2 v2 = new Vector2(1, 2);
             Pacman.Game.Classes.Map.Path testPath = new Pacman.Game.Classes.Map.Path(1, 2, new Energizer());
             List<Tile> testTiles = new List<Tile>();
             testTiles.Add(testPath);
-            List<Tile> testNeighbors = maze.GetAvailableNeighbours(v2, Direction.Left);
+            List<Tile> testNeighbors = maze.GetAvailableNeighbours(v2, Direction.Up);
+        }
+
+        [TestMethod]
+        public void TestMazeGetAvailableNeighboursLeft()
+        {
         }
     }
 }
