@@ -27,45 +27,70 @@ namespace Pacman.Characters.Classes
         }
         public Vector2 Position
         {
+            /* Old
             get { return new Vector2(position.X, position.Y); }
             set { position = new Vector2(value.X, value.Y); }
+            */
+            get { return new Vector2(position.X, position.Y); }
+            set { position = new Vector2(value.Y, value.X); }
+
         }
 
         public int Points
         {
             get
             {
-                throw new NotImplementedException();
+                //throw new NotImplementedException();
+                return Points;
             }
 
             set
             {
-                throw new NotImplementedException();
+                if (value == 10 || value == 100 || value == 200)
+                    Points = value;
             }
         }
 
         public void Move(Direction dir)
         {
+            int x = (int)this.Position.Y,
+                y = (int)this.Position.X;
+
           switch (dir)
             {
-                case Direction.Up:
-                    if (this.Position.Y != 0)
-                        this.Position = new Vector2(this.Position.X, this.Position.Y - 1);
-                    break;
-
-                case Direction.Down:
-                    if (this.Position.Y != (maze.Size - 1))
-                        this.Position = new Vector2(this.Position.X, this.Position.Y + 1);
-                    break;
-
+                /* The maze is drawn sideways because vector2(x,y) = array[y,x] (instead of array[x,y])
+                 * Either change the way the maze is stored or use this for positions
+                 */
+                // case Direction.Up:
                 case Direction.Left:
-                    if (this.Position.X != 0)
-                        this.Position = new Vector2(this.Position.X - 1, this.Position.Y);
+                    if (this.Position.Y != 0)
+                        //this.Position = new Vector2(this.Position.X, this.Position.Y - 1);
+                        //this.Position = new Vector2(x - 1, y);
+                        this.Position = new Vector2(y, x - 1);
                     break;
 
+                //   case Direction.Down:
                 case Direction.Right:
+                    if (this.Position.Y != (maze.Size - 1))
+                        //this.Position = new Vector2(this.Position.X, this.Position.Y + 1);
+                        //this.Position = new Vector2(x + 1, y);
+                        this.Position = new Vector2(y, x + 1);
+                    break;
+
+              //  case Direction.Left:
+                 case Direction.Up:
+                    if (this.Position.X != 0)
+                        //this.Position = new Vector2(this.Position.X - 1, this.Position.Y);
+                        // this.Position = new Vector2(x, y - 1);
+                        this.Position = new Vector2(y - 1, x);
+                    break;
+
+                //   case Direction.Right:
+                case Direction.Down:
                     if (this.Position.X != (maze.Size - 1))
-                        this.Position = new Vector2(this.Position.X + 1, this.Position.Y);
+                        //this.Position = new Vector2(this.Position.X + 1, this.Position.Y);
+                        //  this.Position = new Vector2(x, y + 1);
+                        this.Position = new Vector2(y + 1, x);
                     break;
             }
         }

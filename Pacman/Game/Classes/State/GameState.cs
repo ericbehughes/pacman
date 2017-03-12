@@ -66,6 +66,12 @@ namespace Pacman.Game.Classes.State
             private set;
         }
 
+        public Pacman.Characters.Classes.Pacman Pacman
+        {
+            get;
+            private set;
+        }
+
         // understand how pacman is initialized pr ghost or before all ghosts and ignored during ghost build
         private static void drawMaze(GameState g, string fileContent)
         {
@@ -81,7 +87,8 @@ namespace Pacman.Game.Classes.State
             {
                 for (int j = 0; j < size; j++)
                 {
-                    mazeChar = str[counter].ToLower();
+                    // mazeChar = str[counter].ToLower(); This gave me a headache 
+                    mazeChar = str[counter];
                     // build wall object
                     if (mazeChar.Equals("w"))
                     {
@@ -155,7 +162,15 @@ namespace Pacman.Game.Classes.State
                     // pacman
                     else if (mazeChar.Equals("P"))
                     {
-                        g.Maze[j, i] = new Map.Path(j, i, pacman);   
+                        g.Maze[j, i] = new Map.Path(j, i, pacman);
+                        g.Pacman = pacman;
+                        g.Pacman.Position = new Vector2(j, i);
+                    }
+
+                    else if (mazeChar.Equals("x"))
+                    {
+                        g.Maze[j, i] = new Map.Path(j, i, null);
+                        g.Pen.AddTile(g.Maze[j, i]);
                     }
 
                     else if (mazeChar.Equals(""))

@@ -58,6 +58,8 @@
     <Compile Include="EnergizerTest.cs" />
     <Compile Include="PathTest.cs" />
     <Compile Include="MazeTest.cs" />
+    <Compile Include="PenTest.cs" />
+    <Compile Include="PacmanTest.cs" />
     <Compile Include="WallTest.cs" />
   </ItemGroup>
   <ItemGroup>

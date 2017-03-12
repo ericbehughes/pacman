@@ -98,9 +98,7 @@ namespace PacmanUnitTest
             GameState gs = GameState.Parse("map.csv");
             Maze maze = gs.Maze;
             maze[1, 1].Member = null;
-            maze[1, 2].Member = null;
             maze[2, 1].Member = new Pellet();
-            maze[2, 2].Member = null;
             Boolean val = false;
             maze.PacmanWonEvent += () =>
             {
