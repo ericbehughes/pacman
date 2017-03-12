@@ -9,7 +9,7 @@ namespace PacmanUnitTest
     public class WallTest
     {
         [TestMethod]
-        public void TestValidConstructor()
+        public void TestWallValidConstructor()
         {
             int x = 10,
                 y = 10;
@@ -20,7 +20,7 @@ namespace PacmanUnitTest
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
-        public void TestInValidConstructor()
+        public void TestWallInValidConstructor()
         {
             int x = -1,
                 y = -1;
@@ -28,7 +28,7 @@ namespace PacmanUnitTest
         }
 
         [TestMethod]
-        public void TestCanEnter()
+        public void TestWallCanEnter()
         {
             Wall w = new Wall(10, 10);
             Assert.AreEqual(false, w.CanEnter());
@@ -36,7 +36,7 @@ namespace PacmanUnitTest
 
         [TestMethod]
         [ExpectedException(typeof(NotSupportedException))]
-        public void TestCollide()
+        public void TestWallCollide()
         {
             Wall w = new Wall(10, 10);
             w.Collide();
@@ -44,7 +44,7 @@ namespace PacmanUnitTest
 
         [TestMethod]
         [ExpectedException(typeof(NotImplementedException))]
-        public void TestIsEmpty()
+        public void TestWallIsEmpty()
         {
             Wall w = new Wall(10, 10);
             w.IsEmpty();
@@ -52,7 +52,7 @@ namespace PacmanUnitTest
 
         [TestMethod]
         [ExpectedException(typeof(NotSupportedException))]
-        public void TestMemberMutatorProperty()
+        public void TestWallMemberMutatorProperty()
         {
             Wall w = new Wall(10, 10);
             w.Member = null;
@@ -60,7 +60,7 @@ namespace PacmanUnitTest
 
         [TestMethod]
         [ExpectedException(typeof(NotSupportedException))]
-        public void TestMemberAccessorProperty()
+        public void TestWallMemberAccessorProperty()
         {
             Wall w = new Wall(10, 10);
             var m = w.Member;

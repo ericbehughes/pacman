@@ -11,7 +11,7 @@ namespace PacmanUnitTest
     public class EnergizerTest
     {
         [TestMethod]
-        public void TestValidParameterConstructor()
+        public void TestEnergizerValidParameterConstructor()
         {
             /* Test Points Ghosts*/
             /*
@@ -29,7 +29,7 @@ namespace PacmanUnitTest
         }
 
         [TestMethod]
-        public void TestValidNoParameterConstructor()
+        public void TestEnergizerValidNoParameterConstructor()
         {
             Energizer e = new Energizer();
             int points = e.Points;
@@ -38,14 +38,14 @@ namespace PacmanUnitTest
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
-        public void TestInvalidPointsMutator()
+        public void TestEnergizerInvalidPointsMutator()
         {
             Energizer e = new Energizer();
             e.Points = -1;
         }
 
         [TestMethod]
-        public void TestPointsAccessor()
+        public void TestEnergizerPointsAccessor()
         {
             Energizer e = new Energizer();
             int points = e.Points;
@@ -53,7 +53,7 @@ namespace PacmanUnitTest
         }
         
         [TestMethod]
-        public void TestValidPointsMutator()
+        public void TestEnergizerValidPointsMutator()
         {
             Energizer e = new Energizer();
             e.Points += 500;
@@ -62,7 +62,7 @@ namespace PacmanUnitTest
         }
         
         [TestMethod]
-        public void TestCollideEvent()
+        public void TestEnergizerCollideEvent()
         {
             Energizer e = new Energizer();
             int points = e.Points;

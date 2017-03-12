@@ -9,7 +9,7 @@ namespace PacmanUnitTest
     public class PelletTest
     {
         [TestMethod]
-        public void TestValidConstructor()
+        public void TestPelletValidConstructor()
         {
             /* Test Pellet */
             Pellet p = new Pellet();
@@ -19,14 +19,14 @@ namespace PacmanUnitTest
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
-        public void TestInvalidPointsMutator()
+        public void TestPelletInvalidPointsMutator()
         {
             Pellet p = new Pellet();
             p.Points = -1;
         }
         
         [TestMethod]
-        public void TestPointsAccessor()
+        public void TestPelletPointsAccessor()
         {
             Pellet p = new Pellet();
             int points = p.Points;
@@ -34,7 +34,7 @@ namespace PacmanUnitTest
         }
 
         [TestMethod]
-        public void TestValidPointsMutator()
+        public void TestPelletValidPointsMutator()
         {
             Pellet p = new Pellet();
             p.Points += 500;
@@ -43,7 +43,7 @@ namespace PacmanUnitTest
         }
 
         [TestMethod]
-        public void TestCollideEvent()
+        public void TestPelletCollideEvent()
         {
             Pellet p = new Pellet();
             int points = p.Points;

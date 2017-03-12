@@ -11,7 +11,7 @@ namespace PacmanUnitTest
     public class PathTest
     {
         [TestMethod]
-        public void TestValidConstructor()
+        public void TestPathValidConstructor()
         {
             GhostPack gPack = new GhostPack();
             Energizer e = new Energizer(gPack);
@@ -26,7 +26,7 @@ namespace PacmanUnitTest
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
-        public void TestInValidConstructor()
+        public void TestPathInValidConstructor()
         {
             GhostPack gPack = new GhostPack();
             Energizer e = new Energizer(gPack);
@@ -36,7 +36,7 @@ namespace PacmanUnitTest
         }
 
         [TestMethod]
-        public void TestCanEnter()
+        public void TestPathCanEnter()
         {
             GhostPack gPack = new GhostPack();
             Energizer e = new Energizer(gPack);
@@ -48,7 +48,7 @@ namespace PacmanUnitTest
         }
 
         [TestMethod]
-        public void TestIsEmpty()
+        public void TestPathIsEmpty()
         {
             GhostPack gPack = new GhostPack();
             Energizer e = new Energizer(gPack);
@@ -62,7 +62,7 @@ namespace PacmanUnitTest
         }
 
         [TestMethod]
-        public void TestMemberMutatorProperty()
+        public void TestPathMemberMutatorProperty()
         {
             GhostPack gPack = new GhostPack();
             Energizer oldE = new Energizer(gPack);
@@ -80,7 +80,7 @@ namespace PacmanUnitTest
         }
 
         [TestMethod]
-        public void TestMemberAccessorProperty()
+        public void TestPathMemberAccessorProperty()
         {
             GhostPack gPack = new GhostPack();
             Energizer e = new Energizer(gPack);
@@ -92,7 +92,7 @@ namespace PacmanUnitTest
         }
 
         [TestMethod]
-        public void TestCollide()
+        public void TestPathCollide()
         {
             GhostPack gPack = new GhostPack();
             Energizer e = new Energizer(gPack);
@@ -106,7 +106,7 @@ namespace PacmanUnitTest
                 actualVal = true;
             };
             p.Collide();
-            Assert.AreEqual(actualVal, expectedVal);
+            Assert.AreEqual(expectedVal, actualVal);
         }
     }
 }
