@@ -33,7 +33,7 @@ namespace Pacman.Game.Classes.State
 
           try
             {
-             drawMaze(g);
+             drawMaze(g, filecontent);
             }
             catch (Exception)
             {
@@ -67,7 +67,7 @@ namespace Pacman.Game.Classes.State
         }
 
         // understand how pacman is initialized pr ghost or before all ghosts and ignored during ghost build
-        private static void drawMaze(GameState g)
+        private static void drawMaze(GameState g, string fileContent)
         {
             var size = File.ReadLines(@"level.txt").Count();
             g.Maze.SetTiles(new Tile[size, size]);
