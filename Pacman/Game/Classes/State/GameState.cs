@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Pacman.Characters.Classes;
 using Pacman.Game.Classes.Map;
-using PacManLib;
 using System.IO;
 using System.Text.RegularExpressions;
 using Microsoft.Xna.Framework;
