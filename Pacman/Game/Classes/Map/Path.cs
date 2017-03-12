@@ -17,7 +17,7 @@ namespace Pacman.Game.Classes.Map
             this.member = member;
         }
 
-        public override bool CanEnter(){  return true; }
+        public override bool CanEnter() { return true; }
         /*Invoked each time pacman moves to the tile*/
         public override void Collide()
         {
@@ -31,6 +31,6 @@ namespace Pacman.Game.Classes.Map
             throw new NotImplementedException();
         }
 
-        public override ICollidable Member { get;set; }
+        public override ICollidable Member { get; set; }
     }
 }
