@@ -69,10 +69,10 @@ namespace Pacman.Game.Classes.State
         // understand how pacman is initialized pr ghost or before all ghosts and ignored during ghost build
         private static void drawMaze(GameState g, string fileContent)
         {
-            var size = File.ReadLines(@"level.txt").Count();
+            var size = File.ReadLines(@fileContent).Count();
             g.Maze.SetTiles(new Tile[size, size]);
             String[,] strMaze = new String[size, size];
-            string line = Regex.Replace(File.ReadAllText(@"level.txt"), @"[\r\n\t]+", ",");
+            string line = Regex.Replace(File.ReadAllText(@fileContent), @"[\r\n\t]+", ",");
             String[] str = line.Split(',');
             String mazeChar = "";
             Pacman.Characters.Classes.Pacman pacman = new Pacman.Characters.Classes.Pacman(new GameState());
@@ -157,6 +157,12 @@ namespace Pacman.Game.Classes.State
                     {
                         g.Maze[i, j] = new Map.Path(i, j, pacman);   
                     }
+
+                    else if (mazeChar.Equals(""))
+                    {
+                        break;
+                    }
+                    counter++;
                 }
 
 
