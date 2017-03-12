@@ -30,7 +30,7 @@ namespace PacmanUnitTest
             Pacman.Game.Classes.Map.Path testPath = new Pacman.Game.Classes.Map.Path(1, 2, new Energizer());
             List<Tile> testTiles = new List<Tile>();
             testTiles.Add(testPath);
-            List<Tile> testNeighbors = maze.GetAvailableNeighbours(testPath, Direction.Left);
+            List<Tile> testNeighbors = maze.GetAvailableNeighbours(v2, Direction.Left);
         }
     }
 }
