@@ -42,6 +42,8 @@ namespace Pacman.Characters.Classes
         {
             this.Position = new Vector2(x, y);
             this.maze = g.Maze;
+            Console.WriteLine(g.Pacman);
+            this.pacman = g.Pacman;
             Random r = new Random();
             var enums = Enum.GetValues(typeof(Direction));
             var enumchosen = enums.GetValue(r.Next(0, 3));

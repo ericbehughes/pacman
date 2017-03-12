@@ -22,8 +22,8 @@ namespace Pacman.Game.Classes.State
             Maze maze = new Maze();
             GhostPack gpack = new GhostPack();
             ScoreAndLives score_lives = new ScoreAndLives(g);
-            Pacman.Characters.Classes.Pacman pacman = new Pacman.Characters.Classes.Pacman(g);
-
+            Characters.Classes.Pacman pacman = new Characters.Classes.Pacman(g);
+            g.Pacman = pacman;
             // initializing properties with objects from above
             g.Maze = maze;
             g.Pen = pen;
@@ -66,7 +66,7 @@ namespace Pacman.Game.Classes.State
             private set;
         }
 
-        public Pacman.Characters.Classes.Pacman Pacman
+        public Characters.Classes.Pacman Pacman
         {
             get;
             private set;

@@ -24,10 +24,59 @@ namespace PacmanUnitTest
             GhostState state = GhostState.Chase;
             Pacman.Characters.Classes.Color c = Pacman.Characters.Classes.Color.Red;
             Ghost ghost = new Ghost(gameState, 1, 3, target, state, c);
-            Random r = new Random();
-            var enums = Enum.GetValues(typeof(Direction));
-            var enumchosen = enums.GetValue(r.Next(0, 3));
+            ghost.Direction = Direction.Left;
+
+            Assert.AreEqual(1, ghost.Position.X);
+            Assert.AreEqual(3, ghost.Position.Y);
+            Assert.AreEqual(Direction.Left, ghost.Direction);
+            Assert.AreEqual(Pacman.Characters.Classes.Color.Red, ghost.Color);
+
+        }
+
+        [TestMethod]
+        public void TestGhostChaseMovement()
+        {
+            //parse map
+            GameState gameState = GameState.Parse("ghostMap.csv");
+
+            //NOTE
+            // x and y are switched since business logic uses array logic instead of cartesian
+            //  vector X and Y are inverted in constructor for Ghost Class
+
+            //target is pacmans location on ghostMap.csv in bin/debug row 3 col 1
+            Vector2 target = new Vector2(3, 1);
+            //build ghost
+            GhostState state = GhostState.Chase;
+            Pacman.Characters.Classes.Color c = Pacman.Characters.Classes.Color.Red;
+            Ghost ghost = new Ghost(gameState, 1, 3, target, state, c);
+            ghost.Direction = Direction.Left;
+            // make ghost move towards target
             ghost.Move();
+
+            Assert.AreEqual(1, ghost.Position.X);
+            Assert.AreEqual(2, ghost.Position.Y);
+
+        }
+
+
+        [TestMethod]
+        public void TestGhostCollision()
+        {
+            //parse map
+            GameState gameState = GameState.Parse("collisionTest.csv");
+
+            //target is pacmans location on ghostMap.csv in bin/debug row 3 col 1
+            Vector2 target = gameState.Pacman.Position;
+            //build ghost
+            GhostState state = GhostState.Chase;
+            Pacman.Characters.Classes.Color c = Pacman.Characters.Classes.Color.Red;
+            Ghost ghost = new Ghost(gameState, 1, 3, target, state, c);
+            ghost.Direction = Direction.Left;
+            // make ghost move towards target
+            ghost.Move();
+
+            Assert.AreEqual(1, ghost.Position.X);
+            Assert.AreEqual(2, ghost.Position.Y);
 
         }
     }

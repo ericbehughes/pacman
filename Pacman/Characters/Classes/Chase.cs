@@ -45,38 +45,38 @@ namespace Pacman.Characters.Classes
                 if (Vector2.Distance(target, tile.Position) < shortestDistance)
                 {
                     index = counter;
-                    shortestDistance = Vector2.Distance(pacman.Position, tile.Position);
+                    shortestDistance = Vector2.Distance(target, tile.Position);
                 }
                 counter++;
             }
 
             temp = freeTiles.ElementAt((int)index).Position;
-            if (temp.X != ghost.Position.X) {
-                if (temp.X < ghost.Position.X)
-                {
-                    ghost.Position = temp;
-                    ghost.Direction = Direction.Left;
-                }
-
-                else if (temp.X > ghost.Position.X)
-                {
-                    ghost.Position = temp;
-                    ghost.Direction = Direction.Right;
-                }
-            }
-
-            else if (temp.Y != ghost.Position.Y)
-            {
-                if (temp.Y < ghost.Position.Y)
+            if ((int)temp.X != (int)ghost.Position.X) {
+                if ((int)temp.X < (int)ghost.Position.X)
                 {
                     ghost.Position = temp;
                     ghost.Direction = Direction.Up;
                 }
 
-                else if (temp.Y > ghost.Position.Y)
+                else if ((int)temp.X > (int)ghost.Position.X)
                 {
                     ghost.Position = temp;
                     ghost.Direction = Direction.Down;
+                }
+            }
+
+            else if ((int)temp.Y != (int)ghost.Position.Y)
+            {
+                if (temp.Y < ghost.Position.Y)
+                {
+                    ghost.Position = temp;
+                    ghost.Direction = Direction.Left;
+                }
+
+                else if (temp.Y > ghost.Position.Y)
+                {
+                    ghost.Position = temp;
+                    ghost.Direction = Direction.Right;
                 }
             }
         }
