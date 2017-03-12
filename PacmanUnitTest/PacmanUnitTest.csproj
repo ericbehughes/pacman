@@ -60,6 +60,7 @@
     <Compile Include="MazeTest.cs" />
     <Compile Include="PenTest.cs" />
     <Compile Include="PacmanTest.cs" />
+    <Compile Include="GhostTest.cs" />
     <Compile Include="WallTest.cs" />
   </ItemGroup>
   <ItemGroup>
