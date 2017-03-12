@@ -85,77 +85,77 @@ namespace Pacman.Game.Classes.State
                     // build wall object
                     if (mazeChar.Equals("w"))
                     {
-                        g.Maze[i, j] = new Wall(i, j);
+                        g.Maze[j, i] = new Wall(j, i);
                     }
                     // build pellet or empty object for path
                     else if (mazeChar.Equals("p"))
                     {
                         var pel = new Pellet();
                         pel.CollisionEvent += g.Score.incrementScore;
-                        g.Maze[i, j] = new Map.Path(i, j, pel);
+                        g.Maze[j, i] = new Map.Path(j, i, pel);
                         
                     }
                     else if (mazeChar.Equals("e"))
                     {
                         var e = new Energizer();
                         e.CollisionEvent += g.Score.incrementScore;
-                        g.Maze[i, j] = new Map.Path(i, j, e);
+                        g.Maze[j, i] = new Map.Path(j, i, e);
                     }
                     // empty path 
                     else if (mazeChar.Equals("m"))
                     {
-                        g.Maze[i, j] = new Map.Path(i, j, null);
+                        g.Maze[j, i] = new Map.Path(j, i, null);
                     }
                     else if (mazeChar.Equals("1"))
                     {
-                        Ghost ghost = new Ghost(g, i, j, new Vector2(i, j), GhostState.Penned, new Characters.Classes.Color());
+                        Ghost ghost = new Ghost(g, j, i, new Vector2(j, i), GhostState.Penned, new Characters.Classes.Color());
                         ghost.Pacman = pacman;
                         g.GhostPack.Add(ghost);
                         ghost.CollisionEvent += g.Score.incrementScore;
                         ghost.PacmanDiedEvent += g.Score.deadPacman;
-                        g.Maze[i, j] = new Map.Path(i, j, ghost);
+                        g.Maze[j, i] = new Map.Path(j, i, ghost);
 
                     }
 
                     else if (mazeChar.Equals("2"))
                     {
-                        Ghost ghost = new Ghost(g, i, j, new Vector2(i, j), GhostState.Penned, new Characters.Classes.Color());
+                        Ghost ghost = new Ghost(g, j, i, new Vector2(j, i), GhostState.Penned, new Characters.Classes.Color());
                         ghost.Pacman = pacman;
                         g.GhostPack.Add(ghost);
                         g.Pen.AddToPen(ghost);
                         ghost.CollisionEvent += g.Score.incrementScore;
                         ghost.PacmanDiedEvent += g.Score.deadPacman;
-                        g.Maze[i, j] = new Map.Path(i, j, ghost);
+                        g.Maze[j, i] = new Map.Path(j, i, ghost);
                         
                     }
 
                     else if (mazeChar.Equals("3"))
                     {
-                        Ghost ghost = new Ghost(g, i, j, new Vector2(i, j), GhostState.Penned, new Characters.Classes.Color());
+                        Ghost ghost = new Ghost(g, j, i, new Vector2(j, i), GhostState.Penned, new Characters.Classes.Color());
                         ghost.Pacman = pacman;
                         g.GhostPack.Add(ghost);
                         g.Pen.AddToPen(ghost);
                         ghost.CollisionEvent += g.Score.incrementScore;
                         ghost.PacmanDiedEvent += g.Score.deadPacman;
-                        g.Maze[i, j] = new Map.Path(i, j, ghost);
+                        g.Maze[j, i] = new Map.Path(j, i, ghost);
                         
                     }
 
                     else if (mazeChar.Equals("4"))
                     {
-                        Ghost ghost = new Ghost(g, i, j, new Vector2(i, j), Ghost.GhostState.Penned, new Characters.Classes.Color());
+                        Ghost ghost = new Ghost(g, j, i, new Vector2(j, i), Ghost.GhostState.Penned, new Characters.Classes.Color());
                         ghost.Pacman = pacman;
                         g.GhostPack.Add(ghost);
                         g.Pen.AddToPen(ghost);
                         ghost.CollisionEvent += g.Score.incrementScore;
                         ghost.PacmanDiedEvent += g.Score.deadPacman;
-                        g.Maze[i, j] = new Map.Path(i, j, ghost);
+                        g.Maze[j, i] = new Map.Path(j, i, ghost);
                         
                     }
                     // pacman
                     else if (mazeChar.Equals("P"))
                     {
-                        g.Maze[i, j] = new Map.Path(i, j, pacman);   
+                        g.Maze[j, i] = new Map.Path(j, i, pacman);   
                     }
 
                     else if (mazeChar.Equals(""))

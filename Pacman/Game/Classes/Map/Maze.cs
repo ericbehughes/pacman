@@ -83,22 +83,22 @@ namespace Pacman.Game.Classes.Map
             /* Check left */
             if (!(maze[x - 1, y] is Wall))
                 if (Direction != Direction.Right)
-                    emptyTiles.Add(maze[y, x - 1]);
+                    emptyTiles.Add(maze[x - 1, y]);
 
             /* check right */
             if (!(maze[x + 1, y] is Wall))
                 if (Direction != Direction.Left)
-                    emptyTiles.Add(maze[y, x + 1]);
+                    emptyTiles.Add(maze[x + 1, y]);
 
             /* Check up */
             if (!(maze[x, y - 1] is Wall))
                 if (Direction != Direction.Down)
-                    emptyTiles.Add(maze[y-1, x]);
+                    emptyTiles.Add(maze[x, y - 1]);
 
             /* Check down */
             if (!(maze[x, y + 1] is Wall))
                 if (Direction != Direction.Up)
-                    emptyTiles.Add(maze[y+1, x]);
+                    emptyTiles.Add(maze[x, y + 1]);
 
             return emptyTiles;
 
