@@ -95,5 +95,16 @@ namespace PacmanUnitTest
             Assert.AreEqual(3, x);
             Assert.AreEqual(2, y);
         }
+
+        [TestMethod]
+        public void TestPacmanPelletCollide()
+        {
+            GameState gameState = GameState.Parse("pellet.csv");
+            Pellet p = (Pellet)gameState.Maze[2, 2].Member;
+            p.CollisionEvent += (p) =>
+            {
+                actual = true;
+            };
+        }
     }
 }
