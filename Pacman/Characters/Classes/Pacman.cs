@@ -82,6 +82,8 @@ namespace Pacman.Characters.Classes
                         this.Position = new Vector2(x, y + 1);
                     break;
             }
+
+            CheckCollisions(this.Position);
         }
 
         public Boolean CanEnter(Vector2 position, Direction dir)

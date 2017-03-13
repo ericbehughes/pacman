@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Pacman;
 using Pacman.Game.Classes.State;
+using Pacman.Game.Classes.Map;
 
 namespace PacmanUnitTest
 {
@@ -44,6 +45,7 @@ namespace PacmanUnitTest
         [TestMethod]
         public void TestPelletCollideEvent()
         {
+            GameState gameState = GameState.Parse("map.csv");
             Pellet p = new Pellet();
             int points = p.Points;
             Assert.AreEqual(10, points);
@@ -51,9 +53,13 @@ namespace PacmanUnitTest
             {
                 x.Points += 300;
             };
-            p.Collide();
+            Maze maze = gameState.Maze;
+            maze[2, 1].Member = p;
+            maze[2, 1].Member.Collide();
+            maze[2, 1].Member = null;
             points = p.Points;
             Assert.AreEqual(310, points);
+
         }
     }
 }
