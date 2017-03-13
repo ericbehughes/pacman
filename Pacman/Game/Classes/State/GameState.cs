@@ -99,7 +99,6 @@ namespace Pacman.Game.Classes.State
                         var pel = new Pellet();
                         pel.CollisionEvent += g.Score.incrementScore;
                         g.Maze[j, i] = new Map.Path(j, i, pel);
-
                     }
                     else if (mazeChar.Equals("e"))
                     {

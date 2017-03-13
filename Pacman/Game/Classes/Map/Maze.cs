@@ -67,6 +67,7 @@ namespace Pacman.Game.Classes.Map
             }
         }
 
+
         /* The function will check the tiles to the left, right, down and up from the parameter's position and save them to a list
          * if and only if the tiles are not a wall
          */

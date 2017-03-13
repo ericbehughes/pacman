@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Pacman.Game.Classes.State;
 using Pacman.Characters.Classes;
 using Microsoft.Xna.Framework;
+using Pacman.Game.Classes.Map;
 
 namespace PacmanUnitTest
 {
@@ -101,10 +102,8 @@ namespace PacmanUnitTest
         {
             GameState gameState = GameState.Parse("pellet.csv");
             Pellet p = (Pellet)gameState.Maze[2, 2].Member;
-            p.CollisionEvent += (p) =>
-            {
-                actual = true;
-            };
+            gameState.Pacman.Move(Direction.Right);
+            Assert.AreEqual(null, gameState.Maze[2, 2].Member);
         }
     }
 }

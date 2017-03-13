@@ -103,6 +103,7 @@ namespace Pacman.Characters.Classes
             if (this.maze[(int)this.position.X, (int)this.position.Y] != null)
             {
                 this.maze[(int)this.position.X, (int)this.position.Y].Collide();
+                this.maze[(int)this.position.X, (int)this.position.Y].Member = null;
             }
 
 
