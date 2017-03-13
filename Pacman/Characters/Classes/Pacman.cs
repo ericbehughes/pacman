@@ -22,7 +22,7 @@ namespace Pacman.Characters.Classes
         public Pacman(GameState gs)
         {
             this.gamestate = gs;
-            this.maze = this.gamestate.Maze;
+            this.maze = gamestate.Maze;
 
         }
         public Vector2 Position
@@ -88,7 +88,7 @@ namespace Pacman.Characters.Classes
 
         public Boolean CanEnter(Vector2 position, Direction dir)
         {
-            var freeTiles = this.maze.GetAvailableNeighbours(this.Position, dir);
+            var freeTiles = gamestate.Maze.GetAvailableNeighbours(this.Position, dir);
             foreach (Tile tile in freeTiles)
             {
                 if ((tile.Position.X == position.X) && (tile.Position.Y == position.Y))
@@ -100,10 +100,10 @@ namespace Pacman.Characters.Classes
         public void CheckCollisions(Vector2 v)
         {
             //check non empty tile collision
-            if (this.maze[(int)this.position.X, (int)this.position.Y] != null)
+            if (gamestate.Maze[(int)this.position.X, (int)this.position.Y] != null)
             {
-                this.maze[(int)this.position.X, (int)this.position.Y].Collide();
-                this.maze[(int)this.position.X, (int)this.position.Y].Member = null;
+                gamestate.Maze[(int)this.position.X, (int)this.position.Y].Collide();
+                gamestate.Maze[(int)this.position.X, (int)this.position.Y].Member = null;
             }
 
 
