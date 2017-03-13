@@ -78,5 +78,54 @@ namespace PacmanUnitTest
             Assert.AreEqual(2, ghost.Position.Y);
 
         }
+
+        [TestMethod]
+        public void TestPacmanCollideWithGhost_PacManShouldDie()
+        {
+            //parse map
+            GameState gameState = GameState.Parse("ghostCollisionWithPacman.csv");
+            //build ghost
+            GhostState state = GhostState.Chase;
+            Pacman.Characters.Classes.Color c = Pacman.Characters.Classes.Color.Red;
+            Ghost ghost = new Ghost(gameState, 1, 3, gameState.Pacman.Position, state, c);
+            ghost.Direction = Direction.Left;
+            
+            bool expected = true;
+            bool actual = false;
+            ghost.PacmanDiedEvent += () =>
+            {
+                actual = true;
+            };
+            ghost.Move();
+            Assert.AreEqual(expected, actual);
+        }
+
+
+        [TestMethod]
+        public void TestPacmanCollideWithGhost_GhostShouldDie()
+        {
+            //parse map
+            //map has pacman and ghost beside each other
+            // and some random cell with x inside for pen to be initialized
+            GameState gameState = GameState.Parse("ghostCollisionWithPacman.csv");
+            //build ghost
+            GhostState state = GhostState.Scared;
+            Pacman.Characters.Classes.Color c = Pacman.Characters.Classes.Color.Red;
+            Ghost ghost = new Ghost(gameState, 1, 3, gameState.Pacman.Position, state, c);
+            ghost.CollisionEvent += gameState.Score.incrementScore;
+            ghost.Direction = Direction.Left;
+
+            bool expected = true;
+            bool actual = false;
+            ghost.PacmanDiedEvent += () =>
+            {
+                actual = true;
+            };
+            ghost.Move();
+            Assert.AreEqual(expected, actual);
+        }
+
+
+
     }
 }

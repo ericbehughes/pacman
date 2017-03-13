@@ -14,7 +14,7 @@ namespace Pacman.Characters.Classes
     {
         public event GameOverHandler GameOver;
         private GameState gamestate;
-        private int lives;
+        private int lives = 3;
         private int score;
         public ScoreAndLives(GameState gs)
         {
