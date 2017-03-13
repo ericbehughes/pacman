@@ -29,11 +29,12 @@ namespace PacmanUnitTest
             /* Make sure start position is correct */
             Assert.AreEqual(3, x);
             Assert.AreEqual(1, y);
-            gameState.Pacman.Position = new Vector2(3, 1);
-            gameState.Pacman.Move(Pacman.Characters.Classes.Direction.Up);
-            x = (int)gameState.Pacman.Position.X;
-            y = (int)gameState.Pacman.Position.Y;
-            /* New position should be x - 1*/
+            Pacman.Characters.Classes.Pacman p = new Pacman.Characters.Classes.Pacman(gameState);
+            p.Position = new Vector2(3, 1);
+            p.Move(Pacman.Characters.Classes.Direction.Up);
+            x = (int)p.Position.X;
+            y = (int)p.Position.Y;
+            /* New position should be the same because left is a wall*/
             Assert.AreEqual(2, x);
             Assert.AreEqual(1, y);
         }
