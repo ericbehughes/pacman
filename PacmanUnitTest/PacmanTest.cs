@@ -46,15 +46,16 @@ namespace PacmanUnitTest
             int x = (int)gameState.Pacman.Position.X,
                y = (int)gameState.Pacman.Position.Y;
             /* Make sure start position is correct */
-            Assert.AreEqual(2, x);
-            Assert.AreEqual(3, y);
-
-            gameState.Pacman.Move(Pacman.Characters.Classes.Direction.Up);
-            x = (int)gameState.Pacman.Position.X;
-            y = (int)gameState.Pacman.Position.Y;
-            /* New position should be x - 1, y  */
-            Assert.AreEqual(1, x);
-            Assert.AreEqual(3, y);
+            Assert.AreEqual(3, x);
+            Assert.AreEqual(1, y);
+            Pacman.Characters.Classes.Pacman p = new Pacman.Characters.Classes.Pacman(gameState);
+            p.Position = new Vector2(3, 1);
+            p.Move(Pacman.Characters.Classes.Direction.Left);
+            x = (int)p.Position.X;
+            y = (int)p.Position.Y;
+            /* New position should be the same because left is a wall*/
+            Assert.AreEqual(3, x);
+            Assert.AreEqual(1, y);
         }
 
         [TestMethod]
@@ -64,15 +65,16 @@ namespace PacmanUnitTest
             int x = (int)gameState.Pacman.Position.X,
                y = (int)gameState.Pacman.Position.Y;
             /* Make sure start position is correct */
-            Assert.AreEqual(2, x);
-            Assert.AreEqual(3, y);
-
-            gameState.Pacman.Move(Pacman.Characters.Classes.Direction.Up);
-            x = (int)gameState.Pacman.Position.X;
-            y = (int)gameState.Pacman.Position.Y;
-            /* New position should be x, y + 1  */
-            Assert.AreEqual(2, x);
-            Assert.AreEqual(4, y);
+            Assert.AreEqual(3, x);
+            Assert.AreEqual(1, y);
+            Pacman.Characters.Classes.Pacman p = new Pacman.Characters.Classes.Pacman(gameState);
+            p.Position = new Vector2(3, 1);
+            p.Move(Pacman.Characters.Classes.Direction.Down);
+            x = (int)p.Position.X;
+            y = (int)p.Position.Y;
+            /* New position should be x - 1*/
+            Assert.AreEqual(4, x);
+            Assert.AreEqual(1, y);
         }
 
         [TestMethod]
@@ -82,15 +84,16 @@ namespace PacmanUnitTest
             int x = (int)gameState.Pacman.Position.X,
                y = (int)gameState.Pacman.Position.Y;
             /* Make sure start position is correct */
-            Assert.AreEqual(2, x);
-            Assert.AreEqual(3, y);
-
-            gameState.Pacman.Move(Pacman.Characters.Classes.Direction.Up);
-            x = (int)gameState.Pacman.Position.X;
-            y = (int)gameState.Pacman.Position.Y;
-            /* New position should be x + 1, y  */
             Assert.AreEqual(3, x);
-            Assert.AreEqual(3, y);
+            Assert.AreEqual(1, y);
+            Pacman.Characters.Classes.Pacman p = new Pacman.Characters.Classes.Pacman(gameState);
+            p.Position = new Vector2(3, 1);
+            p.Move(Pacman.Characters.Classes.Direction.Right);
+            x = (int)p.Position.X;
+            y = (int)p.Position.Y;
+            /* New position should be x - 1*/
+            Assert.AreEqual(3, x);
+            Assert.AreEqual(2, y);
         }
     }
 }
