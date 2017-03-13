@@ -86,7 +86,7 @@ namespace Pacman.Characters.Classes
 
         public Boolean CanEnter(Vector2 position, Direction dir)
         {
-            var freeTiles = this.maze.GetAvailableNeighbours(position, dir);
+            var freeTiles = this.maze.GetAvailableNeighbours(this.Position, dir);
             foreach (Tile tile in freeTiles)
             {
                 if ((tile.Position.X == position.X) && (tile.Position.Y == position.Y))

@@ -32,8 +32,8 @@ namespace PacmanUnitTest
             Pacman.Characters.Classes.Pacman p = new Pacman.Characters.Classes.Pacman(gameState);
             p.Position = new Vector2(3, 1);
             p.Move(Pacman.Characters.Classes.Direction.Up);
-            x = (int)gameState.Pacman.Position.X;
-            y = (int)gameState.Pacman.Position.Y;
+            x = (int)p.Position.X;
+            y = (int)p.Position.Y;
             /* New position should be x - 1*/
             Assert.AreEqual(2, x);
             Assert.AreEqual(1, y);
