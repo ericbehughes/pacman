@@ -37,6 +37,7 @@ namespace Pacman.Characters.Classes
             this.maze = g.Maze;
             Console.WriteLine(g.Pacman);
             this.pacman = g.Pacman;
+            this.pen = g.Pen;
             Random r = new Random();
             var enums = Enum.GetValues(typeof(Direction));
             var enumchosen = enums.GetValue(r.Next(0, 3));
@@ -50,7 +51,7 @@ namespace Pacman.Characters.Classes
             {
                 currentState = new Chase(this, this.maze, pacman, target);
             }
-
+            
             this.colour = colour;
         }
 
@@ -87,7 +88,7 @@ namespace Pacman.Characters.Classes
         }
 
 
-        public int Points { get; set; }
+        public int Points { get { return 200; }  set { } }
 
         public void Move()
         {
@@ -107,13 +108,19 @@ namespace Pacman.Characters.Classes
         {
             if (this.CurrentState == GhostState.Scared)
             {
-                CollisionEvent(this);
+                OnCollisionEvent(this);
                 this.pen.AddToPen(this);
             }
             if (this.CurrentState == GhostState.Chase)
             {
-                //PacmanDiedEvent();
+                PacmanDiedEvent();
             }
+        }
+
+        public virtual void OnCollisionEvent(ICollidable m)
+        {
+            if (CollisionEvent != null)
+                CollisionEvent(m);
         }
 
         public GhostState CurrentState
@@ -135,7 +142,7 @@ namespace Pacman.Characters.Classes
 
         public void Reset()
         {
-
+            this.pen.AddToPen(this);
         }
 
         public void ChangeState(GhostState g)
