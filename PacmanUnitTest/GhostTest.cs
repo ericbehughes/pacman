@@ -71,9 +71,13 @@ namespace PacmanUnitTest
             Pacman.Characters.Classes.Color c = Pacman.Characters.Classes.Color.Red;
             Ghost ghost = new Ghost(gameState, 1, 3, target, state, c);
             ghost.Direction = Direction.Left;
+
+            ghost.PacmanDiedEvent += () =>
+            {
+              // pacmandied event needs to be assigned for no null reference exception  
+            };
             // make ghost move towards target
             ghost.Move();
-
             Assert.AreEqual(1, ghost.Position.X);
             Assert.AreEqual(2, ghost.Position.Y);
 
@@ -102,7 +106,7 @@ namespace PacmanUnitTest
 
 
         [TestMethod]
-        public void TestPacmanCollideWithGhost_GhostShouldDie()
+        public void TestPacmanCollideWithGhost_GhostShouldDieButSometimesRunsAwaySoMightFailSinceRandom()
         {
             //parse map
             //map has pacman and ghost beside each other
@@ -115,17 +119,11 @@ namespace PacmanUnitTest
             ghost.CollisionEvent += gameState.Score.incrementScore;
             ghost.Direction = Direction.Left;
 
-            bool expected = true;
-            bool actual = false;
-            ghost.PacmanDiedEvent += () =>
-            {
-                actual = true;
-            };
+            int score = 200;
+            
             ghost.Move();
-            Assert.AreEqual(expected, actual);
+            int actualScore = gameState.Score.Score;
+            Assert.AreEqual(score, gameState.Score);
         }
-
-
-
     }
 }
