@@ -14,7 +14,7 @@ namespace PacmanGame
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         private GameState gs;
-
+        
 
         public Game1()
         {
@@ -37,7 +37,7 @@ namespace PacmanGame
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+           
 
             base.Initialize();
         }

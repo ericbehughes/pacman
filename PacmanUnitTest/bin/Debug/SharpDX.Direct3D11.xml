@@ -1006,6 +1006,29 @@
             <unmanaged>D3D11_RENDER_TARGET_BLEND_DESC1 RenderTarget[8]</unmanaged>	
             <unmanaged-short>D3D11_RENDER_TARGET_BLEND_DESC1 RenderTarget</unmanaged-short>	
         </member>
+        <member name="T:SharpDX.Direct3D11.IDrawingSurfaceContentProviderNative">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDrawingSurfaceContentProviderNative']/*"/>	
+            <unmanaged>IDrawingSurfaceContentProviderNative</unmanaged>	
+            <unmanaged-short>IDrawingSurfaceContentProviderNative</unmanaged-short>	
+        </member>
+        <member name="T:SharpDX.Direct3D11.DrawingSurfaceContentProviderShadow">
+            <summary>
+            Internal DrawingSurfaceContentProvider Callback
+            </summary>
+        </member>
+        <member name="M:SharpDX.Direct3D11.DrawingSurfaceContentProviderShadow.ToIntPtr(SharpDX.Direct3D11.IDrawingSurfaceContentProviderNative)">
+            <summary>
+            Return a pointer to the unmanaged version of this callback.
+            </summary>
+            <param name="callback">The callback.</param>
+            <returns>A pointer to a shadow c++ callback</returns>
+        </member>
+        <member name="T:SharpDX.Direct3D11.DrawingSurfaceContentProviderShadow.DrawingSurfaceContentProviderVtbl.DisconnectDelegate">
+            <unmanaged>HRESULT ID2D1DrawingSurfaceContentProvider::SetComputeInfo([In] ID2D1ComputeInfo* computeInfo)</unmanaged>	
+        </member>
         <member name="T:SharpDX.Direct3D11.RasterizerStateDescription1">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p><strong>Note</strong>??This structure is supported by the Direct3D 11.1 runtime, which is available on Windows?8 Consumer Preview and later operating systems.</p><p>Describes rasterizer state.</p>	
@@ -1660,7 +1683,7 @@
             <summary>	
             <p>Creates a geometry shader that can write to streaming output buffers.</p>	
             </summary>	
-            <param name="shaderBytecodeRef"><dd>  <p>A reference to the compiled geometry shader for a standard geometry shader plus stream output. For info on how to get this reference, see Getting a Pointer to a Compiled Shader.</p> <p>To create the stream output without using a geometry shader, pass a reference to the output signature for the prior stage. To obtain this output signature, call the <strong><see cref="!:SharpDX.D3DCompiler.D3D.GetOutputSignatureBlob"/></strong> compiler function. You can also pass a reference to the compiled shader for the prior stage (for example, the vertex-shader stage or domain-shader stage). This compiled shader provides the output signature for the data.</p> </dd></param>	
+            <param name="shaderBytecodeRef"><dd>  <p>A reference to the compiled geometry shader for a standard geometry shader plus stream output. For info on how to get this reference, see Getting a Pointer to a Compiled Shader.</p> <p>To create the stream output without using a geometry shader, pass a reference to the output signature for the prior stage. To obtain this output signature, call the <strong>D3DGetOutputSignatureBlob</strong> compiler function. You can also pass a reference to the compiled shader for the prior stage (for example, the vertex-shader stage or domain-shader stage). This compiled shader provides the output signature for the data.</p> </dd></param>	
             <param name="bytecodeLength"><dd>  <p>Size of the compiled geometry shader.</p> </dd></param>	
             <param name="sODeclarationRef"><dd>  <p>Pointer to a <strong><see cref="T:SharpDX.Direct3D11.StreamOutputElement"/></strong> array. Cannot be <strong><c>null</c></strong> if NumEntries &gt; 0.</p> </dd></param>	
             <param name="numEntries"><dd>  <p>The number of entries in the stream output declaration ( ranges from 0 to <see cref="F:SharpDX.Direct3D11.GeometryShader.StreamOutputStreamCount"/> * <see cref="F:SharpDX.Direct3D11.GeometryShader.StreamOutputOutputComponentCount"/> ).</p> </dd></param>	
@@ -2525,6 +2548,29 @@
             <unmanaged>GetImmediateContext1</unmanaged>	
             <unmanaged-short>GetImmediateContext1</unmanaged-short>	
             <unmanaged>void ID3D11Device1::GetImmediateContext1([Out] ID3D11DeviceContext1** ppImmediateContext)</unmanaged>
+        </member>
+        <member name="T:SharpDX.Direct3D11.IDrawingSurfaceBackgroundContentProviderNative">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDrawingSurfaceBackgroundContentProviderNative']/*"/>	
+            <unmanaged>IDrawingSurfaceBackgroundContentProviderNative</unmanaged>	
+            <unmanaged-short>IDrawingSurfaceBackgroundContentProviderNative</unmanaged-short>	
+        </member>
+        <member name="T:SharpDX.Direct3D11.DrawingSurfaceBackgroundContentProviderShadow">
+            <summary>
+            Internal DrawingSurfaceBackgroundContentProvider Callback
+            </summary>
+        </member>
+        <member name="M:SharpDX.Direct3D11.DrawingSurfaceBackgroundContentProviderShadow.ToIntPtr(SharpDX.Direct3D11.IDrawingSurfaceBackgroundContentProviderNative)">
+            <summary>
+            Return a pointer to the unmanaged version of this callback.
+            </summary>
+            <param name="callback">The callback.</param>
+            <returns>A pointer to a shadow c++ callback</returns>
+        </member>
+        <member name="T:SharpDX.Direct3D11.DrawingSurfaceBackgroundContentProviderShadow.DrawingSurfaceBackgroundContentProviderVtbl.DisconnectDelegate">
+            <unmanaged>HRESULT ID2D1DrawingSurfaceBackgroundContentProvider::SetComputeInfo([In] ID2D1ComputeInfo* computeInfo)</unmanaged>	
         </member>
         <member name="T:SharpDX.Direct3D11.NamespaceDoc">
             <summary>
@@ -4833,6 +4879,10 @@
             <summary>Constant ImmediateConstantBufferRegisterComponents.</summary>
             <unmanaged>D3D11_COMMONSHADER_IMMEDIATE_CONSTANT_BUFFER_REGISTER_COMPONENTS</unmanaged>
         </member>
+        <member name="F:SharpDX.Direct3D11.CommonShaderStage.InputResourceRegisterReadPorts">
+            <summary>Constant InputResourceRegisterReadPorts.</summary>
+            <unmanaged>D3D11_COMMONSHADER_INPUT_RESOURCE_REGISTER_READ_PORTS</unmanaged>
+        </member>
         <member name="F:SharpDX.Direct3D11.CommonShaderStage.SamplerRegisterComponents">
             <summary>Constant SamplerRegisterComponents.</summary>
             <unmanaged>D3D11_COMMONSHADER_SAMPLER_REGISTER_COMPONENTS</unmanaged>
@@ -4849,33 +4899,25 @@
             <summary>Constant InputResourceRegisterCount.</summary>
             <unmanaged>D3D11_COMMONSHADER_INPUT_RESOURCE_REGISTER_COUNT</unmanaged>
         </member>
-        <member name="F:SharpDX.Direct3D11.CommonShaderStage.TempRegisterCount">
-            <summary>Constant TempRegisterCount.</summary>
-            <unmanaged>D3D11_COMMONSHADER_TEMP_REGISTER_COUNT</unmanaged>
-        </member>
-        <member name="F:SharpDX.Direct3D11.CommonShaderStage.InputResourceRegisterReadPorts">
-            <summary>Constant InputResourceRegisterReadPorts.</summary>
-            <unmanaged>D3D11_COMMONSHADER_INPUT_RESOURCE_REGISTER_READ_PORTS</unmanaged>
-        </member>
-        <member name="F:SharpDX.Direct3D11.CommonShaderStage.TempRegisterComponents">
-            <summary>Constant TempRegisterComponents.</summary>
-            <unmanaged>D3D11_COMMONSHADER_TEMP_REGISTER_COMPONENTS</unmanaged>
-        </member>
         <member name="F:SharpDX.Direct3D11.CommonShaderStage.FlowcontrolNestingLimit">
             <summary>Constant FlowcontrolNestingLimit.</summary>
             <unmanaged>D3D11_COMMONSHADER_FLOWCONTROL_NESTING_LIMIT</unmanaged>
+        </member>
+        <member name="F:SharpDX.Direct3D11.CommonShaderStage.ImmediateValueComponentBitCount">
+            <summary>Constant ImmediateValueComponentBitCount.</summary>
+            <unmanaged>D3D11_COMMONSHADER_IMMEDIATE_VALUE_COMPONENT_BIT_COUNT</unmanaged>
+        </member>
+        <member name="F:SharpDX.Direct3D11.CommonShaderStage.TextureCoordRangeReductionMinimum">
+            <summary>Constant TextureCoordRangeReductionMinimum.</summary>
+            <unmanaged>D3D11_COMMONSHADER_TEXCOORD_RANGE_REDUCTION_MIN</unmanaged>
         </member>
         <member name="F:SharpDX.Direct3D11.CommonShaderStage.TempRegisterComponentBitCount">
             <summary>Constant TempRegisterComponentBitCount.</summary>
             <unmanaged>D3D11_COMMONSHADER_TEMP_REGISTER_COMPONENT_BIT_COUNT</unmanaged>
         </member>
-        <member name="F:SharpDX.Direct3D11.CommonShaderStage.InputResourceRegisterComponents">
-            <summary>Constant InputResourceRegisterComponents.</summary>
-            <unmanaged>D3D11_COMMONSHADER_INPUT_RESOURCE_REGISTER_COMPONENTS</unmanaged>
-        </member>
-        <member name="F:SharpDX.Direct3D11.CommonShaderStage.SamplerRegisterReadsPerInst">
-            <summary>Constant SamplerRegisterReadsPerInst.</summary>
-            <unmanaged>D3D11_COMMONSHADER_SAMPLER_REGISTER_READS_PER_INST</unmanaged>
+        <member name="F:SharpDX.Direct3D11.CommonShaderStage.TempRegisterComponents">
+            <summary>Constant TempRegisterComponents.</summary>
+            <unmanaged>D3D11_COMMONSHADER_TEMP_REGISTER_COMPONENTS</unmanaged>
         </member>
         <member name="F:SharpDX.Direct3D11.CommonShaderStage.TextureCoordRangeReductionMaximum">
             <summary>Constant TextureCoordRangeReductionMaximum.</summary>
@@ -4893,13 +4935,17 @@
             <summary>Constant InputResourceSlotCount.</summary>
             <unmanaged>D3D11_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT</unmanaged>
         </member>
-        <member name="F:SharpDX.Direct3D11.CommonShaderStage.ImmediateConstantBufferRegisterReadsPerInst">
-            <summary>Constant ImmediateConstantBufferRegisterReadsPerInst.</summary>
-            <unmanaged>D3D11_COMMONSHADER_IMMEDIATE_CONSTANT_BUFFER_REGISTER_READS_PER_INST</unmanaged>
+        <member name="F:SharpDX.Direct3D11.CommonShaderStage.SamplerRegisterReadsPerInst">
+            <summary>Constant SamplerRegisterReadsPerInst.</summary>
+            <unmanaged>D3D11_COMMONSHADER_SAMPLER_REGISTER_READS_PER_INST</unmanaged>
         </member>
         <member name="F:SharpDX.Direct3D11.CommonShaderStage.ImmediateConstantBufferRegisterCount">
             <summary>Constant ImmediateConstantBufferRegisterCount.</summary>
             <unmanaged>D3D11_COMMONSHADER_IMMEDIATE_CONSTANT_BUFFER_REGISTER_COUNT</unmanaged>
+        </member>
+        <member name="F:SharpDX.Direct3D11.CommonShaderStage.TempRegisterReadPorts">
+            <summary>Constant TempRegisterReadPorts.</summary>
+            <unmanaged>D3D11_COMMONSHADER_TEMP_REGISTER_READ_PORTS</unmanaged>
         </member>
         <member name="F:SharpDX.Direct3D11.CommonShaderStage.ConstantBufferRegisterCount">
             <summary>Constant ConstantBufferRegisterCount.</summary>
@@ -4909,17 +4955,25 @@
             <summary>Constant ConstantBufferRegisterReadsPerInst.</summary>
             <unmanaged>D3D11_COMMONSHADER_CONSTANT_BUFFER_REGISTER_READS_PER_INST</unmanaged>
         </member>
+        <member name="F:SharpDX.Direct3D11.CommonShaderStage.InputResourceRegisterComponents">
+            <summary>Constant InputResourceRegisterComponents.</summary>
+            <unmanaged>D3D11_COMMONSHADER_INPUT_RESOURCE_REGISTER_COMPONENTS</unmanaged>
+        </member>
+        <member name="F:SharpDX.Direct3D11.CommonShaderStage.TempRegisterCount">
+            <summary>Constant TempRegisterCount.</summary>
+            <unmanaged>D3D11_COMMONSHADER_TEMP_REGISTER_COUNT</unmanaged>
+        </member>
         <member name="F:SharpDX.Direct3D11.CommonShaderStage.TextureElOffsetMaximumPositive">
             <summary>Constant TextureElOffsetMaximumPositive.</summary>
             <unmanaged>D3D11_COMMONSHADER_TEXEL_OFFSET_MAX_POSITIVE</unmanaged>
         </member>
-        <member name="F:SharpDX.Direct3D11.CommonShaderStage.TempRegisterReadPorts">
-            <summary>Constant TempRegisterReadPorts.</summary>
-            <unmanaged>D3D11_COMMONSHADER_TEMP_REGISTER_READ_PORTS</unmanaged>
+        <member name="F:SharpDX.Direct3D11.CommonShaderStage.SubRoutineNestingLimit">
+            <summary>Constant SubRoutineNestingLimit.</summary>
+            <unmanaged>D3D11_COMMONSHADER_SUBROUTINE_NESTING_LIMIT</unmanaged>
         </member>
-        <member name="F:SharpDX.Direct3D11.CommonShaderStage.TextureCoordRangeReductionMinimum">
-            <summary>Constant TextureCoordRangeReductionMinimum.</summary>
-            <unmanaged>D3D11_COMMONSHADER_TEXCOORD_RANGE_REDUCTION_MIN</unmanaged>
+        <member name="F:SharpDX.Direct3D11.CommonShaderStage.ImmediateConstantBufferRegisterReadsPerInst">
+            <summary>Constant ImmediateConstantBufferRegisterReadsPerInst.</summary>
+            <unmanaged>D3D11_COMMONSHADER_IMMEDIATE_CONSTANT_BUFFER_REGISTER_READS_PER_INST</unmanaged>
         </member>
         <member name="F:SharpDX.Direct3D11.CommonShaderStage.ConstantBufferComponentBitCount">
             <summary>Constant ConstantBufferComponentBitCount.</summary>
@@ -4929,17 +4983,9 @@
             <summary>Constant TempRegisterReadsPerInst.</summary>
             <unmanaged>D3D11_COMMONSHADER_TEMP_REGISTER_READS_PER_INST</unmanaged>
         </member>
-        <member name="F:SharpDX.Direct3D11.CommonShaderStage.ImmediateValueComponentBitCount">
-            <summary>Constant ImmediateValueComponentBitCount.</summary>
-            <unmanaged>D3D11_COMMONSHADER_IMMEDIATE_VALUE_COMPONENT_BIT_COUNT</unmanaged>
-        </member>
         <member name="F:SharpDX.Direct3D11.CommonShaderStage.ConstantBufferHwSlotCount">
             <summary>Constant ConstantBufferHwSlotCount.</summary>
             <unmanaged>D3D11_COMMONSHADER_CONSTANT_BUFFER_HW_SLOT_COUNT</unmanaged>
-        </member>
-        <member name="F:SharpDX.Direct3D11.CommonShaderStage.SubRoutineNestingLimit">
-            <summary>Constant SubRoutineNestingLimit.</summary>
-            <unmanaged>D3D11_COMMONSHADER_SUBROUTINE_NESTING_LIMIT</unmanaged>
         </member>
         <member name="F:SharpDX.Direct3D11.CommonShaderStage.SamplerSlotCount">
             <summary>Constant SamplerSlotCount.</summary>
@@ -5251,9 +5297,21 @@
             <summary>Constant ThreadGroupSharedMemoryResourceRegisterReadPorts.</summary>
             <unmanaged>D3D11_CS_TGSM_RESOURCE_REGISTER_READ_PORTS</unmanaged>
         </member>
+        <member name="F:SharpDX.Direct3D11.ComputeShaderStage.ThreadGroupMaximumX">
+            <summary>Constant ThreadGroupMaximumX.</summary>
+            <unmanaged>D3D11_CS_THREAD_GROUP_MAX_X</unmanaged>
+        </member>
         <member name="F:SharpDX.Direct3D11.ComputeShaderStage.DispatchMaximumThreadGroupsPerDimension">
             <summary>Constant DispatchMaximumThreadGroupsPerDimension.</summary>
             <unmanaged>D3D11_CS_DISPATCH_MAX_THREAD_GROUPS_PER_DIMENSION</unmanaged>
+        </member>
+        <member name="F:SharpDX.Direct3D11.ComputeShaderStage.ThreadidingroupflattenedRegisterComponents">
+            <summary>Constant ThreadidingroupflattenedRegisterComponents.</summary>
+            <unmanaged>D3D11_CS_THREADIDINGROUPFLATTENED_REGISTER_COMPONENTS</unmanaged>
+        </member>
+        <member name="F:SharpDX.Direct3D11.ComputeShaderStage.ThreadGroupSharedMemoryRegisterCount">
+            <summary>Constant ThreadGroupSharedMemoryRegisterCount.</summary>
+            <unmanaged>D3D11_CS_TGSM_REGISTER_COUNT</unmanaged>
         </member>
         <member name="F:SharpDX.Direct3D11.ComputeShaderStage.ThreadidingroupRegisterComponents">
             <summary>Constant ThreadidingroupRegisterComponents.</summary>
@@ -5263,25 +5321,17 @@
             <summary>Constant ThreadGroupMaximumThreadsPerGroup.</summary>
             <unmanaged>D3D11_CS_THREAD_GROUP_MAX_THREADS_PER_GROUP</unmanaged>
         </member>
-        <member name="F:SharpDX.Direct3D11.ComputeShaderStage.ThreadgroupidRegisterComponents">
-            <summary>Constant ThreadgroupidRegisterComponents.</summary>
-            <unmanaged>D3D11_CS_THREADGROUPID_REGISTER_COMPONENTS</unmanaged>
-        </member>
         <member name="F:SharpDX.Direct3D11.ComputeShaderStage.ThreadgroupidRegisterCount">
             <summary>Constant ThreadgroupidRegisterCount.</summary>
             <unmanaged>D3D11_CS_THREADGROUPID_REGISTER_COUNT</unmanaged>
         </member>
-        <member name="F:SharpDX.Direct3D11.ComputeShaderStage.ThreadGroupSharedMemoryRegisterCount">
-            <summary>Constant ThreadGroupSharedMemoryRegisterCount.</summary>
-            <unmanaged>D3D11_CS_TGSM_REGISTER_COUNT</unmanaged>
+        <member name="F:SharpDX.Direct3D11.ComputeShaderStage.ThreadgroupidRegisterComponents">
+            <summary>Constant ThreadgroupidRegisterComponents.</summary>
+            <unmanaged>D3D11_CS_THREADGROUPID_REGISTER_COMPONENTS</unmanaged>
         </member>
         <member name="F:SharpDX.Direct3D11.ComputeShaderStage.ThreadGroupMaximumY">
             <summary>Constant ThreadGroupMaximumY.</summary>
             <unmanaged>D3D11_CS_THREAD_GROUP_MAX_Y</unmanaged>
-        </member>
-        <member name="F:SharpDX.Direct3D11.ComputeShaderStage.ThreadLocalTempRegisterPool">
-            <summary>Constant ThreadLocalTempRegisterPool.</summary>
-            <unmanaged>D3D11_CS_THREAD_LOCAL_TEMP_REGISTER_POOL</unmanaged>
         </member>
         <member name="F:SharpDX.Direct3D11.ComputeShaderStage.ThreadidingroupRegisterCount">
             <summary>Constant ThreadidingroupRegisterCount.</summary>
@@ -5290,10 +5340,6 @@
         <member name="F:SharpDX.Direct3D11.ComputeShaderStage.ThreadidingroupflattenedRegisterCount">
             <summary>Constant ThreadidingroupflattenedRegisterCount.</summary>
             <unmanaged>D3D11_CS_THREADIDINGROUPFLATTENED_REGISTER_COUNT</unmanaged>
-        </member>
-        <member name="F:SharpDX.Direct3D11.ComputeShaderStage.ThreadGroupMaximumX">
-            <summary>Constant ThreadGroupMaximumX.</summary>
-            <unmanaged>D3D11_CS_THREAD_GROUP_MAX_X</unmanaged>
         </member>
         <member name="F:SharpDX.Direct3D11.ComputeShaderStage.ThreadGroupMinimumZ">
             <summary>Constant ThreadGroupMinimumZ.</summary>
@@ -5311,25 +5357,25 @@
             <summary>Constant ThreadidRegisterComponents.</summary>
             <unmanaged>D3D11_CS_THREADID_REGISTER_COMPONENTS</unmanaged>
         </member>
-        <member name="F:SharpDX.Direct3D11.ComputeShaderStage.ThreadidRegisterCount">
-            <summary>Constant ThreadidRegisterCount.</summary>
-            <unmanaged>D3D11_CS_THREADID_REGISTER_COUNT</unmanaged>
-        </member>
-        <member name="F:SharpDX.Direct3D11.ComputeShaderStage.ThreadGroupSharedMemoryResourceRegisterComponents">
-            <summary>Constant ThreadGroupSharedMemoryResourceRegisterComponents.</summary>
-            <unmanaged>D3D11_CS_TGSM_RESOURCE_REGISTER_COMPONENTS</unmanaged>
-        </member>
         <member name="F:SharpDX.Direct3D11.ComputeShaderStage.ThreadGroupMinimumY">
             <summary>Constant ThreadGroupMinimumY.</summary>
             <unmanaged>D3D11_CS_THREAD_GROUP_MIN_Y</unmanaged>
         </member>
-        <member name="F:SharpDX.Direct3D11.ComputeShaderStage.ThreadidingroupflattenedRegisterComponents">
-            <summary>Constant ThreadidingroupflattenedRegisterComponents.</summary>
-            <unmanaged>D3D11_CS_THREADIDINGROUPFLATTENED_REGISTER_COMPONENTS</unmanaged>
+        <member name="F:SharpDX.Direct3D11.ComputeShaderStage.ThreadLocalTempRegisterPool">
+            <summary>Constant ThreadLocalTempRegisterPool.</summary>
+            <unmanaged>D3D11_CS_THREAD_LOCAL_TEMP_REGISTER_POOL</unmanaged>
+        </member>
+        <member name="F:SharpDX.Direct3D11.ComputeShaderStage.ThreadidRegisterCount">
+            <summary>Constant ThreadidRegisterCount.</summary>
+            <unmanaged>D3D11_CS_THREADID_REGISTER_COUNT</unmanaged>
         </member>
         <member name="F:SharpDX.Direct3D11.ComputeShaderStage.ThreadGroupMinimumX">
             <summary>Constant ThreadGroupMinimumX.</summary>
             <unmanaged>D3D11_CS_THREAD_GROUP_MIN_X</unmanaged>
+        </member>
+        <member name="F:SharpDX.Direct3D11.ComputeShaderStage.ThreadGroupSharedMemoryResourceRegisterComponents">
+            <summary>Constant ThreadGroupSharedMemoryResourceRegisterComponents.</summary>
+            <unmanaged>D3D11_CS_TGSM_RESOURCE_REGISTER_COMPONENTS</unmanaged>
         </member>
         <member name="M:SharpDX.Direct3D11.ComputeShaderStage.GetUnorderedAccessViews(System.Int32,System.Int32)">
             <summary>	
@@ -5594,14 +5640,6 @@
             <summary>Constant VertexIdBitCount.</summary>
             <unmanaged>D3D11_IA_VERTEX_ID_BIT_COUNT</unmanaged>
         </member>
-        <member name="F:SharpDX.Direct3D11.InputAssemblerStage.IntegerArithmeticBitCount">
-            <summary>Constant IntegerArithmeticBitCount.</summary>
-            <unmanaged>D3D11_IA_INTEGER_ARITHMETIC_BIT_COUNT</unmanaged>
-        </member>
-        <member name="F:SharpDX.Direct3D11.InputAssemblerStage.VertexInputResourceSlotCount">
-            <summary>Constant VertexInputResourceSlotCount.</summary>
-            <unmanaged>D3D11_IA_VERTEX_INPUT_RESOURCE_SLOT_COUNT</unmanaged>
-        </member>
         <member name="F:SharpDX.Direct3D11.InputAssemblerStage.DefaultIndexBufferOffsetInBytes">
             <summary>Constant DefaultIndexBufferOffsetInBytes.</summary>
             <unmanaged>D3D11_IA_DEFAULT_INDEX_BUFFER_OFFSET_IN_BYTES</unmanaged>
@@ -5618,17 +5656,25 @@
             <summary>Constant InstanceIdBitCount.</summary>
             <unmanaged>D3D11_IA_INSTANCE_ID_BIT_COUNT</unmanaged>
         </member>
+        <member name="F:SharpDX.Direct3D11.InputAssemblerStage.VertexInputResourceSlotCount">
+            <summary>Constant VertexInputResourceSlotCount.</summary>
+            <unmanaged>D3D11_IA_VERTEX_INPUT_RESOURCE_SLOT_COUNT</unmanaged>
+        </member>
+        <member name="F:SharpDX.Direct3D11.InputAssemblerStage.IntegerArithmeticBitCount">
+            <summary>Constant IntegerArithmeticBitCount.</summary>
+            <unmanaged>D3D11_IA_INTEGER_ARITHMETIC_BIT_COUNT</unmanaged>
+        </member>
         <member name="F:SharpDX.Direct3D11.InputAssemblerStage.VertexInputStructureElementsComponents">
             <summary>Constant VertexInputStructureElementsComponents.</summary>
             <unmanaged>D3D11_IA_VERTEX_INPUT_STRUCTURE_ELEMENTS_COMPONENTS</unmanaged>
         </member>
-        <member name="F:SharpDX.Direct3D11.InputAssemblerStage.VertexInputStructureElementCount">
-            <summary>Constant VertexInputStructureElementCount.</summary>
-            <unmanaged>D3D11_IA_VERTEX_INPUT_STRUCTURE_ELEMENT_COUNT</unmanaged>
-        </member>
         <member name="F:SharpDX.Direct3D11.InputAssemblerStage.PatchMaximumControlPointCount">
             <summary>Constant PatchMaximumControlPointCount.</summary>
             <unmanaged>D3D11_IA_PATCH_MAX_CONTROL_POINT_COUNT</unmanaged>
+        </member>
+        <member name="F:SharpDX.Direct3D11.InputAssemblerStage.VertexInputStructureElementCount">
+            <summary>Constant VertexInputStructureElementCount.</summary>
+            <unmanaged>D3D11_IA_VERTEX_INPUT_STRUCTURE_ELEMENT_COUNT</unmanaged>
         </member>
         <member name="F:SharpDX.Direct3D11.InputAssemblerStage.PrimitiveIdBitCount">
             <summary>Constant PrimitiveIdBitCount.</summary>
@@ -18808,237 +18854,6 @@
             <unmanaged>None</unmanaged>	
             <unmanaged-short>None</unmanaged-short>	
         </member>
-        <member name="T:SharpDX.Direct3D11.ShaderTrackingOption">
-            <summary>	
-            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps only</p><p>Options that specify how to perform shader debug tracking.</p>	
-            </summary>	
-            <remarks>	
-            <p>This enumeration is used by the <strong><see cref="M:SharpDX.Direct3D11.TracingDevice.SetShaderTrackingOptions(SharpDX.ComObject,System.Int32)"/></strong>, <strong><see cref="M:SharpDX.Direct3D11.TracingDevice.SetShaderTrackingOptionsByType(System.Int32,System.Int32)"/></strong>, <strong><see cref="M:SharpDX.Direct3D11.RefTrackingOptions.SetTrackingOptions(System.Int32)"/></strong>, and <strong><see cref="M:SharpDX.Direct3D11.RefDefaultTrackingOptions.SetTrackingOptions(System.Int32,System.Int32)"/></strong> methods.</p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_SHADER_TRACKING_OPTION']/*"/>	
-            <msdn-id>hh404501</msdn-id>	
-            <unmanaged>D3D11_SHADER_TRACKING_OPTION</unmanaged>	
-            <unmanaged-short>D3D11_SHADER_TRACKING_OPTION</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.ShaderTrackingOption.Ignore">
-            <summary>	
-            <dd> <p>No debug tracking is performed.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_SHADER_TRACKING_OPTION_IGNORE']/*"/>	
-            <msdn-id>hh404501</msdn-id>	
-            <unmanaged>D3D11_SHADER_TRACKING_OPTION_IGNORE</unmanaged>	
-            <unmanaged-short>D3D11_SHADER_TRACKING_OPTION_IGNORE</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.ShaderTrackingOption.TrackUninitialized">
-            <summary>	
-            <dd> <p>Track the reading of uninitialized data.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_SHADER_TRACKING_OPTION_TRACK_UNINITIALIZED']/*"/>	
-            <msdn-id>hh404501</msdn-id>	
-            <unmanaged>D3D11_SHADER_TRACKING_OPTION_TRACK_UNINITIALIZED</unmanaged>	
-            <unmanaged-short>D3D11_SHADER_TRACKING_OPTION_TRACK_UNINITIALIZED</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.ShaderTrackingOption.TrackRaw">
-            <summary>	
-            <dd> <p>Track read-after-write hazards.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_SHADER_TRACKING_OPTION_TRACK_RAW']/*"/>	
-            <msdn-id>hh404501</msdn-id>	
-            <unmanaged>D3D11_SHADER_TRACKING_OPTION_TRACK_RAW</unmanaged>	
-            <unmanaged-short>D3D11_SHADER_TRACKING_OPTION_TRACK_RAW</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.ShaderTrackingOption.TrackWar">
-            <summary>	
-            <dd> <p>Track write-after-read hazards.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_SHADER_TRACKING_OPTION_TRACK_WAR']/*"/>	
-            <msdn-id>hh404501</msdn-id>	
-            <unmanaged>D3D11_SHADER_TRACKING_OPTION_TRACK_WAR</unmanaged>	
-            <unmanaged-short>D3D11_SHADER_TRACKING_OPTION_TRACK_WAR</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.ShaderTrackingOption.TrackWaw">
-            <summary>	
-            <dd> <p>Track write-after-write hazards.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_SHADER_TRACKING_OPTION_TRACK_WAW']/*"/>	
-            <msdn-id>hh404501</msdn-id>	
-            <unmanaged>D3D11_SHADER_TRACKING_OPTION_TRACK_WAW</unmanaged>	
-            <unmanaged-short>D3D11_SHADER_TRACKING_OPTION_TRACK_WAW</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.ShaderTrackingOption.AllowSame">
-            <summary>	
-            <dd> <p>Track that hazards are allowed in which data is written but the value does not change.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_SHADER_TRACKING_OPTION_ALLOW_SAME']/*"/>	
-            <msdn-id>hh404501</msdn-id>	
-            <unmanaged>D3D11_SHADER_TRACKING_OPTION_ALLOW_SAME</unmanaged>	
-            <unmanaged-short>D3D11_SHADER_TRACKING_OPTION_ALLOW_SAME</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.ShaderTrackingOption.TrackAtomicConsistency">
-            <summary>	
-            <dd> <p>Track that only one type of atomic operation is used on an address.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_SHADER_TRACKING_OPTION_TRACK_ATOMIC_CONSISTENCY']/*"/>	
-            <msdn-id>hh404501</msdn-id>	
-            <unmanaged>D3D11_SHADER_TRACKING_OPTION_TRACK_ATOMIC_CONSISTENCY</unmanaged>	
-            <unmanaged-short>D3D11_SHADER_TRACKING_OPTION_TRACK_ATOMIC_CONSISTENCY</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.ShaderTrackingOption.TrackRawAcrossThreadgroups">
-            <summary>	
-            <dd> <p>Track read-after-write hazards across thread groups.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_SHADER_TRACKING_OPTION_TRACK_RAW_ACROSS_THREADGROUPS']/*"/>	
-            <msdn-id>hh404501</msdn-id>	
-            <unmanaged>D3D11_SHADER_TRACKING_OPTION_TRACK_RAW_ACROSS_THREADGROUPS</unmanaged>	
-            <unmanaged-short>D3D11_SHADER_TRACKING_OPTION_TRACK_RAW_ACROSS_THREADGROUPS</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.ShaderTrackingOption.TrackWarAcrossThreadgroups">
-            <summary>	
-            <dd> <p>Track write-after-read hazards across thread groups.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_SHADER_TRACKING_OPTION_TRACK_WAR_ACROSS_THREADGROUPS']/*"/>	
-            <msdn-id>hh404501</msdn-id>	
-            <unmanaged>D3D11_SHADER_TRACKING_OPTION_TRACK_WAR_ACROSS_THREADGROUPS</unmanaged>	
-            <unmanaged-short>D3D11_SHADER_TRACKING_OPTION_TRACK_WAR_ACROSS_THREADGROUPS</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.ShaderTrackingOption.TrackWawAcrossThreadgroups">
-            <summary>	
-            <dd> <p>Track write-after-write hazards across thread groups.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_SHADER_TRACKING_OPTION_TRACK_WAW_ACROSS_THREADGROUPS']/*"/>	
-            <msdn-id>hh404501</msdn-id>	
-            <unmanaged>D3D11_SHADER_TRACKING_OPTION_TRACK_WAW_ACROSS_THREADGROUPS</unmanaged>	
-            <unmanaged-short>D3D11_SHADER_TRACKING_OPTION_TRACK_WAW_ACROSS_THREADGROUPS</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.ShaderTrackingOption.TrackAtomicConsistencyAcrossThreadgroups">
-            <summary>	
-            <dd> <p>Track that only one type of atomic operation is used on an address across thread groups.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_SHADER_TRACKING_OPTION_TRACK_ATOMIC_CONSISTENCY_ACROSS_THREADGROUPS']/*"/>	
-            <msdn-id>hh404501</msdn-id>	
-            <unmanaged>D3D11_SHADER_TRACKING_OPTION_TRACK_ATOMIC_CONSISTENCY_ACROSS_THREADGROUPS</unmanaged>	
-            <unmanaged-short>D3D11_SHADER_TRACKING_OPTION_TRACK_ATOMIC_CONSISTENCY_ACROSS_THREADGROUPS</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.ShaderTrackingOption.UnorderedAccessViewSpecificFlags">
-            <summary>	
-            <dd> <p>Track hazards that are specific to unordered access views (UAVs).</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_SHADER_TRACKING_OPTION_UAV_SPECIFIC_FLAGS']/*"/>	
-            <msdn-id>hh404501</msdn-id>	
-            <unmanaged>D3D11_SHADER_TRACKING_OPTION_UAV_SPECIFIC_FLAGS</unmanaged>	
-            <unmanaged-short>D3D11_SHADER_TRACKING_OPTION_UAV_SPECIFIC_FLAGS</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.ShaderTrackingOption.AllHazards">
-            <summary>	
-            <dd> <p>Track all hazards.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_SHADER_TRACKING_OPTION_ALL_HAZARDS']/*"/>	
-            <msdn-id>hh404501</msdn-id>	
-            <unmanaged>D3D11_SHADER_TRACKING_OPTION_ALL_HAZARDS</unmanaged>	
-            <unmanaged-short>D3D11_SHADER_TRACKING_OPTION_ALL_HAZARDS</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.ShaderTrackingOption.AllHazardsAllowingSame">
-            <summary>	
-            <dd> <p>Track all hazards and track that hazards are allowed in which data is written but the value does not change.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_SHADER_TRACKING_OPTION_ALL_HAZARDS_ALLOWING_SAME']/*"/>	
-            <msdn-id>hh404501</msdn-id>	
-            <unmanaged>D3D11_SHADER_TRACKING_OPTION_ALL_HAZARDS_ALLOWING_SAME</unmanaged>	
-            <unmanaged-short>D3D11_SHADER_TRACKING_OPTION_ALL_HAZARDS_ALLOWING_SAME</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.ShaderTrackingOption.AllOptions">
-            <summary>	
-            <dd> <p>All of the preceding tracking options are set except <strong><see cref="F:SharpDX.Direct3D11.ShaderTrackingOption.Ignore"/></strong>.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_SHADER_TRACKING_OPTION_ALL_OPTIONS']/*"/>	
-            <msdn-id>hh404501</msdn-id>	
-            <unmanaged>D3D11_SHADER_TRACKING_OPTION_ALL_OPTIONS</unmanaged>	
-            <unmanaged-short>D3D11_SHADER_TRACKING_OPTION_ALL_OPTIONS</unmanaged-short>	
-        </member>
-        <member name="T:SharpDX.Direct3D11.ShaderTrackingResourceType">
-            <summary>	
-            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps only</p><p>Indicates which resource types to track.</p>	
-            </summary>	
-            <remarks>	
-            <p>The <strong><see cref="M:SharpDX.Direct3D11.TracingDevice.SetShaderTrackingOptionsByType(System.Int32,System.Int32)"/></strong> or <strong><see cref="M:SharpDX.Direct3D11.RefDefaultTrackingOptions.SetTrackingOptions(System.Int32,System.Int32)"/></strong> method tracks a specific type of resource.</p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_SHADER_TRACKING_RESOURCE_TYPE']/*"/>	
-            <msdn-id>hh404503</msdn-id>	
-            <unmanaged>D3D11_SHADER_TRACKING_RESOURCE_TYPE</unmanaged>	
-            <unmanaged-short>D3D11_SHADER_TRACKING_RESOURCE_TYPE</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.ShaderTrackingResourceType.None">
-            <summary>	
-            <dd> <p>No resource types are tracked.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_SHADER_TRACKING_RESOURCE_TYPE_NONE']/*"/>	
-            <msdn-id>hh404503</msdn-id>	
-            <unmanaged>D3D11_SHADER_TRACKING_RESOURCE_TYPE_NONE</unmanaged>	
-            <unmanaged-short>D3D11_SHADER_TRACKING_RESOURCE_TYPE_NONE</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.ShaderTrackingResourceType.UnorderedAccessViewDevicememory">
-            <summary>	
-            <dd> <p>Track device memory that is created with unordered access view (UAV) bind flags.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_SHADER_TRACKING_RESOURCE_TYPE_UAV_DEVICEMEMORY']/*"/>	
-            <msdn-id>hh404503</msdn-id>	
-            <unmanaged>D3D11_SHADER_TRACKING_RESOURCE_TYPE_UAV_DEVICEMEMORY</unmanaged>	
-            <unmanaged-short>D3D11_SHADER_TRACKING_RESOURCE_TYPE_UAV_DEVICEMEMORY</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.ShaderTrackingResourceType.NonUnorderedAccessViewDevicememory">
-            <summary>	
-            <dd> <p>Track device memory that is created without UAV bind flags.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_SHADER_TRACKING_RESOURCE_TYPE_NON_UAV_DEVICEMEMORY']/*"/>	
-            <msdn-id>hh404503</msdn-id>	
-            <unmanaged>D3D11_SHADER_TRACKING_RESOURCE_TYPE_NON_UAV_DEVICEMEMORY</unmanaged>	
-            <unmanaged-short>D3D11_SHADER_TRACKING_RESOURCE_TYPE_NON_UAV_DEVICEMEMORY</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.ShaderTrackingResourceType.AllDevicememory">
-            <summary>	
-            <dd> <p>Track all device memory.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_SHADER_TRACKING_RESOURCE_TYPE_ALL_DEVICEMEMORY']/*"/>	
-            <msdn-id>hh404503</msdn-id>	
-            <unmanaged>D3D11_SHADER_TRACKING_RESOURCE_TYPE_ALL_DEVICEMEMORY</unmanaged>	
-            <unmanaged-short>D3D11_SHADER_TRACKING_RESOURCE_TYPE_ALL_DEVICEMEMORY</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.ShaderTrackingResourceType.GroupsharedMemory">
-            <summary>	
-            <dd> <p>Track all shaders that use group shared memory.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_SHADER_TRACKING_RESOURCE_TYPE_GROUPSHARED_MEMORY']/*"/>	
-            <msdn-id>hh404503</msdn-id>	
-            <unmanaged>D3D11_SHADER_TRACKING_RESOURCE_TYPE_GROUPSHARED_MEMORY</unmanaged>	
-            <unmanaged-short>D3D11_SHADER_TRACKING_RESOURCE_TYPE_GROUPSHARED_MEMORY</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.ShaderTrackingResourceType.AllSharedMemory">
-            <summary>	
-            <dd> <p>Track all device memory except device memory that is created without UAV bind flags.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_SHADER_TRACKING_RESOURCE_TYPE_ALL_SHARED_MEMORY']/*"/>	
-            <msdn-id>hh404503</msdn-id>	
-            <unmanaged>D3D11_SHADER_TRACKING_RESOURCE_TYPE_ALL_SHARED_MEMORY</unmanaged>	
-            <unmanaged-short>D3D11_SHADER_TRACKING_RESOURCE_TYPE_ALL_SHARED_MEMORY</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.ShaderTrackingResourceType.GroupsharedNonUnorderedAccessView">
-            <summary>	
-            <dd> <p>Track all device memory except device memory that is created with UAV bind flags.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_SHADER_TRACKING_RESOURCE_TYPE_GROUPSHARED_NON_UAV']/*"/>	
-            <msdn-id>hh404503</msdn-id>	
-            <unmanaged>D3D11_SHADER_TRACKING_RESOURCE_TYPE_GROUPSHARED_NON_UAV</unmanaged>	
-            <unmanaged-short>D3D11_SHADER_TRACKING_RESOURCE_TYPE_GROUPSHARED_NON_UAV</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.ShaderTrackingResourceType.All">
-            <summary>	
-            <dd> <p>Track all memory on the device.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_SHADER_TRACKING_RESOURCE_TYPE_ALL']/*"/>	
-            <msdn-id>hh404503</msdn-id>	
-            <unmanaged>D3D11_SHADER_TRACKING_RESOURCE_TYPE_ALL</unmanaged>	
-            <unmanaged-short>D3D11_SHADER_TRACKING_RESOURCE_TYPE_ALL</unmanaged-short>	
-        </member>
         <member name="T:SharpDX.Direct3D11.StandardMultisampleQualityLevels">
             <summary>	
             <p>Specifies a multi-sample pattern type.</p>	
@@ -21104,6 +20919,89 @@
             <unmanaged>void ID3D11DeviceContext::DSGetConstantBuffers([In] unsigned int StartSlot,[In] unsigned int NumBuffers,[Out, Buffer, Optional] ID3D11Buffer** ppConstantBuffers)</unmanaged>	
             <unmanaged-short>ID3D11DeviceContext::DSGetConstantBuffers</unmanaged-short>	
         </member>
+        <member name="T:SharpDX.Direct3D11.DrawingSurfaceRuntimeHost">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDrawingSurfaceRuntimeHostNative']/*"/>	
+            <unmanaged>IDrawingSurfaceRuntimeHostNative</unmanaged>	
+            <unmanaged-short>IDrawingSurfaceRuntimeHostNative</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.Direct3D11.DrawingSurfaceRuntimeHost.#ctor(System.IntPtr)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.Direct3D11.DrawingSurfaceRuntimeHost"/> class.
+            </summary>
+            <param name="nativePtr">The native pointer.</param>	
+        </member>
+        <member name="M:SharpDX.Direct3D11.DrawingSurfaceRuntimeHost.op_Explicit(System.IntPtr)~SharpDX.Direct3D11.DrawingSurfaceRuntimeHost">
+            <summary>
+            Performs an explicit conversion from <see cref="T:System.IntPtr"/> to <see cref="T:SharpDX.Direct3D11.DrawingSurfaceRuntimeHost"/>. (This method is a shortcut to <see cref="P:SharpDX.CppObject.NativePointer"/>) 
+            </summary>
+            <param name="nativePointer">The native pointer.</param>
+            <returns>
+            The result of the conversion.
+            </returns>
+        </member>
+        <member name="M:SharpDX.Direct3D11.DrawingSurfaceRuntimeHost.RequestAdditionalFrame">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <returns>No documentation.</returns>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDrawingSurfaceRuntimeHostNative::RequestAdditionalFrame']/*"/>	
+            <unmanaged>HRESULT IDrawingSurfaceRuntimeHostNative::RequestAdditionalFrame()</unmanaged>	
+            <unmanaged-short>IDrawingSurfaceRuntimeHostNative::RequestAdditionalFrame</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.Direct3D11.DrawingSurfaceRuntimeHost.CreateSynchronizedTexture(SharpDX.Direct3D11.Texture2D)">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <param name="texture">No documentation.</param>	
+            <returns>No documentation.</returns>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDrawingSurfaceRuntimeHostNative::CreateSynchronizedTexture']/*"/>	
+            <unmanaged>HRESULT IDrawingSurfaceRuntimeHostNative::CreateSynchronizedTexture([In] ID3D11Texture2D* texture,[Out] IDrawingSurfaceSynchronizedTextureNative** synchronizedTexture)</unmanaged>	
+            <unmanaged-short>IDrawingSurfaceRuntimeHostNative::CreateSynchronizedTexture</unmanaged-short>	
+        </member>
+        <member name="T:SharpDX.Direct3D11.DrawingSurfaceSynchronizedTexture">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDrawingSurfaceSynchronizedTextureNative']/*"/>	
+            <unmanaged>IDrawingSurfaceSynchronizedTextureNative</unmanaged>	
+            <unmanaged-short>IDrawingSurfaceSynchronizedTextureNative</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.Direct3D11.DrawingSurfaceSynchronizedTexture.#ctor(System.IntPtr)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.Direct3D11.DrawingSurfaceSynchronizedTexture"/> class.
+            </summary>
+            <param name="nativePtr">The native pointer.</param>	
+        </member>
+        <member name="M:SharpDX.Direct3D11.DrawingSurfaceSynchronizedTexture.op_Explicit(System.IntPtr)~SharpDX.Direct3D11.DrawingSurfaceSynchronizedTexture">
+            <summary>
+            Performs an explicit conversion from <see cref="T:System.IntPtr"/> to <see cref="T:SharpDX.Direct3D11.DrawingSurfaceSynchronizedTexture"/>. (This method is a shortcut to <see cref="P:SharpDX.CppObject.NativePointer"/>) 
+            </summary>
+            <param name="nativePointer">The native pointer.</param>
+            <returns>
+            The result of the conversion.
+            </returns>
+        </member>
+        <member name="M:SharpDX.Direct3D11.DrawingSurfaceSynchronizedTexture.BeginDraw">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <returns>No documentation.</returns>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDrawingSurfaceSynchronizedTextureNative::BeginDraw']/*"/>	
+            <unmanaged>HRESULT IDrawingSurfaceSynchronizedTextureNative::BeginDraw()</unmanaged>	
+            <unmanaged-short>IDrawingSurfaceSynchronizedTextureNative::BeginDraw</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.Direct3D11.DrawingSurfaceSynchronizedTexture.EndDraw">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <returns>No documentation.</returns>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDrawingSurfaceSynchronizedTextureNative::EndDraw']/*"/>	
+            <unmanaged>HRESULT IDrawingSurfaceSynchronizedTextureNative::EndDraw()</unmanaged>	
+            <unmanaged-short>IDrawingSurfaceSynchronizedTextureNative::EndDraw</unmanaged-short>	
+        </member>
         <member name="T:SharpDX.Direct3D11.GeometryShader">
             <summary>	
             <p>A geometry-shader interface manages an executable program (a geometry shader) that controls the geometry-shader stage.</p>	
@@ -21198,7 +21096,7 @@
             <param name="numBuffers"><dd>  <p>Number of buffers to set (ranges from 0 to <strong><see cref="F:SharpDX.Direct3D11.CommonShaderStage.ConstantBufferApiSlotCount"/></strong> - <em>StartSlot</em>).</p> </dd></param>	
             <param name="constantBuffersOut"><dd>  <p>Array of constant buffers (see <strong><see cref="T:SharpDX.Direct3D11.Buffer"/></strong>) being given to the device.</p> </dd></param>	
             <remarks>	
-            <p> The method will hold a reference to the interfaces passed in. This differs from the device state behavior in Direct3D 10. </p><p>You can't use the <strong><see cref="!:SharpDX.D3DCompiler.ConstantBuffer"/></strong> interface to get information about what is currently bound to the pipeline in the device context. But you can use <strong><see cref="!:SharpDX.D3DCompiler.ConstantBuffer"/></strong> to get information from a compiled shader. For example, you can use <strong><see cref="!:SharpDX.D3DCompiler.ConstantBuffer"/></strong> and <strong><see cref="!:SharpDX.D3DCompiler.ShaderReflectionVariable"/></strong> to determine the slot in which a geometry shader expects a constant buffer. You can then pass this slot number to <strong>GSSetConstantBuffers</strong> to set the constant buffer. You can call the <strong>D3D11Reflect</strong> function to retrieve the address of a reference to the <strong><see cref="!:SharpDX.D3DCompiler.ShaderReflection"/></strong> interface and then call <strong><see cref="!:SharpDX.D3DCompiler.ShaderReflection.GetConstantBuffer"/></strong> to get a reference to <strong><see cref="!:SharpDX.D3DCompiler.ConstantBuffer"/></strong>.</p><p>The Direct3D 11.1 runtime, which is available starting with Windows Developer Preview, can bind a larger number of <strong><see cref="T:SharpDX.Direct3D11.Buffer"/></strong> resources to the shader than the maximum constant buffer size that is supported by shaders (4096 constants ? 4*32-bit components each).  When you bind such a large buffer, the shader can access only the first 4096 4*32-bit component constants in the buffer, as if 4096 constants is the full size of the buffer.  </p><p>If the application wants the shader to access other parts of the buffer, it must call the <strong>GSSetConstantBuffers1</strong> method instead. </p>	
+            <p> The method will hold a reference to the interfaces passed in. This differs from the device state behavior in Direct3D 10. </p><p>You can't use the <strong>ID3D11ShaderReflectionConstantBuffer</strong> interface to get information about what is currently bound to the pipeline in the device context. But you can use <strong>ID3D11ShaderReflectionConstantBuffer</strong> to get information from a compiled shader. For example, you can use <strong>ID3D11ShaderReflectionConstantBuffer</strong> and <strong>ID3D11ShaderReflectionVariable</strong> to determine the slot in which a geometry shader expects a constant buffer. You can then pass this slot number to <strong>GSSetConstantBuffers</strong> to set the constant buffer. You can call the <strong>D3D11Reflect</strong> function to retrieve the address of a reference to the <strong>ID3D11ShaderReflection</strong> interface and then call <strong>ID3D11ShaderReflection::GetConstantBufferByName</strong> to get a reference to <strong>ID3D11ShaderReflectionConstantBuffer</strong>.</p><p>The Direct3D 11.1 runtime, which is available starting with Windows Developer Preview, can bind a larger number of <strong><see cref="T:SharpDX.Direct3D11.Buffer"/></strong> resources to the shader than the maximum constant buffer size that is supported by shaders (4096 constants ? 4*32-bit components each).  When you bind such a large buffer, the shader can access only the first 4096 4*32-bit component constants in the buffer, as if 4096 constants is the full size of the buffer.  </p><p>If the application wants the shader to access other parts of the buffer, it must call the <strong>GSSetConstantBuffers1</strong> method instead. </p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D11DeviceContext::GSSetConstantBuffers']/*"/>	
             <msdn-id>ff476436</msdn-id>	
@@ -22197,10 +22095,6 @@
             <summary>Constant InputRegisterComponentBitCount.</summary>
             <unmanaged>D3D11_PS_INPUT_REGISTER_COMPONENT_BIT_COUNT</unmanaged>
         </member>
-        <member name="F:SharpDX.Direct3D11.PixelShaderStage.InputRegisterCount">
-            <summary>Constant InputRegisterCount.</summary>
-            <unmanaged>D3D11_PS_INPUT_REGISTER_COUNT</unmanaged>
-        </member>
         <member name="F:SharpDX.Direct3D11.PixelShaderStage.InputRegisterReadPorts">
             <summary>Constant InputRegisterReadPorts.</summary>
             <unmanaged>D3D11_PS_INPUT_REGISTER_READ_PORTS</unmanaged>
@@ -22217,9 +22111,9 @@
             <summary>Constant OutputRegisterCount.</summary>
             <unmanaged>D3D11_PS_OUTPUT_REGISTER_COUNT</unmanaged>
         </member>
-        <member name="F:SharpDX.Direct3D11.PixelShaderStage.OutputMaskRegisterCount">
-            <summary>Constant OutputMaskRegisterCount.</summary>
-            <unmanaged>D3D11_PS_OUTPUT_MASK_REGISTER_COUNT</unmanaged>
+        <member name="F:SharpDX.Direct3D11.PixelShaderStage.InputRegisterCount">
+            <summary>Constant InputRegisterCount.</summary>
+            <unmanaged>D3D11_PS_INPUT_REGISTER_COUNT</unmanaged>
         </member>
         <member name="F:SharpDX.Direct3D11.PixelShaderStage.OutputRegisterComponents">
             <summary>Constant OutputRegisterComponents.</summary>
@@ -22229,17 +22123,17 @@
             <summary>Constant FrontfacingFalseValue.</summary>
             <unmanaged>D3D11_PS_FRONTFACING_FALSE_VALUE</unmanaged>
         </member>
-        <member name="F:SharpDX.Direct3D11.PixelShaderStage.InputRegisterComponents">
-            <summary>Constant InputRegisterComponents.</summary>
-            <unmanaged>D3D11_PS_INPUT_REGISTER_COMPONENTS</unmanaged>
+        <member name="F:SharpDX.Direct3D11.PixelShaderStage.OutputMaskRegisterCount">
+            <summary>Constant OutputMaskRegisterCount.</summary>
+            <unmanaged>D3D11_PS_OUTPUT_MASK_REGISTER_COUNT</unmanaged>
         </member>
         <member name="F:SharpDX.Direct3D11.PixelShaderStage.LegacyPixelCenterFractionalComponent">
             <summary>Constant LegacyPixelCenterFractionalComponent.</summary>
             <unmanaged>D3D11_PS_LEGACY_PIXEL_CENTER_FRACTIONAL_COMPONENT</unmanaged>
         </member>
-        <member name="F:SharpDX.Direct3D11.PixelShaderStage.OutputDepthRegisterComponentBitCount">
-            <summary>Constant OutputDepthRegisterComponentBitCount.</summary>
-            <unmanaged>D3D11_PS_OUTPUT_DEPTH_REGISTER_COMPONENT_BIT_COUNT</unmanaged>
+        <member name="F:SharpDX.Direct3D11.PixelShaderStage.InputRegisterReadsPerInst">
+            <summary>Constant InputRegisterReadsPerInst.</summary>
+            <unmanaged>D3D11_PS_INPUT_REGISTER_READS_PER_INST</unmanaged>
         </member>
         <member name="F:SharpDX.Direct3D11.PixelShaderStage.OutputMaskRegisterComponentBitCount">
             <summary>Constant OutputMaskRegisterComponentBitCount.</summary>
@@ -22253,13 +22147,13 @@
             <summary>Constant FrontfacingDefaultValue.</summary>
             <unmanaged>D3D11_PS_FRONTFACING_DEFAULT_VALUE</unmanaged>
         </member>
+        <member name="F:SharpDX.Direct3D11.PixelShaderStage.OutputDepthRegisterComponentBitCount">
+            <summary>Constant OutputDepthRegisterComponentBitCount.</summary>
+            <unmanaged>D3D11_PS_OUTPUT_DEPTH_REGISTER_COMPONENT_BIT_COUNT</unmanaged>
+        </member>
         <member name="F:SharpDX.Direct3D11.PixelShaderStage.FrontfacingTrueValue">
             <summary>Constant FrontfacingTrueValue.</summary>
             <unmanaged>D3D11_PS_FRONTFACING_TRUE_VALUE</unmanaged>
-        </member>
-        <member name="F:SharpDX.Direct3D11.PixelShaderStage.InputRegisterReadsPerInst">
-            <summary>Constant InputRegisterReadsPerInst.</summary>
-            <unmanaged>D3D11_PS_INPUT_REGISTER_READS_PER_INST</unmanaged>
         </member>
         <member name="F:SharpDX.Direct3D11.PixelShaderStage.OutputDepthRegisterCount">
             <summary>Constant OutputDepthRegisterCount.</summary>
@@ -22268,6 +22162,10 @@
         <member name="F:SharpDX.Direct3D11.PixelShaderStage.OutputDepthRegisterComponents">
             <summary>Constant OutputDepthRegisterComponents.</summary>
             <unmanaged>D3D11_PS_OUTPUT_DEPTH_REGISTER_COMPONENTS</unmanaged>
+        </member>
+        <member name="F:SharpDX.Direct3D11.PixelShaderStage.InputRegisterComponents">
+            <summary>Constant InputRegisterComponents.</summary>
+            <unmanaged>D3D11_PS_INPUT_REGISTER_COMPONENTS</unmanaged>
         </member>
         <member name="M:SharpDX.Direct3D11.PixelShaderStage.#ctor(System.IntPtr)">
             <summary>
@@ -22516,87 +22414,6 @@
             <param name = "device">The device with which to associate the state object.</param>
             <param name = "description">The query description.</param>
             <returns>The newly created object.</returns>
-        </member>
-        <member name="T:SharpDX.Direct3D11.RefDefaultTrackingOptions">
-            <summary>	
-            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>The default tracking interface sets reference default tracking options.</p>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D11RefDefaultTrackingOptions']/*"/>	
-            <msdn-id>hh446832</msdn-id>	
-            <unmanaged>ID3D11RefDefaultTrackingOptions</unmanaged>	
-            <unmanaged-short>ID3D11RefDefaultTrackingOptions</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.Direct3D11.RefDefaultTrackingOptions.#ctor(System.IntPtr)">
-            <summary>
-            Initializes a new instance of the <see cref="T:SharpDX.Direct3D11.RefDefaultTrackingOptions"/> class.
-            </summary>
-            <param name="nativePtr">The native pointer.</param>	
-        </member>
-        <member name="M:SharpDX.Direct3D11.RefDefaultTrackingOptions.op_Explicit(System.IntPtr)~SharpDX.Direct3D11.RefDefaultTrackingOptions">
-            <summary>
-            Performs an explicit conversion from <see cref="T:System.IntPtr"/> to <see cref="T:SharpDX.Direct3D11.RefDefaultTrackingOptions"/>. (This method is a shortcut to <see cref="P:SharpDX.CppObject.NativePointer"/>) 
-            </summary>
-            <param name="nativePointer">The native pointer.</param>
-            <returns>
-            The result of the conversion.
-            </returns>
-        </member>
-        <member name="M:SharpDX.Direct3D11.RefDefaultTrackingOptions.SetTrackingOptions(System.Int32,System.Int32)">
-            <summary>	
-            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Sets graphics processing unit (GPU) debug reference default tracking options for specific resource types.</p>	
-            </summary>	
-            <param name="resourceTypeFlags"><dd> <p>A <strong><see cref="T:SharpDX.Direct3D11.ShaderTrackingResourceType"/></strong>-typed value that specifies the type of resource to track. </p> </dd></param>	
-            <param name="options"><dd> <p>A combination of <strong>D3D11_SHADER_TRACKING_OPTIONS</strong>-typed flags that are combined by using a bitwise <strong>OR</strong> operation. The resulting value identifies tracking options. If a flag is present, the tracking option that the flag represents is set to "on"; otherwise the tracking option is set to "off."</p> </dd></param>	
-            <returns><p>This method returns one of the Direct3D 11 return codes.</p></returns>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D11RefDefaultTrackingOptions::SetTrackingOptions']/*"/>	
-            <msdn-id>hh446834</msdn-id>	
-            <unmanaged>HRESULT ID3D11RefDefaultTrackingOptions::SetTrackingOptions([In] unsigned int ResourceTypeFlags,[In] unsigned int Options)</unmanaged>	
-            <unmanaged-short>ID3D11RefDefaultTrackingOptions::SetTrackingOptions</unmanaged-short>	
-        </member>
-        <member name="T:SharpDX.Direct3D11.RefTrackingOptions">
-            <summary>	
-            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>The tracking interface sets reference tracking options.</p>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D11RefTrackingOptions']/*"/>	
-            <msdn-id>hh446836</msdn-id>	
-            <unmanaged>ID3D11RefTrackingOptions</unmanaged>	
-            <unmanaged-short>ID3D11RefTrackingOptions</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.Direct3D11.RefTrackingOptions.#ctor(System.IntPtr)">
-            <summary>
-            Initializes a new instance of the <see cref="T:SharpDX.Direct3D11.RefTrackingOptions"/> class.
-            </summary>
-            <param name="nativePtr">The native pointer.</param>	
-        </member>
-        <member name="M:SharpDX.Direct3D11.RefTrackingOptions.op_Explicit(System.IntPtr)~SharpDX.Direct3D11.RefTrackingOptions">
-            <summary>
-            Performs an explicit conversion from <see cref="T:System.IntPtr"/> to <see cref="T:SharpDX.Direct3D11.RefTrackingOptions"/>. (This method is a shortcut to <see cref="P:SharpDX.CppObject.NativePointer"/>) 
-            </summary>
-            <param name="nativePointer">The native pointer.</param>
-            <returns>
-            The result of the conversion.
-            </returns>
-        </member>
-        <member name="M:SharpDX.Direct3D11.RefTrackingOptions.SetTrackingOptions(System.Int32)">
-            <summary>	
-            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Sets graphics processing unit (GPU) debug reference tracking options.</p>	
-            </summary>	
-            <param name="uOptions"><dd> <p>A combination of <strong>D3D11_SHADER_TRACKING_OPTIONS</strong>-typed flags that are combined by using a bitwise <strong>OR</strong> operation. The resulting value identifies tracking options. If a flag is present, the tracking option that the flag represents is set to "on"; otherwise the tracking option is set to "off."</p> </dd></param>	
-            <returns><p>This method returns one of the Direct3D 11 return codes.</p></returns>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D11RefTrackingOptions::SetTrackingOptions']/*"/>	
-            <msdn-id>hh446838</msdn-id>	
-            <unmanaged>HRESULT ID3D11RefTrackingOptions::SetTrackingOptions([In] unsigned int uOptions)</unmanaged>	
-            <unmanaged-short>ID3D11RefTrackingOptions::SetTrackingOptions</unmanaged-short>	
-        </member>
-        <member name="P:SharpDX.Direct3D11.RefTrackingOptions.TrackingOptions">
-            <summary>	
-            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Sets graphics processing unit (GPU) debug reference tracking options.</p>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D11RefTrackingOptions::SetTrackingOptions']/*"/>	
-            <msdn-id>hh446838</msdn-id>	
-            <unmanaged>SetTrackingOptions</unmanaged>	
-            <unmanaged-short>SetTrackingOptions</unmanaged-short>	
-            <unmanaged>HRESULT ID3D11RefTrackingOptions::SetTrackingOptions([In] unsigned int uOptions)</unmanaged>
         </member>
         <member name="T:SharpDX.Direct3D11.RenderTargetView">
             <summary>	
@@ -23033,57 +22850,6 @@
             <unmanaged>GetDesc</unmanaged>	
             <unmanaged-short>GetDesc</unmanaged-short>	
             <unmanaged>void ID3D11Texture3D::GetDesc([Out] D3D11_TEXTURE3D_DESC* pDesc)</unmanaged>
-        </member>
-        <member name="T:SharpDX.Direct3D11.TracingDevice">
-            <summary>	
-            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Sets the reference rasterizer's default race-condition tracking options for the specified resource types.</p>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D11TracingDevice']/*"/>	
-            <msdn-id>hh446874</msdn-id>	
-            <unmanaged>ID3D11TracingDevice</unmanaged>	
-            <unmanaged-short>ID3D11TracingDevice</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.Direct3D11.TracingDevice.#ctor(System.IntPtr)">
-            <summary>
-            Initializes a new instance of the <see cref="T:SharpDX.Direct3D11.TracingDevice"/> class.
-            </summary>
-            <param name="nativePtr">The native pointer.</param>	
-        </member>
-        <member name="M:SharpDX.Direct3D11.TracingDevice.op_Explicit(System.IntPtr)~SharpDX.Direct3D11.TracingDevice">
-            <summary>
-            Performs an explicit conversion from <see cref="T:System.IntPtr"/> to <see cref="T:SharpDX.Direct3D11.TracingDevice"/>. (This method is a shortcut to <see cref="P:SharpDX.CppObject.NativePointer"/>) 
-            </summary>
-            <param name="nativePointer">The native pointer.</param>
-            <returns>
-            The result of the conversion.
-            </returns>
-        </member>
-        <member name="M:SharpDX.Direct3D11.TracingDevice.SetShaderTrackingOptionsByType(System.Int32,System.Int32)">
-            <summary>	
-            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Sets the reference rasterizer's default race-condition tracking options for the specified resource types.</p>	
-            </summary>	
-            <param name="resourceTypeFlags"><dd> <p>A <strong><see cref="T:SharpDX.Direct3D11.ShaderTrackingResourceType"/></strong>-typed value that specifies the type of resource to track. </p> </dd></param>	
-            <param name="options"><dd> <p>A combination of <strong>D3D11_SHADER_TRACKING_OPTIONS</strong>-typed flags that are combined by using a bitwise <strong>OR</strong> operation. The resulting value identifies tracking options. If a flag is present, the tracking option that the flag represents is set to "on," otherwise the tracking option is set to "off."</p> </dd></param>	
-            <returns><p>This method returns one of the Direct3D 11 return codes.</p></returns>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D11TracingDevice::SetShaderTrackingOptionsByType']/*"/>	
-            <msdn-id>hh446874</msdn-id>	
-            <unmanaged>HRESULT ID3D11TracingDevice::SetShaderTrackingOptionsByType([In] unsigned int ResourceTypeFlags,[In] unsigned int Options)</unmanaged>	
-            <unmanaged-short>ID3D11TracingDevice::SetShaderTrackingOptionsByType</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.Direct3D11.TracingDevice.SetShaderTrackingOptions(SharpDX.ComObject,System.Int32)">
-            <summary>	
-            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Sets the reference rasterizer's race-condition tracking options for a specific shader.</p>	
-            </summary>	
-            <param name="shaderRef"><dd> <p>A reference to the <strong><see cref="T:SharpDX.ComObject"/></strong> interface of a shader.</p> </dd></param>	
-            <param name="options"><dd> <p>A combination of <strong>D3D11_SHADER_TRACKING_OPTIONS</strong>-typed flags that are combined by using a bitwise <strong>OR</strong> operation. The resulting value identifies tracking options. If a flag is present, the tracking option that the flag represents is set to "on"; otherwise the tracking option is set to "off."</p> </dd></param>	
-            <returns><p>This method returns one of the Direct3D 11 return codes.</p></returns>	
-            <remarks>	
-            <p><strong>Note</strong>??After a call to <strong>SetShaderTrackingOptions</strong>, the tracking options that the  <em>Options</em> parameter specifies are set for all calls by the shader that the  <em>pShader</em> parameter specifies, until the next call to <strong>SetShaderTrackingOptions</strong>. If you set a flag that is specific to unordered access views (UAV) (for example, <strong><see cref="F:SharpDX.Direct3D11.ShaderTrackingOption.UnorderedAccessViewSpecificFlags"/></strong>) in the <em>Options</em> parameter for a compute shader, <strong>SetShaderTrackingOptions</strong> ignores it.</p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D11TracingDevice::SetShaderTrackingOptions']/*"/>	
-            <msdn-id>hh446871</msdn-id>	
-            <unmanaged>HRESULT ID3D11TracingDevice::SetShaderTrackingOptions([In] IUnknown* pShader,[In] unsigned int Options)</unmanaged>	
-            <unmanaged-short>ID3D11TracingDevice::SetShaderTrackingOptions</unmanaged-short>	
         </member>
         <member name="T:SharpDX.Direct3D11.UnorderedAccessView">
             <summary>	
@@ -26378,27 +26144,6 @@
             <unmanaged>D3D11_TEX2DMS_ARRAY_DSV Texture2DMSArray</unmanaged>	
             <unmanaged-short>D3D11_TEX2DMS_ARRAY_DSV Texture2DMSArray</unmanaged-short>	
         </member>
-        <member name="T:SharpDX.Direct3D11.DepthStencilViewDescription.Texture2DMultisampledResource">
-            <summary>	
-            <p>Specifies the subresource from a multisampled 2D texture that is accessible to a depth-stencil view.</p>	
-            </summary>	
-            <remarks>	
-            <p>Because a multisampled 2D texture contains a single subtexture, there is nothing to specify; this unused member is included so that this structure will compile in C.</p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_TEX2DMS_DSV']/*"/>	
-            <msdn-id>ff476236</msdn-id>	
-            <unmanaged>D3D11_TEX2DMS_DSV</unmanaged>	
-            <unmanaged-short>D3D11_TEX2DMS_DSV</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.DepthStencilViewDescription.Texture2DMultisampledResource.UnusedFieldNothingToDefine">
-            <summary>	
-            <dd> <p>Unused.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_TEX2DMS_DSV::UnusedField_NothingToDefine']/*"/>	
-            <msdn-id>ff476236</msdn-id>	
-            <unmanaged>unsigned int UnusedField_NothingToDefine</unmanaged>	
-            <unmanaged-short>unsigned int UnusedField_NothingToDefine</unmanaged-short>	
-        </member>
         <member name="T:SharpDX.Direct3D11.DepthStencilViewDescription.Texture2DResource">
             <summary>	
             <p>Specifies the subresource from a 2D texture that is accessible to a depth-stencil view.</p>	
@@ -26456,36 +26201,6 @@
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_TEX1D_ARRAY_DSV::ArraySize']/*"/>	
             <msdn-id>ff476225</msdn-id>	
-            <unmanaged>unsigned int ArraySize</unmanaged>	
-            <unmanaged-short>unsigned int ArraySize</unmanaged-short>	
-        </member>
-        <member name="T:SharpDX.Direct3D11.DepthStencilViewDescription.Texture2DMultisampledArrayResource">
-            <summary>	
-            <p>Specifies the subresources from an array of multisampled 2D textures for a depth-stencil view.</p>	
-            </summary>	
-            <remarks>	
-            <p>This structure is one member of a depth-stencil-view description (see <strong><see cref="T:SharpDX.Direct3D11.DepthStencilViewDescription"/></strong>).</p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_TEX2DMS_ARRAY_DSV']/*"/>	
-            <msdn-id>ff476233</msdn-id>	
-            <unmanaged>D3D11_TEX2DMS_ARRAY_DSV</unmanaged>	
-            <unmanaged-short>D3D11_TEX2DMS_ARRAY_DSV</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.DepthStencilViewDescription.Texture2DMultisampledArrayResource.FirstArraySlice">
-            <summary>	
-            <dd> <p>The index of the first texture to use in an array of textures.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_TEX2DMS_ARRAY_DSV::FirstArraySlice']/*"/>	
-            <msdn-id>ff476233</msdn-id>	
-            <unmanaged>unsigned int FirstArraySlice</unmanaged>	
-            <unmanaged-short>unsigned int FirstArraySlice</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.DepthStencilViewDescription.Texture2DMultisampledArrayResource.ArraySize">
-            <summary>	
-            <dd> <p>Number of textures to use.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_TEX2DMS_ARRAY_DSV::ArraySize']/*"/>	
-            <msdn-id>ff476233</msdn-id>	
             <unmanaged>unsigned int ArraySize</unmanaged>	
             <unmanaged-short>unsigned int ArraySize</unmanaged-short>	
         </member>
@@ -26548,6 +26263,57 @@
             <msdn-id>ff476229</msdn-id>	
             <unmanaged>unsigned int MipSlice</unmanaged>	
             <unmanaged-short>unsigned int MipSlice</unmanaged-short>	
+        </member>
+        <member name="T:SharpDX.Direct3D11.DepthStencilViewDescription.Texture2DMultisampledResource">
+            <summary>	
+            <p>Specifies the subresource from a multisampled 2D texture that is accessible to a depth-stencil view.</p>	
+            </summary>	
+            <remarks>	
+            <p>Because a multisampled 2D texture contains a single subtexture, there is nothing to specify; this unused member is included so that this structure will compile in C.</p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_TEX2DMS_DSV']/*"/>	
+            <msdn-id>ff476236</msdn-id>	
+            <unmanaged>D3D11_TEX2DMS_DSV</unmanaged>	
+            <unmanaged-short>D3D11_TEX2DMS_DSV</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.DepthStencilViewDescription.Texture2DMultisampledResource.UnusedFieldNothingToDefine">
+            <summary>	
+            <dd> <p>Unused.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_TEX2DMS_DSV::UnusedField_NothingToDefine']/*"/>	
+            <msdn-id>ff476236</msdn-id>	
+            <unmanaged>unsigned int UnusedField_NothingToDefine</unmanaged>	
+            <unmanaged-short>unsigned int UnusedField_NothingToDefine</unmanaged-short>	
+        </member>
+        <member name="T:SharpDX.Direct3D11.DepthStencilViewDescription.Texture2DMultisampledArrayResource">
+            <summary>	
+            <p>Specifies the subresources from an array of multisampled 2D textures for a depth-stencil view.</p>	
+            </summary>	
+            <remarks>	
+            <p>This structure is one member of a depth-stencil-view description (see <strong><see cref="T:SharpDX.Direct3D11.DepthStencilViewDescription"/></strong>).</p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_TEX2DMS_ARRAY_DSV']/*"/>	
+            <msdn-id>ff476233</msdn-id>	
+            <unmanaged>D3D11_TEX2DMS_ARRAY_DSV</unmanaged>	
+            <unmanaged-short>D3D11_TEX2DMS_ARRAY_DSV</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.DepthStencilViewDescription.Texture2DMultisampledArrayResource.FirstArraySlice">
+            <summary>	
+            <dd> <p>The index of the first texture to use in an array of textures.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_TEX2DMS_ARRAY_DSV::FirstArraySlice']/*"/>	
+            <msdn-id>ff476233</msdn-id>	
+            <unmanaged>unsigned int FirstArraySlice</unmanaged>	
+            <unmanaged-short>unsigned int FirstArraySlice</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.DepthStencilViewDescription.Texture2DMultisampledArrayResource.ArraySize">
+            <summary>	
+            <dd> <p>Number of textures to use.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_TEX2DMS_ARRAY_DSV::ArraySize']/*"/>	
+            <msdn-id>ff476233</msdn-id>	
+            <unmanaged>unsigned int ArraySize</unmanaged>	
+            <unmanaged-short>unsigned int ArraySize</unmanaged-short>	
         </member>
         <member name="T:SharpDX.Direct3D11.EncryptedBlockInformation">
             <summary>	
@@ -26785,7 +26551,7 @@
             </summary>	
             <remarks>	
             <p>Shadows are an important element in realistic 3D scenes.  You can use the shadow buffer technique to render shadows.  The basic principle of the technique is to use a depth buffer to store the scene depth info from the perspective of the light source, and then compare each point rendered in the scene with that buffer to determine if it is in shadow.</p><p>To render objects into the scene with shadows on them, you create <strong>sampler state objects</strong> with comparison filtering set and  the comparison mode (ComparisonFunc) to LessEqual.  You can also set BorderColor addressing on this depth sampler, even though BorderColor isn't typically allowed on feature levels 9.1 and 9.2.  By using the border color and picking 0.0 or 1.0 as the border color value, you can control whether the regions off the edge of the shadow map appear to be always in shadow or never in shadow respectively.	
-            You can control the shadow filter quality by the Mag and Min filter settings in the comparison sampler.  Point sampling will produce shadows with non-anti-aliased edges.  Linear filter sampler settings will result in higher quality shadow edges, but might affect performance on some power-optimized devices.</p><p><strong>Note</strong>??If you use a separate setting for Mag versus Min filter options, you produce an undefined result.  Anisotropic filtering is not supported. The Mip filter choice is not relevant because feature level 9.x does not allow mipmapped depth buffers.</p><p><strong>Note</strong>??On feature level 9.x, you can't compile a shader with the <strong>SampleCmp</strong> and <strong>SampleCmpLevelZero</strong> intrinsic functions by using older versions of the compiler. For example,  you can't use the fxc.exe compiler that ships with the DirectX SDK or use the <strong><see cref="!:SharpDX.D3DCompiler.D3D.Compile"/>**</strong> functions (like <strong><see cref="!:SharpDX.D3DCompiler.D3D.CompileFromFile"/></strong>) that are implemented in D3DCompiler_43.dll and earlier. These intrinsic functions on feature level 9.x are only supported in the fxc.exe compiler that ships with the Windows?8 SDK and later and with the <strong><see cref="!:SharpDX.D3DCompiler.D3D.Compile"/>**</strong> functions that are implemented in D3DCompiler_44.dll and later.	
+            You can control the shadow filter quality by the Mag and Min filter settings in the comparison sampler.  Point sampling will produce shadows with non-anti-aliased edges.  Linear filter sampler settings will result in higher quality shadow edges, but might affect performance on some power-optimized devices.</p><p><strong>Note</strong>??If you use a separate setting for Mag versus Min filter options, you produce an undefined result.  Anisotropic filtering is not supported. The Mip filter choice is not relevant because feature level 9.x does not allow mipmapped depth buffers.</p><p><strong>Note</strong>??On feature level 9.x, you can't compile a shader with the <strong>SampleCmp</strong> and <strong>SampleCmpLevelZero</strong> intrinsic functions by using older versions of the compiler. For example,  you can't use the fxc.exe compiler that ships with the DirectX SDK or use the <strong>D3DCompile**</strong> functions (like <strong>D3DCompileFromFile</strong>) that are implemented in D3DCompiler_43.dll and earlier. These intrinsic functions on feature level 9.x are only supported in the fxc.exe compiler that ships with the Windows?8 SDK and later and with the <strong>D3DCompile**</strong> functions that are implemented in D3DCompiler_44.dll and later.	
             But these intrinsic functions are present in shader models for feature levels higher than 9.x.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_FEATURE_DATA_D3D9_SHADOW_SUPPORT']/*"/>	
@@ -27733,45 +27499,6 @@
             <unmanaged>D3D11_TEX3D_RTV Texture3D</unmanaged>	
             <unmanaged-short>D3D11_TEX3D_RTV Texture3D</unmanaged-short>	
         </member>
-        <member name="T:SharpDX.Direct3D11.RenderTargetViewDescription.Texture2DArrayResource">
-            <summary>	
-            <p>Specifies the subresources from an array of 2D textures to use in a render-target view.</p>	
-            </summary>	
-            <remarks>	
-            <p>This structure is one member of a render-target-view description (see <strong><see cref="T:SharpDX.Direct3D11.RenderTargetViewDescription"/></strong>).</p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_TEX2D_ARRAY_RTV']/*"/>	
-            <msdn-id>ff476240</msdn-id>	
-            <unmanaged>D3D11_TEX2D_ARRAY_RTV</unmanaged>	
-            <unmanaged-short>D3D11_TEX2D_ARRAY_RTV</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.RenderTargetViewDescription.Texture2DArrayResource.MipSlice">
-            <summary>	
-            <dd> <p>The index of the mipmap level to use mip slice.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_TEX2D_ARRAY_RTV::MipSlice']/*"/>	
-            <msdn-id>ff476240</msdn-id>	
-            <unmanaged>unsigned int MipSlice</unmanaged>	
-            <unmanaged-short>unsigned int MipSlice</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.RenderTargetViewDescription.Texture2DArrayResource.FirstArraySlice">
-            <summary>	
-            <dd> <p>The index of the first texture to use in an array of textures.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_TEX2D_ARRAY_RTV::FirstArraySlice']/*"/>	
-            <msdn-id>ff476240</msdn-id>	
-            <unmanaged>unsigned int FirstArraySlice</unmanaged>	
-            <unmanaged-short>unsigned int FirstArraySlice</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.RenderTargetViewDescription.Texture2DArrayResource.ArraySize">
-            <summary>	
-            <dd> <p>Number of textures in the array to use in the render target view, starting from <strong>FirstArraySlice</strong>.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_TEX2D_ARRAY_RTV::ArraySize']/*"/>	
-            <msdn-id>ff476240</msdn-id>	
-            <unmanaged>unsigned int ArraySize</unmanaged>	
-            <unmanaged-short>unsigned int ArraySize</unmanaged-short>	
-        </member>
         <member name="T:SharpDX.Direct3D11.RenderTargetViewDescription.Texture2DMultisampledArrayResource">
             <summary>	
             <p>Specifies the subresources from a an array of multisampled 2D textures to use in a render-target view.</p>	
@@ -27802,27 +27529,6 @@
             <unmanaged>unsigned int ArraySize</unmanaged>	
             <unmanaged-short>unsigned int ArraySize</unmanaged-short>	
         </member>
-        <member name="T:SharpDX.Direct3D11.RenderTargetViewDescription.Texture2DMultisampledResource">
-            <summary>	
-            <p>Specifies the subresource from a multisampled 2D texture to use in a render-target view.</p>	
-            </summary>	
-            <remarks>	
-            <p>Since a multisampled 2D texture contains a single subresource, there is actually nothing to specify in <see cref="T:SharpDX.Direct3D11.RenderTargetViewDescription.Texture2DMultisampledResource"/>. Consequently, <strong>UnusedField_NothingToDefine</strong> is included so that this structure will compile in C.</p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_TEX2DMS_RTV']/*"/>	
-            <msdn-id>ff476237</msdn-id>	
-            <unmanaged>D3D11_TEX2DMS_RTV</unmanaged>	
-            <unmanaged-short>D3D11_TEX2DMS_RTV</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.RenderTargetViewDescription.Texture2DMultisampledResource.UnusedFieldNothingToDefine">
-            <summary>	
-            <dd> <p>Integer of any value. See remarks.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_TEX2DMS_RTV::UnusedField_NothingToDefine']/*"/>	
-            <msdn-id>ff476237</msdn-id>	
-            <unmanaged>unsigned int UnusedField_NothingToDefine</unmanaged>	
-            <unmanaged-short>unsigned int UnusedField_NothingToDefine</unmanaged-short>	
-        </member>
         <member name="T:SharpDX.Direct3D11.RenderTargetViewDescription.Texture1DResource">
             <summary>	
             <p>Specifies the subresource from a 1D texture to use in a render-target view.</p>	
@@ -27843,6 +27549,27 @@
             <msdn-id>ff476230</msdn-id>	
             <unmanaged>unsigned int MipSlice</unmanaged>	
             <unmanaged-short>unsigned int MipSlice</unmanaged-short>	
+        </member>
+        <member name="T:SharpDX.Direct3D11.RenderTargetViewDescription.Texture2DMultisampledResource">
+            <summary>	
+            <p>Specifies the subresource from a multisampled 2D texture to use in a render-target view.</p>	
+            </summary>	
+            <remarks>	
+            <p>Since a multisampled 2D texture contains a single subresource, there is actually nothing to specify in <see cref="T:SharpDX.Direct3D11.RenderTargetViewDescription.Texture2DMultisampledResource"/>. Consequently, <strong>UnusedField_NothingToDefine</strong> is included so that this structure will compile in C.</p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_TEX2DMS_RTV']/*"/>	
+            <msdn-id>ff476237</msdn-id>	
+            <unmanaged>D3D11_TEX2DMS_RTV</unmanaged>	
+            <unmanaged-short>D3D11_TEX2DMS_RTV</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.RenderTargetViewDescription.Texture2DMultisampledResource.UnusedFieldNothingToDefine">
+            <summary>	
+            <dd> <p>Integer of any value. See remarks.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_TEX2DMS_RTV::UnusedField_NothingToDefine']/*"/>	
+            <msdn-id>ff476237</msdn-id>	
+            <unmanaged>unsigned int UnusedField_NothingToDefine</unmanaged>	
+            <unmanaged-short>unsigned int UnusedField_NothingToDefine</unmanaged-short>	
         </member>
         <member name="T:SharpDX.Direct3D11.RenderTargetViewDescription.Texture3DResource">
             <summary>	
@@ -27882,6 +27609,66 @@
             <msdn-id>ff476247</msdn-id>	
             <unmanaged>unsigned int WSize</unmanaged>	
             <unmanaged-short>unsigned int WSize</unmanaged-short>	
+        </member>
+        <member name="T:SharpDX.Direct3D11.RenderTargetViewDescription.Texture2DArrayResource">
+            <summary>	
+            <p>Specifies the subresources from an array of 2D textures to use in a render-target view.</p>	
+            </summary>	
+            <remarks>	
+            <p>This structure is one member of a render-target-view description (see <strong><see cref="T:SharpDX.Direct3D11.RenderTargetViewDescription"/></strong>).</p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_TEX2D_ARRAY_RTV']/*"/>	
+            <msdn-id>ff476240</msdn-id>	
+            <unmanaged>D3D11_TEX2D_ARRAY_RTV</unmanaged>	
+            <unmanaged-short>D3D11_TEX2D_ARRAY_RTV</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.RenderTargetViewDescription.Texture2DArrayResource.MipSlice">
+            <summary>	
+            <dd> <p>The index of the mipmap level to use mip slice.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_TEX2D_ARRAY_RTV::MipSlice']/*"/>	
+            <msdn-id>ff476240</msdn-id>	
+            <unmanaged>unsigned int MipSlice</unmanaged>	
+            <unmanaged-short>unsigned int MipSlice</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.RenderTargetViewDescription.Texture2DArrayResource.FirstArraySlice">
+            <summary>	
+            <dd> <p>The index of the first texture to use in an array of textures.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_TEX2D_ARRAY_RTV::FirstArraySlice']/*"/>	
+            <msdn-id>ff476240</msdn-id>	
+            <unmanaged>unsigned int FirstArraySlice</unmanaged>	
+            <unmanaged-short>unsigned int FirstArraySlice</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.RenderTargetViewDescription.Texture2DArrayResource.ArraySize">
+            <summary>	
+            <dd> <p>Number of textures in the array to use in the render target view, starting from <strong>FirstArraySlice</strong>.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_TEX2D_ARRAY_RTV::ArraySize']/*"/>	
+            <msdn-id>ff476240</msdn-id>	
+            <unmanaged>unsigned int ArraySize</unmanaged>	
+            <unmanaged-short>unsigned int ArraySize</unmanaged-short>	
+        </member>
+        <member name="T:SharpDX.Direct3D11.RenderTargetViewDescription.Texture2DResource">
+            <summary>	
+            <p>Specifies the subresource from a 2D texture to use in a render-target view.</p>	
+            </summary>	
+            <remarks>	
+            <p>This structure is one member of a render-target-view description (see <strong><see cref="T:SharpDX.Direct3D11.RenderTargetViewDescription"/></strong>).</p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_TEX2D_RTV']/*"/>	
+            <msdn-id>ff476244</msdn-id>	
+            <unmanaged>D3D11_TEX2D_RTV</unmanaged>	
+            <unmanaged-short>D3D11_TEX2D_RTV</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.RenderTargetViewDescription.Texture2DResource.MipSlice">
+            <summary>	
+            <dd> <p>The index of the mipmap level to use mip slice.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_TEX2D_RTV::MipSlice']/*"/>	
+            <msdn-id>ff476244</msdn-id>	
+            <unmanaged>unsigned int MipSlice</unmanaged>	
+            <unmanaged-short>unsigned int MipSlice</unmanaged-short>	
         </member>
         <member name="T:SharpDX.Direct3D11.RenderTargetViewDescription.BufferResource">
             <summary>	
@@ -27930,27 +27717,6 @@
             <msdn-id>ff476093</msdn-id>	
             <unmanaged>unsigned int ElementWidth</unmanaged>	
             <unmanaged-short>unsigned int ElementWidth</unmanaged-short>	
-        </member>
-        <member name="T:SharpDX.Direct3D11.RenderTargetViewDescription.Texture2DResource">
-            <summary>	
-            <p>Specifies the subresource from a 2D texture to use in a render-target view.</p>	
-            </summary>	
-            <remarks>	
-            <p>This structure is one member of a render-target-view description (see <strong><see cref="T:SharpDX.Direct3D11.RenderTargetViewDescription"/></strong>).</p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_TEX2D_RTV']/*"/>	
-            <msdn-id>ff476244</msdn-id>	
-            <unmanaged>D3D11_TEX2D_RTV</unmanaged>	
-            <unmanaged-short>D3D11_TEX2D_RTV</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.RenderTargetViewDescription.Texture2DResource.MipSlice">
-            <summary>	
-            <dd> <p>The index of the mipmap level to use mip slice.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_TEX2D_RTV::MipSlice']/*"/>	
-            <msdn-id>ff476244</msdn-id>	
-            <unmanaged>unsigned int MipSlice</unmanaged>	
-            <unmanaged-short>unsigned int MipSlice</unmanaged-short>	
         </member>
         <member name="T:SharpDX.Direct3D11.RenderTargetViewDescription.Texture1DArrayResource">
             <summary>	
@@ -28362,6 +28128,45 @@
             <unmanaged>unsigned int ElementWidth</unmanaged>	
             <unmanaged-short>unsigned int ElementWidth</unmanaged-short>	
         </member>
+        <member name="T:SharpDX.Direct3D11.ShaderResourceViewDescription.ExtendedBufferResource">
+            <summary>	
+            <p>Describes a raw buffer resource.</p>	
+            </summary>	
+            <remarks>	
+            <p>This structure is used by <strong><see cref="T:SharpDX.Direct3D11.ShaderResourceViewDescription"/></strong> to create a raw buffer.</p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_BUFFEREX_SRV']/*"/>	
+            <msdn-id>ff476090</msdn-id>	
+            <unmanaged>D3D11_BUFFEREX_SRV</unmanaged>	
+            <unmanaged-short>D3D11_BUFFEREX_SRV</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.ShaderResourceViewDescription.ExtendedBufferResource.FirstElement">
+            <summary>	
+            <dd> <p>The index of the first element to be accessed by the view.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_BUFFEREX_SRV::FirstElement']/*"/>	
+            <msdn-id>ff476090</msdn-id>	
+            <unmanaged>unsigned int FirstElement</unmanaged>	
+            <unmanaged-short>unsigned int FirstElement</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.ShaderResourceViewDescription.ExtendedBufferResource.ElementCount">
+            <summary>	
+            <dd> <p>The number of elements in the resource.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_BUFFEREX_SRV::NumElements']/*"/>	
+            <msdn-id>ff476090</msdn-id>	
+            <unmanaged>unsigned int NumElements</unmanaged>	
+            <unmanaged-short>unsigned int NumElements</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.ShaderResourceViewDescription.ExtendedBufferResource.Flags">
+            <summary>	
+            <dd> <p>Options for binding a raw buffer (see <strong><see cref="T:SharpDX.Direct3D11.ShaderResourceViewExtendedBufferFlags"/></strong>).</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_BUFFEREX_SRV::Flags']/*"/>	
+            <msdn-id>ff476090</msdn-id>	
+            <unmanaged>D3D11_BUFFEREX_SRV_FLAG Flags</unmanaged>	
+            <unmanaged-short>D3D11_BUFFEREX_SRV_FLAG Flags</unmanaged-short>	
+        </member>
         <member name="T:SharpDX.Direct3D11.ShaderResourceViewDescription.Texture1DResource">
             <summary>	
             <p>Specifies the subresource from a 1D texture to use in a shader-resource view.</p>	
@@ -28676,45 +28481,6 @@
             <msdn-id>ff476250</msdn-id>	
             <unmanaged>unsigned int NumCubes</unmanaged>	
             <unmanaged-short>unsigned int NumCubes</unmanaged-short>	
-        </member>
-        <member name="T:SharpDX.Direct3D11.ShaderResourceViewDescription.ExtendedBufferResource">
-            <summary>	
-            <p>Describes a raw buffer resource.</p>	
-            </summary>	
-            <remarks>	
-            <p>This structure is used by <strong><see cref="T:SharpDX.Direct3D11.ShaderResourceViewDescription"/></strong> to create a raw buffer.</p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_BUFFEREX_SRV']/*"/>	
-            <msdn-id>ff476090</msdn-id>	
-            <unmanaged>D3D11_BUFFEREX_SRV</unmanaged>	
-            <unmanaged-short>D3D11_BUFFEREX_SRV</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.ShaderResourceViewDescription.ExtendedBufferResource.FirstElement">
-            <summary>	
-            <dd> <p>The index of the first element to be accessed by the view.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_BUFFEREX_SRV::FirstElement']/*"/>	
-            <msdn-id>ff476090</msdn-id>	
-            <unmanaged>unsigned int FirstElement</unmanaged>	
-            <unmanaged-short>unsigned int FirstElement</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.ShaderResourceViewDescription.ExtendedBufferResource.ElementCount">
-            <summary>	
-            <dd> <p>The number of elements in the resource.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_BUFFEREX_SRV::NumElements']/*"/>	
-            <msdn-id>ff476090</msdn-id>	
-            <unmanaged>unsigned int NumElements</unmanaged>	
-            <unmanaged-short>unsigned int NumElements</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.ShaderResourceViewDescription.ExtendedBufferResource.Flags">
-            <summary>	
-            <dd> <p>Options for binding a raw buffer (see <strong><see cref="T:SharpDX.Direct3D11.ShaderResourceViewExtendedBufferFlags"/></strong>).</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_BUFFEREX_SRV::Flags']/*"/>	
-            <msdn-id>ff476090</msdn-id>	
-            <unmanaged>D3D11_BUFFEREX_SRV_FLAG Flags</unmanaged>	
-            <unmanaged-short>D3D11_BUFFEREX_SRV_FLAG Flags</unmanaged-short>	
         </member>
         <member name="T:SharpDX.Direct3D11.StreamOutputElement">
             <summary>	

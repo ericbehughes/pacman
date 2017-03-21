@@ -17,8 +17,8 @@ namespace PacmanGame
         Game1 maingame;
         GameState gs;
         private List<Wall> Walls;
-        private List<Texture2D> pictureList; 
-
+        private List<Texture2D> pictureList;
+        
         private SpriteBatch spriteBatch;
         private Texture2D Wall;
         private Texture2D Pen;
@@ -94,21 +94,20 @@ namespace PacmanGame
             //private string[] csv_array = {"w", "e","x","pw", "1", "2", "3", "4", "P", "p"};
 
             var dictionary = new Dictionary<string,drawSpriteDelegate>();
-            dictionary.Add(csv_array[0], drawSprite);
+            dictionary.Add("w", drawSprite);
+                       
+
 
             string line = Regex.Replace(File.ReadAllText("map.csv"), @"[\r\n\t]+", ",");
             string[] str = line.Split(',');
             String mazeChar = "";
 
             spriteBatch.Begin();
-            for (int i = 0; i < gs.Maze.Size; i++)
-            {
-                // need to test this dictionary 
-                for (int j = 0; j < gs.Maze.Size; j++)
-                {
+       
+                    // need to search which pictureList to choose from i put pictureList[0] for testing
                     dictionary[mazeChar](pictureList[0]);
-                }
-            }
+                
+            
 
             base.Draw(gameTime);
         }

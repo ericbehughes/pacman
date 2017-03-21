@@ -1164,236 +1164,6 @@
             <unmanaged>HRESULT IDXGIResource1::CreateSharedHandle([In, Optional] const SECURITY_ATTRIBUTES* pAttributes,[In] DXGI_SHARED_RESOURCE_FLAGS dwAccess,[In, Optional] const wchar_t* lpName,[Out] void** pHandle)</unmanaged>	
             <unmanaged-short>IDXGIResource1::CreateSharedHandle</unmanaged-short>	
         </member>
-        <member name="T:SharpDX.DXGI.IVirtualSurfaceImageSourceNative">
-            <summary>	
-            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>Metro style apps only</p><p>Provides the implementation of a large (greater than the screen size) shared surface for DirectX drawing.</p>	
-            </summary>	
-            <remarks>	
-            <p>This interface provides the native implementation of the <strong>Windows::UI::Xaml::Media::Imaging::VirtualSurfaceImageSource</strong> Windows runtime type. To obtain a reference to <strong><see cref="T:SharpDX.DXGI.IVirtualSurfaceImageSourceNative"/></strong>, you must cast a <strong>VirtualSurfaceImageSource</strong> instance to <strong>IInspectable</strong> or <strong><see cref="T:SharpDX.ComObject"/></strong>, and call <strong>QueryInterface</strong>.</p><pre> Microsoft::WRL::ComPtr&lt;<see cref="T:SharpDX.DXGI.IVirtualSurfaceImageSourceNative"/>&gt;	m_vsisNative;	
-            // ...	
-            IInspectable* vsisInspectable = (IInspectable*) reinterpret_cast&lt;IInspectable*&gt;(virtualSurfaceImageSource);	
-            vsisInspectable-&gt;QueryInterface(__uuidof(<see cref="T:SharpDX.DXGI.IVirtualSurfaceImageSourceNative"/>), (void **)&amp;m_vsisNative) </pre>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IVirtualSurfaceImageSourceNative']/*"/>	
-            <msdn-id>hh848328</msdn-id>	
-            <unmanaged>IVirtualSurfaceImageSourceNative</unmanaged>	
-            <unmanaged-short>IVirtualSurfaceImageSourceNative</unmanaged-short>	
-        </member>
-        <member name="T:SharpDX.DXGI.ISurfaceImageSourceNative">
-            <summary>	
-            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps only</p><p>Closes the surface draw operation.</p>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ISurfaceImageSourceNative']/*"/>	
-            <msdn-id>hh848324</msdn-id>	
-            <unmanaged>ISurfaceImageSourceNative</unmanaged>	
-            <unmanaged-short>ISurfaceImageSourceNative</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.DXGI.ISurfaceImageSourceNative.#ctor(System.IntPtr)">
-            <summary>
-            Initializes a new instance of the <see cref="T:SharpDX.DXGI.ISurfaceImageSourceNative"/> class.
-            </summary>
-            <param name="nativePtr">The native pointer.</param>	
-        </member>
-        <member name="M:SharpDX.DXGI.ISurfaceImageSourceNative.op_Explicit(System.IntPtr)~SharpDX.DXGI.ISurfaceImageSourceNative">
-            <summary>
-            Performs an explicit conversion from <see cref="T:System.IntPtr"/> to <see cref="T:SharpDX.DXGI.ISurfaceImageSourceNative"/>. (This method is a shortcut to <see cref="P:SharpDX.CppObject.NativePointer"/>) 
-            </summary>
-            <param name="nativePointer">The native pointer.</param>
-            <returns>
-            The result of the conversion.
-            </returns>
-        </member>
-        <member name="M:SharpDX.DXGI.ISurfaceImageSourceNative.SetDevice(SharpDX.DXGI.Device)">
-            <summary>	
-            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps only</p><p>Closes the surface draw operation.</p>	
-            </summary>	
-            <param name="deviceRef">No documentation.</param>	
-            <returns><p>If this method succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ISurfaceImageSourceNative::SetDevice']/*"/>	
-            <msdn-id>hh848324</msdn-id>	
-            <unmanaged>HRESULT ISurfaceImageSourceNative::SetDevice([In] IDXGIDevice* pDevice)</unmanaged>	
-            <unmanaged-short>ISurfaceImageSourceNative::SetDevice</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.DXGI.ISurfaceImageSourceNative.BeginDraw(SharpDX.Rectangle,SharpDX.Point@)">
-            <summary>	
-            No documentation.	
-            </summary>	
-            <param name="updateRect">No documentation.</param>	
-            <param name="offset">No documentation.</param>	
-            <returns>No documentation.</returns>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ISurfaceImageSourceNative::BeginDraw']/*"/>	
-            <unmanaged>HRESULT ISurfaceImageSourceNative::BeginDraw([In] RECT updateRect,[Out] IDXGISurface** pSurface,[Out] POINT* offset)</unmanaged>	
-            <unmanaged-short>ISurfaceImageSourceNative::BeginDraw</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.DXGI.ISurfaceImageSourceNative.EndDraw">
-            <summary>	
-            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps only</p><p>Closes the surface draw operation.</p>	
-            </summary>	
-            <returns><p>If this method succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ISurfaceImageSourceNative::EndDraw']/*"/>	
-            <msdn-id>hh848324</msdn-id>	
-            <unmanaged>HRESULT ISurfaceImageSourceNative::EndDraw()</unmanaged>	
-            <unmanaged-short>ISurfaceImageSourceNative::EndDraw</unmanaged-short>	
-        </member>
-        <member name="P:SharpDX.DXGI.ISurfaceImageSourceNative.Device">
-            <summary>	
-            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps only</p><p>Closes the surface draw operation.</p>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ISurfaceImageSourceNative::SetDevice']/*"/>	
-            <msdn-id>hh848324</msdn-id>	
-            <unmanaged>SetDevice</unmanaged>	
-            <unmanaged-short>SetDevice</unmanaged-short>	
-            <unmanaged>HRESULT ISurfaceImageSourceNative::SetDevice([In] IDXGIDevice* pDevice)</unmanaged>
-        </member>
-        <member name="M:SharpDX.DXGI.IVirtualSurfaceImageSourceNative.#ctor(System.IntPtr)">
-            <summary>
-            Initializes a new instance of the <see cref="T:SharpDX.DXGI.IVirtualSurfaceImageSourceNative"/> class.
-            </summary>
-            <param name="nativePtr">The native pointer.</param>	
-        </member>
-        <member name="M:SharpDX.DXGI.IVirtualSurfaceImageSourceNative.op_Explicit(System.IntPtr)~SharpDX.DXGI.IVirtualSurfaceImageSourceNative">
-            <summary>
-            Performs an explicit conversion from <see cref="T:System.IntPtr"/> to <see cref="T:SharpDX.DXGI.IVirtualSurfaceImageSourceNative"/>. (This method is a shortcut to <see cref="P:SharpDX.CppObject.NativePointer"/>) 
-            </summary>
-            <param name="nativePointer">The native pointer.</param>
-            <returns>
-            The result of the conversion.
-            </returns>
-        </member>
-        <member name="M:SharpDX.DXGI.IVirtualSurfaceImageSourceNative.Invalidate(SharpDX.Rectangle)">
-            <summary>	
-            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>Metro style apps only</p><p>Invalidates a specific region of the shared surface for drawing.</p>	
-            </summary>	
-            <param name="updateRect"><dd> <p>The region of the surface to invalidate.</p> </dd></param>	
-            <returns><p>If this method succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IVirtualSurfaceImageSourceNative::Invalidate']/*"/>	
-            <msdn-id>hh848332</msdn-id>	
-            <unmanaged>HRESULT IVirtualSurfaceImageSourceNative::Invalidate([In] RECT updateRect)</unmanaged>	
-            <unmanaged-short>IVirtualSurfaceImageSourceNative::Invalidate</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.DXGI.IVirtualSurfaceImageSourceNative.GetUpdateRectCount">
-            <summary>	
-            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>Metro style apps only</p><p>Provides the implementation of a large (greater than the screen size) shared surface for DirectX drawing.</p>	
-            </summary>	
-            <returns>No documentation.</returns>	
-            <remarks>	
-            <p>This interface provides the native implementation of the <strong>Windows::UI::Xaml::Media::Imaging::VirtualSurfaceImageSource</strong> Windows runtime type. To obtain a reference to <strong><see cref="T:SharpDX.DXGI.IVirtualSurfaceImageSourceNative"/></strong>, you must cast a <strong>VirtualSurfaceImageSource</strong> instance to <strong>IInspectable</strong> or <strong><see cref="T:SharpDX.ComObject"/></strong>, and call <strong>QueryInterface</strong>.</p><pre> Microsoft::WRL::ComPtr&lt;<see cref="T:SharpDX.DXGI.IVirtualSurfaceImageSourceNative"/>&gt;	m_vsisNative;	
-            // ...	
-            IInspectable* vsisInspectable = (IInspectable*) reinterpret_cast&lt;IInspectable*&gt;(virtualSurfaceImageSource);	
-            vsisInspectable-&gt;QueryInterface(__uuidof(<see cref="T:SharpDX.DXGI.IVirtualSurfaceImageSourceNative"/>), (void **)&amp;m_vsisNative) </pre>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IVirtualSurfaceImageSourceNative::GetUpdateRectCount']/*"/>	
-            <msdn-id>hh848328</msdn-id>	
-            <unmanaged>HRESULT IVirtualSurfaceImageSourceNative::GetUpdateRectCount([Out] unsigned int* pCount)</unmanaged>	
-            <unmanaged-short>IVirtualSurfaceImageSourceNative::GetUpdateRectCount</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.DXGI.IVirtualSurfaceImageSourceNative.GetUpdateRects(SharpDX.Rectangle[],System.Int32)">
-            <summary>	
-            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>Metro style apps only</p><p>Provides the implementation of a large (greater than the screen size) shared surface for DirectX drawing.</p>	
-            </summary>	
-            <param name="updatesRef">No documentation.</param>	
-            <param name="count">No documentation.</param>	
-            <returns>No documentation.</returns>	
-            <remarks>	
-            <p>This interface provides the native implementation of the <strong>Windows::UI::Xaml::Media::Imaging::VirtualSurfaceImageSource</strong> Windows runtime type. To obtain a reference to <strong><see cref="T:SharpDX.DXGI.IVirtualSurfaceImageSourceNative"/></strong>, you must cast a <strong>VirtualSurfaceImageSource</strong> instance to <strong>IInspectable</strong> or <strong><see cref="T:SharpDX.ComObject"/></strong>, and call <strong>QueryInterface</strong>.</p><pre> Microsoft::WRL::ComPtr&lt;<see cref="T:SharpDX.DXGI.IVirtualSurfaceImageSourceNative"/>&gt;	m_vsisNative;	
-            // ...	
-            IInspectable* vsisInspectable = (IInspectable*) reinterpret_cast&lt;IInspectable*&gt;(virtualSurfaceImageSource);	
-            vsisInspectable-&gt;QueryInterface(__uuidof(<see cref="T:SharpDX.DXGI.IVirtualSurfaceImageSourceNative"/>), (void **)&amp;m_vsisNative) </pre>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IVirtualSurfaceImageSourceNative::GetUpdateRects']/*"/>	
-            <msdn-id>hh848328</msdn-id>	
-            <unmanaged>HRESULT IVirtualSurfaceImageSourceNative::GetUpdateRects([Out, Buffer] RECT* pUpdates,[In] unsigned int count)</unmanaged>	
-            <unmanaged-short>IVirtualSurfaceImageSourceNative::GetUpdateRects</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.DXGI.IVirtualSurfaceImageSourceNative.GetVisibleBounds(SharpDX.Rectangle@)">
-            <summary>	
-            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>Metro style apps only</p><p>Provides the implementation of a large (greater than the screen size) shared surface for DirectX drawing.</p>	
-            </summary>	
-            <param name="boundsRef">No documentation.</param>	
-            <returns>No documentation.</returns>	
-            <remarks>	
-            <p>This interface provides the native implementation of the <strong>Windows::UI::Xaml::Media::Imaging::VirtualSurfaceImageSource</strong> Windows runtime type. To obtain a reference to <strong><see cref="T:SharpDX.DXGI.IVirtualSurfaceImageSourceNative"/></strong>, you must cast a <strong>VirtualSurfaceImageSource</strong> instance to <strong>IInspectable</strong> or <strong><see cref="T:SharpDX.ComObject"/></strong>, and call <strong>QueryInterface</strong>.</p><pre> Microsoft::WRL::ComPtr&lt;<see cref="T:SharpDX.DXGI.IVirtualSurfaceImageSourceNative"/>&gt;	m_vsisNative;	
-            // ...	
-            IInspectable* vsisInspectable = (IInspectable*) reinterpret_cast&lt;IInspectable*&gt;(virtualSurfaceImageSource);	
-            vsisInspectable-&gt;QueryInterface(__uuidof(<see cref="T:SharpDX.DXGI.IVirtualSurfaceImageSourceNative"/>), (void **)&amp;m_vsisNative) </pre>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IVirtualSurfaceImageSourceNative::GetVisibleBounds']/*"/>	
-            <msdn-id>hh848328</msdn-id>	
-            <unmanaged>HRESULT IVirtualSurfaceImageSourceNative::GetVisibleBounds([Out] RECT* pBounds)</unmanaged>	
-            <unmanaged-short>IVirtualSurfaceImageSourceNative::GetVisibleBounds</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.DXGI.IVirtualSurfaceImageSourceNative.RegisterForUpdatesNeeded_(System.IntPtr)">
-            <summary>	
-            No documentation.	
-            </summary>	
-            <param name="callbackRef">No documentation.</param>	
-            <returns>No documentation.</returns>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IVirtualSurfaceImageSourceNative::RegisterForUpdatesNeeded']/*"/>	
-            <unmanaged>HRESULT IVirtualSurfaceImageSourceNative::RegisterForUpdatesNeeded([In] IVirtualSurfaceUpdatesCallbackNative* pCallback)</unmanaged>	
-            <unmanaged-short>IVirtualSurfaceImageSourceNative::RegisterForUpdatesNeeded</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.DXGI.IVirtualSurfaceImageSourceNative.Resize(System.Int32,System.Int32)">
-            <summary>	
-            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>Metro style apps only</p><p>Provides the implementation of a large (greater than the screen size) shared surface for DirectX drawing.</p>	
-            </summary>	
-            <param name="newWidth">No documentation.</param>	
-            <param name="newHeight">No documentation.</param>	
-            <returns>No documentation.</returns>	
-            <remarks>	
-            <p>This interface provides the native implementation of the <strong>Windows::UI::Xaml::Media::Imaging::VirtualSurfaceImageSource</strong> Windows runtime type. To obtain a reference to <strong><see cref="T:SharpDX.DXGI.IVirtualSurfaceImageSourceNative"/></strong>, you must cast a <strong>VirtualSurfaceImageSource</strong> instance to <strong>IInspectable</strong> or <strong><see cref="T:SharpDX.ComObject"/></strong>, and call <strong>QueryInterface</strong>.</p><pre> Microsoft::WRL::ComPtr&lt;<see cref="T:SharpDX.DXGI.IVirtualSurfaceImageSourceNative"/>&gt;	m_vsisNative;	
-            // ...	
-            IInspectable* vsisInspectable = (IInspectable*) reinterpret_cast&lt;IInspectable*&gt;(virtualSurfaceImageSource);	
-            vsisInspectable-&gt;QueryInterface(__uuidof(<see cref="T:SharpDX.DXGI.IVirtualSurfaceImageSourceNative"/>), (void **)&amp;m_vsisNative) </pre>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IVirtualSurfaceImageSourceNative::Resize']/*"/>	
-            <msdn-id>hh848328</msdn-id>	
-            <unmanaged>HRESULT IVirtualSurfaceImageSourceNative::Resize([In] int newWidth,[In] int newHeight)</unmanaged>	
-            <unmanaged-short>IVirtualSurfaceImageSourceNative::Resize</unmanaged-short>	
-        </member>
-        <member name="P:SharpDX.DXGI.IVirtualSurfaceImageSourceNative.UpdateRectangles">
-            <summary>
-            Gets the set of regions that must be updated on the shared surface.
-            </summary>
-        </member>
-        <member name="E:SharpDX.DXGI.IVirtualSurfaceImageSourceNative.UpdatesNeeded">
-            <summary>
-            Event fired when an update is needed. Use <see cref="P:SharpDX.DXGI.IVirtualSurfaceImageSourceNative.UpdateRectangles"/> to get the region to update.
-            </summary>
-        </member>
-        <member name="P:SharpDX.DXGI.IVirtualSurfaceImageSourceNative.VisibleBounds">
-            <summary>	
-            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>Metro style apps only</p><p>Provides the implementation of a large (greater than the screen size) shared surface for DirectX drawing.</p>	
-            </summary>	
-            <remarks>	
-            <p>This interface provides the native implementation of the <strong>Windows::UI::Xaml::Media::Imaging::VirtualSurfaceImageSource</strong> Windows runtime type. To obtain a reference to <strong><see cref="T:SharpDX.DXGI.IVirtualSurfaceImageSourceNative"/></strong>, you must cast a <strong>VirtualSurfaceImageSource</strong> instance to <strong>IInspectable</strong> or <strong><see cref="T:SharpDX.ComObject"/></strong>, and call <strong>QueryInterface</strong>.</p><pre> Microsoft::WRL::ComPtr&lt;<see cref="T:SharpDX.DXGI.IVirtualSurfaceImageSourceNative"/>&gt;	m_vsisNative;	
-            // ...	
-            IInspectable* vsisInspectable = (IInspectable*) reinterpret_cast&lt;IInspectable*&gt;(virtualSurfaceImageSource);	
-            vsisInspectable-&gt;QueryInterface(__uuidof(<see cref="T:SharpDX.DXGI.IVirtualSurfaceImageSourceNative"/>), (void **)&amp;m_vsisNative) </pre>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IVirtualSurfaceImageSourceNative::GetVisibleBounds']/*"/>	
-            <msdn-id>hh848328</msdn-id>	
-            <unmanaged>GetVisibleBounds</unmanaged>	
-            <unmanaged-short>GetVisibleBounds</unmanaged-short>	
-            <unmanaged>HRESULT IVirtualSurfaceImageSourceNative::GetVisibleBounds([Out] RECT* pBounds)</unmanaged>
-        </member>
-        <member name="T:SharpDX.DXGI.IVirtualSurfaceUpdatesCallbackNative">
-            <summary>	
-            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps only</p><p>Provides an interface for the implementation of drawing behaviors when a <strong>VirtualSurfaceImageSource</strong> requests an update. </p>	
-            </summary>	
-            <remarks>	
-            <p>This interface is implemented by the developer to provide specific drawing behaviors for updates to a <strong>VirtualSurfaceImageSource</strong>. Classes that implement  this interface are provided to the <strong><see cref="M:SharpDX.DXGI.IVirtualSurfaceImageSourceNative.RegisterForUpdatesNeeded_(System.IntPtr)"/></strong>, which calls the <strong>UpdatesNeeded</strong> method implementation whenever an update is requested.</p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IVirtualSurfaceUpdatesCallbackNative']/*"/>	
-            <msdn-id>hh848336</msdn-id>	
-            <unmanaged>IVirtualSurfaceUpdatesCallbackNative</unmanaged>	
-            <unmanaged-short>IVirtualSurfaceUpdatesCallbackNative</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.DXGI.IVirtualSurfaceUpdatesCallbackNative.UpdatesNeeded">
-            <summary>	
-            Callback method for IVirtualSurfaceUpdatesCallbackNative
-            </summary>	
-            <unmanaged>HRESULT IVirtualSurfaceUpdatesCallbackNative::UpdatesNeeded()</unmanaged>	
-        </member>
         <member name="T:SharpDX.DXGI.Device">
             <summary>	
             <p>An <strong><see cref="T:SharpDX.DXGI.Device"/></strong> interface implements a derived class for DXGI objects that produce image data.</p>	
@@ -1892,7 +1662,7 @@
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Identifies the alpha value, transparency behavior, of a surface.</p>	
             </summary>	
             <remarks>	
-            <p>For more information about alpha mode, see <strong><see cref="!:SharpDX.Direct2D1.AlphaMode"/></strong>.</p>	
+            <p>For more information about alpha mode, see <strong>D2D1_ALPHA_MODE</strong>.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DXGI_ALPHA_MODE']/*"/>	
             <msdn-id>hh404496</msdn-id>	
@@ -3643,6 +3413,14 @@
             <unmanaged>DXGI_SCALING_NONE</unmanaged>	
             <unmanaged-short>DXGI_SCALING_NONE</unmanaged-short>	
         </member>
+        <member name="F:SharpDX.DXGI.Scaling.AspectRatioStretch">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DXGI_SCALING_ASPECT_RATIO_STRETCH']/*"/>	
+            <unmanaged>DXGI_SCALING_ASPECT_RATIO_STRETCH</unmanaged>	
+            <unmanaged-short>DXGI_SCALING_ASPECT_RATIO_STRETCH</unmanaged-short>	
+        </member>
         <member name="T:SharpDX.DXGI.SharedResourceFlags">
             <summary>	
             No documentation.	
@@ -3927,9 +3705,21 @@
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='SharpDX.DXGI.ResultCode']/*"/>	
         </member>
+        <member name="F:SharpDX.DXGI.ResultCode.CannotProtectContent">
+            <summary>Constant CannotProtectContent.</summary>
+            <unmanaged>DXGI_ERROR_CANNOT_PROTECT_CONTENT</unmanaged>
+        </member>
+        <member name="F:SharpDX.DXGI.ResultCode.SessionDisconnected">
+            <summary>Constant SessionDisconnected.</summary>
+            <unmanaged>DXGI_ERROR_SESSION_DISCONNECTED</unmanaged>
+        </member>
         <member name="F:SharpDX.DXGI.ResultCode.AccessLost">
             <summary>Constant AccessLost.</summary>
             <unmanaged>DXGI_ERROR_ACCESS_LOST</unmanaged>
+        </member>
+        <member name="F:SharpDX.DXGI.ResultCode.WaitTimeout">
+            <summary>Constant WaitTimeout.</summary>
+            <unmanaged>DXGI_ERROR_WAIT_TIMEOUT</unmanaged>
         </member>
         <member name="F:SharpDX.DXGI.ResultCode.RemoteClientDisconnected">
             <summary>Constant RemoteClientDisconnected.</summary>
@@ -3938,10 +3728,6 @@
         <member name="F:SharpDX.DXGI.ResultCode.DeviceRemoved">
             <summary>Constant DeviceRemoved.</summary>
             <unmanaged>DXGI_ERROR_DEVICE_REMOVED</unmanaged>
-        </member>
-        <member name="F:SharpDX.DXGI.ResultCode.CannotProtectContent">
-            <summary>Constant CannotProtectContent.</summary>
-            <unmanaged>DXGI_ERROR_CANNOT_PROTECT_CONTENT</unmanaged>
         </member>
         <member name="F:SharpDX.DXGI.ResultCode.Nonexclusive">
             <summary>Constant Nonexclusive.</summary>
@@ -3967,10 +3753,6 @@
             <summary>Constant RestrictToOutputStale.</summary>
             <unmanaged>DXGI_ERROR_RESTRICT_TO_OUTPUT_STALE</unmanaged>
         </member>
-        <member name="F:SharpDX.DXGI.ResultCode.NotFound">
-            <summary>Constant NotFound.</summary>
-            <unmanaged>DXGI_ERROR_NOT_FOUND</unmanaged>
-        </member>
         <member name="F:SharpDX.DXGI.ResultCode.DeviceReset">
             <summary>Constant DeviceReset.</summary>
             <unmanaged>DXGI_ERROR_DEVICE_RESET</unmanaged>
@@ -3979,9 +3761,9 @@
             <summary>Constant MoreData.</summary>
             <unmanaged>DXGI_ERROR_MORE_DATA</unmanaged>
         </member>
-        <member name="F:SharpDX.DXGI.ResultCode.SessionDisconnected">
-            <summary>Constant SessionDisconnected.</summary>
-            <unmanaged>DXGI_ERROR_SESSION_DISCONNECTED</unmanaged>
+        <member name="F:SharpDX.DXGI.ResultCode.NotFound">
+            <summary>Constant NotFound.</summary>
+            <unmanaged>DXGI_ERROR_NOT_FOUND</unmanaged>
         </member>
         <member name="F:SharpDX.DXGI.ResultCode.DriverInternalError">
             <summary>Constant DriverInternalError.</summary>
@@ -3998,10 +3780,6 @@
         <member name="F:SharpDX.DXGI.ResultCode.WasStillDrawing">
             <summary>Constant WasStillDrawing.</summary>
             <unmanaged>DXGI_ERROR_WAS_STILL_DRAWING</unmanaged>
-        </member>
-        <member name="F:SharpDX.DXGI.ResultCode.WaitTimeout">
-            <summary>Constant WaitTimeout.</summary>
-            <unmanaged>DXGI_ERROR_WAIT_TIMEOUT</unmanaged>
         </member>
         <member name="F:SharpDX.DXGI.ResultCode.AccessDenied">
             <summary>Constant AccessDenied.</summary>
@@ -4475,7 +4253,7 @@
             <param name="restrictToOutputRef">No documentation.</param>	
             <returns>No documentation.</returns>	
             <remarks>	
-            <p>You can use composition swap chains with either DirectComposition?s <strong>IDCompositionVisual</strong> interface or XAML?s <strong>SwapChainBackgroundPanel</strong> class. For DirectComposition, you can call the <strong>IDCompositionVisual::SetContent</strong> method to set the swap chain as the content of a visual object, which then allows you to bind the swap chain to the visual tree. For XAML, the <strong>SwapChainBackgroundPanel</strong> class exposes a classic COM interface <strong><see cref="T:SharpDX.DXGI.ISwapChainBackgroundPanelNative"/></strong>. You can use the <strong><see cref="M:SharpDX.DXGI.ISwapChainBackgroundPanelNative.SetSwapChain(SharpDX.DXGI.SwapChain)"/></strong> method to bind to the XAML UI graph.</p><p>The <strong><see cref="M:SharpDX.DXGI.SwapChain.SetFullscreenState(SharpDX.Bool,SharpDX.DXGI.Output)"/></strong>, <strong><see cref="M:SharpDX.DXGI.SwapChain.ResizeTarget(SharpDX.DXGI.ModeDescription@)"/></strong>, <strong><see cref="M:SharpDX.DXGI.SwapChain.GetContainingOutput(SharpDX.DXGI.Output@)"/></strong>, <strong><see cref="M:SharpDX.DXGI.SwapChain1.GetHwnd(System.IntPtr@)"/></strong>, and <strong>IDXGISwapChain::GetCoreWindow</strong> methods aren't valid on this type of swap chain. If you call any of these methods on this type of swap chain, they fail.</p>	
+            <p>You can use composition swap chains with either DirectComposition?s <strong>IDCompositionVisual</strong> interface or XAML?s <strong>SwapChainBackgroundPanel</strong> class. For DirectComposition, you can call the <strong>IDCompositionVisual::SetContent</strong> method to set the swap chain as the content of a visual object, which then allows you to bind the swap chain to the visual tree. For XAML, the <strong>SwapChainBackgroundPanel</strong> class exposes a classic COM interface <strong>ISwapChainBackgroundPanelNative</strong>. You can use the <strong>ISwapChainBackgroundPanelNative::SetSwapChain</strong> method to bind to the XAML UI graph.</p><p>The <strong><see cref="M:SharpDX.DXGI.SwapChain.SetFullscreenState(SharpDX.Bool,SharpDX.DXGI.Output)"/></strong>, <strong><see cref="M:SharpDX.DXGI.SwapChain.ResizeTarget(SharpDX.DXGI.ModeDescription@)"/></strong>, <strong><see cref="M:SharpDX.DXGI.SwapChain.GetContainingOutput(SharpDX.DXGI.Output@)"/></strong>, <strong><see cref="M:SharpDX.DXGI.SwapChain1.GetHwnd(System.IntPtr@)"/></strong>, and <strong>IDXGISwapChain::GetCoreWindow</strong> methods aren't valid on this type of swap chain. If you call any of these methods on this type of swap chain, they fail.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIFactory2::CreateSwapChainForComposition']/*"/>	
             <msdn-id>hh404558</msdn-id>	
@@ -4494,97 +4272,6 @@
             <unmanaged>IsWindowedStereoEnabled</unmanaged>	
             <unmanaged-short>IsWindowedStereoEnabled</unmanaged-short>	
             <unmanaged>BOOL IDXGIFactory2::IsWindowedStereoEnabled()</unmanaged>
-        </member>
-        <member name="T:SharpDX.DXGI.ISwapChainBackgroundPanelNative">
-            <summary>	
-            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps only</p><p>Provides interoperation between XAML and a DirectX swap chain.</p>	
-            </summary>	
-            <remarks>	
-            <p>This interface provides the native implementation of the <strong>Windows::UI::XAML::Control::SwapChainBackgroundPanel</strong> Windows Runtime type. To obtain a reference to <strong><see cref="T:SharpDX.DXGI.ISwapChainBackgroundPanelNative"/></strong>, you must cast a <strong>SwapChainBackgroundPanel</strong> instance to <strong>IInspectable</strong> or <strong><see cref="T:SharpDX.ComObject"/></strong>, and call <strong>QueryInterface</strong>.</p><pre> Microsoft::WRL::ComPtr&lt;<see cref="T:SharpDX.DXGI.ISwapChainBackgroundPanelNative"/>&gt;	m_swapChainNative;	
-            // ...	
-            IInspectable* panelInspectable = (IInspectable*) reinterpret_cast&lt;IInspectable*&gt;(swapChainPanel);	
-            panelInspectable-&gt;QueryInterface(__uuidof(<see cref="T:SharpDX.DXGI.ISwapChainBackgroundPanelNative"/>), (void **)&amp;m_swapChainNative); </pre>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ISwapChainBackgroundPanelNative']/*"/>	
-            <msdn-id>hh848326</msdn-id>	
-            <unmanaged>ISwapChainBackgroundPanelNative</unmanaged>	
-            <unmanaged-short>ISwapChainBackgroundPanelNative</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.DXGI.ISwapChainBackgroundPanelNative.#ctor(System.IntPtr)">
-            <summary>
-            Initializes a new instance of the <see cref="T:SharpDX.DXGI.ISwapChainBackgroundPanelNative"/> class.
-            </summary>
-            <param name="nativePtr">The native pointer.</param>	
-        </member>
-        <member name="M:SharpDX.DXGI.ISwapChainBackgroundPanelNative.op_Explicit(System.IntPtr)~SharpDX.DXGI.ISwapChainBackgroundPanelNative">
-            <summary>
-            Performs an explicit conversion from <see cref="T:System.IntPtr"/> to <see cref="T:SharpDX.DXGI.ISwapChainBackgroundPanelNative"/>. (This method is a shortcut to <see cref="P:SharpDX.CppObject.NativePointer"/>) 
-            </summary>
-            <param name="nativePointer">The native pointer.</param>
-            <returns>
-            The result of the conversion.
-            </returns>
-        </member>
-        <member name="M:SharpDX.DXGI.ISwapChainBackgroundPanelNative.SetSwapChain(SharpDX.DXGI.SwapChain)">
-            <summary>	
-            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps only</p><p>Sets the DirectX swap chain for <strong>SwapChainBackgroundPanel</strong>.</p>	
-            </summary>	
-            <param name="swapChainRef">No documentation.</param>	
-            <returns><p>If this method succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ISwapChainBackgroundPanelNative::SetSwapChain']/*"/>	
-            <msdn-id>hh848327</msdn-id>	
-            <unmanaged>HRESULT ISwapChainBackgroundPanelNative::SetSwapChain([In] IDXGISwapChain* pSwapChain)</unmanaged>	
-            <unmanaged-short>ISwapChainBackgroundPanelNative::SetSwapChain</unmanaged-short>	
-        </member>
-        <member name="P:SharpDX.DXGI.ISwapChainBackgroundPanelNative.SwapChain">
-            <summary>	
-            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps only</p><p>Sets the DirectX swap chain for <strong>SwapChainBackgroundPanel</strong>.</p>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ISwapChainBackgroundPanelNative::SetSwapChain']/*"/>	
-            <msdn-id>hh848327</msdn-id>	
-            <unmanaged>SetSwapChain</unmanaged>	
-            <unmanaged-short>SetSwapChain</unmanaged-short>	
-            <unmanaged>HRESULT ISwapChainBackgroundPanelNative::SetSwapChain([In] IDXGISwapChain* pSwapChain)</unmanaged>
-        </member>
-        <member name="T:SharpDX.DXGI.IVirtualSurfaceUpdatesCallbackNativeNative">
-            <summary>	
-            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps only</p><p>Provides an interface for the implementation of drawing behaviors when a <strong>VirtualSurfaceImageSource</strong> requests an update. </p>	
-            </summary>	
-            <remarks>	
-            <p>This interface is implemented by the developer to provide specific drawing behaviors for updates to a <strong>VirtualSurfaceImageSource</strong>. Classes that implement  this interface are provided to the <strong><see cref="M:SharpDX.DXGI.IVirtualSurfaceImageSourceNative.RegisterForUpdatesNeeded_(System.IntPtr)"/></strong>, which calls the <strong>UpdatesNeeded</strong> method implementation whenever an update is requested.</p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IVirtualSurfaceUpdatesCallbackNative']/*"/>	
-            <msdn-id>hh848336</msdn-id>	
-            <unmanaged>IVirtualSurfaceUpdatesCallbackNative</unmanaged>	
-            <unmanaged-short>IVirtualSurfaceUpdatesCallbackNative</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.DXGI.IVirtualSurfaceUpdatesCallbackNativeNative.#ctor(System.IntPtr)">
-            <summary>
-            Initializes a new instance of the <see cref="T:SharpDX.DXGI.IVirtualSurfaceUpdatesCallbackNativeNative"/> class.
-            </summary>
-            <param name="nativePtr">The native pointer.</param>	
-        </member>
-        <member name="M:SharpDX.DXGI.IVirtualSurfaceUpdatesCallbackNativeNative.op_Explicit(System.IntPtr)~SharpDX.DXGI.IVirtualSurfaceUpdatesCallbackNativeNative">
-            <summary>
-            Performs an explicit conversion from <see cref="T:System.IntPtr"/> to <see cref="T:SharpDX.DXGI.IVirtualSurfaceUpdatesCallbackNativeNative"/>. (This method is a shortcut to <see cref="P:SharpDX.CppObject.NativePointer"/>) 
-            </summary>
-            <param name="nativePointer">The native pointer.</param>
-            <returns>
-            The result of the conversion.
-            </returns>
-        </member>
-        <member name="M:SharpDX.DXGI.IVirtualSurfaceUpdatesCallbackNativeNative.UpdatesNeeded_">
-            <summary>	
-            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps only</p><p>Performs the drawing behaviors when an update to <strong>VirtualSurfaceImageSource</strong> is requested.</p>	
-            </summary>	
-            <returns><p>If this method succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
-            <remarks>	
-            <p>This method is implemented by the developer.</p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IVirtualSurfaceUpdatesCallbackNative::UpdatesNeeded']/*"/>	
-            <msdn-id>hh848337</msdn-id>	
-            <unmanaged>HRESULT IVirtualSurfaceUpdatesCallbackNative::UpdatesNeeded()</unmanaged>	
-            <unmanaged-short>IVirtualSurfaceUpdatesCallbackNative::UpdatesNeeded</unmanaged-short>	
         </member>
         <member name="T:SharpDX.DXGI.KeyedMutex">
             <summary>	
@@ -6356,18 +6043,6 @@
             <remarks>
             This method is called when the assembly is loaded.
             </remarks>
-        </member>
-        <member name="T:SharpDX.DXGI.VirtualSurfaceUpdatesCallbackNativeShadow">
-            <summary>
-            Internal VirtualSurfaceUpdatesCallbackNative Callback
-            </summary>
-        </member>
-        <member name="M:SharpDX.DXGI.VirtualSurfaceUpdatesCallbackNativeShadow.ToIntPtr(SharpDX.DXGI.IVirtualSurfaceUpdatesCallbackNative)">
-            <summary>
-            Get a native callback pointer from a managed callback.
-            </summary>
-            <param name="virtualSurfaceUpdatesCallbackNative">The geometry sink.</param>
-            <returns>A pointer to the unmanaged geometry sink counterpart</returns>
         </member>
     </members>
 </doc>

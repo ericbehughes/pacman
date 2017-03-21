@@ -1,0 +1,17 @@
+C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\Pacman\bin\Release\Pacman.dll
+C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\Pacman\bin\Release\Pacman.pdb
+C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\Pacman\bin\Release\MonoGame.Framework.dll
+C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\Pacman\bin\Release\SharpDX.dll
+C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\Pacman\bin\Release\SharpDX.Direct3D11.dll
+C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\Pacman\bin\Release\SharpDX.XAudio2.dll
+C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\Pacman\bin\Release\SharpDX.DXGI.dll
+C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\Pacman\bin\Release\SharpDX.WP8.winmd
+C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\Pacman\bin\Release\MonoGame.Framework.xml
+C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\Pacman\bin\Release\SharpDX.xml
+C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\Pacman\bin\Release\SharpDX.Direct3D11.xml
+C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\Pacman\bin\Release\SharpDX.XAudio2.xml
+C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\Pacman\bin\Release\SharpDX.DXGI.xml
+C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\Pacman\bin\Release\SharpDX.WP8.dll
+C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\Pacman\obj\Release\Pacman.csprojResolveAssemblyReference.cache
+C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\Pacman\obj\Release\Pacman.dll
+C:\Users\ehugh\OneDrive\c#\Projects\PacManGithub\Pacman\obj\Release\Pacman.pdb

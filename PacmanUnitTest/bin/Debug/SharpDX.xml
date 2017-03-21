@@ -4575,7 +4575,7 @@
             <remarks>
             This class should mostly be used internally for performance reasons, in scenarios where equals/hashcode
             could be invoked frequently, and the set of strings is limited. Internally, <see cref="T:SharpDX.SingletonString"/> 
-            string is using the method <see cref="!:string.Intern"/> and also is precaching the hashcode of the string.
+            string is using the method <see cref="M:System.String.Intern(System.String)"/> and also is precaching the hashcode of the string.
             </remarks>
         </member>
         <member name="M:SharpDX.SingletonString.#ctor(System.String)">
@@ -6959,61 +6959,6 @@
             </summary>
             <param name="path">The path.</param>
             <returns>The last write time access</returns>
-        </member>
-        <member name="M:SharpDX.IO.NativeFile.ReadFile(System.IntPtr,System.IntPtr,System.Int32,System.Int32@,System.IntPtr)">
-            <summary>
-            Reads to a file.
-            </summary>
-            <param name="fileHandle">The file handle.</param>
-            <param name="buffer">The buffer.</param>
-            <param name="numberOfBytesToRead">The number of bytes to read.</param>
-            <param name="numberOfBytesRead">The number of bytes read.</param>
-            <param name="overlapped">The overlapped.</param>
-            <returns>A Result</returns>
-            <unmanaged>ReadFile</unmanaged>
-        </member>
-        <member name="M:SharpDX.IO.NativeFile.WriteFile(System.IntPtr,System.IntPtr,System.Int32,System.Int32@,System.IntPtr)">
-            <summary>
-            Writes to a file.
-            </summary>
-            <param name="fileHandle">The file handle.</param>
-            <param name="buffer">The buffer.</param>
-            <param name="numberOfBytesToRead">The number of bytes to read.</param>
-            <param name="numberOfBytesRead">The number of bytes read.</param>
-            <param name="overlapped">The overlapped.</param>
-            <returns>A Result</returns>
-            <unmanaged>WriteFile</unmanaged>
-        </member>
-        <member name="M:SharpDX.IO.NativeFile.SetFilePointerEx(System.IntPtr,System.Int64,System.Int64@,System.IO.SeekOrigin)">
-            <summary>
-            Sets the file pointer.
-            </summary>
-            <param name="handle">The handle.</param>
-            <param name="distanceToMove">The distance to move.</param>
-            <param name="distanceToMoveHigh">The distance to move high.</param>
-            <param name="seekOrigin">The seek origin.</param>
-            <returns></returns>
-            <unmanaged>SetFilePointerEx</unmanaged>
-        </member>
-        <member name="M:SharpDX.IO.NativeFile.SetEndOfFile(System.IntPtr)">
-            <summary>
-            Sets the end of file.
-            </summary>
-            <param name="handle">The handle.</param>
-            <returns></returns>
-            <unmanaged>SetEndOfFile</unmanaged>
-        </member>
-        <member name="M:SharpDX.IO.NativeFile.Create(System.String,SharpDX.IO.NativeFileAccess,SharpDX.IO.NativeFileShare,SharpDX.IO.NativeFileMode,System.IntPtr)">
-            <summary>
-            Creates the file.
-            </summary>
-            <param name="fileName">Name of the file.</param>
-            <param name="desiredAccess">The desired access.</param>
-            <param name="shareMode">The share mode.</param>
-            <param name="mode">The creation disposition.</param>
-            <param name="extendedParameters">The extended parameters.</param>
-            <returns>A handle to the created file. IntPtr.Zero if failed.</returns>
-            <unmanaged>CreateFile2</unmanaged>
         </member>
         <member name="T:SharpDX.IO.NativeFileStream">
             <summary>
@@ -10816,6 +10761,80 @@
               <c>true</c> if the specified <see cref="T:System.Object"/> is equal to this instance; otherwise, <c>false</c>.
             </returns>
         </member>
+        <member name="T:SharpDX.Direct3D.ConstantBufferFlags">
+            <summary>	
+            <p>Values that identify the indended use of a constant-data buffer.</p>	
+            </summary>	
+            <remarks>	
+            <p><strong><see cref="T:SharpDX.Direct3D.ConstantBufferFlags"/></strong>-typed values are specified in the <strong>uFlags</strong> member of the <strong>D3D11_SHADER_BUFFER_DESC</strong> structure.</p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SHADER_CBUFFER_FLAGS']/*"/>	
+            <msdn-id>ff728729</msdn-id>	
+            <unmanaged>D3D_SHADER_CBUFFER_FLAGS</unmanaged>	
+            <unmanaged-short>D3D_SHADER_CBUFFER_FLAGS</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ConstantBufferFlags.ConstantBufferUserpacked">
+            <summary>	
+            <dd> <p>Bind the constant buffer to an input slot defined in HLSL code (instead of letting the compiler choose the input slot).</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_CBF_USERPACKED']/*"/>	
+            <msdn-id>ff728729</msdn-id>	
+            <unmanaged>D3D_CBF_USERPACKED</unmanaged>	
+            <unmanaged-short>D3D_CBF_USERPACKED</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ConstantBufferFlags.None">
+            <summary>	
+            None.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='']/*"/>	
+            <unmanaged>None</unmanaged>	
+            <unmanaged-short>None</unmanaged-short>	
+        </member>
+        <member name="T:SharpDX.Direct3D.ConstantBufferType">
+            <summary>	
+            <p>Values that identify the intended use of constant-buffer data. </p>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_CBUFFER_TYPE']/*"/>	
+            <msdn-id>ff728722</msdn-id>	
+            <unmanaged>D3D_CBUFFER_TYPE</unmanaged>	
+            <unmanaged-short>D3D_CBUFFER_TYPE</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ConstantBufferType.ConstantBuffer">
+            <summary>	
+            <dd> <p>A buffer containing scalar constants.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_CT_CBUFFER']/*"/>	
+            <msdn-id>ff728722</msdn-id>	
+            <unmanaged>D3D_CT_CBUFFER</unmanaged>	
+            <unmanaged-short>D3D_CT_CBUFFER</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ConstantBufferType.TextureBuffer">
+            <summary>	
+            <dd> <p>A buffer containing texture data.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_CT_TBUFFER']/*"/>	
+            <msdn-id>ff728722</msdn-id>	
+            <unmanaged>D3D_CT_TBUFFER</unmanaged>	
+            <unmanaged-short>D3D_CT_TBUFFER</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ConstantBufferType.InterfacePointers">
+            <summary>	
+            <dd> <p>A buffer containing interface references.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_CT_INTERFACE_POINTERS']/*"/>	
+            <msdn-id>ff728722</msdn-id>	
+            <unmanaged>D3D_CT_INTERFACE_POINTERS</unmanaged>	
+            <unmanaged-short>D3D_CT_INTERFACE_POINTERS</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ConstantBufferType.ResourceBindInformation">
+            <summary>	
+            <dd> <p>A buffer containing binding information.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_CT_RESOURCE_BIND_INFO']/*"/>	
+            <msdn-id>ff728722</msdn-id>	
+            <unmanaged>D3D_CT_RESOURCE_BIND_INFO</unmanaged>	
+            <unmanaged-short>D3D_CT_RESOURCE_BIND_INFO</unmanaged-short>	
+        </member>
         <member name="T:SharpDX.Direct3D.DriverType">
             <summary>	
             <p>Driver type options.</p>	
@@ -10956,6 +10975,352 @@
             <msdn-id>ff476329</msdn-id>	
             <unmanaged>D3D_FEATURE_LEVEL_11_1</unmanaged>	
             <unmanaged-short>D3D_FEATURE_LEVEL_11_1</unmanaged-short>	
+        </member>
+        <member name="T:SharpDX.Direct3D.IncludeType">
+            <summary>	
+            <p>Values that indicate the location of a shader #include file. </p>	
+            </summary>	
+            <remarks>	
+            <p>You pass a <strong><see cref="T:SharpDX.Direct3D.IncludeType"/></strong>-typed value to the  <em>IncludeType</em> parameter in a call to the  <strong><see cref="!:SharpDX.Direct3D.Include.Open"/></strong> method to indicate the location of the #include file.</p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_INCLUDE_TYPE']/*"/>	
+            <msdn-id>ff728723</msdn-id>	
+            <unmanaged>D3D_INCLUDE_TYPE</unmanaged>	
+            <unmanaged-short>D3D_INCLUDE_TYPE</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.IncludeType.Local">
+            <summary>	
+            <dd> <p>The local directory.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_INCLUDE_LOCAL']/*"/>	
+            <msdn-id>ff728723</msdn-id>	
+            <unmanaged>D3D_INCLUDE_LOCAL</unmanaged>	
+            <unmanaged-short>D3D_INCLUDE_LOCAL</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.IncludeType.System">
+            <summary>	
+            <dd> <p>The system directory.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_INCLUDE_SYSTEM']/*"/>	
+            <msdn-id>ff728723</msdn-id>	
+            <unmanaged>D3D_INCLUDE_SYSTEM</unmanaged>	
+            <unmanaged-short>D3D_INCLUDE_SYSTEM</unmanaged-short>	
+        </member>
+        <member name="T:SharpDX.Direct3D.InputPrimitive">
+            <summary>	
+            <p>Values that indicate how the pipeline interprets vertex data that is bound to the input-assembler stage. These primitive topology values determine how the vertex data is rendered on screen.</p>	
+            </summary>	
+            <remarks>	
+            <p>Use the  <strong><see cref="!:SharpDX.Direct3D11.InputAssemblerStage.SetPrimitiveTopology"/></strong> method and a value from <strong><see cref="T:SharpDX.Direct3D.PrimitiveTopology"/></strong> to bind a primitive topology to the input-assembler stage. Use the  <strong><see cref="!:SharpDX.Direct3D11.InputAssemblerStage.GetPrimitiveTopology"/></strong> method to retrieve the primitive topology for the input-assembler stage.</p><p>The following diagram shows the various primitive types for a geometry shader object.</p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_PRIMITIVE']/*"/>	
+            <msdn-id>ff728726</msdn-id>	
+            <unmanaged>D3D_PRIMITIVE</unmanaged>	
+            <unmanaged-short>D3D_PRIMITIVE</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.InputPrimitive.Undefined">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_PRIMITIVE_UNDEFINED']/*"/>	
+            <unmanaged>D3D_PRIMITIVE_UNDEFINED</unmanaged>	
+            <unmanaged-short>D3D_PRIMITIVE_UNDEFINED</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.InputPrimitive.Point">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_PRIMITIVE_POINT']/*"/>	
+            <unmanaged>D3D_PRIMITIVE_POINT</unmanaged>	
+            <unmanaged-short>D3D_PRIMITIVE_POINT</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.InputPrimitive.Line">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_PRIMITIVE_LINE']/*"/>	
+            <unmanaged>D3D_PRIMITIVE_LINE</unmanaged>	
+            <unmanaged-short>D3D_PRIMITIVE_LINE</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.InputPrimitive.Triangle">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_PRIMITIVE_TRIANGLE']/*"/>	
+            <unmanaged>D3D_PRIMITIVE_TRIANGLE</unmanaged>	
+            <unmanaged-short>D3D_PRIMITIVE_TRIANGLE</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.InputPrimitive.LineWithAdjacency">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_PRIMITIVE_LINE_ADJ']/*"/>	
+            <unmanaged>D3D_PRIMITIVE_LINE_ADJ</unmanaged>	
+            <unmanaged-short>D3D_PRIMITIVE_LINE_ADJ</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.InputPrimitive.TriangleWithAdjacency">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_PRIMITIVE_TRIANGLE_ADJ']/*"/>	
+            <unmanaged>D3D_PRIMITIVE_TRIANGLE_ADJ</unmanaged>	
+            <unmanaged-short>D3D_PRIMITIVE_TRIANGLE_ADJ</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.InputPrimitive.PatchWith1ControlPoints">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_PRIMITIVE_1_CONTROL_POINT_PATCH']/*"/>	
+            <unmanaged>D3D_PRIMITIVE_1_CONTROL_POINT_PATCH</unmanaged>	
+            <unmanaged-short>D3D_PRIMITIVE_1_CONTROL_POINT_PATCH</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.InputPrimitive.PatchWith2ControlPoints">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_PRIMITIVE_2_CONTROL_POINT_PATCH']/*"/>	
+            <unmanaged>D3D_PRIMITIVE_2_CONTROL_POINT_PATCH</unmanaged>	
+            <unmanaged-short>D3D_PRIMITIVE_2_CONTROL_POINT_PATCH</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.InputPrimitive.PatchWith3ControlPoints">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_PRIMITIVE_3_CONTROL_POINT_PATCH']/*"/>	
+            <unmanaged>D3D_PRIMITIVE_3_CONTROL_POINT_PATCH</unmanaged>	
+            <unmanaged-short>D3D_PRIMITIVE_3_CONTROL_POINT_PATCH</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.InputPrimitive.PatchWith4ControlPoints">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_PRIMITIVE_4_CONTROL_POINT_PATCH']/*"/>	
+            <unmanaged>D3D_PRIMITIVE_4_CONTROL_POINT_PATCH</unmanaged>	
+            <unmanaged-short>D3D_PRIMITIVE_4_CONTROL_POINT_PATCH</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.InputPrimitive.PatchWith5ControlPoints">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_PRIMITIVE_5_CONTROL_POINT_PATCH']/*"/>	
+            <unmanaged>D3D_PRIMITIVE_5_CONTROL_POINT_PATCH</unmanaged>	
+            <unmanaged-short>D3D_PRIMITIVE_5_CONTROL_POINT_PATCH</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.InputPrimitive.PatchWith6ControlPoints">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_PRIMITIVE_6_CONTROL_POINT_PATCH']/*"/>	
+            <unmanaged>D3D_PRIMITIVE_6_CONTROL_POINT_PATCH</unmanaged>	
+            <unmanaged-short>D3D_PRIMITIVE_6_CONTROL_POINT_PATCH</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.InputPrimitive.PatchWith7ControlPoints">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_PRIMITIVE_7_CONTROL_POINT_PATCH']/*"/>	
+            <unmanaged>D3D_PRIMITIVE_7_CONTROL_POINT_PATCH</unmanaged>	
+            <unmanaged-short>D3D_PRIMITIVE_7_CONTROL_POINT_PATCH</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.InputPrimitive.PatchWith8ControlPoints">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_PRIMITIVE_8_CONTROL_POINT_PATCH']/*"/>	
+            <unmanaged>D3D_PRIMITIVE_8_CONTROL_POINT_PATCH</unmanaged>	
+            <unmanaged-short>D3D_PRIMITIVE_8_CONTROL_POINT_PATCH</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.InputPrimitive.PatchWith9ControlPoints">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_PRIMITIVE_9_CONTROL_POINT_PATCH']/*"/>	
+            <unmanaged>D3D_PRIMITIVE_9_CONTROL_POINT_PATCH</unmanaged>	
+            <unmanaged-short>D3D_PRIMITIVE_9_CONTROL_POINT_PATCH</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.InputPrimitive.PatchWith10ControlPoints">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_PRIMITIVE_10_CONTROL_POINT_PATCH']/*"/>	
+            <unmanaged>D3D_PRIMITIVE_10_CONTROL_POINT_PATCH</unmanaged>	
+            <unmanaged-short>D3D_PRIMITIVE_10_CONTROL_POINT_PATCH</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.InputPrimitive.PatchWith11ControlPoints">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_PRIMITIVE_11_CONTROL_POINT_PATCH']/*"/>	
+            <unmanaged>D3D_PRIMITIVE_11_CONTROL_POINT_PATCH</unmanaged>	
+            <unmanaged-short>D3D_PRIMITIVE_11_CONTROL_POINT_PATCH</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.InputPrimitive.PatchWith12ControlPoints">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_PRIMITIVE_12_CONTROL_POINT_PATCH']/*"/>	
+            <unmanaged>D3D_PRIMITIVE_12_CONTROL_POINT_PATCH</unmanaged>	
+            <unmanaged-short>D3D_PRIMITIVE_12_CONTROL_POINT_PATCH</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.InputPrimitive.PatchWith13ControlPoints">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_PRIMITIVE_13_CONTROL_POINT_PATCH']/*"/>	
+            <unmanaged>D3D_PRIMITIVE_13_CONTROL_POINT_PATCH</unmanaged>	
+            <unmanaged-short>D3D_PRIMITIVE_13_CONTROL_POINT_PATCH</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.InputPrimitive.PatchWith14ControlPoints">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_PRIMITIVE_14_CONTROL_POINT_PATCH']/*"/>	
+            <unmanaged>D3D_PRIMITIVE_14_CONTROL_POINT_PATCH</unmanaged>	
+            <unmanaged-short>D3D_PRIMITIVE_14_CONTROL_POINT_PATCH</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.InputPrimitive.PatchWith15ControlPoints">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_PRIMITIVE_15_CONTROL_POINT_PATCH']/*"/>	
+            <unmanaged>D3D_PRIMITIVE_15_CONTROL_POINT_PATCH</unmanaged>	
+            <unmanaged-short>D3D_PRIMITIVE_15_CONTROL_POINT_PATCH</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.InputPrimitive.PatchWith16ControlPoints">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_PRIMITIVE_16_CONTROL_POINT_PATCH']/*"/>	
+            <unmanaged>D3D_PRIMITIVE_16_CONTROL_POINT_PATCH</unmanaged>	
+            <unmanaged-short>D3D_PRIMITIVE_16_CONTROL_POINT_PATCH</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.InputPrimitive.PatchWith17ControlPoints">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_PRIMITIVE_17_CONTROL_POINT_PATCH']/*"/>	
+            <unmanaged>D3D_PRIMITIVE_17_CONTROL_POINT_PATCH</unmanaged>	
+            <unmanaged-short>D3D_PRIMITIVE_17_CONTROL_POINT_PATCH</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.InputPrimitive.PatchWith18ControlPoints">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_PRIMITIVE_18_CONTROL_POINT_PATCH']/*"/>	
+            <unmanaged>D3D_PRIMITIVE_18_CONTROL_POINT_PATCH</unmanaged>	
+            <unmanaged-short>D3D_PRIMITIVE_18_CONTROL_POINT_PATCH</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.InputPrimitive.PatchWith19ControlPoints">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_PRIMITIVE_19_CONTROL_POINT_PATCH']/*"/>	
+            <unmanaged>D3D_PRIMITIVE_19_CONTROL_POINT_PATCH</unmanaged>	
+            <unmanaged-short>D3D_PRIMITIVE_19_CONTROL_POINT_PATCH</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.InputPrimitive.PatchWith20ControlPoints">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_PRIMITIVE_20_CONTROL_POINT_PATCH']/*"/>	
+            <unmanaged>D3D_PRIMITIVE_20_CONTROL_POINT_PATCH</unmanaged>	
+            <unmanaged-short>D3D_PRIMITIVE_20_CONTROL_POINT_PATCH</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.InputPrimitive.PatchWith21ControlPoints">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_PRIMITIVE_21_CONTROL_POINT_PATCH']/*"/>	
+            <unmanaged>D3D_PRIMITIVE_21_CONTROL_POINT_PATCH</unmanaged>	
+            <unmanaged-short>D3D_PRIMITIVE_21_CONTROL_POINT_PATCH</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.InputPrimitive.PatchWith22ControlPoints">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_PRIMITIVE_22_CONTROL_POINT_PATCH']/*"/>	
+            <unmanaged>D3D_PRIMITIVE_22_CONTROL_POINT_PATCH</unmanaged>	
+            <unmanaged-short>D3D_PRIMITIVE_22_CONTROL_POINT_PATCH</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.InputPrimitive.PatchWith23ControlPoints">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_PRIMITIVE_23_CONTROL_POINT_PATCH']/*"/>	
+            <unmanaged>D3D_PRIMITIVE_23_CONTROL_POINT_PATCH</unmanaged>	
+            <unmanaged-short>D3D_PRIMITIVE_23_CONTROL_POINT_PATCH</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.InputPrimitive.PatchWith24ControlPoints">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_PRIMITIVE_24_CONTROL_POINT_PATCH']/*"/>	
+            <unmanaged>D3D_PRIMITIVE_24_CONTROL_POINT_PATCH</unmanaged>	
+            <unmanaged-short>D3D_PRIMITIVE_24_CONTROL_POINT_PATCH</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.InputPrimitive.PatchWith25ControlPoints">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_PRIMITIVE_25_CONTROL_POINT_PATCH']/*"/>	
+            <unmanaged>D3D_PRIMITIVE_25_CONTROL_POINT_PATCH</unmanaged>	
+            <unmanaged-short>D3D_PRIMITIVE_25_CONTROL_POINT_PATCH</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.InputPrimitive.PatchWith26ControlPoints">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_PRIMITIVE_26_CONTROL_POINT_PATCH']/*"/>	
+            <unmanaged>D3D_PRIMITIVE_26_CONTROL_POINT_PATCH</unmanaged>	
+            <unmanaged-short>D3D_PRIMITIVE_26_CONTROL_POINT_PATCH</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.InputPrimitive.PatchWith27ControlPoints">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_PRIMITIVE_27_CONTROL_POINT_PATCH']/*"/>	
+            <unmanaged>D3D_PRIMITIVE_27_CONTROL_POINT_PATCH</unmanaged>	
+            <unmanaged-short>D3D_PRIMITIVE_27_CONTROL_POINT_PATCH</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.InputPrimitive.PatchWith28ControlPoints">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_PRIMITIVE_28_CONTROL_POINT_PATCH']/*"/>	
+            <unmanaged>D3D_PRIMITIVE_28_CONTROL_POINT_PATCH</unmanaged>	
+            <unmanaged-short>D3D_PRIMITIVE_28_CONTROL_POINT_PATCH</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.InputPrimitive.PatchWith29ControlPoints">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_PRIMITIVE_29_CONTROL_POINT_PATCH']/*"/>	
+            <unmanaged>D3D_PRIMITIVE_29_CONTROL_POINT_PATCH</unmanaged>	
+            <unmanaged-short>D3D_PRIMITIVE_29_CONTROL_POINT_PATCH</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.InputPrimitive.PatchWith30ControlPoints">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_PRIMITIVE_30_CONTROL_POINT_PATCH']/*"/>	
+            <unmanaged>D3D_PRIMITIVE_30_CONTROL_POINT_PATCH</unmanaged>	
+            <unmanaged-short>D3D_PRIMITIVE_30_CONTROL_POINT_PATCH</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.InputPrimitive.PatchWith31ControlPoints">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_PRIMITIVE_31_CONTROL_POINT_PATCH']/*"/>	
+            <unmanaged>D3D_PRIMITIVE_31_CONTROL_POINT_PATCH</unmanaged>	
+            <unmanaged-short>D3D_PRIMITIVE_31_CONTROL_POINT_PATCH</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.InputPrimitive.PatchWith32ControlPoints">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_PRIMITIVE_32_CONTROL_POINT_PATCH']/*"/>	
+            <unmanaged>D3D_PRIMITIVE_32_CONTROL_POINT_PATCH</unmanaged>	
+            <unmanaged-short>D3D_PRIMITIVE_32_CONTROL_POINT_PATCH</unmanaged-short>	
         </member>
         <member name="T:SharpDX.Direct3D.MinimumPrecision">
             <summary>	
@@ -11377,12 +11742,338 @@
             <unmanaged>D3D_PRIMITIVE_TOPOLOGY_32_CONTROL_POINT_PATCHLIST</unmanaged>	
             <unmanaged-short>D3D_PRIMITIVE_TOPOLOGY_32_CONTROL_POINT_PATCHLIST</unmanaged-short>	
         </member>
+        <member name="T:SharpDX.Direct3D.RegisterComponentType">
+            <summary>	
+            <p>Values that identify the data types that can be stored in a register.</p>	
+            </summary>	
+            <remarks>	
+            <p>A register component type is specified in the <strong>ComponentType</strong> member of the <strong>D3D11_SIGNATURE_PARAMETER_DESC</strong> structure.</p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_REGISTER_COMPONENT_TYPE']/*"/>	
+            <msdn-id>ff728727</msdn-id>	
+            <unmanaged>D3D_REGISTER_COMPONENT_TYPE</unmanaged>	
+            <unmanaged-short>D3D_REGISTER_COMPONENT_TYPE</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.RegisterComponentType.Unknown">
+            <summary>	
+            <dd> <p>The data type is unknown.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_REGISTER_COMPONENT_UNKNOWN']/*"/>	
+            <msdn-id>ff728727</msdn-id>	
+            <unmanaged>D3D_REGISTER_COMPONENT_UNKNOWN</unmanaged>	
+            <unmanaged-short>D3D_REGISTER_COMPONENT_UNKNOWN</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.RegisterComponentType.UInt32">
+            <summary>	
+            <dd> <p>32-bit unsigned integer.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_REGISTER_COMPONENT_UINT32']/*"/>	
+            <msdn-id>ff728727</msdn-id>	
+            <unmanaged>D3D_REGISTER_COMPONENT_UINT32</unmanaged>	
+            <unmanaged-short>D3D_REGISTER_COMPONENT_UINT32</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.RegisterComponentType.SInt32">
+            <summary>	
+            <dd> <p>32-bit signed integer.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_REGISTER_COMPONENT_SINT32']/*"/>	
+            <msdn-id>ff728727</msdn-id>	
+            <unmanaged>D3D_REGISTER_COMPONENT_SINT32</unmanaged>	
+            <unmanaged-short>D3D_REGISTER_COMPONENT_SINT32</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.RegisterComponentType.Float32">
+            <summary>	
+            <dd> <p>32-bit floating-point number.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_REGISTER_COMPONENT_FLOAT32']/*"/>	
+            <msdn-id>ff728727</msdn-id>	
+            <unmanaged>D3D_REGISTER_COMPONENT_FLOAT32</unmanaged>	
+            <unmanaged-short>D3D_REGISTER_COMPONENT_FLOAT32</unmanaged-short>	
+        </member>
+        <member name="T:SharpDX.Direct3D.ResourceReturnType">
+            <summary>	
+            <p>Values that identify the return type of a resource.</p>	
+            </summary>	
+            <remarks>	
+            <p>A resource return type is specified in the <strong>ReturnType</strong> member of the <strong>D3D11_SHADER_INPUT_BIND_DESC</strong> structure.</p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_RESOURCE_RETURN_TYPE']/*"/>	
+            <msdn-id>ff728728</msdn-id>	
+            <unmanaged>D3D_RESOURCE_RETURN_TYPE</unmanaged>	
+            <unmanaged-short>D3D_RESOURCE_RETURN_TYPE</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ResourceReturnType.UNorm">
+            <summary>	
+            <dd> <p>Return type is an unsigned integer value normalized to a value between 0 and 1.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_RETURN_TYPE_UNORM']/*"/>	
+            <msdn-id>ff728728</msdn-id>	
+            <unmanaged>D3D_RETURN_TYPE_UNORM</unmanaged>	
+            <unmanaged-short>D3D_RETURN_TYPE_UNORM</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ResourceReturnType.SNorm">
+            <summary>	
+            <dd> <p>Return type is a signed integer value normalized to a value between -1 and 1.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_RETURN_TYPE_SNORM']/*"/>	
+            <msdn-id>ff728728</msdn-id>	
+            <unmanaged>D3D_RETURN_TYPE_SNORM</unmanaged>	
+            <unmanaged-short>D3D_RETURN_TYPE_SNORM</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ResourceReturnType.SInt">
+            <summary>	
+            <dd> <p>Return type is a signed integer.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_RETURN_TYPE_SINT']/*"/>	
+            <msdn-id>ff728728</msdn-id>	
+            <unmanaged>D3D_RETURN_TYPE_SINT</unmanaged>	
+            <unmanaged-short>D3D_RETURN_TYPE_SINT</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ResourceReturnType.UInt">
+            <summary>	
+            <dd> <p>Return type is an unsigned integer.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_RETURN_TYPE_UINT']/*"/>	
+            <msdn-id>ff728728</msdn-id>	
+            <unmanaged>D3D_RETURN_TYPE_UINT</unmanaged>	
+            <unmanaged-short>D3D_RETURN_TYPE_UINT</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ResourceReturnType.Float">
+            <summary>	
+            <dd> <p>Return type is a floating-point number.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_RETURN_TYPE_FLOAT']/*"/>	
+            <msdn-id>ff728728</msdn-id>	
+            <unmanaged>D3D_RETURN_TYPE_FLOAT</unmanaged>	
+            <unmanaged-short>D3D_RETURN_TYPE_FLOAT</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ResourceReturnType.Mixed">
+            <summary>	
+            <dd> <p>Return type is unknown.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_RETURN_TYPE_MIXED']/*"/>	
+            <msdn-id>ff728728</msdn-id>	
+            <unmanaged>D3D_RETURN_TYPE_MIXED</unmanaged>	
+            <unmanaged-short>D3D_RETURN_TYPE_MIXED</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ResourceReturnType.Double">
+            <summary>	
+            <dd> <p>Return type is a double-precision value.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_RETURN_TYPE_DOUBLE']/*"/>	
+            <msdn-id>ff728728</msdn-id>	
+            <unmanaged>D3D_RETURN_TYPE_DOUBLE</unmanaged>	
+            <unmanaged-short>D3D_RETURN_TYPE_DOUBLE</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ResourceReturnType.Continued">
+            <summary>	
+            <dd> <p>Return type is a multiple-dword type, such as a double or uint64, and the component is continued from the previous component that was declared.  The first component represents the lower bits.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_RETURN_TYPE_CONTINUED']/*"/>	
+            <msdn-id>ff728728</msdn-id>	
+            <unmanaged>D3D_RETURN_TYPE_CONTINUED</unmanaged>	
+            <unmanaged-short>D3D_RETURN_TYPE_CONTINUED</unmanaged-short>	
+        </member>
+        <member name="T:SharpDX.Direct3D.ShaderInputFlags">
+            <summary>	
+            <p>Values that identify shader-input options.</p>	
+            </summary>	
+            <remarks>	
+            <p><strong><see cref="T:SharpDX.Direct3D.ShaderInputFlags"/></strong>-typed values are specified in the <strong>uFlags</strong> member of the <strong>D3D11_SHADER_INPUT_BIND_DESC</strong> structure.</p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SHADER_INPUT_FLAGS']/*"/>	
+            <msdn-id>ff728730</msdn-id>	
+            <unmanaged>D3D_SHADER_INPUT_FLAGS</unmanaged>	
+            <unmanaged-short>D3D_SHADER_INPUT_FLAGS</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderInputFlags.Userpacked">
+            <summary>	
+            <dd> <p>Assign a shader input to a register based on the register assignment in the HLSL code (instead of letting the compiler choose the register).</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SIF_USERPACKED']/*"/>	
+            <msdn-id>ff728730</msdn-id>	
+            <unmanaged>D3D_SIF_USERPACKED</unmanaged>	
+            <unmanaged-short>D3D_SIF_USERPACKED</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderInputFlags.ComparisonSampler">
+            <summary>	
+            <dd> <p>Use a comparison sampler, which uses the SampleCmp (DirectX HLSL Texture Object) and SampleCmpLevelZero (DirectX HLSL Texture Object) sampling functions.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SIF_COMPARISON_SAMPLER']/*"/>	
+            <msdn-id>ff728730</msdn-id>	
+            <unmanaged>D3D_SIF_COMPARISON_SAMPLER</unmanaged>	
+            <unmanaged-short>D3D_SIF_COMPARISON_SAMPLER</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderInputFlags.TextureComponent0">
+            <summary>	
+            <dd> <p>A 2-bit value for encoding texture components.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SIF_TEXTURE_COMPONENT_0']/*"/>	
+            <msdn-id>ff728730</msdn-id>	
+            <unmanaged>D3D_SIF_TEXTURE_COMPONENT_0</unmanaged>	
+            <unmanaged-short>D3D_SIF_TEXTURE_COMPONENT_0</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderInputFlags.TextureComponent1">
+            <summary>	
+            <dd> <p>A 2-bit value for encoding texture components.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SIF_TEXTURE_COMPONENT_1']/*"/>	
+            <msdn-id>ff728730</msdn-id>	
+            <unmanaged>D3D_SIF_TEXTURE_COMPONENT_1</unmanaged>	
+            <unmanaged-short>D3D_SIF_TEXTURE_COMPONENT_1</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderInputFlags.TextureComponents">
+            <summary>	
+            <dd> <p>A 2-bit value for encoding texture components.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SIF_TEXTURE_COMPONENTS']/*"/>	
+            <msdn-id>ff728730</msdn-id>	
+            <unmanaged>D3D_SIF_TEXTURE_COMPONENTS</unmanaged>	
+            <unmanaged-short>D3D_SIF_TEXTURE_COMPONENTS</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderInputFlags.Unused">
+            <summary>	
+            <dd> <p>This value is reserved.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SIF_UNUSED']/*"/>	
+            <msdn-id>ff728730</msdn-id>	
+            <unmanaged>D3D_SIF_UNUSED</unmanaged>	
+            <unmanaged-short>D3D_SIF_UNUSED</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderInputFlags.None">
+            <summary>	
+            None.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='']/*"/>	
+            <unmanaged>None</unmanaged>	
+            <unmanaged-short>None</unmanaged-short>	
+        </member>
+        <member name="T:SharpDX.Direct3D.ShaderInputType">
+            <summary>	
+            <p>Values that identify resource types that can be bound to a shader and that are reflected as part of the resource description for the shader.</p>	
+            </summary>	
+            <remarks>	
+            <p><strong><see cref="T:SharpDX.Direct3D.ShaderInputType"/></strong>-typed values are specified in the <strong>Type</strong> member of the <strong>D3D11_SHADER_INPUT_BIND_DESC</strong> structure.</p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SHADER_INPUT_TYPE']/*"/>	
+            <msdn-id>ff728731</msdn-id>	
+            <unmanaged>D3D_SHADER_INPUT_TYPE</unmanaged>	
+            <unmanaged-short>D3D_SHADER_INPUT_TYPE</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderInputType.ConstantBuffer">
+            <summary>	
+            <dd> <p>The shader resource is a constant buffer.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SIT_CBUFFER']/*"/>	
+            <msdn-id>ff728731</msdn-id>	
+            <unmanaged>D3D_SIT_CBUFFER</unmanaged>	
+            <unmanaged-short>D3D_SIT_CBUFFER</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderInputType.TextureBuffer">
+            <summary>	
+            <dd> <p>The shader resource is a texture buffer.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SIT_TBUFFER']/*"/>	
+            <msdn-id>ff728731</msdn-id>	
+            <unmanaged>D3D_SIT_TBUFFER</unmanaged>	
+            <unmanaged-short>D3D_SIT_TBUFFER</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderInputType.Texture">
+            <summary>	
+            <dd> <p>The shader resource is a texture.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SIT_TEXTURE']/*"/>	
+            <msdn-id>ff728731</msdn-id>	
+            <unmanaged>D3D_SIT_TEXTURE</unmanaged>	
+            <unmanaged-short>D3D_SIT_TEXTURE</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderInputType.Sampler">
+            <summary>	
+            <dd> <p>The shader resource is a sampler.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SIT_SAMPLER']/*"/>	
+            <msdn-id>ff728731</msdn-id>	
+            <unmanaged>D3D_SIT_SAMPLER</unmanaged>	
+            <unmanaged-short>D3D_SIT_SAMPLER</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderInputType.UnorderedAccessViewRWTyped">
+            <summary>	
+            <dd> <p>The shader resource is a read-and-write buffer.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SIT_UAV_RWTYPED']/*"/>	
+            <msdn-id>ff728731</msdn-id>	
+            <unmanaged>D3D_SIT_UAV_RWTYPED</unmanaged>	
+            <unmanaged-short>D3D_SIT_UAV_RWTYPED</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderInputType.Structured">
+            <summary>	
+            <dd> <p>The shader resource is a structured buffer.</p> <p>For more information about structured buffer, see the <strong>Remarks</strong> section.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SIT_STRUCTURED']/*"/>	
+            <msdn-id>ff728731</msdn-id>	
+            <unmanaged>D3D_SIT_STRUCTURED</unmanaged>	
+            <unmanaged-short>D3D_SIT_STRUCTURED</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderInputType.UnorderedAccessViewRWStructured">
+            <summary>	
+            <dd> <p>The shader resource is a read-and-write structured buffer.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SIT_UAV_RWSTRUCTURED']/*"/>	
+            <msdn-id>ff728731</msdn-id>	
+            <unmanaged>D3D_SIT_UAV_RWSTRUCTURED</unmanaged>	
+            <unmanaged-short>D3D_SIT_UAV_RWSTRUCTURED</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderInputType.ByteAddress">
+            <summary>	
+            <dd> <p>The shader resource is a byte-address buffer.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SIT_BYTEADDRESS']/*"/>	
+            <msdn-id>ff728731</msdn-id>	
+            <unmanaged>D3D_SIT_BYTEADDRESS</unmanaged>	
+            <unmanaged-short>D3D_SIT_BYTEADDRESS</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderInputType.UnorderedAccessViewRWByteAddress">
+            <summary>	
+            <dd> <p>The shader resource is a read-and-write byte-address buffer.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SIT_UAV_RWBYTEADDRESS']/*"/>	
+            <msdn-id>ff728731</msdn-id>	
+            <unmanaged>D3D_SIT_UAV_RWBYTEADDRESS</unmanaged>	
+            <unmanaged-short>D3D_SIT_UAV_RWBYTEADDRESS</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderInputType.UnorderedAccessViewAppendStructured">
+            <summary>	
+            <dd> <p>The shader resource is an append-structured buffer.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SIT_UAV_APPEND_STRUCTURED']/*"/>	
+            <msdn-id>ff728731</msdn-id>	
+            <unmanaged>D3D_SIT_UAV_APPEND_STRUCTURED</unmanaged>	
+            <unmanaged-short>D3D_SIT_UAV_APPEND_STRUCTURED</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderInputType.UnorderedAccessViewConsumeStructured">
+            <summary>	
+            <dd> <p>The shader resource is a consume-structured buffer.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SIT_UAV_CONSUME_STRUCTURED']/*"/>	
+            <msdn-id>ff728731</msdn-id>	
+            <unmanaged>D3D_SIT_UAV_CONSUME_STRUCTURED</unmanaged>	
+            <unmanaged-short>D3D_SIT_UAV_CONSUME_STRUCTURED</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderInputType.UnorderedAccessViewRWStructuredWithCounter">
+            <summary>	
+            <dd> <p>The shader resource is a read-and-write structured buffer that uses the built-in counter to append or consume.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SIT_UAV_RWSTRUCTURED_WITH_COUNTER']/*"/>	
+            <msdn-id>ff728731</msdn-id>	
+            <unmanaged>D3D_SIT_UAV_RWSTRUCTURED_WITH_COUNTER</unmanaged>	
+            <unmanaged-short>D3D_SIT_UAV_RWSTRUCTURED_WITH_COUNTER</unmanaged-short>	
+        </member>
         <member name="T:SharpDX.Direct3D.ShaderResourceViewDimension">
             <summary>	
             <p>Values that identify the type of resource to be viewed as a shader resource.</p>	
             </summary>	
             <remarks>	
-            <p>A <strong><see cref="T:SharpDX.Direct3D.ShaderResourceViewDimension"/></strong>-typed value is specified in the <strong>ViewDimension</strong> member of the <strong><see cref="!:SharpDX.Direct3D11.ShaderResourceViewDescription"/></strong> structure or the  <strong>Dimension</strong> member of the <strong><see cref="!:SharpDX.D3DCompiler.InputBindingDescription"/></strong> structure.</p>	
+            <p>A <strong><see cref="T:SharpDX.Direct3D.ShaderResourceViewDimension"/></strong>-typed value is specified in the <strong>ViewDimension</strong> member of the <strong><see cref="!:SharpDX.Direct3D11.ShaderResourceViewDescription"/></strong> structure or the  <strong>Dimension</strong> member of the <strong>D3D11_SHADER_INPUT_BIND_DESC</strong> structure.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SRV_DIMENSION']/*"/>	
             <msdn-id>ff728736</msdn-id>	
@@ -11496,6 +12187,1053 @@
             <msdn-id>ff728736</msdn-id>	
             <unmanaged>D3D_SRV_DIMENSION_BUFFEREX</unmanaged>	
             <unmanaged-short>D3D_SRV_DIMENSION_BUFFEREX</unmanaged-short>	
+        </member>
+        <member name="T:SharpDX.Direct3D.ShaderVariableClass">
+            <summary>	
+            <p>Values that identify the class of a shader variable.</p>	
+            </summary>	
+            <remarks>	
+            <p>The class of a shader variable is not a programming class; the class identifies the variable class such as scalar, vector, object, and so on. <strong><see cref="T:SharpDX.Direct3D.ShaderVariableClass"/></strong>-typed values are specified in the <strong>Class</strong> member of the <strong>D3D11_SHADER_TYPE_DESC</strong> structure.</p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SHADER_VARIABLE_CLASS']/*"/>	
+            <msdn-id>ff728733</msdn-id>	
+            <unmanaged>D3D_SHADER_VARIABLE_CLASS</unmanaged>	
+            <unmanaged-short>D3D_SHADER_VARIABLE_CLASS</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableClass.Scalar">
+            <summary>	
+            <dd> <p>The shader variable is a scalar.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVC_SCALAR']/*"/>	
+            <msdn-id>ff728733</msdn-id>	
+            <unmanaged>D3D_SVC_SCALAR</unmanaged>	
+            <unmanaged-short>D3D_SVC_SCALAR</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableClass.Vector">
+            <summary>	
+            <dd> <p>The shader variable is a vector.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVC_VECTOR']/*"/>	
+            <msdn-id>ff728733</msdn-id>	
+            <unmanaged>D3D_SVC_VECTOR</unmanaged>	
+            <unmanaged-short>D3D_SVC_VECTOR</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableClass.MatrixRows">
+            <summary>	
+            <dd> <p>The shader variable is a row-major matrix.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVC_MATRIX_ROWS']/*"/>	
+            <msdn-id>ff728733</msdn-id>	
+            <unmanaged>D3D_SVC_MATRIX_ROWS</unmanaged>	
+            <unmanaged-short>D3D_SVC_MATRIX_ROWS</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableClass.MatrixColumns">
+            <summary>	
+            <dd> <p>The shader variable is a column-major matrix.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVC_MATRIX_COLUMNS']/*"/>	
+            <msdn-id>ff728733</msdn-id>	
+            <unmanaged>D3D_SVC_MATRIX_COLUMNS</unmanaged>	
+            <unmanaged-short>D3D_SVC_MATRIX_COLUMNS</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableClass.Object">
+            <summary>	
+            <dd> <p>The shader variable is an object.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVC_OBJECT']/*"/>	
+            <msdn-id>ff728733</msdn-id>	
+            <unmanaged>D3D_SVC_OBJECT</unmanaged>	
+            <unmanaged-short>D3D_SVC_OBJECT</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableClass.Struct">
+            <summary>	
+            <dd> <p>The shader variable is a structure.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVC_STRUCT']/*"/>	
+            <msdn-id>ff728733</msdn-id>	
+            <unmanaged>D3D_SVC_STRUCT</unmanaged>	
+            <unmanaged-short>D3D_SVC_STRUCT</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableClass.InterfaceClass">
+            <summary>	
+            <dd> <p>The shader variable is a class.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVC_INTERFACE_CLASS']/*"/>	
+            <msdn-id>ff728733</msdn-id>	
+            <unmanaged>D3D_SVC_INTERFACE_CLASS</unmanaged>	
+            <unmanaged-short>D3D_SVC_INTERFACE_CLASS</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableClass.InterfacePointer">
+            <summary>	
+            <dd> <p>The shader variable is an interface.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVC_INTERFACE_POINTER']/*"/>	
+            <msdn-id>ff728733</msdn-id>	
+            <unmanaged>D3D_SVC_INTERFACE_POINTER</unmanaged>	
+            <unmanaged-short>D3D_SVC_INTERFACE_POINTER</unmanaged-short>	
+        </member>
+        <member name="T:SharpDX.Direct3D.ShaderVariableFlags">
+            <summary>	
+            <p>Values that identify information about a shader variable.</p>	
+            </summary>	
+            <remarks>	
+            <p>A call to the  <strong>ID3D11ShaderReflectionVariable::GetDesc</strong> method returns <strong><see cref="T:SharpDX.Direct3D.ShaderVariableFlags"/></strong> values in the  <strong>uFlags</strong> member of a  <strong>D3D11_SHADER_VARIABLE_DESC</strong> structure.</p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SHADER_VARIABLE_FLAGS']/*"/>	
+            <msdn-id>ff728734</msdn-id>	
+            <unmanaged>D3D_SHADER_VARIABLE_FLAGS</unmanaged>	
+            <unmanaged-short>D3D_SHADER_VARIABLE_FLAGS</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableFlags.Userpacked">
+            <summary>	
+            <dd> <p>Indicates that the registers assigned to this shader variable were explicitly declared in shader code (instead of automatically assigned by the compiler).</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVF_USERPACKED']/*"/>	
+            <msdn-id>ff728734</msdn-id>	
+            <unmanaged>D3D_SVF_USERPACKED</unmanaged>	
+            <unmanaged-short>D3D_SVF_USERPACKED</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableFlags.Used">
+            <summary>	
+            <dd> <p>Indicates that this variable is used by this shader. This value confirms that a particular shader variable (which can be common to many different shaders) is indeed used by a particular shader.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVF_USED']/*"/>	
+            <msdn-id>ff728734</msdn-id>	
+            <unmanaged>D3D_SVF_USED</unmanaged>	
+            <unmanaged-short>D3D_SVF_USED</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableFlags.InterfacePointer">
+            <summary>	
+            <dd> <p>Indicates that this variable is an interface.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVF_INTERFACE_POINTER']/*"/>	
+            <msdn-id>ff728734</msdn-id>	
+            <unmanaged>D3D_SVF_INTERFACE_POINTER</unmanaged>	
+            <unmanaged-short>D3D_SVF_INTERFACE_POINTER</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableFlags.InterfaceParameter">
+            <summary>	
+            <dd> <p>Indicates that this variable is a parameter of an interface.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVF_INTERFACE_PARAMETER']/*"/>	
+            <msdn-id>ff728734</msdn-id>	
+            <unmanaged>D3D_SVF_INTERFACE_PARAMETER</unmanaged>	
+            <unmanaged-short>D3D_SVF_INTERFACE_PARAMETER</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableFlags.None">
+            <summary>	
+            None.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='']/*"/>	
+            <unmanaged>None</unmanaged>	
+            <unmanaged-short>None</unmanaged-short>	
+        </member>
+        <member name="T:SharpDX.Direct3D.ShaderVariableType">
+            <summary>	
+            <p>Values that identify various data, texture, and buffer types that can be assigned to a shader variable.</p>	
+            </summary>	
+            <remarks>	
+            <p>A call to the <strong>ID3D11ShaderReflectionType::GetDesc</strong> method returns a <strong><see cref="T:SharpDX.Direct3D.ShaderVariableType"/></strong> value in the  <strong>Type</strong> member of a  <strong>D3D11_SHADER_TYPE_DESC</strong> structure.</p><p>The types in a structured buffer describe the structure of the elements in the buffer. The layout of these types generally match their C++ struct counterparts. The following examples show structured buffers:</p><pre><code>struct mystruct {float4 val; uint ind;}; RWStructuredBuffer&lt;mystruct&gt; rwbuf;	
+            RWStructuredBuffer&lt;float3&gt; rwbuf2;</code></pre>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SHADER_VARIABLE_TYPE']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SHADER_VARIABLE_TYPE</unmanaged>	
+            <unmanaged-short>D3D_SHADER_VARIABLE_TYPE</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.Void">
+            <summary>	
+            <dd> <p>The variable is a void reference.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_VOID']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_VOID</unmanaged>	
+            <unmanaged-short>D3D_SVT_VOID</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.Bool">
+            <summary>	
+            <dd> <p>The variable is a boolean.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_BOOL']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_BOOL</unmanaged>	
+            <unmanaged-short>D3D_SVT_BOOL</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.Int">
+            <summary>	
+            <dd> <p>The variable is an integer.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_INT']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_INT</unmanaged>	
+            <unmanaged-short>D3D_SVT_INT</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.Float">
+            <summary>	
+            <dd> <p>The variable is a floating-point number.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_FLOAT']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_FLOAT</unmanaged>	
+            <unmanaged-short>D3D_SVT_FLOAT</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.String">
+            <summary>	
+            <dd> <p>The variable is a string.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_STRING']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_STRING</unmanaged>	
+            <unmanaged-short>D3D_SVT_STRING</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.Texture">
+            <summary>	
+            <dd> <p>The variable is a texture.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_TEXTURE']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_TEXTURE</unmanaged>	
+            <unmanaged-short>D3D_SVT_TEXTURE</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.Texture1D">
+            <summary>	
+            <dd> <p>The variable is a 1D texture.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_TEXTURE1D']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_TEXTURE1D</unmanaged>	
+            <unmanaged-short>D3D_SVT_TEXTURE1D</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.Texture2D">
+            <summary>	
+            <dd> <p>The variable is a 2D texture.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_TEXTURE2D']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_TEXTURE2D</unmanaged>	
+            <unmanaged-short>D3D_SVT_TEXTURE2D</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.Texture3D">
+            <summary>	
+            <dd> <p>The variable is a 3D texture.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_TEXTURE3D']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_TEXTURE3D</unmanaged>	
+            <unmanaged-short>D3D_SVT_TEXTURE3D</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.TextureCube">
+            <summary>	
+            <dd> <p>The variable is a texture cube.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_TEXTURECUBE']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_TEXTURECUBE</unmanaged>	
+            <unmanaged-short>D3D_SVT_TEXTURECUBE</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.Sampler">
+            <summary>	
+            <dd> <p>The variable is a sampler.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_SAMPLER']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_SAMPLER</unmanaged>	
+            <unmanaged-short>D3D_SVT_SAMPLER</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.Sampler1D">
+            <summary>	
+            <dd> <p>The variable is a pixel shader.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_SAMPLER1D']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_SAMPLER1D</unmanaged>	
+            <unmanaged-short>D3D_SVT_SAMPLER1D</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.Sampler2D">
+            <summary>	
+            <dd> <p>The variable is a vertex shader.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_SAMPLER2D']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_SAMPLER2D</unmanaged>	
+            <unmanaged-short>D3D_SVT_SAMPLER2D</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.Sampler3D">
+            <summary>	
+            <dd> <p>The variable is an unsigned integer.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_SAMPLER3D']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_SAMPLER3D</unmanaged>	
+            <unmanaged-short>D3D_SVT_SAMPLER3D</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.SamplerCube">
+            <summary>	
+            <dd> <p>The variable is an 8-bit unsigned integer.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_SAMPLERCUBE']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_SAMPLERCUBE</unmanaged>	
+            <unmanaged-short>D3D_SVT_SAMPLERCUBE</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.PixelShader">
+            <summary>	
+            <dd> <p>The variable is a geometry shader.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_PIXELSHADER']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_PIXELSHADER</unmanaged>	
+            <unmanaged-short>D3D_SVT_PIXELSHADER</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.VertexShader">
+            <summary>	
+            <dd> <p>The variable is a rasterizer-state object.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_VERTEXSHADER']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_VERTEXSHADER</unmanaged>	
+            <unmanaged-short>D3D_SVT_VERTEXSHADER</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.PixelFragment">
+            <summary>	
+            <dd> <p>The variable is a depth-stencil-state object.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_PIXELFRAGMENT']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_PIXELFRAGMENT</unmanaged>	
+            <unmanaged-short>D3D_SVT_PIXELFRAGMENT</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.VertexFragment">
+            <summary>	
+            <dd> <p>The variable is a blend-state object.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_VERTEXFRAGMENT']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_VERTEXFRAGMENT</unmanaged>	
+            <unmanaged-short>D3D_SVT_VERTEXFRAGMENT</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.UInt">
+            <summary>	
+            <dd> <p>The variable is a buffer.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_UINT']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_UINT</unmanaged>	
+            <unmanaged-short>D3D_SVT_UINT</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.UInt8">
+            <summary>	
+            <dd> <p>The variable is a constant buffer.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_UINT8']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_UINT8</unmanaged>	
+            <unmanaged-short>D3D_SVT_UINT8</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.GeometryShader">
+            <summary>	
+            <dd> <p>The variable is a texture buffer.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_GEOMETRYSHADER']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_GEOMETRYSHADER</unmanaged>	
+            <unmanaged-short>D3D_SVT_GEOMETRYSHADER</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.Rasterizer">
+            <summary>	
+            <dd> <p>The variable is a 1D-texture array.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_RASTERIZER']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_RASTERIZER</unmanaged>	
+            <unmanaged-short>D3D_SVT_RASTERIZER</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.DepthStencil">
+            <summary>	
+            <dd> <p>The variable is a 2D-texture array.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_DEPTHSTENCIL']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_DEPTHSTENCIL</unmanaged>	
+            <unmanaged-short>D3D_SVT_DEPTHSTENCIL</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.Blend">
+            <summary>	
+            <dd> <p>The variable is a render-target view.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_BLEND']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_BLEND</unmanaged>	
+            <unmanaged-short>D3D_SVT_BLEND</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.Buffer">
+            <summary>	
+            <dd> <p>The variable is a depth-stencil view.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_BUFFER']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_BUFFER</unmanaged>	
+            <unmanaged-short>D3D_SVT_BUFFER</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.ConstantBuffer">
+            <summary>	
+            <dd> <p>The variable is a 2D-multisampled texture.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_CBUFFER']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_CBUFFER</unmanaged>	
+            <unmanaged-short>D3D_SVT_CBUFFER</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.TextureBuffer">
+            <summary>	
+            <dd> <p>The variable is a 2D-multisampled-texture array.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_TBUFFER']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_TBUFFER</unmanaged>	
+            <unmanaged-short>D3D_SVT_TBUFFER</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.Texture1DArray">
+            <summary>	
+            <dd> <p>The variable is a texture-cube array.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_TEXTURE1DARRAY']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_TEXTURE1DARRAY</unmanaged>	
+            <unmanaged-short>D3D_SVT_TEXTURE1DARRAY</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.Texture2DArray">
+            <summary>	
+            <dd> <p>The variable holds a compiled hull-shader binary.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_TEXTURE2DARRAY']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_TEXTURE2DARRAY</unmanaged>	
+            <unmanaged-short>D3D_SVT_TEXTURE2DARRAY</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.RenderTargetView">
+            <summary>	
+            <dd> <p>The variable holds a compiled domain-shader binary.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_RENDERTARGETVIEW']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_RENDERTARGETVIEW</unmanaged>	
+            <unmanaged-short>D3D_SVT_RENDERTARGETVIEW</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.DepthStencilView">
+            <summary>	
+            <dd> <p>The variable is an interface.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_DEPTHSTENCILVIEW']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_DEPTHSTENCILVIEW</unmanaged>	
+            <unmanaged-short>D3D_SVT_DEPTHSTENCILVIEW</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.Texture2DMultisampled">
+            <summary>	
+            <dd> <p>The variable holds a compiled compute-shader binary.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_TEXTURE2DMS']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_TEXTURE2DMS</unmanaged>	
+            <unmanaged-short>D3D_SVT_TEXTURE2DMS</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.Texture2DMultisampledArray">
+            <summary>	
+            <dd> <p>The variable is a double precision (64-bit) floating-point number.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_TEXTURE2DMSARRAY']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_TEXTURE2DMSARRAY</unmanaged>	
+            <unmanaged-short>D3D_SVT_TEXTURE2DMSARRAY</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.TextureCubeArray">
+            <summary>	
+            <dd> <p>The variable is a 1D read-and-write texture.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_TEXTURECUBEARRAY']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_TEXTURECUBEARRAY</unmanaged>	
+            <unmanaged-short>D3D_SVT_TEXTURECUBEARRAY</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.HullShader">
+            <summary>	
+            <dd> <p>The variable is an array of 1D read-and-write textures.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_HULLSHADER']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_HULLSHADER</unmanaged>	
+            <unmanaged-short>D3D_SVT_HULLSHADER</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.DomainShader">
+            <summary>	
+            <dd> <p>The variable is a 2D read-and-write texture.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_DOMAINSHADER']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_DOMAINSHADER</unmanaged>	
+            <unmanaged-short>D3D_SVT_DOMAINSHADER</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.InterfacePointer">
+            <summary>	
+            <dd> <p>The variable is an array of 2D read-and-write textures.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_INTERFACE_POINTER']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_INTERFACE_POINTER</unmanaged>	
+            <unmanaged-short>D3D_SVT_INTERFACE_POINTER</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.ComputeShader">
+            <summary>	
+            <dd> <p>The variable is a 3D read-and-write texture.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_COMPUTESHADER']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_COMPUTESHADER</unmanaged>	
+            <unmanaged-short>D3D_SVT_COMPUTESHADER</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.Double">
+            <summary>	
+            <dd> <p>The variable is a read-and-write buffer.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_DOUBLE']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_DOUBLE</unmanaged>	
+            <unmanaged-short>D3D_SVT_DOUBLE</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.RWTexture1D">
+            <summary>	
+            <dd> <p>The variable is a byte-address buffer.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_RWTEXTURE1D']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_RWTEXTURE1D</unmanaged>	
+            <unmanaged-short>D3D_SVT_RWTEXTURE1D</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.RWTexture1DArray">
+            <summary>	
+            <dd> <p>The variable is a read-and-write byte-address buffer.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_RWTEXTURE1DARRAY']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_RWTEXTURE1DARRAY</unmanaged>	
+            <unmanaged-short>D3D_SVT_RWTEXTURE1DARRAY</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.RWTexture2D">
+            <summary>	
+            <dd> <p>The variable is a structured buffer. </p> <p>For more information about structured buffer, see the <strong>Remarks</strong> section.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_RWTEXTURE2D']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_RWTEXTURE2D</unmanaged>	
+            <unmanaged-short>D3D_SVT_RWTEXTURE2D</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.RWTexture2DArray">
+            <summary>	
+            <dd> <p>The variable is a read-and-write structured buffer.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_RWTEXTURE2DARRAY']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_RWTEXTURE2DARRAY</unmanaged>	
+            <unmanaged-short>D3D_SVT_RWTEXTURE2DARRAY</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.RWTexture3D">
+            <summary>	
+            <dd> <p>The variable is an append structured buffer.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_RWTEXTURE3D']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_RWTEXTURE3D</unmanaged>	
+            <unmanaged-short>D3D_SVT_RWTEXTURE3D</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.RWBuffer">
+            <summary>	
+            <dd> <p>The variable is a consume structured buffer.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_RWBUFFER']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_RWBUFFER</unmanaged>	
+            <unmanaged-short>D3D_SVT_RWBUFFER</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.ByteAddressBuffer">
+            <summary>	
+            <dd> <p>The variable is a void reference.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_BYTEADDRESS_BUFFER']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_BYTEADDRESS_BUFFER</unmanaged>	
+            <unmanaged-short>D3D_SVT_BYTEADDRESS_BUFFER</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.RWByteAddressBuffer">
+            <summary>	
+            <dd> <p>The variable is a boolean.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_RWBYTEADDRESS_BUFFER']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_RWBYTEADDRESS_BUFFER</unmanaged>	
+            <unmanaged-short>D3D_SVT_RWBYTEADDRESS_BUFFER</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.StructuredBuffer">
+            <summary>	
+            <dd> <p>The variable is an integer.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_STRUCTURED_BUFFER']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_STRUCTURED_BUFFER</unmanaged>	
+            <unmanaged-short>D3D_SVT_STRUCTURED_BUFFER</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.RWStructuredBuffer">
+            <summary>	
+            <dd> <p>The variable is a floating-point number.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_RWSTRUCTURED_BUFFER']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_RWSTRUCTURED_BUFFER</unmanaged>	
+            <unmanaged-short>D3D_SVT_RWSTRUCTURED_BUFFER</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.AppendStructuredBuffer">
+            <summary>	
+            <dd> <p>The variable is a string.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_APPEND_STRUCTURED_BUFFER']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_APPEND_STRUCTURED_BUFFER</unmanaged>	
+            <unmanaged-short>D3D_SVT_APPEND_STRUCTURED_BUFFER</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.ConsumeStructuredBuffer">
+            <summary>	
+            <dd> <p>The variable is a texture.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_CONSUME_STRUCTURED_BUFFER']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_CONSUME_STRUCTURED_BUFFER</unmanaged>	
+            <unmanaged-short>D3D_SVT_CONSUME_STRUCTURED_BUFFER</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.MinimumFloat8">
+            <summary>	
+            <dd> <p>The variable is a 1D texture.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_MIN8FLOAT']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_MIN8FLOAT</unmanaged>	
+            <unmanaged-short>D3D_SVT_MIN8FLOAT</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.MinimumFloat10">
+            <summary>	
+            <dd> <p>The variable is a 2D texture.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_MIN10FLOAT']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_MIN10FLOAT</unmanaged>	
+            <unmanaged-short>D3D_SVT_MIN10FLOAT</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.MinimumFloat16">
+            <summary>	
+            <dd> <p>The variable is a 3D texture.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_MIN16FLOAT']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_MIN16FLOAT</unmanaged>	
+            <unmanaged-short>D3D_SVT_MIN16FLOAT</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.MinimumInt12">
+            <summary>	
+            <dd> <p>The variable is a texture cube.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_MIN12INT']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_MIN12INT</unmanaged>	
+            <unmanaged-short>D3D_SVT_MIN12INT</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.MinimumInt16">
+            <summary>	
+            <dd> <p>The variable is a sampler.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_MIN16INT']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_MIN16INT</unmanaged>	
+            <unmanaged-short>D3D_SVT_MIN16INT</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.ShaderVariableType.MinimumUInt16">
+            <summary>	
+            <dd> <p>The variable is a pixel shader.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_SVT_MIN16UINT']/*"/>	
+            <msdn-id>ff728735</msdn-id>	
+            <unmanaged>D3D_SVT_MIN16UINT</unmanaged>	
+            <unmanaged-short>D3D_SVT_MIN16UINT</unmanaged-short>	
+        </member>
+        <member name="T:SharpDX.Direct3D.SystemValueType">
+            <summary>	
+            <p>Values that identify shader parameters that use system-value semantics.</p>	
+            </summary>	
+            <remarks>	
+            <p>The <strong><see cref="T:SharpDX.Direct3D.SystemValueType"/></strong> values identify shader parameters that have predefined system-value semantics. These values are used in a shader-signature description. For more information about shader-signature description, see <strong>D3D11_SIGNATURE_PARAMETER_DESC</strong>.</p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_NAME']/*"/>	
+            <msdn-id>ff728724</msdn-id>	
+            <unmanaged>D3D_NAME</unmanaged>	
+            <unmanaged-short>D3D_NAME</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.SystemValueType.Undefined">
+            <summary>	
+            <dd> <p>This parameter does not use a predefined system-value semantic.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_NAME_UNDEFINED']/*"/>	
+            <msdn-id>ff728724</msdn-id>	
+            <unmanaged>D3D_NAME_UNDEFINED</unmanaged>	
+            <unmanaged-short>D3D_NAME_UNDEFINED</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.SystemValueType.Position">
+            <summary>	
+            <dd> <p>This parameter contains position data.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_NAME_POSITION']/*"/>	
+            <msdn-id>ff728724</msdn-id>	
+            <unmanaged>D3D_NAME_POSITION</unmanaged>	
+            <unmanaged-short>D3D_NAME_POSITION</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.SystemValueType.ClipDistance">
+            <summary>	
+            <dd> <p>This parameter contains clip-distance data.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_NAME_CLIP_DISTANCE']/*"/>	
+            <msdn-id>ff728724</msdn-id>	
+            <unmanaged>D3D_NAME_CLIP_DISTANCE</unmanaged>	
+            <unmanaged-short>D3D_NAME_CLIP_DISTANCE</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.SystemValueType.CullDistance">
+            <summary>	
+            <dd> <p>This parameter contains cull-distance data.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_NAME_CULL_DISTANCE']/*"/>	
+            <msdn-id>ff728724</msdn-id>	
+            <unmanaged>D3D_NAME_CULL_DISTANCE</unmanaged>	
+            <unmanaged-short>D3D_NAME_CULL_DISTANCE</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.SystemValueType.RenderTargetArrayIndex">
+            <summary>	
+            <dd> <p>This parameter contains a render-target-array index.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_NAME_RENDER_TARGET_ARRAY_INDEX']/*"/>	
+            <msdn-id>ff728724</msdn-id>	
+            <unmanaged>D3D_NAME_RENDER_TARGET_ARRAY_INDEX</unmanaged>	
+            <unmanaged-short>D3D_NAME_RENDER_TARGET_ARRAY_INDEX</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.SystemValueType.ViewportArrayIndex">
+            <summary>	
+            <dd> <p>This parameter contains a viewport-array index.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_NAME_VIEWPORT_ARRAY_INDEX']/*"/>	
+            <msdn-id>ff728724</msdn-id>	
+            <unmanaged>D3D_NAME_VIEWPORT_ARRAY_INDEX</unmanaged>	
+            <unmanaged-short>D3D_NAME_VIEWPORT_ARRAY_INDEX</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.SystemValueType.VertexId">
+            <summary>	
+            <dd> <p>This parameter contains a vertex ID.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_NAME_VERTEX_ID']/*"/>	
+            <msdn-id>ff728724</msdn-id>	
+            <unmanaged>D3D_NAME_VERTEX_ID</unmanaged>	
+            <unmanaged-short>D3D_NAME_VERTEX_ID</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.SystemValueType.PrimitiveId">
+            <summary>	
+            <dd> <p>This parameter contains a primitive ID.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_NAME_PRIMITIVE_ID']/*"/>	
+            <msdn-id>ff728724</msdn-id>	
+            <unmanaged>D3D_NAME_PRIMITIVE_ID</unmanaged>	
+            <unmanaged-short>D3D_NAME_PRIMITIVE_ID</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.SystemValueType.InstanceId">
+            <summary>	
+            <dd> <p>This parameter contains an instance ID.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_NAME_INSTANCE_ID']/*"/>	
+            <msdn-id>ff728724</msdn-id>	
+            <unmanaged>D3D_NAME_INSTANCE_ID</unmanaged>	
+            <unmanaged-short>D3D_NAME_INSTANCE_ID</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.SystemValueType.IsFrontFace">
+            <summary>	
+            <dd> <p>This parameter contains data that identifies whether or not the primitive faces the camera.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_NAME_IS_FRONT_FACE']/*"/>	
+            <msdn-id>ff728724</msdn-id>	
+            <unmanaged>D3D_NAME_IS_FRONT_FACE</unmanaged>	
+            <unmanaged-short>D3D_NAME_IS_FRONT_FACE</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.SystemValueType.SampleIndex">
+            <summary>	
+            <dd> <p>This parameter contains a sampler-array index.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_NAME_SAMPLE_INDEX']/*"/>	
+            <msdn-id>ff728724</msdn-id>	
+            <unmanaged>D3D_NAME_SAMPLE_INDEX</unmanaged>	
+            <unmanaged-short>D3D_NAME_SAMPLE_INDEX</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.SystemValueType.FinalQuadEdgeTessfactor">
+            <summary>	
+            <dd> <p>This parameter contains one of four tessellation factors that correspond to the amount of parts that a quad patch is broken into along the given edge. This flag is used to tessellate a quad patch.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_NAME_FINAL_QUAD_EDGE_TESSFACTOR']/*"/>	
+            <msdn-id>ff728724</msdn-id>	
+            <unmanaged>D3D_NAME_FINAL_QUAD_EDGE_TESSFACTOR</unmanaged>	
+            <unmanaged-short>D3D_NAME_FINAL_QUAD_EDGE_TESSFACTOR</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.SystemValueType.FinalQuadInsideTessfactor">
+            <summary>	
+            <dd> <p>This parameter contains one of two tessellation factors that correspond to the amount of parts that a quad patch is broken into vertically and horizontally within the patch. This flag is used to tessellate a quad patch.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_NAME_FINAL_QUAD_INSIDE_TESSFACTOR']/*"/>	
+            <msdn-id>ff728724</msdn-id>	
+            <unmanaged>D3D_NAME_FINAL_QUAD_INSIDE_TESSFACTOR</unmanaged>	
+            <unmanaged-short>D3D_NAME_FINAL_QUAD_INSIDE_TESSFACTOR</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.SystemValueType.FinalTriEdgeTessfactor">
+            <summary>	
+            <dd> <p>This parameter contains one of three tessellation factors that correspond to the amount of parts that a tri patch is broken into along the given edge. This flag is used to tessellate a tri patch.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_NAME_FINAL_TRI_EDGE_TESSFACTOR']/*"/>	
+            <msdn-id>ff728724</msdn-id>	
+            <unmanaged>D3D_NAME_FINAL_TRI_EDGE_TESSFACTOR</unmanaged>	
+            <unmanaged-short>D3D_NAME_FINAL_TRI_EDGE_TESSFACTOR</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.SystemValueType.FinalTriInsideTessfactor">
+            <summary>	
+            <dd> <p>This parameter contains the tessellation factor that corresponds to the amount of parts that a tri patch is broken into within the patch. This flag is used to tessellate a tri patch.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_NAME_FINAL_TRI_INSIDE_TESSFACTOR']/*"/>	
+            <msdn-id>ff728724</msdn-id>	
+            <unmanaged>D3D_NAME_FINAL_TRI_INSIDE_TESSFACTOR</unmanaged>	
+            <unmanaged-short>D3D_NAME_FINAL_TRI_INSIDE_TESSFACTOR</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.SystemValueType.FinalLineDetailTessfactor">
+            <summary>	
+            <dd> <p>This parameter contains the tessellation factor that corresponds to the number of lines broken into within the patch. This flag is used to tessellate an isolines patch.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_NAME_FINAL_LINE_DETAIL_TESSFACTOR']/*"/>	
+            <msdn-id>ff728724</msdn-id>	
+            <unmanaged>D3D_NAME_FINAL_LINE_DETAIL_TESSFACTOR</unmanaged>	
+            <unmanaged-short>D3D_NAME_FINAL_LINE_DETAIL_TESSFACTOR</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.SystemValueType.FinalLineDensityTessfactor">
+            <summary>	
+            <dd> <p>This parameter contains the tessellation factor that corresponds to the number of lines that are created within the patch. This flag is used to tessellate an isolines patch.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_NAME_FINAL_LINE_DENSITY_TESSFACTOR']/*"/>	
+            <msdn-id>ff728724</msdn-id>	
+            <unmanaged>D3D_NAME_FINAL_LINE_DENSITY_TESSFACTOR</unmanaged>	
+            <unmanaged-short>D3D_NAME_FINAL_LINE_DENSITY_TESSFACTOR</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.SystemValueType.Target">
+            <summary>	
+            <dd> <p>This parameter contains render-target data.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_NAME_TARGET']/*"/>	
+            <msdn-id>ff728724</msdn-id>	
+            <unmanaged>D3D_NAME_TARGET</unmanaged>	
+            <unmanaged-short>D3D_NAME_TARGET</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.SystemValueType.Depth">
+            <summary>	
+            <dd> <p>This parameter contains depth data.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_NAME_DEPTH']/*"/>	
+            <msdn-id>ff728724</msdn-id>	
+            <unmanaged>D3D_NAME_DEPTH</unmanaged>	
+            <unmanaged-short>D3D_NAME_DEPTH</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.SystemValueType.Coverage">
+            <summary>	
+            <dd> <p>This parameter contains alpha-coverage data.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_NAME_COVERAGE']/*"/>	
+            <msdn-id>ff728724</msdn-id>	
+            <unmanaged>D3D_NAME_COVERAGE</unmanaged>	
+            <unmanaged-short>D3D_NAME_COVERAGE</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.SystemValueType.DepthGreaterEqual">
+            <summary>	
+            <dd> <p>This parameter signifies that the value is greater than or equal to a reference value. This flag is used to specify conservative depth for a pixel shader.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_NAME_DEPTH_GREATER_EQUAL']/*"/>	
+            <msdn-id>ff728724</msdn-id>	
+            <unmanaged>D3D_NAME_DEPTH_GREATER_EQUAL</unmanaged>	
+            <unmanaged-short>D3D_NAME_DEPTH_GREATER_EQUAL</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.SystemValueType.DepthLessEqual">
+            <summary>	
+            <dd> <p>This parameter signifies that the value is less than or equal to a reference value. This flag is used to specify conservative depth for a pixel shader.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_NAME_DEPTH_LESS_EQUAL']/*"/>	
+            <msdn-id>ff728724</msdn-id>	
+            <unmanaged>D3D_NAME_DEPTH_LESS_EQUAL</unmanaged>	
+            <unmanaged-short>D3D_NAME_DEPTH_LESS_EQUAL</unmanaged-short>	
+        </member>
+        <member name="T:SharpDX.Direct3D.TessellatorDomain">
+            <summary>	
+            <p>Values that identify domain options for tessellator data.</p>	
+            </summary>	
+            <remarks>	
+            <p>The data domain defines the type of data. This enumeration is used by <strong>D3D11_SHADER_DESC</strong>.</p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_TESSELLATOR_DOMAIN']/*"/>	
+            <msdn-id>ff728737</msdn-id>	
+            <unmanaged>D3D_TESSELLATOR_DOMAIN</unmanaged>	
+            <unmanaged-short>D3D_TESSELLATOR_DOMAIN</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.TessellatorDomain.Undefined">
+            <summary>	
+            <dd> <p>The data type is undefined.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_TESSELLATOR_DOMAIN_UNDEFINED']/*"/>	
+            <msdn-id>ff728737</msdn-id>	
+            <unmanaged>D3D_TESSELLATOR_DOMAIN_UNDEFINED</unmanaged>	
+            <unmanaged-short>D3D_TESSELLATOR_DOMAIN_UNDEFINED</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.TessellatorDomain.Isoline">
+            <summary>	
+            <dd> <p>Isoline data.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_TESSELLATOR_DOMAIN_ISOLINE']/*"/>	
+            <msdn-id>ff728737</msdn-id>	
+            <unmanaged>D3D_TESSELLATOR_DOMAIN_ISOLINE</unmanaged>	
+            <unmanaged-short>D3D_TESSELLATOR_DOMAIN_ISOLINE</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.TessellatorDomain.Triangle">
+            <summary>	
+            <dd> <p>Triangle data.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_TESSELLATOR_DOMAIN_TRI']/*"/>	
+            <msdn-id>ff728737</msdn-id>	
+            <unmanaged>D3D_TESSELLATOR_DOMAIN_TRI</unmanaged>	
+            <unmanaged-short>D3D_TESSELLATOR_DOMAIN_TRI</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.TessellatorDomain.Quad">
+            <summary>	
+            <dd> <p>Quad data.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_TESSELLATOR_DOMAIN_QUAD']/*"/>	
+            <msdn-id>ff728737</msdn-id>	
+            <unmanaged>D3D_TESSELLATOR_DOMAIN_QUAD</unmanaged>	
+            <unmanaged-short>D3D_TESSELLATOR_DOMAIN_QUAD</unmanaged-short>	
+        </member>
+        <member name="T:SharpDX.Direct3D.TessellatorOutputPrimitive">
+            <summary>	
+            <p>Values that identify output primitive types.</p>	
+            </summary>	
+            <remarks>	
+            <p>The output primitive type determines how the tessellator output data is organized; this enumeration is used by <strong>D3D11_SHADER_DESC</strong>.</p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_TESSELLATOR_OUTPUT_PRIMITIVE']/*"/>	
+            <msdn-id>ff728738</msdn-id>	
+            <unmanaged>D3D_TESSELLATOR_OUTPUT_PRIMITIVE</unmanaged>	
+            <unmanaged-short>D3D_TESSELLATOR_OUTPUT_PRIMITIVE</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.TessellatorOutputPrimitive.Undefined">
+            <summary>	
+            <dd> <p>The output primitive type is undefined.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_TESSELLATOR_OUTPUT_UNDEFINED']/*"/>	
+            <msdn-id>ff728738</msdn-id>	
+            <unmanaged>D3D_TESSELLATOR_OUTPUT_UNDEFINED</unmanaged>	
+            <unmanaged-short>D3D_TESSELLATOR_OUTPUT_UNDEFINED</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.TessellatorOutputPrimitive.Point">
+            <summary>	
+            <dd> <p>The output primitive type is a point.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_TESSELLATOR_OUTPUT_POINT']/*"/>	
+            <msdn-id>ff728738</msdn-id>	
+            <unmanaged>D3D_TESSELLATOR_OUTPUT_POINT</unmanaged>	
+            <unmanaged-short>D3D_TESSELLATOR_OUTPUT_POINT</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.TessellatorOutputPrimitive.Line">
+            <summary>	
+            <dd> <p>The output primitive type is a line.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_TESSELLATOR_OUTPUT_LINE']/*"/>	
+            <msdn-id>ff728738</msdn-id>	
+            <unmanaged>D3D_TESSELLATOR_OUTPUT_LINE</unmanaged>	
+            <unmanaged-short>D3D_TESSELLATOR_OUTPUT_LINE</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.TessellatorOutputPrimitive.TriangleClockwise">
+            <summary>	
+            <dd> <p>The output primitive type is a clockwise triangle.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_TESSELLATOR_OUTPUT_TRIANGLE_CW']/*"/>	
+            <msdn-id>ff728738</msdn-id>	
+            <unmanaged>D3D_TESSELLATOR_OUTPUT_TRIANGLE_CW</unmanaged>	
+            <unmanaged-short>D3D_TESSELLATOR_OUTPUT_TRIANGLE_CW</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.TessellatorOutputPrimitive.TriangleCounterclockwise">
+            <summary>	
+            <dd> <p>The output primitive type is a counter clockwise triangle.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_TESSELLATOR_OUTPUT_TRIANGLE_CCW']/*"/>	
+            <msdn-id>ff728738</msdn-id>	
+            <unmanaged>D3D_TESSELLATOR_OUTPUT_TRIANGLE_CCW</unmanaged>	
+            <unmanaged-short>D3D_TESSELLATOR_OUTPUT_TRIANGLE_CCW</unmanaged-short>	
+        </member>
+        <member name="T:SharpDX.Direct3D.TessellatorPartitioning">
+            <summary>	
+            <p>Values that identify partitioning options.</p>	
+            </summary>	
+            <remarks>	
+            <p>During tessellation, the partition option helps to determine how the algorithm chooses the next partition value; this enumeration is used by <strong>D3D11_SHADER_DESC</strong>.</p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_TESSELLATOR_PARTITIONING']/*"/>	
+            <msdn-id>ff728739</msdn-id>	
+            <unmanaged>D3D_TESSELLATOR_PARTITIONING</unmanaged>	
+            <unmanaged-short>D3D_TESSELLATOR_PARTITIONING</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.TessellatorPartitioning.Undefined">
+            <summary>	
+            <dd> <p>The partitioning type is undefined.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_TESSELLATOR_PARTITIONING_UNDEFINED']/*"/>	
+            <msdn-id>ff728739</msdn-id>	
+            <unmanaged>D3D_TESSELLATOR_PARTITIONING_UNDEFINED</unmanaged>	
+            <unmanaged-short>D3D_TESSELLATOR_PARTITIONING_UNDEFINED</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.TessellatorPartitioning.Integer">
+            <summary>	
+            <dd> <p>Partition with integers only.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_TESSELLATOR_PARTITIONING_INTEGER']/*"/>	
+            <msdn-id>ff728739</msdn-id>	
+            <unmanaged>D3D_TESSELLATOR_PARTITIONING_INTEGER</unmanaged>	
+            <unmanaged-short>D3D_TESSELLATOR_PARTITIONING_INTEGER</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.TessellatorPartitioning.PowerOfTwo">
+            <summary>	
+            <dd> <p>Partition with a power-of-two number only.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_TESSELLATOR_PARTITIONING_POW2']/*"/>	
+            <msdn-id>ff728739</msdn-id>	
+            <unmanaged>D3D_TESSELLATOR_PARTITIONING_POW2</unmanaged>	
+            <unmanaged-short>D3D_TESSELLATOR_PARTITIONING_POW2</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.TessellatorPartitioning.FractionalOdd">
+            <summary>	
+            <dd> <p>Partition with an odd, fractional number.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_TESSELLATOR_PARTITIONING_FRACTIONAL_ODD']/*"/>	
+            <msdn-id>ff728739</msdn-id>	
+            <unmanaged>D3D_TESSELLATOR_PARTITIONING_FRACTIONAL_ODD</unmanaged>	
+            <unmanaged-short>D3D_TESSELLATOR_PARTITIONING_FRACTIONAL_ODD</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D.TessellatorPartitioning.FractionalEven">
+            <summary>	
+            <dd> <p>Partition with an even, fractional number.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D_TESSELLATOR_PARTITIONING_FRACTIONAL_EVEN']/*"/>	
+            <msdn-id>ff728739</msdn-id>	
+            <unmanaged>D3D_TESSELLATOR_PARTITIONING_FRACTIONAL_EVEN</unmanaged>	
+            <unmanaged-short>D3D_TESSELLATOR_PARTITIONING_FRACTIONAL_EVEN</unmanaged-short>	
         </member>
         <member name="T:SharpDX.Direct3D.CommonGuid">
             <summary>	
@@ -11645,6 +13383,18 @@
             <msdn-id>bb173818</msdn-id>	
             <unmanaged>BOOL ID3D10Multithread::GetMultithreadProtected()</unmanaged>	
             <unmanaged-short>ID3D10Multithread::GetMultithreadProtected</unmanaged-short>	
+        </member>
+        <member name="T:SharpDX.Direct3D.Include">
+            <summary>	
+            <p><strong><see cref="T:SharpDX.Direct3D.Include"/></strong> is an include interface that the user implements to allow an application to call user-overridable methods for opening and closing shader #include files.</p>	
+            </summary>	
+            <remarks>	
+            <p>To use this interface, create an interface that inherits from <strong><see cref="T:SharpDX.Direct3D.Include"/></strong> and implement custom behavior for the methods.</p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3DInclude']/*"/>	
+            <msdn-id>ff728746</msdn-id>	
+            <unmanaged>ID3DInclude</unmanaged>	
+            <unmanaged-short>ID3DInclude</unmanaged-short>	
         </member>
         <member name="T:SharpDX.Direct3D.ShaderMacro">
             <summary>	
@@ -12109,102 +13859,6 @@
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='HID_USAGE_PAGE']/*"/>	
             <unmanaged>HID_USAGE_PAGE</unmanaged>	
             <unmanaged-short>HID_USAGE_PAGE</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Multimedia.UsagePage.Medical">
-            <summary>	
-            No documentation.	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='HID_USAGE_PAGE_MEDICAL']/*"/>	
-            <unmanaged>HID_USAGE_PAGE_MEDICAL</unmanaged>	
-            <unmanaged-short>HID_USAGE_PAGE_MEDICAL</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Multimedia.UsagePage.MonitorPage0">
-            <summary>	
-            No documentation.	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='HID_USAGE_PAGE_MONITOR_PAGE0']/*"/>	
-            <unmanaged>HID_USAGE_PAGE_MONITOR_PAGE0</unmanaged>	
-            <unmanaged-short>HID_USAGE_PAGE_MONITOR_PAGE0</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Multimedia.UsagePage.MonitorPage1">
-            <summary>	
-            No documentation.	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='HID_USAGE_PAGE_MONITOR_PAGE1']/*"/>	
-            <unmanaged>HID_USAGE_PAGE_MONITOR_PAGE1</unmanaged>	
-            <unmanaged-short>HID_USAGE_PAGE_MONITOR_PAGE1</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Multimedia.UsagePage.MonitorPage2">
-            <summary>	
-            No documentation.	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='HID_USAGE_PAGE_MONITOR_PAGE2']/*"/>	
-            <unmanaged>HID_USAGE_PAGE_MONITOR_PAGE2</unmanaged>	
-            <unmanaged-short>HID_USAGE_PAGE_MONITOR_PAGE2</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Multimedia.UsagePage.MonitorPage3">
-            <summary>	
-            No documentation.	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='HID_USAGE_PAGE_MONITOR_PAGE3']/*"/>	
-            <unmanaged>HID_USAGE_PAGE_MONITOR_PAGE3</unmanaged>	
-            <unmanaged-short>HID_USAGE_PAGE_MONITOR_PAGE3</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Multimedia.UsagePage.PowerPage0">
-            <summary>	
-            No documentation.	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='HID_USAGE_PAGE_POWER_PAGE0']/*"/>	
-            <unmanaged>HID_USAGE_PAGE_POWER_PAGE0</unmanaged>	
-            <unmanaged-short>HID_USAGE_PAGE_POWER_PAGE0</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Multimedia.UsagePage.PowerPage1">
-            <summary>	
-            No documentation.	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='HID_USAGE_PAGE_POWER_PAGE1']/*"/>	
-            <unmanaged>HID_USAGE_PAGE_POWER_PAGE1</unmanaged>	
-            <unmanaged-short>HID_USAGE_PAGE_POWER_PAGE1</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Multimedia.UsagePage.PowerPage2">
-            <summary>	
-            No documentation.	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='HID_USAGE_PAGE_POWER_PAGE2']/*"/>	
-            <unmanaged>HID_USAGE_PAGE_POWER_PAGE2</unmanaged>	
-            <unmanaged-short>HID_USAGE_PAGE_POWER_PAGE2</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Multimedia.UsagePage.PowerPage3">
-            <summary>	
-            No documentation.	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='HID_USAGE_PAGE_POWER_PAGE3']/*"/>	
-            <unmanaged>HID_USAGE_PAGE_POWER_PAGE3</unmanaged>	
-            <unmanaged-short>HID_USAGE_PAGE_POWER_PAGE3</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Multimedia.UsagePage.Barcode">
-            <summary>	
-            No documentation.	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='HID_USAGE_PAGE_BARCODE']/*"/>	
-            <unmanaged>HID_USAGE_PAGE_BARCODE</unmanaged>	
-            <unmanaged-short>HID_USAGE_PAGE_BARCODE</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Multimedia.UsagePage.Scale">
-            <summary>	
-            No documentation.	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='HID_USAGE_PAGE_SCALE']/*"/>	
-            <unmanaged>HID_USAGE_PAGE_SCALE</unmanaged>	
-            <unmanaged-short>HID_USAGE_PAGE_SCALE</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Multimedia.UsagePage.Msr">
-            <summary>	
-            No documentation.	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='HID_USAGE_PAGE_MSR']/*"/>	
-            <unmanaged>HID_USAGE_PAGE_MSR</unmanaged>	
-            <unmanaged-short>HID_USAGE_PAGE_MSR</unmanaged-short>	
         </member>
         <member name="T:SharpDX.Multimedia.WaveFormatEncoding">
             <summary>	
@@ -46944,89 +48598,6 @@
             <summary>
             The <see cref="N:SharpDX.Win32"/> namespace contains common enumerations, structures and helper classes for Win32 low-level API.
             </summary>
-        </member>
-        <member name="T:SharpDX.Win32.PropertyBag">
-            <summary>
-            Implementation of OLE IPropertyBag2.
-            </summary>
-            <unmanaged>IPropertyBag2</unmanaged>
-        </member>
-        <member name="M:SharpDX.Win32.PropertyBag.#ctor(System.IntPtr)">
-            <summary>
-            Initializes a new instance of the <see cref="T:SharpDX.Win32.PropertyBag"/> class.
-            </summary>
-            <param name="propertyBagPointer">The property bag pointer.</param>
-        </member>
-        <member name="M:SharpDX.Win32.PropertyBag.Get(System.String)">
-            <summary>
-            Gets the value of the property with this name.
-            </summary>
-            <param name="name">The name.</param>
-            <returns>Value of the property</returns>
-        </member>
-        <member name="M:SharpDX.Win32.PropertyBag.Get``2(SharpDX.Win32.PropertyBagKey{``0,``1})">
-            <summary>
-            Gets the value of the property by using a <see cref="T:SharpDX.Win32.PropertyBagKey`2"/>
-            </summary>
-            <typeparam name="T1">The public type of this property.</typeparam>
-            <typeparam name="T2">The marshaling type of this property.</typeparam>
-            <param name="propertyKey">The property key.</param>
-            <returns>Value of the property</returns>
-        </member>
-        <member name="M:SharpDX.Win32.PropertyBag.Set(System.String,System.Object)">
-            <summary>
-            Sets the value of the property with this name
-            </summary>
-            <param name="name">The name.</param>
-            <param name="value">The value.</param>
-        </member>
-        <member name="M:SharpDX.Win32.PropertyBag.Set``2(SharpDX.Win32.PropertyBagKey{``0,``1},``0)">
-            <summary>
-            Sets the value of the property by using a <see cref="T:SharpDX.Win32.PropertyBagKey`2"/>
-            </summary>
-            <typeparam name="T1">The public type of this property.</typeparam>
-            <typeparam name="T2">The marshaling type of this property.</typeparam>
-            <param name="propertyKey">The property key.</param>
-            <param name="value">The value.</param>
-        </member>
-        <member name="P:SharpDX.Win32.PropertyBag.Count">
-            <summary>
-            Gets the number of properties.
-            </summary>
-        </member>
-        <member name="P:SharpDX.Win32.PropertyBag.Keys">
-            <summary>
-            Gets the keys.
-            </summary>
-        </member>
-        <member name="T:SharpDX.Win32.PropertyBagKey`2">
-            <summary>
-            Identifies a typed property in a <see cref="T:SharpDX.Win32.PropertyBag"/>.
-            </summary>
-            <typeparam name="T1">The public type of this property.</typeparam>
-            <typeparam name="T2">The marshaling type of this property.</typeparam>
-        </member>
-        <member name="M:SharpDX.Win32.PropertyBagKey`2.#ctor(System.String)">
-            <summary>
-            Initializes a new instance of the <see cref="T:SharpDX.Win32.PropertyBagKey`2"/> class.
-            </summary>
-            <param name="name">The name.</param>
-        </member>
-        <member name="P:SharpDX.Win32.PropertyBagKey`2.Name">
-            <summary>
-            Gets the name.
-            </summary>
-        </member>
-        <member name="T:SharpDX.Win32.ComStringEnumerator">
-            <summary>
-            An enumerator using internally a <see cref="T:System.Runtime.InteropServices.ComTypes.IEnumString"/>.
-            </summary>
-        </member>
-        <member name="M:SharpDX.Win32.ComStringEnumerator.#ctor(System.IntPtr)">
-            <summary>
-            Initializes a new instance of the <see cref="T:SharpDX.Win32.ComStringEnumerator"/> class.
-            </summary>
-            <param name="ptrToIEnumString">The PTR to I enum string.</param>
         </member>
         <member name="T:SharpDX.Win32.SecurityAttributes">
             <summary>
