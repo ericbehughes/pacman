@@ -1,8 +1,8 @@
 
 #----------------------------- Global Properties ----------------------------#
 
-/outputDir:..\bin\Windows\x86\Debug
-/intermediateDir:..\bin\Windows\x86\Debug
+/outputDir:bin/$(Platform)
+/intermediateDir:obj/$(Platform)
 /platform:Windows
 /config:
 /profile:Reach

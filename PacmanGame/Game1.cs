@@ -1,8 +1,6 @@
-﻿using System.IO;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Pacman.Game.Classes.State;
 
 namespace PacmanGame
 {
@@ -13,22 +11,13 @@ namespace PacmanGame
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        private GameState gs;
-        
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
-            graphics.PreferredBackBufferHeight = 835;
-            graphics.PreferredBackBufferWidth = 736;
-
-            //read map data for maze from file
             Content.RootDirectory = "Content";
-            var mapData = File.ReadAllText("map.csv");
-            gs = GameState.Parse(mapData);
         }
 
-        public GameState GameState { get; set; }
         /// <summary>
         /// Allows the game to perform any initialization it needs to before starting to run.
         /// This is where it can query for any required services and load any non-graphic
@@ -37,7 +26,7 @@ namespace PacmanGame
         /// </summary>
         protected override void Initialize()
         {
-           
+            // TODO: Add your initialization logic here
 
             base.Initialize();
         }
