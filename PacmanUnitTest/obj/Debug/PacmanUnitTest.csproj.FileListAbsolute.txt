@@ -64,3 +64,9 @@ C:\Users\1232983\Source\Repos\pacman\PacmanUnitTest\bin\Debug\SharpDX.WP8.dll
 C:\Users\1232983\Source\Repos\pacman\PacmanUnitTest\obj\Debug\PacmanUnitTest.csprojResolveAssemblyReference.cache
 C:\Users\1232983\Source\Repos\pacman\PacmanUnitTest\obj\Debug\PacmanUnitTest.dll
 C:\Users\1232983\Source\Repos\pacman\PacmanUnitTest\obj\Debug\PacmanUnitTest.pdb
+C:\Users\ehugh\OneDrive\c#\Projects\PacmanGithub\PacmanUnitTest\bin\Debug\SharpDX.Direct2D1.dll
+C:\Users\ehugh\OneDrive\c#\Projects\PacmanGithub\PacmanUnitTest\bin\Debug\SharpDX.XInput.dll
+C:\Users\ehugh\OneDrive\c#\Projects\PacmanGithub\PacmanUnitTest\bin\Debug\SharpDX.MediaFoundation.dll
+C:\Users\ehugh\OneDrive\c#\Projects\PacmanGithub\PacmanUnitTest\bin\Debug\SharpDX.Direct2D1.xml
+C:\Users\ehugh\OneDrive\c#\Projects\PacmanGithub\PacmanUnitTest\bin\Debug\SharpDX.XInput.xml
+C:\Users\ehugh\OneDrive\c#\Projects\PacmanGithub\PacmanUnitTest\bin\Debug\SharpDX.MediaFoundation.xml

@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System.IO;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Pacman.Game.Classes.State;
@@ -12,12 +13,16 @@ namespace PacmanGame
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        private GameState _gameState;
+        private MazeSprite map;
+       
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            gs = GameState.Parse("map.csv");
+            _gameState = GameState.Parse("map.csv");
+            
         }
 
         /// <summary>
@@ -29,8 +34,25 @@ namespace PacmanGame
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            map = new MazeSprite(this);
+          
 
+            Components.Add(map);
+         
             base.Initialize();
+        }
+
+        public GameState GameState
+        {
+            get
+            {
+                return _gameState;
+            }
+
+            set
+            {
+                _gameState = value;
+            }
         }
 
         /// <summary>
@@ -42,7 +64,6 @@ namespace PacmanGame
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // TODO: use this.Content to load your game content here
         }
 
         /// <summary>
@@ -51,7 +72,7 @@ namespace PacmanGame
         /// </summary>
         protected override void UnloadContent()
         {
-            // TODO: Unload any non ContentManager content here
+    
         }
 
         /// <summary>

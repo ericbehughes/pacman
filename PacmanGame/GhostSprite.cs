@@ -46,6 +46,11 @@ namespace PacmanGame
         private int width,
                     height;
 
+        private Texture2D[][] ghostarray;
+        // 1 array for colors 
+        // 1 state / direction
+        private string[] csv_array = { "ghost/red/normal", "ghost/red/scared" };
+
         public GhostSprite(Game1 maingame) : base(maingame)
         {
             this.maingame = maingame;
@@ -55,12 +60,16 @@ namespace PacmanGame
         {
             base.Initialize();
         }
-
+        // class that holds 6 things 
+        // class ghsot directions it would hold all 6 things 
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
             /* Set red ghost */
+
+            //ghostarray[0][0] = maingame.Content.Load<Texture2D>("ghost"+ "colorarray[j]" + csv_array[i]);
             GhostRedNormal = maingame.Content.Load<Texture2D>("ghost/red/ghostRedNormal");
+            
             GhostRedScared = maingame.Content.Load<Texture2D>("ghost/red/ghostRedScared");
             GhostRedLeft = maingame.Content.Load<Texture2D>("ghost/red/ghostRedLeft");
             GhostRedRight = maingame.Content.Load<Texture2D>("ghost/red/ghostRedRight");
@@ -109,6 +118,7 @@ namespace PacmanGame
 
         }
     }
+    
 
 
 }

@@ -25,3 +25,5 @@ C:\Users\1232983\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\SharpDX.Di
 C:\Users\1232983\Source\Repos\pacman\PacmanGame\obj\x86\Debug\PacmanGame.csprojResolveAssemblyReference.cache
 C:\Users\1232983\Source\Repos\pacman\PacmanGame\obj\x86\Debug\PacmanGame.exe
 C:\Users\1232983\Source\Repos\pacman\PacmanGame\obj\x86\Debug\PacmanGame.pdb
+C:\Users\ehugh\OneDrive\c#\Projects\PacmanGithub\PacmanGame\obj\x86\Debug\PacmanGame.exe
+C:\Users\ehugh\OneDrive\c#\Projects\PacmanGithub\PacmanGame\obj\x86\Debug\PacmanGame.pdb
