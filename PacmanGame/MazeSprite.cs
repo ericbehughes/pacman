@@ -90,10 +90,7 @@ namespace PacmanGame
                     {
                         DrawSprite(i, j ,Wall);
                     }
-                    else if (maingame.GameState.Maze[i, j] is Pacman.Game.Classes.Map.Path)
-                    {
-                        DrawSprite(i, j,Path);
-                    }
+                   
                     else
                     {
                       
@@ -109,7 +106,11 @@ namespace PacmanGame
                         }
                         else if (maingame.GameState.Maze[i, j].Member == null)
                         {
-                            DrawSprite(i, j,Path);
+                            DrawSprite(i, j, Path);
+                        }
+                        else
+                        {
+                            continue;
                         }
                      
                        

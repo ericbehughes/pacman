@@ -79,3 +79,4 @@ C:\Users\ehugh\OneDrive\c#\Projects\PacmanGithub\Pacman\bin\Debug\SharpDX.XInput
 C:\Users\ehugh\OneDrive\c#\Projects\PacmanGithub\Pacman\bin\Debug\SharpDX.MediaFoundation.xml
 C:\Users\ehugh\OneDrive\c#\Projects\PacmanGithub\Pacman\obj\Debug\Pacman.dll
 C:\Users\ehugh\OneDrive\c#\Projects\PacmanGithub\Pacman\obj\Debug\Pacman.pdb
+C:\Users\ehugh\OneDrive\c#\Projects\PacmanGithub\Pacman\obj\Debug\Pacman.csprojResolveAssemblyReference.cache

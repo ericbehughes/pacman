@@ -55,7 +55,7 @@ namespace Pacman
             Timer t = (Timer)sender;
             t.Enabled = false;
             Ghost g = ghosts.Dequeue();
-            timers.Remove(t);
+           // timers.Remove(t);
             g.ChangeState(GhostState.Released);
         }
 

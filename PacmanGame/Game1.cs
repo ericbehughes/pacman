@@ -20,6 +20,8 @@ namespace PacmanGame
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
+            graphics.PreferredBackBufferWidth = 736;
+            graphics.PreferredBackBufferHeight = 800;
             Content.RootDirectory = "Content";
             _gameState = GameState.Parse("map.csv");
             
