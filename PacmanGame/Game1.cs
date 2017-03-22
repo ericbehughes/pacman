@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Pacman.Game.Classes.State;
 
 namespace PacmanGame
 {
@@ -16,6 +17,7 @@ namespace PacmanGame
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            gs = GameState.Parse("map.csv");
         }
 
         /// <summary>
