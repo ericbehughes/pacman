@@ -76,6 +76,7 @@ namespace Pacman.Game.Classes.State
         {
             var size = File.ReadLines(@fileContent).Count();
             g.Maze.SetTiles(new Tile[size, size]);
+            
             String[,] strMaze = new String[size, size];
             string line = Regex.Replace(File.ReadAllText(@fileContent), @"[\r\n\t]+", ",");
             String[] str = line.Split(',');

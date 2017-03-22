@@ -28,7 +28,7 @@ namespace Pacman.Game.Classes.Map
         public void SetTiles(Tile[,] tiles)
         {
             this.maze = tiles;
-            size = maze.Length;
+            size = maze.GetLength(0);
         }
 
 

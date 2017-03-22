@@ -60,11 +60,11 @@ namespace PacmanGame
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
             Wall = maingame.Content.Load<Texture2D>("wall");
-            Pen = maingame.Content.Load<Texture2D>("pen");
+            //Pen = maingame.Content.Load<Texture2D>("pen");
             //PenDoor = maingame.Content.Load<Texture2D>("penDoor");
             Energizer = maingame.Content.Load<Texture2D>("energizer");
             Pellet = maingame.Content.Load<Texture2D>("pellet");
-            Path = maingame.Content.Load<Texture2D>("path");
+            Path = maingame.Content.Load<Texture2D>("empty");
 
         }
 
@@ -73,28 +73,26 @@ namespace PacmanGame
             base.Update(gameTime);
         }
 
-        private void DrawSprite(Texture2D obj)
+        private void DrawSprite(int i, int j , Texture2D obj)
         {
-            spriteBatch.Draw(obj, new Rectangle(30, 30, 32, 32), Color.White);
+            spriteBatch.Draw(obj, new Rectangle(i * 32, j * 32, 32, 32), Color.White);
         }
        
         public override void Draw(GameTime gameTime)
         {
-            if (maingame.GameState.Score.Lives == 0)
-            {
-                LoadContent();
-            }
+            spriteBatch.Begin();
+           
             for (int i = 0; i < maingame.GameState.Maze.Size; i++)
             {
                 for (int j = 0; j < maingame.GameState.Maze.Size; j++)
                 {
                     if (maingame.GameState.Maze[i, j] is Wall)
                     {
-                        DrawSprite(Wall);
+                        DrawSprite(i, j ,Wall);
                     }
                     else if (maingame.GameState.Maze[i, j] is Pacman.Game.Classes.Map.Path)
                     {
-                        DrawSprite(Path);
+                        DrawSprite(i, j,Path);
                     }
                     else
                     {
@@ -102,12 +100,16 @@ namespace PacmanGame
                         if (maingame.GameState.Maze[i, j].Member is Energizer)
                         {
 
-                            DrawSprite(Energizer);
+                            DrawSprite(i,j,Energizer);
                         }
                         else if (maingame.GameState.Maze[i, j].Member is Pellet)
                         {
 
-                            DrawSprite(Pellet);
+                            DrawSprite(i, j,Pellet);
+                        }
+                        else if (maingame.GameState.Maze[i, j].Member == null)
+                        {
+                            DrawSprite(i, j,Path);
                         }
                      
                        
@@ -116,11 +118,11 @@ namespace PacmanGame
                 }
             }
 
-            spriteBatch.Begin();
+       
 
             // need to search which pictureList to choose from i put pictureList[0] for testing
             
-
+            spriteBatch.End();
             base.Draw(gameTime);
         }
 

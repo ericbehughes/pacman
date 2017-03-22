@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/ehugh/OneDrive/c#/Projects/PacmanGithub/PacmanGame/Content/empty.png</File>
+    <File>C:/Users/ehugh/OneDrive/c#/Projects/PacmanGithub/PacmanGame/Content/energizer.png</File>
+    <File>C:/Users/ehugh/OneDrive/c#/Projects/PacmanGithub/PacmanGame/Content/ghost.png</File>
+    <File>C:/Users/ehugh/OneDrive/c#/Projects/PacmanGithub/PacmanGame/Content/pacman.png</File>
+    <File>C:/Users/ehugh/OneDrive/c#/Projects/PacmanGithub/PacmanGame/Content/pellet.png</File>
+    <File>C:/Users/ehugh/OneDrive/c#/Projects/PacmanGithub/PacmanGame/Content/wall.png</File>
+  </SourceFiles>
+</SourceFileCollection>
