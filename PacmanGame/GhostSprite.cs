@@ -45,6 +45,9 @@ namespace PacmanGame
         private int width,
                     height;
 
+        private int timeSinceLastFrame = 0;
+        private int mSecondsPerFrame = 50; 
+
         private Texture2D[][] ghostarray;
         // 1 array for colors 
         // 1 state / direction
@@ -59,6 +62,21 @@ namespace PacmanGame
         protected void Initialize()
         {
             base.Initialize();
+        }
+
+        public override void Update(GameTime gameTime)
+        {
+            timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
+            if (timeSinceLastFrame > mSecondsPerFrame)
+            {
+                timeSinceLastFrame -= mSecondsPerFrame;
+                // increment current frame 
+                foreach (var ghost in maingame.GameState.GhostPack)
+                {
+                    ghost.Move();
+                }
+                timeSinceLastFrame = 0;
+            }
         }
         // class that holds 6 things 
         // class ghsot directions it would hold all 6 things 

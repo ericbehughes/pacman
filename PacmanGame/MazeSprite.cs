@@ -51,7 +51,7 @@ namespace PacmanGame
 
         public override void Initialize()
         {
-            GameBoardDimensions gbd = new GameBoardDimensions(32, 32);
+          
 
             base.Initialize();
         }
