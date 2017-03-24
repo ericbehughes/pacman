@@ -2,7 +2,9 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Pacman.Characters.Classes;
 using Pacman.Game.Classes.State;
+using Color = Microsoft.Xna.Framework.Color;
 
 namespace PacmanGame
 {
@@ -15,6 +17,8 @@ namespace PacmanGame
         SpriteBatch spriteBatch;
         private GameState _gameState;
         private MazeSprite map;
+        private GhostSprite ghostSprite;
+
        
 
         public Game1()
@@ -37,8 +41,6 @@ namespace PacmanGame
         {
             // TODO: Add your initialization logic here
             map = new MazeSprite(this);
-          
-
             Components.Add(map);
          
             base.Initialize();

@@ -102,20 +102,24 @@ namespace PacmanGame
 
         }
 
-        private void Draw(Texture2D tObj)
+        public override void Draw(GameTime gameTime)
         {
+
+            spriteBatch.Begin();
             /* Draw red ghost */
-            spriteBatch.Draw(tObj, GhostRed, Color.Red);
+            spriteBatch.Draw(GhostRedNormal, GhostRed, Color.Red);
 
             /* Draw blue ghost */
-            spriteBatch.Draw(tObj, GhostBlue, Color.Blue);
+            spriteBatch.Draw(GhostRedNormal, GhostBlue, Color.Blue);
 
             /* Draw orange ghost */
-            spriteBatch.Draw(tObj, GhostOrange, Color.Orange);
+            spriteBatch.Draw(GhostRedNormal, GhostOrange, Color.Orange);
 
             /* Draw pink ghost */
-            spriteBatch.Draw(tObj, GhostPink, Color.Pink);
+            spriteBatch.Draw(GhostRedNormal, GhostPink, Color.Pink);
 
+            spriteBatch.End();
+            base.Draw(gameTime);
         }
     }
     
