@@ -41,8 +41,10 @@ namespace PacmanGame
         {
             // TODO: Add your initialization logic here
             map = new MazeSprite(this);
+            ghostSprite = new GhostSprite(this);
             Components.Add(map);
-         
+            Components.Add(ghostSprite);
+
             base.Initialize();
         }
 
