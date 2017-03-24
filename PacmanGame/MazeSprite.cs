@@ -94,7 +94,12 @@ namespace PacmanGame
                     else
                     {
                       
-                        if (maingame.GameState.Maze[i, j].Member is Energizer)
+                        if (maingame.GameState.Maze[i, j].Member == null)
+                        {
+                            DrawSprite(i, j, Path);
+                        }
+
+                        else if (maingame.GameState.Maze[i, j].Member is Energizer)
                         {
 
                             DrawSprite(i,j,Energizer);
@@ -103,10 +108,6 @@ namespace PacmanGame
                         {
 
                             DrawSprite(i, j,Pellet);
-                        }
-                        else if (maingame.GameState.Maze[i, j].Member == null)
-                        {
-                            DrawSprite(i, j, Path);
                         }
                         else
                         {

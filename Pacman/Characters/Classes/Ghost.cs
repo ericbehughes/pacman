@@ -47,7 +47,7 @@ namespace Pacman.Characters.Classes
             {
                 currentState = new Scared(this, this.maze);
             }
-            if (start == GhostState.Chase)
+            if (start == GhostState.Chase || start == GhostState.Penned)
             {
                 currentState = new Chase(this, this.maze, pacman, target);
             }
@@ -156,9 +156,11 @@ namespace Pacman.Characters.Classes
                     this.currentState = new Chase(this, this.maze, this.pacman, this.target);
                     break;
                 case GhostState.Released:
-                    this.Position = new Vector2(8, 11);
+                    this.Position = new Vector2(11, 9);
                     this.currentState = new Chase(this, this.maze, this.pacman, this.target);
+                    //this.Move();
                     break;
+
                 default:
                     this.currentState = new Chase(this, this.maze, this.pacman, this.target);
                     break;
