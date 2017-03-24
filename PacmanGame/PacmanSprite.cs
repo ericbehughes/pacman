@@ -1,5 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using Pacman.Characters.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +22,7 @@ namespace PacmanGame
 
         public override void Initialize()
         {
+            PacmanKeyPress();
             base.Initialize();
         }
 
@@ -31,12 +34,35 @@ namespace PacmanGame
 
         public override void Update(GameTime gameTime)
         {
+            PacmanKeyPress();
             base.Update(gameTime);
         }
+        
+        private void PacmanKeyPress()
+        {
+            KeyboardState CurrentKeyState = Keyboard.GetState();
+            
+            /* Check for right key press */
+            if (CurrentKeyState.IsKeyDown(Keys.Right))
+                maingame.GameState.Pacman.Move(Direction.Right);
 
+            /* Check for left key press */
+            else if (CurrentKeyState.IsKeyDown(Keys.Left))
+                maingame.GameState.Pacman.Move(Direction.Left);
+
+            /* Check for up key press */
+            else if (CurrentKeyState.IsKeyDown(Keys.Up))
+                maingame.GameState.Pacman.Move(Direction.Up);
+
+            /* Check for down key press */
+            else if (CurrentKeyState.IsKeyDown(Keys.Down))
+                maingame.GameState.Pacman.Move(Direction.Down);
+
+        }
+        
         private void DrawSprite(Texture2D obj, int i, int j)
         {
-            spriteBatch.Draw(obj, new Rectangle(i * 32, j * 32, 32, 32), Color.White);
+            spriteBatch.Draw(obj, new Rectangle(i * 32, j * 32, 32, 32), Microsoft.Xna.Framework.Color.White);
         }
         
         public override void Draw(GameTime gameTime)

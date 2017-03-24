@@ -60,26 +60,26 @@ namespace Pacman.Characters.Classes
                  */
                 // case Direction.Up:
                 case Direction.Up:
-                    if (CanEnter(new Vector2(x - 1, y), Direction.Up))
-                        this.Position = new Vector2(x - 1, y);
+                    if (CanEnter(new Vector2(y - 1, x), Direction.Up))
+                        this.Position = new Vector2(y - 1, x);
                     break;
 
                 //   case Direction.Down:
                 case Direction.Down:
-                    if (CanEnter(new Vector2(x + 1, y), Direction.Down))
-                        this.Position = new Vector2(x + 1, y);
+                    if (CanEnter(new Vector2(y + 1, x), Direction.Down))
+                        this.Position = new Vector2(y + 1, x);
                     break;
 
                 //  case Direction.Left:
                 case Direction.Left:
-                    if (CanEnter(new Vector2(x, y - 1), Direction.Left))
-                        this.Position = new Vector2(x, y - 1);
+                    if (CanEnter(new Vector2(y, x - 1), Direction.Left))
+                        this.Position = new Vector2(y, x - 1);
                     break;
 
                 //   case Direction.Right:
                 case Direction.Right:
-                    if (CanEnter(new Vector2(x, y + 1), Direction.Right))
-                        this.Position = new Vector2(x, y + 1);
+                    if (CanEnter(new Vector2(y, x + 1), Direction.Right))
+                        this.Position = new Vector2(y, x + 1);
                     break;
             }
 
