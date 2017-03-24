@@ -56,7 +56,7 @@ namespace PacmanGame
             this.maingame = maingame;
         }
 
-        protected void Initialize()
+        public override void Initialize()
         {
             base.Initialize();
         }

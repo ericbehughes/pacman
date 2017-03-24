@@ -18,25 +18,33 @@ namespace PacmanGame
             this.maingame = maingame;
         }
 
-        private void Initialize()
+        public override void Initialize()
         {
             base.Initialize();
         }
 
-        private void LoadContent()
+        protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
             Pacman = maingame.Content.Load<Texture2D>("pacman");
         }
 
-        private void DrawSprite(Texture2D obj, int i, int j, Color color)
+        public override void Update(GameTime gameTime)
         {
-            spriteBatch.Draw(obj, new Rectangle(i * 32, j * 32, 32, 32) Color.White);
+            base.Update(gameTime);
+        }
+
+        private void DrawSprite(Texture2D obj, int i, int j)
+        {
+            spriteBatch.Draw(obj, new Rectangle(i * 32, j * 32, 32, 32), Color.White);
         }
         
-        private void Draw()
+        public override void Draw(GameTime gameTime)
         {
-
+            spriteBatch.Begin();
+            DrawSprite(Pacman, (int)maingame.GameState.Pacman.Position.X, (int)maingame.GameState.Pacman.Position.Y);
+            spriteBatch.End();
+            base.Draw(gameTime);
         }
     }
 }

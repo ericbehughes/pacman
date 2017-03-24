@@ -18,7 +18,7 @@ namespace PacmanGame
         private GameState _gameState;
         private MazeSprite map;
         private GhostSprite ghostSprite;
-
+        private PacmanSprite pacmanSprite;
        
 
         public Game1()
@@ -42,9 +42,11 @@ namespace PacmanGame
             // TODO: Add your initialization logic here
             map = new MazeSprite(this);
             ghostSprite = new GhostSprite(this);
+            pacmanSprite = new PacmanSprite(this);
+
             Components.Add(map);
             Components.Add(ghostSprite);
-
+            Components.Add(pacmanSprite);
             base.Initialize();
         }
 
