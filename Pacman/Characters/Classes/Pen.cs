@@ -55,8 +55,9 @@ namespace Pacman
             Timer t = (Timer)sender;
             t.Enabled = false;
             Ghost g = ghosts.Dequeue();
-           timers.Remove(t);
+            timers.Remove(t);
             g.ChangeState(GhostState.Released);
+            g.Position = new Microsoft.Xna.Framework.Vector2(9, 8);
         }
 
         /// <summary>
@@ -70,10 +71,8 @@ namespace Pacman
         public void AddToPen(Ghost ghost)
         {
             ghosts.Enqueue(ghost);
-            if (pen.Count >=0)
-            ghost.Position = pen[0].Position;
-            ghost.ChangeState(GhostState.Penned);
-            Timer t = new Timer((ghosts.Count * 1000));
+            ghost.Position = pen[ghosts.Count - 1].Position;
+            Timer t = new Timer((ghosts.Count * 2000));
             t.Enabled = true;
             t.Elapsed += Release;
             timers.Add(t);
