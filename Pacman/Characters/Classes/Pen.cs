@@ -56,8 +56,9 @@ namespace Pacman
             t.Enabled = false;
             Ghost g = ghosts.Dequeue();
             timers.Remove(t);
-            g.ChangeState(GhostState.Released);
+            g.ChangeState(GhostState.Chase);
             g.Position = new Microsoft.Xna.Framework.Vector2(9, 8);
+            
         }
 
         /// <summary>

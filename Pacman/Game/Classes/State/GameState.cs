@@ -33,6 +33,7 @@ namespace Pacman.Game.Classes.State
         //    try
        //     {
                 drawMaze(g, filecontent);
+          
          //   }
       //      catch (Exception e)
         //    {

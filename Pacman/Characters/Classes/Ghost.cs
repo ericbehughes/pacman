@@ -158,7 +158,7 @@ namespace Pacman.Characters.Classes
                     this.currentState = new Scared(this, this.maze);
                     break;
                 case GhostState.Chase:
-                    this.currentState = new Chase(this, this.maze, this.pacman, this.target);
+                    this.currentState = new Chase(this, this.maze, this.pacman, this.pacman.Position);
                     break;
                 case GhostState.Released:
                     this.Position = new Vector2(11, 9);
