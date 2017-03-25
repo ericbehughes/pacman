@@ -18,29 +18,10 @@ namespace PacmanGame
                           GhostPink = new Rectangle(20, 20, 20, 20);
         private SpriteBatch spriteBatch;
         private Texture2D GhostRedNormal,
-                          GhostRedScared,
-                          GhostRedUp,
-                          GhostRedDown,
-                          GhostRedLeft,
-                          GhostRedRight,
                           GhostBlueNormal,
-                          GhostBlueScared,
-                          GhostBlueUp,
-                          GhostBlueDown,
-                          GhostBlueLeft,
-                          GhostBlueRight,
                           GhostOrangeNormal,
-                          GhostOrangeScared,
-                          GhostOrangeUp,
-                          GhostOrangeDown,
-                          GhostOrangeLeft,
-                          GhostOrangeRight,
                           GhostPinkScared,
-                          GhostPinkNormal,
-                          GhostPinkUp,
-                          GhostPinkDown,
-                          GhostPinkLeft,
-                          GhostPinkRight;
+                          Scared;
 
         private int width,
                     height;
