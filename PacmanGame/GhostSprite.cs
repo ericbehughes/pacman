@@ -17,42 +17,19 @@ namespace PacmanGame
                           GhostOrange = new Rectangle(20, 20, 20, 20),
                           GhostPink = new Rectangle(20, 20, 20, 20);
         private SpriteBatch spriteBatch;
-        private Texture2D GhostRedNormal,
-                          GhostRedScared,
-                          GhostRedUp,
-                          GhostRedDown,
-                          GhostRedLeft,
-                          GhostRedRight,
-                          GhostBlueNormal,
-                          GhostBlueScared,
-                          GhostBlueUp,
-                          GhostBlueDown,
-                          GhostBlueLeft,
-                          GhostBlueRight,
-                          GhostOrangeNormal,
-                          GhostOrangeScared,
-                          GhostOrangeUp,
-                          GhostOrangeDown,
-                          GhostOrangeLeft,
-                          GhostOrangeRight,
-                          GhostPinkScared,
-                          GhostPinkNormal,
-                          GhostPinkUp,
-                          GhostPinkDown,
-                          GhostPinkLeft,
-                          GhostPinkRight;
+
+
+                         
 
         private int width,
                     height;
 
-        private int timeSinceLastFrame = 0;
+        private int _timeSinceLastFrame;
         private int mSecondsPerFrame = 290; 
-
-        private Texture2D[][] ghostarray;
         // 1 array for colors 
         // 1 state / direction
-        private string[] csv_array = { "normal", "scared"};
-        private string[] colorArray = { "red", "blue", "pink", "green" };
+        private readonly string[] _scaredOrChaseArray = { "normal", "scared"};
+        private readonly string[] _ghostColorArray = { "red", "blue", "pink", "green" };
         private Texture2D[,] ghostArray = new Texture2D[4,2]; 
         public GhostSprite(Game1 maingame) : base(maingame)
         {
@@ -66,16 +43,16 @@ namespace PacmanGame
 
         public override void Update(GameTime gameTime)
         {
-            timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
-            if (timeSinceLastFrame > mSecondsPerFrame)
+            _timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
+            if (_timeSinceLastFrame > mSecondsPerFrame)
             {
-                timeSinceLastFrame -= mSecondsPerFrame;
+                _timeSinceLastFrame -= mSecondsPerFrame;
                 // increment current frame 
                 foreach (var ghost in maingame.GameState.GhostPack)
                 {
                     ghost.Move();
                 }
-                timeSinceLastFrame = 0;
+                _timeSinceLastFrame = 0;
             }
         }
         // class that holds 6 things 
@@ -83,46 +60,16 @@ namespace PacmanGame
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            /* Set red ghost */
-            for (int i = 0; i < colorArray.Length; i++)
-                for (int j = 0; j < csv_array.Length; j++)
-                    // ghostArray[i,j] = maingame.Content.Load<Texture2D>("ghost"+ colorArray[i] + csv_array[j]);
-                    ghostArray[i, j] = maingame.Content.Load<Texture2D>("ghost");
-            /*
-            GhostRedNormal = maingame.Content.Load<Texture2D>("ghost/red/ghostRedNormal");
-            GhostRedScared = maingame.Content.Load<Texture2D>("ghost/red/ghostRedScared");
-            GhostRedLeft = maingame.Content.Load<Texture2D>("ghost/red/ghostRedLeft");
-            GhostRedRight = maingame.Content.Load<Texture2D>("ghost/red/ghostRedRight");
-            GhostRedUp = maingame.Content.Load<Texture2D>("ghost/red/ghostRedUp");
-            GhostRedDown = maingame.Content.Load<Texture2D>("ghost/red/ghostRedDown");
-
-            GhostBlueNormal = maingame.Content.Load<Texture2D>("ghost/blue/ghostBlueNormal");
-            GhostBlueScared = maingame.Content.Load<Texture2D>("ghost/blue/ghostBlueScared");
-            GhostBlueLeft = maingame.Content.Load<Texture2D>("ghost/blue/ghostBlueLeft");
-            GhostBlueRight = maingame.Content.Load<Texture2D>("ghost/blue/ghostBlueRight");
-            GhostBlueUp = maingame.Content.Load<Texture2D>("ghost/blue/ghostBlueUp");
-            GhostBlueDown = maingame.Content.Load<Texture2D>("ghost/blue/ghostBlueDown");
-
-            GhostOrangeNormal = maingame.Content.Load<Texture2D>("ghost/orange/ghostOrangeNormal");
-            GhostOrangeScared = maingame.Content.Load<Texture2D>("ghost/orange/ghostOrangeScared");
-            GhostOrangeLeft = maingame.Content.Load<Texture2D>("ghost/orange/ghostOrangeLeft");
-            GhostOrangeRight = maingame.Content.Load<Texture2D>("ghost/orange/ghostOrangeRight");
-            GhostOrangeUp = maingame.Content.Load<Texture2D>("ghost/orange/ghostOrangeUp");
-            GhostOrangeDown = maingame.Content.Load<Texture2D>("ghost/orange/ghostOrangeDown");
-
-            GhostPinkNormal = maingame.Content.Load<Texture2D>("ghost/pink/ghostPinkNormal");
-            GhostPinkScared = maingame.Content.Load<Texture2D>("ghost/pink/ghostPinkScared");
-            GhostPinkLeft = maingame.Content.Load<Texture2D>("ghost/pink/ghostPinkLeft");
-            GhostPinkRight = maingame.Content.Load<Texture2D>("ghost/pink/ghostPinkRight");
-            GhostPinkUp = maingame.Content.Load<Texture2D>("ghost/pink/ghostPinkUp");
-            GhostPinkDown = maingame.Content.Load<Texture2D>("ghost/pink/ghostPinkDown");
-            */
+            /* Set all ghosts graphics*/
+            for (int i = 0; i < _ghostColorArray.Length; i++)
+                for (int j = 0; j < _scaredOrChaseArray.Length; j++)
+                    ghostArray[i, j] = maingame.Content.Load<Texture2D>
+                        ("ghost"+ _ghostColorArray[i] + _scaredOrChaseArray[j]);
 
         }
 
         private void DrawSprite(int i, int j, Texture2D obj)
         {
-            //spriteBatch.Draw(obj, new Rectangle(i * 32, j * 32, 32, 32), color);
             spriteBatch.Draw(obj, new Rectangle(i * 32, j * 32, 32, 32), Color.White);
         }
 
@@ -130,18 +77,11 @@ namespace PacmanGame
         {
 
             spriteBatch.Begin();
-
             foreach (var item in maingame.GameState.GhostPack)
             {
                 DrawSprite((int)item.Position.X, (int)item.Position.Y, ghostArray[0,0]);
             }
-            /*
-            spriteBatch.Draw(GhostRedNormal, GhostBlue, Color.Blue);
-
-            spriteBatch.Draw(GhostRedNormal, GhostOrange, Color.Orange);
-
-            spriteBatch.Draw(GhostRedNormal, GhostPink, Color.Pink);
-            */
+            
             spriteBatch.End();
             base.Draw(gameTime);
         }
