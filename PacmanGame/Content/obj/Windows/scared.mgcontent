@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Stella/Source/Repos/pacman/PacmanGame/Content/scared.png</SourceFile>
-  <SourceTime>2017-03-25T13:45:28.5339538-04:00</SourceTime>
-  <DestFile>C:/Users/Stella/Source/Repos/pacman/PacmanGame/Content/bin/Windows/scared.xnb</DestFile>
-  <DestTime>2017-03-25T14:00:11.7394703-04:00</DestTime>
+  <SourceFile>C:/Users/ehugh/OneDrive/c#/Projects/PacmanGithub/PacmanGame/Content/scared.png</SourceFile>
+  <SourceTime>2017-03-25T14:18:41.4703646-04:00</SourceTime>
+  <DestFile>C:/Users/ehugh/OneDrive/c#/Projects/PacmanGithub/PacmanGame/Content/bin/Windows/scared.xnb</DestFile>
+  <DestTime>2017-03-25T14:25:16.2274657-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T10:05:36-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

@@ -98,3 +98,8 @@ C:\Users\Stella\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\gho
 C:\Users\Stella\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\ghostPinkChase.xnb
 C:\Users\Stella\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\ghostRedChase.xnb
 C:\Users\Stella\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\scared.xnb
+C:\Users\ehugh\OneDrive\c#\Projects\PacmanGithub\PacmanGame\bin\Windows\x86\Debug\Content\ghostBlueChase.xnb
+C:\Users\ehugh\OneDrive\c#\Projects\PacmanGithub\PacmanGame\bin\Windows\x86\Debug\Content\ghostOrangeChase.xnb
+C:\Users\ehugh\OneDrive\c#\Projects\PacmanGithub\PacmanGame\bin\Windows\x86\Debug\Content\ghostPinkChase.xnb
+C:\Users\ehugh\OneDrive\c#\Projects\PacmanGithub\PacmanGame\bin\Windows\x86\Debug\Content\ghostRedChase.xnb
+C:\Users\ehugh\OneDrive\c#\Projects\PacmanGithub\PacmanGame\bin\Windows\x86\Debug\Content\scared.xnb

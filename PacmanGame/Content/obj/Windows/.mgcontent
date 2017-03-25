@@ -4,16 +4,16 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/Stella/Source/Repos/pacman/PacmanGame/Content/empty.png</File>
-    <File>C:/Users/Stella/Source/Repos/pacman/PacmanGame/Content/energizer.png</File>
-    <File>C:/Users/Stella/Source/Repos/pacman/PacmanGame/Content/ghost.png</File>
-    <File>C:/Users/Stella/Source/Repos/pacman/PacmanGame/Content/pacman.png</File>
-    <File>C:/Users/Stella/Source/Repos/pacman/PacmanGame/Content/pellet.png</File>
-    <File>C:/Users/Stella/Source/Repos/pacman/PacmanGame/Content/wall.png</File>
-    <File>C:/Users/Stella/Source/Repos/pacman/PacmanGame/Content/ghostRedChase.png</File>
-    <File>C:/Users/Stella/Source/Repos/pacman/PacmanGame/Content/ghostBlueChase.png</File>
-    <File>C:/Users/Stella/Source/Repos/pacman/PacmanGame/Content/ghostOrangeChase.png</File>
-    <File>C:/Users/Stella/Source/Repos/pacman/PacmanGame/Content/ghostPinkChase.png</File>
-    <File>C:/Users/Stella/Source/Repos/pacman/PacmanGame/Content/scared.png</File>
+    <File>C:/Users/ehugh/OneDrive/c#/Projects/PacmanGithub/PacmanGame/Content/empty.png</File>
+    <File>C:/Users/ehugh/OneDrive/c#/Projects/PacmanGithub/PacmanGame/Content/energizer.png</File>
+    <File>C:/Users/ehugh/OneDrive/c#/Projects/PacmanGithub/PacmanGame/Content/ghost.png</File>
+    <File>C:/Users/ehugh/OneDrive/c#/Projects/PacmanGithub/PacmanGame/Content/pacman.png</File>
+    <File>C:/Users/ehugh/OneDrive/c#/Projects/PacmanGithub/PacmanGame/Content/pellet.png</File>
+    <File>C:/Users/ehugh/OneDrive/c#/Projects/PacmanGithub/PacmanGame/Content/wall.png</File>
+    <File>C:/Users/ehugh/OneDrive/c#/Projects/PacmanGithub/PacmanGame/Content/ghostRedChase.png</File>
+    <File>C:/Users/ehugh/OneDrive/c#/Projects/PacmanGithub/PacmanGame/Content/ghostBlueChase.png</File>
+    <File>C:/Users/ehugh/OneDrive/c#/Projects/PacmanGithub/PacmanGame/Content/ghostOrangeChase.png</File>
+    <File>C:/Users/ehugh/OneDrive/c#/Projects/PacmanGithub/PacmanGame/Content/ghostPinkChase.png</File>
+    <File>C:/Users/ehugh/OneDrive/c#/Projects/PacmanGithub/PacmanGame/Content/scared.png</File>
   </SourceFiles>
 </SourceFileCollection>
