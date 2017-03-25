@@ -15,7 +15,6 @@ namespace Pacman.Characters.Classes
     {
         private GameState gamestate;
         private Maze maze;
-        private Vector2 position;
         public event CollisionEventHandler CollisionEvent;
 
         /*Told where to move and gets a direction for the objects move method*/
@@ -25,16 +24,18 @@ namespace Pacman.Characters.Classes
             this.maze = gamestate.Maze;
 
         }
-        public Vector2 Position
-        {
-            /* Old
+
+        public Vector2 Position { get; set; }
+        /* Old
             get { return new Vector2(position.X, position.Y); }
             set { position = new Vector2(value.X, value.Y); }
             */
+            /*
             get { return new Vector2(position.Y, position.X); }
             set { position = new Vector2(value.Y, value.X); }
-
-        }
+            */
+            
+        
 
         public int Points
         {
@@ -83,12 +84,12 @@ namespace Pacman.Characters.Classes
                     break;
             }
 
-            CheckCollisions(this.Position);
+            CheckCollisions();
         }
 
         public Boolean CanEnter(Vector2 position, Direction dir)
         {
-            var freeTiles = gamestate.Maze.GetAvailableNeighbours(this.Position, dir);
+            var freeTiles = gamestate.Maze.GetAvailableNeighbours(Position, dir);
             foreach (Tile tile in freeTiles)
             {
                 if ((tile.Position.X == position.X) && (tile.Position.Y == position.Y))
@@ -97,22 +98,38 @@ namespace Pacman.Characters.Classes
             return false;
 
         }
-        public void CheckCollisions(Vector2 v)
+
+        public void CheckCollisions()
         {
             //check non empty tile collision
-            if (gamestate.Maze[(int)this.position.Y, (int)this.position.X].Member is Pellet ||
-                gamestate.Maze[(int)this.position.Y, (int)this.position.X].Member is Energizer)
+            /*
+            if (
+               //
+                gamestate.Maze[(int)this.position.Y, (int)this.position.X].Member is Ghost)
             {
                 gamestate.Maze[(int)this.position.Y, (int)this.position.X].Member.Collide();
                 gamestate.Maze[(int)this.position.Y, (int)this.position.X].Member = null;
             }
-            /*
-            if (gamestate.Maze[(int)this.position.Y, (int)this.position.X] != null)
-            {
-                //gamestate.Maze[(int)this.position.Y, (int)this.position.X].Collide();
-                //gamestate.Maze[(int)this.position.Y, (int)this.position.X].Member = null;
-            }
             */
+            foreach (var ghost in gamestate.GhostPack)
+            {
+                if (Position.X == ghost.Position.X && Position.Y == ghost.Position.Y)
+                {
+                    var temp = gamestate.Maze[(int)Position.X, (int)Position.Y].Member;
+                    gamestate.Maze[(int) Position.X, (int) Position.Y].Member = ghost;
+                    gamestate.Maze[(int) this.Position.X, (int) this.Position.Y].Collide();
+                    gamestate.Maze[(int)Position.X, (int)Position.Y].Member = temp;
+                    if (ghost.CurrentState == GhostState.Chase)
+                        Position = new Vector2(11,17);
+
+                }
+
+            }
+            if (gamestate.Maze[(int)Position.X, (int)Position.Y].Member is Pellet ||
+                         gamestate.Maze[(int)Position.X, (int)Position.Y].Member is Energizer)
+            {
+                gamestate.Maze[(int)this.Position.X, (int)this.Position.Y].Collide();
+            }
 
         }
 

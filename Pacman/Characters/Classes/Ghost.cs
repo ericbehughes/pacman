@@ -76,9 +76,9 @@ namespace Pacman.Characters.Classes
             CheckCollisions(this.pacman.Position);
         }
 
-        public void CheckCollisions(Vector2 target)
+        public void CheckCollisions(Vector2 pacmanposition)
         {
-            if (this.Position == target)
+            if (Position == pacmanposition)
             {
                 Collide();
             }
