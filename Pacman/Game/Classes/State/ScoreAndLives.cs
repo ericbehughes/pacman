@@ -59,7 +59,7 @@ namespace Pacman.Characters.Classes
             this.score += m.Points; //increment score
             this.gamestate.Maze.CheckMembersLeft(); 
             // check if member is an energizer and scare ghosts
-            if (m is Energizer || m is Pellet)
+            if (m is Energizer)
             {
                 this.gamestate.GhostPack.ScareGhosts();
             }

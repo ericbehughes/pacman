@@ -44,19 +44,19 @@ namespace PacmanGame
             
             /* Check for right key press */
             if (CurrentKeyState.IsKeyDown(Keys.Right))
-                maingame.GameState.Pacman.Move(Direction.Right);
+                maingame.GameState.Pacman.Move(Direction.Down);
 
             /* Check for left key press */
             else if (CurrentKeyState.IsKeyDown(Keys.Left))
-                maingame.GameState.Pacman.Move(Direction.Left);
+                maingame.GameState.Pacman.Move(Direction.Up);
 
             /* Check for up key press */
             else if (CurrentKeyState.IsKeyDown(Keys.Up))
-                maingame.GameState.Pacman.Move(Direction.Up);
+                maingame.GameState.Pacman.Move(Direction.Left);
 
             /* Check for down key press */
             else if (CurrentKeyState.IsKeyDown(Keys.Down))
-                maingame.GameState.Pacman.Move(Direction.Down);
+                maingame.GameState.Pacman.Move(Direction.Right);
 
         }
         

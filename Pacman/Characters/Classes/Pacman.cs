@@ -60,26 +60,26 @@ namespace Pacman.Characters.Classes
                  */
                 // case Direction.Up:
                 case Direction.Up:
-                    if (CanEnter(new Vector2(y - 1, x), Direction.Up))
-                        this.Position = new Vector2(y - 1, x);
+                    if (CanEnter(new Vector2(x - 1, y), Direction.Left))
+                        this.Position = new Vector2(x - 1, y);
                     break;
 
                 //   case Direction.Down:
                 case Direction.Down:
-                    if (CanEnter(new Vector2(y + 1, x), Direction.Down))
-                        this.Position = new Vector2(y + 1, x);
+                    if (CanEnter(new Vector2(x + 1, y), Direction.Down))
+                        this.Position = new Vector2(x + 1, y);
                     break;
 
                 //  case Direction.Left:
                 case Direction.Left:
-                    if (CanEnter(new Vector2(y, x - 1), Direction.Left))
-                        this.Position = new Vector2(y, x - 1);
+                    if (CanEnter(new Vector2(x, y - 1), Direction.Left))
+                        this.Position = new Vector2(x, y - 1);
                     break;
 
                 //   case Direction.Right:
                 case Direction.Right:
-                    if (CanEnter(new Vector2(y, x + 1), Direction.Right))
-                        this.Position = new Vector2(y, x + 1);
+                    if (CanEnter(new Vector2(x, y + 1), Direction.Right))
+                        this.Position = new Vector2(x, y + 1);
                     break;
             }
 
@@ -100,12 +100,19 @@ namespace Pacman.Characters.Classes
         public void CheckCollisions(Vector2 v)
         {
             //check non empty tile collision
-            if (gamestate.Maze[(int)this.position.X, (int)this.position.Y] != null)
+            if (gamestate.Maze[(int)this.position.Y, (int)this.position.X].Member is Pellet ||
+                gamestate.Maze[(int)this.position.Y, (int)this.position.X].Member is Energizer)
             {
-                gamestate.Maze[(int)this.position.X, (int)this.position.Y].Collide();
-                gamestate.Maze[(int)this.position.X, (int)this.position.Y].Member = null;
+                gamestate.Maze[(int)this.position.Y, (int)this.position.X].Member.Collide();
+                gamestate.Maze[(int)this.position.Y, (int)this.position.X].Member = null;
             }
-
+            /*
+            if (gamestate.Maze[(int)this.position.Y, (int)this.position.X] != null)
+            {
+                //gamestate.Maze[(int)this.position.Y, (int)this.position.X].Collide();
+                //gamestate.Maze[(int)this.position.Y, (int)this.position.X].Member = null;
+            }
+            */
 
         }
 
