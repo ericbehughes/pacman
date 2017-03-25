@@ -57,7 +57,7 @@ namespace Pacman
             Ghost g = ghosts.Dequeue();
             timers.Remove(t);
             g.ChangeState(GhostState.Chase);
-            g.Position = new Microsoft.Xna.Framework.Vector2(9, 8);
+            g.Position = new Microsoft.Xna.Framework.Vector2(11, 8);
             
         }
 
@@ -71,8 +71,14 @@ namespace Pacman
         /// <param name="ghost"></param>
         public void AddToPen(Ghost ghost)
         {
+         //   ghost.CurrentState = GhostState.Penned;
             ghosts.Enqueue(ghost);
+            if (ghosts.Count >= 0)
             ghost.Position = pen[ghosts.Count - 1].Position;
+            else
+            {
+                ghost.Position = pen[0].Position;
+            }
             Timer t = new Timer((ghosts.Count * 2000));
             t.Enabled = true;
             t.Elapsed += Release;

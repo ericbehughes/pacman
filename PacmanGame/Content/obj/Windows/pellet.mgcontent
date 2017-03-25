@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/1232983/Source/Repos/pacman/PacmanGame/Content/pellet.png</SourceFile>
-  <SourceTime>2017-03-24T15:06:59.8786969-04:00</SourceTime>
-  <DestFile>C:/Users/1232983/Source/Repos/pacman/PacmanGame/Content/bin/Windows/pellet.xnb</DestFile>
-  <DestTime>2017-03-24T15:07:47.2221504-04:00</DestTime>
+  <SourceFile>C:/Users/ehugh/OneDrive/c#/Projects/PacmanGithub/PacmanGame/Content/pellet.png</SourceFile>
+  <SourceTime>2017-03-24T19:33:23.032191-04:00</SourceTime>
+  <DestFile>C:/Users/ehugh/OneDrive/c#/Projects/PacmanGithub/PacmanGame/Content/bin/Windows/pellet.xnb</DestFile>
+  <DestTime>2017-03-24T19:33:55.4136582-04:00</DestTime>
   <Importer>TextureImporter</Importer>
-  <ImporterTime>2016-03-30T02:36:08-04:00</ImporterTime>
+  <ImporterTime>2017-03-01T10:05:36-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
-  <ProcessorTime>2016-03-30T02:36:08-04:00</ProcessorTime>
+  <ProcessorTime>2017-03-01T10:05:36-05:00</ProcessorTime>
   <Parameters>
     <Key>ColorKeyColor</Key>
     <Value>255,0,255,255</Value>

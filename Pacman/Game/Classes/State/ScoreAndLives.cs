@@ -12,13 +12,14 @@ namespace Pacman.Characters.Classes
     public delegate void GameOverHandler();
     public class ScoreAndLives
     {
-        public event GameOverHandler GameOver;
+        public event GameOverHandler GameOverEvent;
         private GameState gamestate;
         private int lives = 3;
         private int score;
         public ScoreAndLives(GameState gs)
         {
             this.gamestate = gs;
+            //gamestate.Maze.PacmanWonEvent += GameOver;
         }
 
         public int Lives
@@ -34,17 +35,17 @@ namespace Pacman.Characters.Classes
 
         protected virtual void OnGameOver()
         {
-            GameOver();
+            GameOverEvent();
         }
 
-        public void deadPacman()
+        public void DeadPacman()
         {
             this.lives--;
             if (lives <= 0)
             {
                 // if this GameOver event is not null then call OnGameOver() 
                 // helper method which invokes GameOver event pointing to incrementscore method
-                if (GameOver != null)
+                if (GameOverEvent != null)
                     OnGameOver();
             }
             else
@@ -58,7 +59,7 @@ namespace Pacman.Characters.Classes
             this.score += m.Points; //increment score
             this.gamestate.Maze.CheckMembersLeft(); 
             // check if member is an energizer and scare ghosts
-            if (m is Energizer)
+            if (m is Energizer || m is Pellet)
             {
                 this.gamestate.GhostPack.ScareGhosts();
             }

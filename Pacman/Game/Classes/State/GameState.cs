@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Pacman.Characters.Classes;
 using Pacman.Game.Classes.Map;
 using System.IO;
+using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using Microsoft.Xna.Framework;
 
@@ -119,7 +120,7 @@ namespace Pacman.Game.Classes.State
                         ghost.Pacman = g.Pacman;
                         g.GhostPack.Add(ghost);
                         ghost.CollisionEvent += g.Score.incrementScore;
-                        ghost.PacmanDiedEvent += g.Score.deadPacman;
+                        ghost.PacmanDiedEvent += g.Score.DeadPacman;
                         g.Maze[i, j] = new Map.Path(i, j, ghost);
 
                     }
@@ -131,7 +132,7 @@ namespace Pacman.Game.Classes.State
                         g.GhostPack.Add(ghost);
                         g.Pen.AddToPen(ghost);
                         ghost.CollisionEvent += g.Score.incrementScore;
-                        ghost.PacmanDiedEvent += g.Score.deadPacman;
+                        ghost.PacmanDiedEvent += g.Score.DeadPacman;
                         g.Maze[i, j] = new Map.Path(i, j, ghost);
                         g.Pen.AddTile(g.Maze[i, j]);
 
@@ -144,7 +145,7 @@ namespace Pacman.Game.Classes.State
                         g.GhostPack.Add(ghost);
                         g.Pen.AddToPen(ghost);
                         ghost.CollisionEvent += g.Score.incrementScore;
-                        ghost.PacmanDiedEvent += g.Score.deadPacman;
+                        ghost.PacmanDiedEvent += g.Score.DeadPacman;
                         g.Maze[i, j] = new Map.Path(i, j, ghost);
                         g.Pen.AddTile(g.Maze[i, j]);
                     }
@@ -154,9 +155,9 @@ namespace Pacman.Game.Classes.State
                         Ghost ghost = new Ghost(g, i, j, new Vector2(i, j), GhostState.Penned, new Characters.Classes.Color());
                         ghost.Pacman = g.Pacman;
                         g.GhostPack.Add(ghost);
-                       g.Pen.AddToPen(ghost);
+                        g.Pen.AddToPen(ghost);
                         ghost.CollisionEvent += g.Score.incrementScore;
-                        ghost.PacmanDiedEvent += g.Score.deadPacman;
+                        ghost.PacmanDiedEvent += g.Score.DeadPacman;
                         g.Maze[i, j] = new Map.Path(i, j, ghost);
                         g.Pen.AddTile(g.Maze[i, j]);
                     }
@@ -181,6 +182,18 @@ namespace Pacman.Game.Classes.State
 
 
             }
+            g.Score.GameOverEvent += () =>
+            {
+                Console.WriteLine("gameOver");
+                ResetGame();
+
+            };
+
         } // end of method
+
+        private static void ResetGame()
+        {
+            Console.WriteLine("game over needs to be done");
+        }
     }
 }

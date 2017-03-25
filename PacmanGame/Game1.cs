@@ -15,11 +15,13 @@ namespace PacmanGame
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        private GameState _gameState;
         private MazeSprite map;
         private GhostSprite ghostSprite;
         private PacmanSprite pacmanSprite;
        
+
+        int timeSinceLastFrame = 0;
+        int millisecondsPerFrame = 20;
 
         public Game1()
         {
@@ -27,7 +29,7 @@ namespace PacmanGame
             graphics.PreferredBackBufferWidth = 736;
             graphics.PreferredBackBufferHeight = 800;
             Content.RootDirectory = "Content";
-            _gameState = GameState.Parse("map.csv");
+            GameState = GameState.Parse("map.csv");
             
         }
 
@@ -50,18 +52,7 @@ namespace PacmanGame
             base.Initialize();
         }
 
-        public GameState GameState
-        {
-            get
-            {
-                return _gameState;
-            }
-
-            set
-            {
-                _gameState = value;
-            }
-        }
+        public GameState GameState { get; set; }
 
         /// <summary>
         /// LoadContent will be called once per game and is the place to load
@@ -94,7 +85,7 @@ namespace PacmanGame
                 Exit();
 
             // TODO: Add your update logic here
-
+            
             base.Update(gameTime);
         }
 

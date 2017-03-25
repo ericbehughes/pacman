@@ -20,9 +20,6 @@ namespace Pacman.Characters.Classes
         private Vector2 position;
         private Pen pen;
         private Maze maze;
-        private Direction direction;
-        private Color colour;
-        private IGhostState currentState;
         public static Timer scared;
         public static Vector2 ReleasePosition;
         public event CollisionEventHandler CollisionEvent;
@@ -41,41 +38,19 @@ namespace Pacman.Characters.Classes
             Random r = new Random();
             var enums = Enum.GetValues(typeof(Direction));
             var enumchosen = enums.GetValue(r.Next(0, 3));
-            direction = (Direction)enumchosen;
+            Direction = (Direction)enumchosen;
             this.target = target;
-            if (start == GhostState.Scared)
-            {
-                currentState = new Scared(this, this.maze);
-            }
-            else if (start == GhostState.Chase)
-            {
-                currentState = new Chase(this, this.maze, pacman, target);
-            }
-            else if (start == GhostState.Penned)
-            {
-                currentState = null;
-            }
+            ChangeState(start);
             
-            this.colour = colour;
+            this.Color = colour;
         }
 
         // need to check how this works its an enum in the class diagram
-        public IGhostState CurrenState
-        {
-            get { return currentState; }
-        }
+        public IGhostState CurrenState { get; private set; }
 
-        public Color Color
-        {
-            get { return colour; }
-        }
+        public Color Color { get; }
 
-        public Direction Direction
-        {
-            get { return direction; }
-
-            set { direction = value; }
-        }
+        public Direction Direction { get; set; }
 
         public Vector2 Position
         {
@@ -83,7 +58,7 @@ namespace Pacman.Characters.Classes
 
             set
             {
-                Vector2 pos = value;
+                var pos = value;
                 if (pos.X < 0 || pos.Y < 0)
                     throw new ArgumentException("The X and Y position of a ghost must not be negative");
                 this.position = pos;
@@ -96,8 +71,8 @@ namespace Pacman.Characters.Classes
 
         public void Move()
         {
-            if (this.currentState != null)
-             this.currentState.Move();
+            if (this.CurrenState != null)
+             this.CurrenState.Move();
             CheckCollisions(this.pacman.Position);
         }
 
@@ -114,11 +89,11 @@ namespace Pacman.Characters.Classes
             if (this.CurrentState == GhostState.Scared)
             {
                 OnCollisionEvent(this);
-                this.pen.AddToPen(this);
+                pen.AddToPen(this);
             }
-            if (this.CurrentState == GhostState.Chase)
+            else if (this.CurrentState == GhostState.Chase)
             {
-                PacmanDiedEvent();
+                PacmanDiedEvent?.Invoke();
             }
         }
 
@@ -132,7 +107,7 @@ namespace Pacman.Characters.Classes
         {
             get
             {
-                if (this.currentState is Scared)
+                if (this.CurrenState is Scared)
                     return GhostState.Scared;
 
                 return GhostState.Chase;
@@ -147,6 +122,7 @@ namespace Pacman.Characters.Classes
 
         public void Reset()
         {
+           
             this.pen.AddToPen(this);
         }
 
@@ -155,19 +131,17 @@ namespace Pacman.Characters.Classes
             switch (g)
             {
                 case GhostState.Scared:
-                    this.currentState = new Scared(this, this.maze);
+                    this.CurrenState = new Scared(this, this.maze);
                     break;
                 case GhostState.Chase:
-                    this.currentState = new Chase(this, this.maze, this.pacman, this.pacman.Position);
+                    this.CurrenState = new Chase(this, this.maze, this.pacman, this.pacman.Position);
                     break;
                 case GhostState.Released:
-                    this.Position = new Vector2(11, 9);
-                    this.currentState = new Chase(this, this.maze, this.pacman, this.target);
-                    //this.Move();
+                    this.Position = new Vector2(11, 9); // default release position in front of pen
+                    this.CurrenState = new Chase(this, this.maze, this.pacman, this.target);
                     break;
-
                 default:
-                    this.currentState = null;
+                    this.CurrenState = null;
                     break;
             }
         }

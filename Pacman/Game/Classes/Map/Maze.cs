@@ -71,7 +71,7 @@ namespace Pacman.Game.Classes.Map
         /* The function will check the tiles to the left, right, down and up from the parameter's position and save them to a list
          * if and only if the tiles are not a wall
          */
-        public List<Tile> GetAvailableNeighbours(Vector2 position, Direction Direction)
+        public List<Tile> GetAvailableNeighbours(Vector2 position, Direction direction)
         {
 
             List<Tile> emptyTiles = new List<Tile>();
@@ -82,22 +82,22 @@ namespace Pacman.Game.Classes.Map
 
             /* check Left  *///
             if (!(maze[x, y - 1] is Wall))
-                if (Direction != Direction.Right)
+                if (direction != Direction.Right)
                     emptyTiles.Add(maze[x, y - 1]);
 
             /* check Right */
             if (!(maze[x, y + 1] is Wall))
-                if (Direction != Direction.Left)
+                if (direction != Direction.Left)
                     emptyTiles.Add(maze[x, y + 1]);
 
             /* Check Up */
             if (!(maze[x - 1, y] is Wall))
-                if (Direction != Direction.Down)
+                if (direction != Direction.Down)
                     emptyTiles.Add(maze[x - 1, y]);
 
             /* Check Down */
             if (!(maze[x + 1, y] is Wall))
-                if (Direction != Direction.Up)
+                if (direction != Direction.Up)
                     emptyTiles.Add(maze[x + 1, y]);
 
             return emptyTiles;
@@ -115,7 +115,7 @@ namespace Pacman.Game.Classes.Map
         public void CheckMembersLeft()
         {
             int counter = 0;
-            foreach (Tile tile in maze)
+            foreach (var tile in maze)
             {
                 if (tile is Path && tile.Member is Characters.Classes.Pacman)
                     continue;
