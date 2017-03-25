@@ -112,6 +112,7 @@ namespace Pacman.Characters.Classes
 
                 return GhostState.Chase;
             }
+            set { }
         }
 
         public Pacman Pacman

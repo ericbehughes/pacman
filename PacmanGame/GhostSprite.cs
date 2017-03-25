@@ -46,7 +46,7 @@ namespace PacmanGame
                     height;
 
         private int timeSinceLastFrame = 0;
-        private int mSecondsPerFrame = 20; 
+        private int mSecondsPerFrame = 290; 
 
         private Texture2D[][] ghostarray;
         // 1 array for colors 

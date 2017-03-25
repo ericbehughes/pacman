@@ -185,7 +185,8 @@ namespace Pacman.Game.Classes.State
             g.Score.GameOverEvent += () =>
             {
                 Console.WriteLine("gameOver");
-                ResetGame();
+                
+                g.Score.Lives = 3;
 
             };
 
@@ -194,6 +195,7 @@ namespace Pacman.Game.Classes.State
         private static void ResetGame()
         {
             Console.WriteLine("game over needs to be done");
+            
         }
     }
 }

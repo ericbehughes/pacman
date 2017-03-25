@@ -21,7 +21,7 @@ namespace PacmanGame
        
 
         int timeSinceLastFrame = 0;
-        int millisecondsPerFrame = 20;
+        int millisecondsPerFrame = 300;
 
         public Game1()
         {
