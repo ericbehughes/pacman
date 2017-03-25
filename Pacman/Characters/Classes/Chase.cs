@@ -33,6 +33,7 @@ namespace Pacman.Characters.Classes
          * just was) – the choice is based on the tile which is closest to the target coordinates. The Vector2 struct has a static 
          * method: Vector2.Distance(vectorA, vectorB) that returns a float. Use this to find the closest Tile.
          */
+
         public void Move()
         {
 
@@ -41,7 +42,8 @@ namespace Pacman.Characters.Classes
             float shortestDistance = Vector2.Distance(target, ghost.Position);
             List<Tile> freeTiles = maze.GetAvailableNeighbours(ghost.Position, ghostDir);
             int index = 0, counter = 0;
-            foreach (Tile tile in freeTiles){
+            foreach (Tile tile in freeTiles)
+            {
                 if (Vector2.Distance(target, tile.Position) < shortestDistance)
                 {
                     index = counter;
@@ -50,22 +52,23 @@ namespace Pacman.Characters.Classes
                 counter++;
             }
 
-            temp = freeTiles.ElementAt((int)index).Position;
-            if ((int)temp.X != (int)ghost.Position.X) {
-                if ((int)temp.X < (int)ghost.Position.X)
+            temp = freeTiles.ElementAt((int) index).Position;
+            if ((int) temp.X != (int) ghost.Position.X)
+            {
+                if ((int) temp.X < (int) ghost.Position.X)
                 {
                     ghost.Position = temp;
                     ghost.Direction = Direction.Up;
                 }
 
-                else if ((int)temp.X > (int)ghost.Position.X)
+                else if ((int) temp.X > (int) ghost.Position.X)
                 {
                     ghost.Position = temp;
                     ghost.Direction = Direction.Down;
                 }
             }
 
-            else if ((int)temp.Y != (int)ghost.Position.Y)
+            else if ((int) temp.Y != (int) ghost.Position.Y)
             {
                 if (temp.Y < ghost.Position.Y)
                 {
