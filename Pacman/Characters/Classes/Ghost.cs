@@ -20,7 +20,7 @@ namespace Pacman.Characters.Classes
         private Vector2 position;
         private Pen pen;
         private Maze maze;
-        public static Timer scared;
+        public static Timer scared = new Timer();
         public static Vector2 ReleasePosition;
         public event CollisionEventHandler CollisionEvent;
         public event PacmanDiedEventHandler PacmanDiedEvent;
