@@ -13,10 +13,7 @@ namespace PacmanGame
     {
         private Game1 maingame;
         private SpriteBatch spriteBatch;
-
-
-
-
+       
         private int width,
                     height,
                     counter;
@@ -46,22 +43,32 @@ namespace PacmanGame
             {
                 _timeSinceLastFrame -= mSecondsPerFrame;
                 // increment current frame 
-                foreach (var ghost in maingame.GameState.GhostPack)
-                {
-                    if (ghost.CurrentState == Pacman.Characters.Classes.GhostState.Scared)
-                        ghostArray[counter, 0] = maingame.Content.Load<Texture2D>("scared");
-                    else
-                    {
-                        ghostArray[counter, 0] = maingame.Content.Load<Texture2D>("ghost" + 
-                            _ghostColorArray[counter] + _scaredOrChaseArray[0]);
-                    }
-                       
-                    ghost.Move();
-                    counter++;
-                }
+                ChangeGhostPicture();
+                counter++;
                 if (counter >= 3)
                     counter = 0;
                 _timeSinceLastFrame = 0;
+            }
+            else if (_timeSinceLastFrame > mSecondsPerFrame)
+            {
+                ChangeGhostPicture();
+            }
+        }
+
+        private void ChangeGhostPicture()
+        {
+            foreach (var ghost in maingame.GameState.GhostPack)
+            {
+                if (ghost.CurrentState == Pacman.Characters.Classes.GhostState.Scared)
+                    ghostArray[counter, 0] = maingame.Content.Load<Texture2D>("scared");
+                else
+                {
+                    ghostArray[counter, 0] = maingame.Content.Load<Texture2D>("ghost" +
+                        _ghostColorArray[counter] + _scaredOrChaseArray[0]);
+                }
+
+                ghost.Move();
+              
             }
         }
         // class that holds 6 things 
