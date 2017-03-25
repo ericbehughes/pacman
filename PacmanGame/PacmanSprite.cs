@@ -15,6 +15,8 @@ namespace PacmanGame
         private Game1 maingame;
         private SpriteBatch spriteBatch;
         private Texture2D Pacman;
+        private int timeSinceLastFrame = 0;
+        private int mSecondsPerFrame = 10000;
         public PacmanSprite(Game1 maingame) : base(maingame)
         {
             this.maingame = maingame;
@@ -34,6 +36,12 @@ namespace PacmanGame
 
         public override void Update(GameTime gameTime)
         {
+            timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
+            if (timeSinceLastFrame > mSecondsPerFrame)
+            {
+                timeSinceLastFrame -= mSecondsPerFrame;
+                timeSinceLastFrame = 0;
+            }
             PacmanKeyPress();
             base.Update(gameTime);
         }
