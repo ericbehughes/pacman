@@ -62,6 +62,7 @@ namespace Pacman.Characters.Classes
             if (m is Energizer)
             {
                 this.gamestate.GhostPack.ScareGhosts();
+                m = new Energizer(gamestate.GhostPack);
             }
         }
     }
