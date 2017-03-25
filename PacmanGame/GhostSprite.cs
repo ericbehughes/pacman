@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Pacman.Characters.Classes;
 using Pacman.Game.Classes.State;
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,9 @@ namespace PacmanGame
                     counter;
 
         private int _timeSinceLastFrame;
-        private int mSecondsPerFrame = 290; 
+        private int mSecondsPerFrame = 290;
+        private int changeSpeed = 10,
+                    lastSpeed;
         // 1 array for colors 
         // 1 state / direction
         private readonly string[] _scaredOrChaseArray = { "Chase", "Scared"};
@@ -39,19 +42,23 @@ namespace PacmanGame
         public override void Update(GameTime gameTime)
         {
             _timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
+            lastSpeed += gameTime.ElapsedGameTime.Milliseconds;
+            if (lastSpeed > changeSpeed)
+            {
+                lastSpeed -= changeSpeed;
+                ChangeGhostPicture();
+                if (counter >= 3)
+                    counter = 0;
+                lastSpeed = 0;
+            }
+
             if (_timeSinceLastFrame > mSecondsPerFrame)
             {
                 _timeSinceLastFrame -= mSecondsPerFrame;
                 // increment current frame 
-                ChangeGhostPicture();
-                counter++;
-                if (counter >= 3)
-                    counter = 0;
+                foreach (var ghost in maingame.GameState.GhostPack)
+                    ghost.Move();
                 _timeSinceLastFrame = 0;
-            }
-            else if (_timeSinceLastFrame > mSecondsPerFrame)
-            {
-                ChangeGhostPicture();
             }
         }
 
@@ -59,16 +66,14 @@ namespace PacmanGame
         {
             foreach (var ghost in maingame.GameState.GhostPack)
             {
-                if (ghost.CurrentState == Pacman.Characters.Classes.GhostState.Scared)
+                if (ghost.ICurrentState is Scared)
                     ghostArray[counter, 0] = maingame.Content.Load<Texture2D>("scared");
                 else
                 {
                     ghostArray[counter, 0] = maingame.Content.Load<Texture2D>("ghost" +
                         _ghostColorArray[counter] + _scaredOrChaseArray[0]);
                 }
-
-                ghost.Move();
-              
+                counter++;             
             }
         }
         // class that holds 6 things 
@@ -86,7 +91,7 @@ namespace PacmanGame
 
         private void DrawSprite(int i, int j, Texture2D obj)
         {
-            spriteBatch.Draw(obj, new Rectangle(i * 32, j * 32, 32, 32), Color.White);
+            spriteBatch.Draw(obj, new Rectangle(i * 32, j * 32, 32, 32), Microsoft.Xna.Framework.Color.White);
         }
 
         public override void Draw(GameTime gameTime)

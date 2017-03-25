@@ -91,7 +91,6 @@ C:\Users\Stella\Source\Repos\pacman\Pacman\bin\Debug\SharpDX.Direct3D11.dll
 C:\Users\Stella\Source\Repos\pacman\Pacman\bin\Debug\SharpDX.Direct2D1.dll
 C:\Users\Stella\Source\Repos\pacman\Pacman\bin\Debug\SharpDX.XInput.dll
 C:\Users\Stella\Source\Repos\pacman\Pacman\bin\Debug\SharpDX.MediaFoundation.dll
-C:\Users\Stella\Source\Repos\pacman\Pacman\bin\Debug\MonoGame.Framework.xml
 C:\Users\Stella\Source\Repos\pacman\Pacman\bin\Debug\SharpDX.XAudio2.xml
 C:\Users\Stella\Source\Repos\pacman\Pacman\bin\Debug\SharpDX.xml
 C:\Users\Stella\Source\Repos\pacman\Pacman\bin\Debug\SharpDX.DXGI.xml

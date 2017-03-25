@@ -65,7 +65,6 @@ C:\Users\Stella\Source\Repos\pacman\PacmanGame\obj\x86\Debug\PacmanGame.exe
 C:\Users\Stella\Source\Repos\pacman\PacmanGame\obj\x86\Debug\PacmanGame.pdb
 C:\Users\Stella\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\empty.xnb
 C:\Users\Stella\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\energizer.xnb
-C:\Users\Stella\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\ghost.xnb
 C:\Users\Stella\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\pacman.xnb
 C:\Users\Stella\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\pellet.xnb
 C:\Users\Stella\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\wall.xnb

@@ -72,7 +72,7 @@ namespace Pacman
         /// <param name="ghost"></param>
         public void AddToPen(Ghost ghost)
         {
-            ghost.CurrentState = GhostState.Chase;
+            ghost.ChangeState(GhostState.Chase);
             ghosts.Enqueue(ghost);
             if (ghosts.Count > 0)
             ghost.Position = pen[ghosts.Count - 1].Position;

@@ -119,7 +119,7 @@ namespace Pacman.Characters.Classes
                     gamestate.Maze[(int) Position.X, (int) Position.Y].Member = ghost;
                     gamestate.Maze[(int) this.Position.X, (int) this.Position.Y].Collide();
                     gamestate.Maze[(int)Position.X, (int)Position.Y].Member = temp;
-                    if (ghost.CurrentState == GhostState.Chase)
+                    if (ghost.ICurrentState is Chase)
                         Position = new Vector2(11,17);
 
                 }
