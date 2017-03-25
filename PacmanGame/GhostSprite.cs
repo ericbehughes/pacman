@@ -12,25 +12,23 @@ namespace PacmanGame
     class GhostSprite : DrawableGameComponent
     {
         private Game1 maingame;
-        private Rectangle GhostRed = new Rectangle(20, 20, 20, 20),
-                          GhostBlue = new Rectangle(20, 20, 20, 20),
-                          GhostOrange = new Rectangle(20, 20, 20, 20),
-                          GhostPink = new Rectangle(20, 20, 20, 20);
         private SpriteBatch spriteBatch;
 
 
-                         
+
 
         private int width,
-                    height;
+                    height,
+                    counter;
 
         private int _timeSinceLastFrame;
         private int mSecondsPerFrame = 290; 
         // 1 array for colors 
         // 1 state / direction
-        private readonly string[] _scaredOrChaseArray = { "normal", "scared"};
-        private readonly string[] _ghostColorArray = { "red", "blue", "pink", "green" };
-        private Texture2D[,] ghostArray = new Texture2D[4,2]; 
+        private readonly string[] _scaredOrChaseArray = { "Chase", "Scared"};
+        private readonly string[] _ghostColorArray = { "Red", "Blue", "Pink", "Orange" };
+        private Texture2D[,] ghostArray = new Texture2D[4,1]; 
+                           
         public GhostSprite(Game1 maingame) : base(maingame)
         {
             this.maingame = maingame;
@@ -50,8 +48,15 @@ namespace PacmanGame
                 // increment current frame 
                 foreach (var ghost in maingame.GameState.GhostPack)
                 {
+                    if (ghost.CurrentState == Pacman.Characters.Classes.GhostState.Scared)
+                        ghostArray[counter, 0] = maingame.Content.Load<Texture2D>("scared");
+                    else
+                       ghostArray[counter, 0] = maingame.Content.Load<Texture2D>("ghost" + _ghostColorArray[counter] + _scaredOrChaseArray[0]);
                     ghost.Move();
+                    counter++;
                 }
+                if (counter >= 3)
+                    counter = 0;
                 _timeSinceLastFrame = 0;
             }
         }
@@ -62,7 +67,7 @@ namespace PacmanGame
             spriteBatch = new SpriteBatch(GraphicsDevice);
             /* Set all ghosts graphics*/
             for (int i = 0; i < _ghostColorArray.Length; i++)
-                for (int j = 0; j < _scaredOrChaseArray.Length; j++)
+                for (int j = 0; j < 1; j++)
                     ghostArray[i, j] = maingame.Content.Load<Texture2D>
                         ("ghost"+ _ghostColorArray[i] + _scaredOrChaseArray[j]);
 
@@ -75,13 +80,15 @@ namespace PacmanGame
 
         public override void Draw(GameTime gameTime)
         {
-
+            int counter = 0;
             spriteBatch.Begin();
             foreach (var item in maingame.GameState.GhostPack)
             {
-                DrawSprite((int)item.Position.X, (int)item.Position.Y, ghostArray[0,0]);
+                DrawSprite((int)item.Position.X, (int)item.Position.Y, ghostArray[counter,0]);
+                counter++;
             }
-            
+            if (counter >= 3)
+                counter = 0;
             spriteBatch.End();
             base.Draw(gameTime);
         }

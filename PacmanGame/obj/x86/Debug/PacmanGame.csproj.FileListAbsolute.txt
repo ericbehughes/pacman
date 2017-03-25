@@ -93,3 +93,8 @@ C:\Users\Stella\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\SharpDX.Dir
 C:\Users\Stella\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\SharpDX.XInput.xml
 C:\Users\Stella\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
 C:\Users\Stella\Source\Repos\pacman\PacmanGame\obj\x86\Debug\PacmanGame.csprojResolveAssemblyReference.cache
+C:\Users\Stella\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\ghostBlueChase.xnb
+C:\Users\Stella\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\ghostOrangeChase.xnb
+C:\Users\Stella\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\ghostPinkChase.xnb
+C:\Users\Stella\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\ghostRedChase.xnb
+C:\Users\Stella\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\scared.xnb
