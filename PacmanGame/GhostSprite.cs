@@ -51,7 +51,11 @@ namespace PacmanGame
                     if (ghost.CurrentState == Pacman.Characters.Classes.GhostState.Scared)
                         ghostArray[counter, 0] = maingame.Content.Load<Texture2D>("scared");
                     else
-                       ghostArray[counter, 0] = maingame.Content.Load<Texture2D>("ghost" + _ghostColorArray[counter] + _scaredOrChaseArray[0]);
+                    {
+                        ghostArray[counter, 0] = maingame.Content.Load<Texture2D>("ghost" + 
+                            _ghostColorArray[counter] + _scaredOrChaseArray[0]);
+                    }
+                       
                     ghost.Move();
                     counter++;
                 }
