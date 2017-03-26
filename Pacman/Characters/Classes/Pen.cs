@@ -52,14 +52,19 @@ namespace Pacman
         /*This is an event*/
         private void Release(object sender, ElapsedEventArgs e)
         {
+#if DEBUG
+            (sender as Timer).Enabled = false;
             Timer t = (Timer)sender;
             t.Enabled = false;
             Ghost g = ghosts.Dequeue();
             timers.Remove(t);
             g.ChangeState(GhostState.Chase);
             g.Position = new Microsoft.Xna.Framework.Vector2(11, 8);
-           
-            
+#endif
+#if DEBUG
+            (sender as Timer).Enabled = true;
+#endif
+
         }
 
         /// <summary>
@@ -72,7 +77,6 @@ namespace Pacman
         /// <param name="ghost"></param>
         public void AddToPen(Ghost ghost)
         {
-            ghost.ChangeState(GhostState.Chase);
             ghosts.Enqueue(ghost);
             if (ghosts.Count > 0)
             ghost.Position = pen[ghosts.Count - 1].Position;

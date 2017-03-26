@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Pacman.Characters.Classes
 {
-    public class Pacman : ICollidable
+    public class Pacman
     {
         private GameState gamestate;
         private Maze maze;
@@ -111,6 +111,8 @@ namespace Pacman.Characters.Classes
                 gamestate.Maze[(int)this.position.Y, (int)this.position.X].Member = null;
             }
             */
+            gamestate.GhostPack.CheckCollideGhosts(Position);
+            /*
             foreach (var ghost in gamestate.GhostPack)
             {
                 if (Position.X == ghost.Position.X && Position.Y == ghost.Position.Y)
@@ -119,23 +121,20 @@ namespace Pacman.Characters.Classes
                     gamestate.Maze[(int) Position.X, (int) Position.Y].Member = ghost;
                     gamestate.Maze[(int) this.Position.X, (int) this.Position.Y].Collide();
                     gamestate.Maze[(int)Position.X, (int)Position.Y].Member = temp;
-                    if (ghost.ICurrentState is Chase)
+                    if (ghost.ICurrentState is Scared)
+                        ghost.ChangeState(GhostState.Chase);
+                    else
                         Position = new Vector2(11,17);
 
                 }
 
             }
-            if (gamestate.Maze[(int)Position.X, (int)Position.Y].Member is Pellet ||
-                         gamestate.Maze[(int)Position.X, (int)Position.Y].Member is Energizer)
-            {
+            */
+            //if (gamestate.Maze[(int)Position.X, (int)Position.Y].Member is Energizer)
+            //{
                 gamestate.Maze[(int)this.Position.X, (int)this.Position.Y].Collide();
-            }
+            //}
 
-        }
-
-        public void Collide()
-        {
-            CollisionEvent(this);
         }
     }
 }

@@ -91,3 +91,4 @@ C:\Users\Stella\Source\Repos\pacman\PacmanUnitTest\bin\Debug\SharpDX.MediaFounda
 C:\Users\Stella\Source\Repos\pacman\PacmanUnitTest\obj\Debug\PacmanUnitTest.csprojResolveAssemblyReference.cache
 C:\Users\Stella\Source\Repos\pacman\PacmanUnitTest\obj\Debug\PacmanUnitTest.dll
 C:\Users\Stella\Source\Repos\pacman\PacmanUnitTest\obj\Debug\PacmanUnitTest.pdb
+C:\Users\Stella\Source\Repos\pacman\PacmanUnitTest\bin\Debug\MonoGame.Framework.xml

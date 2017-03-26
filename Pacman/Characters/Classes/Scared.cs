@@ -38,7 +38,8 @@ namespace Pacman.Characters.Classes
         }
         public void Move()
         {
-            Tile current = maze[(int)ghost.Position.X, (int)ghost.Position.Y];
+            ghost.ChangeState(GhostState.Scared);
+            Tile current = maze[(int)ghost.Position.Y, (int)ghost.Position.X];
             List<Tile> places = maze.GetAvailableNeighbours(ghost.Position, ghost.Direction);
             int num = places.Count;
             if (num == 0)

@@ -72,8 +72,7 @@ namespace Pacman.Characters.Classes
 
         public void Move()
         {
-            if (this.ICurrentState != null)
-             this.ICurrentState.Move();
+            this.ICurrentState.Move();
             CheckCollisions(this.pacman.Position);
         }
 
@@ -124,6 +123,7 @@ namespace Pacman.Characters.Classes
                     this.ICurrentState = new Scared(this, this.maze);
                     break;
                 case GhostState.Chase:
+                case GhostState.Penned:
                     this.ICurrentState = new Chase(this, this.maze, this.pacman, this.pacman.Position);
                     break;
                 case GhostState.Released:
@@ -131,7 +131,6 @@ namespace Pacman.Characters.Classes
                     this.ICurrentState = new Chase(this, this.maze, this.pacman, this.target);
                     break;
                 default:
-                    this.ICurrentState = null;
                     break;
             }
         }

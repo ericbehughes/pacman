@@ -21,6 +21,7 @@ namespace Pacman.Characters.Classes
 
         }
         // changed ghostpack comment
+        
         public void CheckCollideGhosts(Vector2 target)
         {
             foreach (var g in ghosts)
@@ -61,12 +62,20 @@ namespace Pacman.Characters.Classes
 
         private void OnPauseScaredTimer(object sender, ElapsedEventArgs e)
         {
-            Timer t = (Timer)sender;
-            t.Enabled = false;
+        #if DEBUG
+            //Timer t = (Timer)sender;
+            (sender as Timer).Enabled = false;
             foreach (var item in ghosts)
             {
                 item.ChangeState(GhostState.Chase);
             }
+            Ghost.scared = null;
+#endif
+
+
+#if DEBUG
+            (sender as Timer).Enabled = true;
+#endif
         }
 
 
