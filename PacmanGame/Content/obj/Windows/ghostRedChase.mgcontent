@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/ehugh/OneDrive/c#/Projects/PacmanGithub/PacmanGame/Content/ghostRedChase.png</SourceFile>
-  <SourceTime>2017-03-25T14:15:17.566108-04:00</SourceTime>
-  <DestFile>C:/Users/ehugh/OneDrive/c#/Projects/PacmanGithub/PacmanGame/Content/bin/Windows/ghostRedChase.xnb</DestFile>
-  <DestTime>2017-03-26T13:46:19.7467336-04:00</DestTime>
+  <SourceFile>C:/Users/Stella/Source/Repos/pacman/PacmanGame/Content/ghostRedChase.png</SourceFile>
+  <SourceTime>2017-03-25T14:32:33.8105504-04:00</SourceTime>
+  <DestFile>C:/Users/Stella/Source/Repos/pacman/PacmanGame/Content/bin/Windows/ghostRedChase.xnb</DestFile>
+  <DestTime>2017-03-26T14:04:04.4600573-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T10:05:36-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

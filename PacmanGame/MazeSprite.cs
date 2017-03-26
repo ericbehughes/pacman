@@ -94,7 +94,7 @@ namespace PacmanGame
                     else
                     {
                       
-                        if (maingame.GameState.Maze[i, j].Member == null)
+                        if (maingame.GameState.Maze[i, j].Member == null || maingame.GameState.Maze[i, j].Member is Ghost)
                         {
                             DrawSprite(i, j, Path);
                         }
