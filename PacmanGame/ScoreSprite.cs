@@ -53,7 +53,7 @@ namespace PacmanGame
             spriteBatch.DrawString(score, "Score: " + maingame.GameState.ScoreAndLives.Score, 
                 new Vector2(50, 750),Microsoft.Xna.Framework.Color.White);
 
-            spriteBatch.DrawString(lives, "Lives :" +maingame.GameState.ScoreAndLives.Lives, 
+            spriteBatch.DrawString(lives, "Lives: " +maingame.GameState.ScoreAndLives.Lives, 
                 new Vector2(500, 750), Microsoft.Xna.Framework.Color.White);
             
             spriteBatch.End();
