@@ -52,19 +52,12 @@ namespace Pacman
         /*This is an event*/
         private void Release(object sender, ElapsedEventArgs e)
         {
-#if DEBUG
-            (sender as Timer).Enabled = false;
             Timer t = (Timer)sender;
             t.Enabled = false;
             Ghost g = ghosts.Dequeue();
             timers.Remove(t);
             g.ChangeState(GhostState.Chase);
             g.Position = new Microsoft.Xna.Framework.Vector2(11, 8);
-#endif
-#if DEBUG
-            (sender as Timer).Enabled = true;
-#endif
-
         }
 
         /// <summary>

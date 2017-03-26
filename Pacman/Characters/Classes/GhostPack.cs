@@ -62,20 +62,13 @@ namespace Pacman.Characters.Classes
 
         private void OnPauseScaredTimer(object sender, ElapsedEventArgs e)
         {
-        #if DEBUG
-            //Timer t = (Timer)sender;
-            (sender as Timer).Enabled = false;
+            Timer t = (Timer)sender;
+            t.Enabled = false;
             foreach (var item in ghosts)
             {
                 item.ChangeState(GhostState.Chase);
             }
             Ghost.scared = null;
-#endif
-
-
-#if DEBUG
-            (sender as Timer).Enabled = true;
-#endif
         }
 
 
