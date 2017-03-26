@@ -36,9 +36,8 @@ namespace Pacman.Characters.Classes
 
         public void Move()
         {
-
+           
             Direction ghostDir = ghost.Direction;
-            Vector2 temp;
             float shortestDistance = Vector2.Distance(target, ghost.Position);
             List<Tile> freeTiles = maze.GetAvailableNeighbours(ghost.Position, ghostDir);
             int index = 0, counter = 0;
@@ -52,7 +51,7 @@ namespace Pacman.Characters.Classes
                 counter++;
             }
 
-            temp = freeTiles.ElementAt((int) index).Position;
+            var temp = freeTiles.ElementAt((int) index).Position;
             if ((int) temp.X != (int) ghost.Position.X)
             {
                 if ((int) temp.X < (int) ghost.Position.X)
@@ -82,6 +81,9 @@ namespace Pacman.Characters.Classes
                     ghost.Direction = Direction.Right;
                 }
             }
+
+            if (ghost.Position == target)
+                target = pacman.Position;
         }
     }
 }

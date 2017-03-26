@@ -68,7 +68,7 @@ namespace Pacman.Characters.Classes
             {
                 item.ChangeState(GhostState.Chase);
             }
-            Ghost.scared = null;
+      
         }
 
 

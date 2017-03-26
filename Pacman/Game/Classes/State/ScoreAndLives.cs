@@ -51,6 +51,7 @@ namespace Pacman.Characters.Classes
             else
             {
                this.gamestate.GhostPack.ResetGhosts();
+                
             }
         }
 

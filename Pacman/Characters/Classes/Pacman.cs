@@ -3,11 +3,6 @@ using Pacman.Characters.Interfaces;
 using Pacman.Game.Classes.Map;
 using Pacman.Game.Classes.State;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Pacman.Characters.Classes
 {
@@ -112,6 +107,7 @@ namespace Pacman.Characters.Classes
             }
             */
             gamestate.GhostPack.CheckCollideGhosts(Position);
+            gamestate.Maze[(int)this.Position.X, (int)this.Position.Y].Collide();
             /*
             foreach (var ghost in gamestate.GhostPack)
             {
@@ -132,7 +128,7 @@ namespace Pacman.Characters.Classes
             */
             //if (gamestate.Maze[(int)Position.X, (int)Position.Y].Member is Energizer)
             //{
-                gamestate.Maze[(int)this.Position.X, (int)this.Position.Y].Collide();
+
             //}
 
         }

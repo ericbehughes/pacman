@@ -39,9 +39,8 @@ namespace Pacman.Characters.Classes
             var enums = Enum.GetValues(typeof(Direction));
             var enumchosen = enums.GetValue(r.Next(0, 3));
             Direction = (Direction)enumchosen;
-            this.target = target;
+            this.target = g.Pacman.Position;
             ChangeState(start);
-            
             this.Color = colour;
         }
 
@@ -68,10 +67,14 @@ namespace Pacman.Characters.Classes
         }
 
 
-        public int Points { get { return 200; }  set { } }
+        public int Points { get { return 200; } set { } }
 
         public void Move()
         {
+            if (position == target)
+            {
+                target = pacman.Position;
+            }
             this.ICurrentState.Move();
             CheckCollisions(this.pacman.Position);
         }
@@ -111,7 +114,7 @@ namespace Pacman.Characters.Classes
 
         public void Reset()
         {
-           
+
             this.pen.AddToPen(this);
         }
 
@@ -120,18 +123,18 @@ namespace Pacman.Characters.Classes
             switch (g)
             {
                 case GhostState.Scared:
-                    this.ICurrentState = new Scared(this, this.maze);
-                    break;
+                this.ICurrentState = new Scared(this, this.maze);
+                break;
                 case GhostState.Chase:
                 case GhostState.Penned:
-                    this.ICurrentState = new Chase(this, this.maze, this.pacman, this.pacman.Position);
-                    break;
+                this.ICurrentState = new Chase(this, this.maze, this.pacman, target);
+                break;
                 case GhostState.Released:
-                    this.Position = new Vector2(11, 9); // default release position in front of pen
-                    this.ICurrentState = new Chase(this, this.maze, this.pacman, this.target);
-                    break;
+                this.Position = new Vector2(11, 9); // default release position in front of pen
+                this.ICurrentState = new Chase(this, this.maze, this.pacman, target);
+                break;
                 default:
-                    break;
+                break;
             }
         }
 

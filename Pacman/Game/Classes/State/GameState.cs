@@ -30,15 +30,10 @@ namespace Pacman.Game.Classes.State
             g.GhostPack = gpack;
             g.Score = score_lives;
             g.GhostPack = gpack;
+            g.Pacman.Position = new Vector2(11, 17);
 
-        //    try
-       //     {
-                drawMaze(g, filecontent);
-          
-         //   }
-      //      catch (Exception e)
-        //    {
-         //   }
+            drawMaze(g, filecontent);
+
 
             return g;
         }

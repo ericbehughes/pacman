@@ -71,12 +71,9 @@ namespace Pacman
         public void AddToPen(Ghost ghost)
         {
             ghosts.Enqueue(ghost);
+
             if (ghosts.Count > 0)
-            ghost.Position = pen[ghosts.Count - 1].Position;
-            else
-            {
-                ghost.Position = pen[0].Position;
-            }
+                ghost.Position = pen[ghosts.Count - 1].Position;
             Timer t = new Timer((ghosts.Count * 2000));
             t.Enabled = true;
             t.Elapsed += Release;
