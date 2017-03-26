@@ -50,8 +50,10 @@ namespace Pacman.Characters.Classes
             }
             else
             {
-               this.gamestate.GhostPack.SendToPen();
-                
+                var ghosts = gamestate.GhostPack;
+                for (int i = 0; i < ghosts.Count(); i++)
+                    if (ghosts.ElementAt(i).Position == ghosts.ElementAt(i).Pacman.Position)
+                        ghosts.ElementAt(i).Reset();
             }
         }
 

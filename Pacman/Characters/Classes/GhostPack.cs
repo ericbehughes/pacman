@@ -36,13 +36,6 @@ namespace Pacman.Characters.Classes
                 ghosts.ElementAt(i).Reset();
         }
 
-        public void SendToPen()
-        {
-            for (int i = 0; i < ghosts.Count; i++)
-                if (ghosts.ElementAt(i).Position == ghosts.ElementAt(i).Pacman.Position)
-                    ghosts.ElementAt(i).Reset();
-        }
-
         public void Move()
         {
             for (int i = 0; i < ghosts.Count; i++)
