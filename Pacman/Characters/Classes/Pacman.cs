@@ -96,40 +96,8 @@ namespace Pacman.Characters.Classes
 
         public void CheckCollisions()
         {
-            //check non empty tile collision
-            /*
-            if (
-               //
-                gamestate.Maze[(int)this.position.Y, (int)this.position.X].Member is Ghost)
-            {
-                gamestate.Maze[(int)this.position.Y, (int)this.position.X].Member.Collide();
-                gamestate.Maze[(int)this.position.Y, (int)this.position.X].Member = null;
-            }
-            */
             gamestate.GhostPack.CheckCollideGhosts(Position);
             gamestate.Maze[(int)this.Position.X, (int)this.Position.Y].Collide();
-            /*
-            foreach (var ghost in gamestate.GhostPack)
-            {
-                if (Position.X == ghost.Position.X && Position.Y == ghost.Position.Y)
-                {
-                    var temp = gamestate.Maze[(int)Position.X, (int)Position.Y].Member;
-                    gamestate.Maze[(int) Position.X, (int) Position.Y].Member = ghost;
-                    gamestate.Maze[(int) this.Position.X, (int) this.Position.Y].Collide();
-                    gamestate.Maze[(int)Position.X, (int)Position.Y].Member = temp;
-                    if (ghost.ICurrentState is Scared)
-                        ghost.ChangeState(GhostState.Chase);
-                    else
-                        Position = new Vector2(11,17);
-
-                }
-
-            }
-            */
-            //if (gamestate.Maze[(int)Position.X, (int)Position.Y].Member is Energizer)
-            //{
-
-            //}
 
         }
     }
