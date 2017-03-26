@@ -180,7 +180,7 @@ namespace Pacman.Game.Classes.State
             g.Score.GameOverEvent += () =>
             {
                 Console.WriteLine("gameOver");
-                
+                g.GhostPack.ResetGhosts();
                 g.Score.Lives = 3;
 
             };

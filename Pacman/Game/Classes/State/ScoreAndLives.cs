@@ -50,7 +50,7 @@ namespace Pacman.Characters.Classes
             }
             else
             {
-               this.gamestate.GhostPack.ResetGhosts();
+               this.gamestate.GhostPack.SendToPen();
                 
             }
         }

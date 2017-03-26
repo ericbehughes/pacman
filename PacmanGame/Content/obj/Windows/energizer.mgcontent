@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/ehugh/OneDrive/c#/Projects/PacmanGithub/PacmanGame/Content/energizer.png</SourceFile>
-  <SourceTime>2017-03-24T19:33:22.9848873-04:00</SourceTime>
-  <DestFile>C:/Users/ehugh/OneDrive/c#/Projects/PacmanGithub/PacmanGame/Content/bin/Windows/energizer.xnb</DestFile>
-  <DestTime>2017-03-25T21:02:54.1345368-04:00</DestTime>
+  <SourceFile>C:/Users/Stella/Source/Repos/pacman/PacmanGame/Content/energizer.png</SourceFile>
+  <SourceTime>2017-03-24T23:22:46.3683385-04:00</SourceTime>
+  <DestFile>C:/Users/Stella/Source/Repos/pacman/PacmanGame/Content/bin/Windows/energizer.xnb</DestFile>
+  <DestTime>2017-03-26T13:10:43.4549702-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T10:05:36-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
