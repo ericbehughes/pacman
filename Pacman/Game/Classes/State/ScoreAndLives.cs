@@ -56,14 +56,17 @@ namespace Pacman.Characters.Classes
                 var ghosts = gamestate.GhostPack;
                 for (int i = 0; i < ghosts.Count(); i++)
                     if (ghosts.ElementAt(i).Position == ghosts.ElementAt(i).Pacman.Position)
+                    {
                         ghosts.ElementAt(i).Reset();
+                        gamestate.Pacman.Position = new Microsoft.Xna.Framework.Vector2(11, 17);
+                    }
             }
         }
 
         public void incrementScore(ICollidable m)
         {
             this.score += m.Points; //increment score
-            this.gamestate.Maze.CheckMembersLeft(); 
+            //this.gamestate.Maze.CheckMembersLeft(); 
             // check if member is an energizer and scare ghosts
             if (m is Energizer)
             {

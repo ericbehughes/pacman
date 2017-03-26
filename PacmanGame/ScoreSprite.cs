@@ -71,12 +71,12 @@ namespace PacmanGame
             }
             else if (Lives == 0)
             {
-                spriteBatch.DrawString(score, "Game Over", new Vector2(50, 750), Microsoft.Xna.Framework.Color.White);
+                spriteBatch.DrawString(score, "Game Over", new Vector2(125, 750), Microsoft.Xna.Framework.Color.White);
             }
 
             else
             {
-                spriteBatch.DrawString(score, "You win", new Vector2(50, 750), Microsoft.Xna.Framework.Color.White);
+                spriteBatch.DrawString(score, "You win", new Vector2(125, 750), Microsoft.Xna.Framework.Color.White);
             }
             spriteBatch.End();
             base.Draw(gameTime);
