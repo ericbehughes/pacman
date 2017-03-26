@@ -177,14 +177,8 @@ namespace Pacman.Game.Classes.State
 
 
             }
-            g.ScoreAndLives.GameOverEvent += () =>
-            {
-                Console.WriteLine("gameOver");
-                g.GhostPack.ResetGhosts();
-                g.ScoreAndLives.Lives = 3;
-
-            };
-
+            g.ScoreAndLives.GameOverEvent += g.ScoreAndLives.EndGame;
+            g.Maze.PacmanWonEvent += g.ScoreAndLives.EndGame;
         } // end of method
 
         private static void ResetGame()

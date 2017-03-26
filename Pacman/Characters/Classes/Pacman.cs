@@ -16,7 +16,6 @@ namespace Pacman.Characters.Classes
         {
             this.gamestate = gs;
             this.maze = gamestate.Maze;
-
         }
 
         public Vector2 Position { get; set; }
@@ -79,6 +78,7 @@ namespace Pacman.Characters.Classes
             }
 
             CheckCollisions();
+            gamestate.Maze.CheckMembersLeft();
         }
 
         public Boolean CanEnter(Vector2 position, Direction dir)

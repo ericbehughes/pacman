@@ -103,3 +103,9 @@ C:\Users\ehugh\OneDrive\c#\Projects\PacmanGithub\PacmanGame\bin\Windows\x86\Debu
 C:\Users\ehugh\OneDrive\c#\Projects\PacmanGithub\PacmanGame\bin\Windows\x86\Debug\Content\scared.xnb
 C:\Users\ehugh\OneDrive\c#\Projects\PacmanGithub\PacmanGame\bin\Windows\x86\Debug\Content\LivesTxt.xnb
 C:\Users\ehugh\OneDrive\c#\Projects\PacmanGithub\PacmanGame\bin\Windows\x86\Debug\Content\ScoreTxt.xnb
+C:\Users\Stella\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\LivesTxt.xnb
+C:\Users\Stella\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\ScoreTxt.xnb
+C:\Users\Stella\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\WastedSound.wma
+C:\Users\Stella\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\WastedSound.xnb
+C:\Users\Stella\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\wasted..xnb
+C:\Users\Stella\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\wasted.xnb

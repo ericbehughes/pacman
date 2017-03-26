@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 
 namespace Pacman.Characters.Classes
 {
@@ -16,10 +17,10 @@ namespace Pacman.Characters.Classes
         private GameState gamestate;
         private int lives = 3;
         private int score;
+        private Timer timer = new Timer(5000);
         public ScoreAndLives(GameState gs)
         {
             this.gamestate = gs;
-            //gamestate.Maze.PacmanWonEvent += GameOver;
         }
 
         public int Lives
@@ -75,6 +76,22 @@ namespace Pacman.Characters.Classes
             }
         }
 
-    
+        public void EndGame()
+        {
+            if (Lives != 0)
+                Lives = 998;
+            timer.Elapsed += Reset;
+            timer.Enabled = true;
+        }
+        private void Reset(Object sender, ElapsedEventArgs e)
+        {
+            timer.Enabled = false;
+            timer.Elapsed += null;
+            if (Lives == 0)
+                Lives = -1;
+            else if (Lives == 998)
+                Lives = 999;
+        }
+
     }
     }

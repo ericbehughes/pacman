@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>C:/Users/Stella/Source/Repos/pacman/PacmanGame/Content/WastedSound.mp3</SourceFile>
+  <SourceTime>2017-03-26T15:25:25.6252439-04:00</SourceTime>
+  <DestFile>C:/Users/Stella/Source/Repos/pacman/PacmanGame/Content/bin/Windows/WastedSound.xnb</DestFile>
+  <DestTime>2017-03-26T15:32:50.2306739-04:00</DestTime>
+  <Importer>Mp3Importer</Importer>
+  <ImporterTime>2017-03-01T10:05:36-05:00</ImporterTime>
+  <Processor>SongProcessor</Processor>
+  <ProcessorTime>2017-03-01T10:05:36-05:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput>
+    <string>C:/Users/Stella/Source/Repos/pacman/PacmanGame/Content/bin/Windows/WastedSound.wma</string>
+  </BuildOutput>
+</PipelineBuildEvent>

@@ -115,19 +115,7 @@ namespace Pacman.Game.Classes.Map
          */
         public void CheckMembersLeft()
         {
-            int counter = 0;
-            foreach (var tile in maze)
-            {
-                if (tile is Path && tile.Member is Characters.Classes.Pacman)
-                    continue;
-
-                else if ((tile is Path) && (!tile.IsEmpty()))
-                {
-                    counter++;
-                }
-            }
-
-            if (counter == 0)
+            if (MemberCount() == 0)
                 OnWin();
         }
 
@@ -136,7 +124,9 @@ namespace Pacman.Game.Classes.Map
         {
             int members = 0;
             foreach (Tile tile in maze){
-                if (tile.Member == null || tile.Member is Pellet || tile.Member is Energizer)
+                if (tile.Member == null)
+                    continue;
+                else if (tile.Member is Pellet || tile.Member is Energizer)
                     members++;
             }
             return members;

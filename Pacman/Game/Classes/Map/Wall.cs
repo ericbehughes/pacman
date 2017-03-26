@@ -32,7 +32,8 @@ namespace Pacman.Game.Classes.Map
 
         public override ICollidable Member
         {
-            get { throw new NotSupportedException("Wall.cs - Walls cannot contain members"); }
+            //get { throw new NotSupportedException("Wall.cs - Walls cannot contain members"); }
+            get { return null; }
             set { throw new NotSupportedException("Wall.cs - Walls cannot contain members"); }
         }
     }
