@@ -133,3 +133,17 @@
 /processorParam:TextureFormat=Color
 /build:Scared.png
 
+#begin LivesTxt.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:LivesTxt.spritefont
+
+#begin ScoreTxt.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:ScoreTxt.spritefont
+

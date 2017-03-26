@@ -14,5 +14,7 @@
     <File>C:/Users/ehugh/OneDrive/c#/Projects/PacmanGithub/PacmanGame/Content/ghostRedChase.png</File>
     <File>C:/Users/ehugh/OneDrive/c#/Projects/PacmanGithub/PacmanGame/Content/Pacman.png</File>
     <File>C:/Users/ehugh/OneDrive/c#/Projects/PacmanGithub/PacmanGame/Content/Scared.png</File>
+    <File>C:/Users/ehugh/OneDrive/c#/Projects/PacmanGithub/PacmanGame/Content/LivesTxt.spritefont</File>
+    <File>C:/Users/ehugh/OneDrive/c#/Projects/PacmanGithub/PacmanGame/Content/ScoreTxt.spritefont</File>
   </SourceFiles>
 </SourceFileCollection>

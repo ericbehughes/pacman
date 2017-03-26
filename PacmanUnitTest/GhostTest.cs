@@ -116,14 +116,14 @@ namespace PacmanUnitTest
             GhostState state = GhostState.Scared;
             Pacman.Characters.Classes.Color c = Pacman.Characters.Classes.Color.Red;
             Ghost ghost = new Ghost(gameState, 1, 3, gameState.Pacman.Position, state, c);
-            ghost.CollisionEvent += gameState.Score.incrementScore;
+            ghost.CollisionEvent += gameState.ScoreAndLives.incrementScore;
             ghost.Direction = Direction.Left;
 
             int score = 200;
             
             ghost.Move();
-            int actualScore = gameState.Score.Score;
-            Assert.AreEqual(score, gameState.Score);
+            int actualScore = gameState.ScoreAndLives.Score;
+            Assert.AreEqual(score, gameState.ScoreAndLives);
         }
     }
 }

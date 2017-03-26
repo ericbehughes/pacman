@@ -28,7 +28,7 @@ namespace Pacman.Game.Classes.State
             g.Maze = maze;
             g.Pen = pen;
             g.GhostPack = gpack;
-            g.Score = score_lives;
+            g.ScoreAndLives = score_lives;
             g.GhostPack = gpack;
             g.Pacman.Position = new Vector2(11, 17);
 
@@ -56,7 +56,7 @@ namespace Pacman.Game.Classes.State
             private set;
         }
 
-        public ScoreAndLives Score
+        public ScoreAndLives ScoreAndLives
         {
             get;
             private set;
@@ -95,13 +95,13 @@ namespace Pacman.Game.Classes.State
                     else if (mazeChar.Equals("p"))
                     {
                         var pel = new Pellet();
-                        pel.CollisionEvent += g.Score.incrementScore;
+                        pel.CollisionEvent += g.ScoreAndLives.incrementScore;
                         g.Maze[i, j] = new Map.Path(i, j, pel);
                     }
                     else if (mazeChar.Equals("e"))
                     {
                         var e = new Energizer();
-                        e.CollisionEvent += g.Score.incrementScore;
+                        e.CollisionEvent += g.ScoreAndLives.incrementScore;
                         g.Maze[i, j] = new Map.Path(i, j, e);
                     }
                     // empty path 
@@ -114,8 +114,8 @@ namespace Pacman.Game.Classes.State
                         Ghost ghost = new Ghost(g, i, j, new Vector2(i, j), GhostState.Chase, new Characters.Classes.Color());
                         ghost.Pacman = g.Pacman;
                         g.GhostPack.Add(ghost);
-                        ghost.CollisionEvent += g.Score.incrementScore;
-                        ghost.PacmanDiedEvent += g.Score.DeadPacman;
+                        ghost.CollisionEvent += g.ScoreAndLives.incrementScore;
+                        ghost.PacmanDiedEvent += g.ScoreAndLives.DeadPacman;
                         g.Maze[i, j] = new Map.Path(i, j, ghost);
 
                     }
@@ -126,8 +126,8 @@ namespace Pacman.Game.Classes.State
                         ghost.Pacman = g.Pacman;
                         g.GhostPack.Add(ghost);
                         g.Pen.AddToPen(ghost);
-                        ghost.CollisionEvent += g.Score.incrementScore;
-                        ghost.PacmanDiedEvent += g.Score.DeadPacman;
+                        ghost.CollisionEvent += g.ScoreAndLives.incrementScore;
+                        ghost.PacmanDiedEvent += g.ScoreAndLives.DeadPacman;
                         g.Maze[i, j] = new Map.Path(i, j, ghost);
                         g.Pen.AddTile(g.Maze[i, j]);
 
@@ -139,8 +139,8 @@ namespace Pacman.Game.Classes.State
                         ghost.Pacman = g.Pacman;
                         g.GhostPack.Add(ghost);
                         g.Pen.AddToPen(ghost);
-                        ghost.CollisionEvent += g.Score.incrementScore;
-                        ghost.PacmanDiedEvent += g.Score.DeadPacman;
+                        ghost.CollisionEvent += g.ScoreAndLives.incrementScore;
+                        ghost.PacmanDiedEvent += g.ScoreAndLives.DeadPacman;
                         g.Maze[i, j] = new Map.Path(i, j, ghost);
                         g.Pen.AddTile(g.Maze[i, j]);
                     }
@@ -151,8 +151,8 @@ namespace Pacman.Game.Classes.State
                         ghost.Pacman = g.Pacman;
                         g.GhostPack.Add(ghost);
                         g.Pen.AddToPen(ghost);
-                        ghost.CollisionEvent += g.Score.incrementScore;
-                        ghost.PacmanDiedEvent += g.Score.DeadPacman;
+                        ghost.CollisionEvent += g.ScoreAndLives.incrementScore;
+                        ghost.PacmanDiedEvent += g.ScoreAndLives.DeadPacman;
                         g.Maze[i, j] = new Map.Path(i, j, ghost);
                         g.Pen.AddTile(g.Maze[i, j]);
                     }
@@ -177,11 +177,11 @@ namespace Pacman.Game.Classes.State
 
 
             }
-            g.Score.GameOverEvent += () =>
+            g.ScoreAndLives.GameOverEvent += () =>
             {
                 Console.WriteLine("gameOver");
                 g.GhostPack.ResetGhosts();
-                g.Score.Lives = 3;
+                g.ScoreAndLives.Lives = 3;
 
             };
 

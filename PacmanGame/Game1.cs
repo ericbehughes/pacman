@@ -18,7 +18,7 @@ namespace PacmanGame
         private MazeSprite map;
         private GhostSprite ghostSprite;
         private PacmanSprite pacmanSprite;
-       
+        private ScoreSprite scorelivesSprite;
 
         int timeSinceLastFrame = 0;
         int millisecondsPerFrame = 300;
@@ -45,10 +45,11 @@ namespace PacmanGame
             map = new MazeSprite(this);
             ghostSprite = new GhostSprite(this);
             pacmanSprite = new PacmanSprite(this);
-
+            scorelivesSprite = new ScoreSprite(this);
             Components.Add(map);
             Components.Add(ghostSprite);
             Components.Add(pacmanSprite);
+            Components.Add(scorelivesSprite);
             base.Initialize();
         }
 

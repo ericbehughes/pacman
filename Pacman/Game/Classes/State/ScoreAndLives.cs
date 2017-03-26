@@ -27,6 +27,8 @@ namespace Pacman.Characters.Classes
             get { return this.lives; }
             set { this.lives = value; }  // might need validation here
         }
+
+       
         public int Score
         {
             get { return this.score; }
@@ -72,5 +74,7 @@ namespace Pacman.Characters.Classes
                 ((Ghost)m).Reset();
             }
         }
+
+    
     }
     }

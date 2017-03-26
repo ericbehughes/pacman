@@ -11,14 +11,13 @@ namespace PacmanGame
 {
     public class ScoreSprite : DrawableGameComponent
     {
-        public ScoreSprite(Game game) : base(game)
-        {
-        }
+        public ScoreSprite(Game game) : base(game){}
 
         private ScoreAndLives scoreAndLives;
         private Game1 maingame;
         private SpriteBatch spriteBatch;
-        private SpriteFont font;
+        private SpriteFont score;
+        private SpriteFont lives;
 
         public ScoreSprite(Game1 game) : base(game)
         {
@@ -36,7 +35,8 @@ namespace PacmanGame
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            font = maingame.Content.Load<SpriteFont>("score");
+            score = maingame.Content.Load<SpriteFont>("ScoreTxt");
+            lives = maingame.Content.Load<SpriteFont>("LivesTxt");
 
             base.LoadContent();
         }
@@ -50,9 +50,12 @@ namespace PacmanGame
         {
 
             spriteBatch.Begin();
-            spriteBatch.DrawString(font, "" + maingame.GameState.Score, new Vector2(700, 100),
-                Microsoft.Xna.Framework.Color.White);
+            spriteBatch.DrawString(score, "Score: " + maingame.GameState.ScoreAndLives.Score, 
+                new Vector2(50, 750),Microsoft.Xna.Framework.Color.White);
 
+            spriteBatch.DrawString(lives, "Lives :" +maingame.GameState.ScoreAndLives.Lives, 
+                new Vector2(500, 750), Microsoft.Xna.Framework.Color.White);
+            
             spriteBatch.End();
             base.Draw(gameTime);
 
