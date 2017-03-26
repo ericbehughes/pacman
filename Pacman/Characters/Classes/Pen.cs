@@ -71,7 +71,7 @@ namespace Pacman
         public void AddToPen(Ghost ghost)
         {
             ghosts.Enqueue(ghost);
-
+            ghost.ChangeState(GhostState.Penned);
             if (ghosts.Count > 0)
                 ghost.Position = pen[ghosts.Count - 1].Position;
             Timer t = new Timer((ghosts.Count * 2000));

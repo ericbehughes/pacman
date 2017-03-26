@@ -24,8 +24,7 @@ namespace Pacman.Characters.Classes
         public static Vector2 ReleasePosition;
         public event CollisionEventHandler CollisionEvent;
         public event PacmanDiedEventHandler PacmanDiedEvent;
-
-
+        
         public delegate void Collision(ICollidable obj);
 
         public Ghost(GameState g, int x, int y, Vector2 target, GhostState start, Color colour)
@@ -46,8 +45,7 @@ namespace Pacman.Characters.Classes
 
         // need to check how this works its an enum in the class diagram
 
-        public IGhostState ICurrentState { get; private set; }
-
+       
         public Color Color { get; }
 
         public Direction Direction { get; set; }
@@ -91,8 +89,7 @@ namespace Pacman.Characters.Classes
         {
             if (ICurrentState is Scared)
             {
-                OnCollisionEvent(this);
-                pen.AddToPen(this);
+                OnCollisionEvent(this);             
             }
             else if (ICurrentState is Chase)
             {
@@ -117,18 +114,24 @@ namespace Pacman.Characters.Classes
 
             this.pen.AddToPen(this);
         }
-
+        public IGhostState ICurrentState { get; private set; }
+        public GhostState GhostStateEnum { get; set; }
         public void ChangeState(GhostState g)
         {
             switch (g)
             {
                 case GhostState.Scared:
                 this.ICurrentState = new Scared(this, this.maze);
+                GhostStateEnum = GhostState.Scared;
                 break;
                 case GhostState.Chase:
+                this.ICurrentState = new Chase(this, this.maze, this.pacman, target);
+                GhostStateEnum = GhostState.Chase;
+                    break;
                 case GhostState.Penned:
                 this.ICurrentState = new Chase(this, this.maze, this.pacman, target);
-                break;
+                GhostStateEnum = GhostState.Penned;
+                    break;
                 case GhostState.Released:
                 this.Position = new Vector2(11, 9); // default release position in front of pen
                 this.ICurrentState = new Chase(this, this.maze, this.pacman, target);

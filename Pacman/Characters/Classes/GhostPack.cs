@@ -51,7 +51,7 @@ namespace Pacman.Characters.Classes
         {
             foreach (Ghost g in ghosts)
             {
-                if (g.ICurrentState is Chase)
+                if (g.GhostStateEnum != GhostState.Penned)
                     g.ChangeState(GhostState.Scared);
             }
             // update ghost public scared timer field
