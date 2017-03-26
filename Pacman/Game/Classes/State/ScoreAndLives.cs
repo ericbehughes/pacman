@@ -81,7 +81,7 @@ namespace Pacman.Characters.Classes
 
         public void EndGame()
         {
-            if (Lives != 0)
+            if (Lives > 0)
                 Lives = 998;
             timer.Elapsed += Reset;
             timer.Enabled = true;

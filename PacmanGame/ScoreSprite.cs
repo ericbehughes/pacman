@@ -74,7 +74,7 @@ namespace PacmanGame
                 spriteBatch.DrawString(score, "Game Over", new Vector2(125, 750), Microsoft.Xna.Framework.Color.White);
             }
 
-            else
+            else if (Lives == 998)
             {
                 spriteBatch.DrawString(score, "You win", new Vector2(125, 750), Microsoft.Xna.Framework.Color.White);
             }
