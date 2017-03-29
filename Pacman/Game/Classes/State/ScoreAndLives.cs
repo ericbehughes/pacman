@@ -15,9 +15,9 @@ namespace Pacman.Characters.Classes
     {
         public event GameOverHandler GameOverEvent;
         private GameState gamestate;
-        private int lives = 3;
+        private int lives = 1;
         private int score;
-        private Timer timer = new Timer(5000);
+        private Timer timer = new Timer(1000);
         public ScoreAndLives(GameState gs)
         {
             this.gamestate = gs;
@@ -81,20 +81,10 @@ namespace Pacman.Characters.Classes
 
         public void EndGame()
         {
-            if (Lives > 0)
-                Lives = 998;
-            timer.Elapsed += Reset;
             timer.Enabled = true;
+            timer.Elapsed += (o, e) => gamestate = GameState.Parse("map.csv");
         }
-        private void Reset(Object sender, ElapsedEventArgs e)
-        {
-            timer.Enabled = false;
-            timer.Elapsed += null;
-            if (Lives == 0)
-                Lives = -1;
-            else if (Lives == 998)
-                Lives = 999;
-        }
+   
 
     }
     }

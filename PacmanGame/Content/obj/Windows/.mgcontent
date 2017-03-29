@@ -4,19 +4,19 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/Stella/Source/Repos/pacman/PacmanGame/Content/empty.png</File>
-    <File>C:/Users/Stella/Source/Repos/pacman/PacmanGame/Content/energizer.png</File>
-    <File>C:/Users/Stella/Source/Repos/pacman/PacmanGame/Content/pellet.png</File>
-    <File>C:/Users/Stella/Source/Repos/pacman/PacmanGame/Content/wall.png</File>
-    <File>C:/Users/Stella/Source/Repos/pacman/PacmanGame/Content/ghostBlueChase.png</File>
-    <File>C:/Users/Stella/Source/Repos/pacman/PacmanGame/Content/ghostOrangeChase.png</File>
-    <File>C:/Users/Stella/Source/Repos/pacman/PacmanGame/Content/ghostPinkChase.png</File>
-    <File>C:/Users/Stella/Source/Repos/pacman/PacmanGame/Content/ghostRedChase.png</File>
-    <File>C:/Users/Stella/Source/Repos/pacman/PacmanGame/Content/Pacman.png</File>
-    <File>C:/Users/Stella/Source/Repos/pacman/PacmanGame/Content/Scared.png</File>
-    <File>C:/Users/Stella/Source/Repos/pacman/PacmanGame/Content/LivesTxt.spritefont</File>
-    <File>C:/Users/Stella/Source/Repos/pacman/PacmanGame/Content/ScoreTxt.spritefont</File>
-    <File>C:/Users/Stella/Source/Repos/pacman/PacmanGame/Content/WastedSound.mp3</File>
-    <File>C:/Users/Stella/Source/Repos/pacman/PacmanGame/Content/wasted.png</File>
+    <File>C:/Users/1232983/Source/Repos/pacman/PacmanGame/Content/empty.png</File>
+    <File>C:/Users/1232983/Source/Repos/pacman/PacmanGame/Content/energizer.png</File>
+    <File>C:/Users/1232983/Source/Repos/pacman/PacmanGame/Content/pellet.png</File>
+    <File>C:/Users/1232983/Source/Repos/pacman/PacmanGame/Content/wall.png</File>
+    <File>C:/Users/1232983/Source/Repos/pacman/PacmanGame/Content/ghostBlueChase.png</File>
+    <File>C:/Users/1232983/Source/Repos/pacman/PacmanGame/Content/ghostOrangeChase.png</File>
+    <File>C:/Users/1232983/Source/Repos/pacman/PacmanGame/Content/ghostPinkChase.png</File>
+    <File>C:/Users/1232983/Source/Repos/pacman/PacmanGame/Content/ghostRedChase.png</File>
+    <File>C:/Users/1232983/Source/Repos/pacman/PacmanGame/Content/Pacman.png</File>
+    <File>C:/Users/1232983/Source/Repos/pacman/PacmanGame/Content/Scared.png</File>
+    <File>C:/Users/1232983/Source/Repos/pacman/PacmanGame/Content/LivesTxt.spritefont</File>
+    <File>C:/Users/1232983/Source/Repos/pacman/PacmanGame/Content/ScoreTxt.spritefont</File>
+    <File>C:/Users/1232983/Source/Repos/pacman/PacmanGame/Content/WastedSound.mp3</File>
+    <File>C:/Users/1232983/Source/Repos/pacman/PacmanGame/Content/wasted.png</File>
   </SourceFiles>
 </SourceFileCollection>

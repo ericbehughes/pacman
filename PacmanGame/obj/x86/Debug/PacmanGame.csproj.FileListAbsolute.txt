@@ -57,7 +57,6 @@ C:\Users\ehugh\OneDrive\c#\Projects\PacmanGithub\PacmanGame\obj\x86\Debug\Pacman
 C:\Users\ehugh\OneDrive\c#\Projects\PacmanGithub\PacmanGame\obj\x86\Debug\PacmanGame.pdb
 C:\Users\1232983\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\empty.xnb
 C:\Users\1232983\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\energizer.xnb
-C:\Users\1232983\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\ghost.xnb
 C:\Users\1232983\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\pacman.xnb
 C:\Users\1232983\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\pellet.xnb
 C:\Users\1232983\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\wall.xnb
@@ -109,3 +108,14 @@ C:\Users\Stella\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\Was
 C:\Users\Stella\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\WastedSound.xnb
 C:\Users\Stella\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\wasted..xnb
 C:\Users\Stella\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\wasted.xnb
+C:\Users\1232983\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\ghostBlueChase.xnb
+C:\Users\1232983\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\ghostOrangeChase.xnb
+C:\Users\1232983\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\ghostPinkChase.xnb
+C:\Users\1232983\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\ghostRedChase.xnb
+C:\Users\1232983\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\LivesTxt.xnb
+C:\Users\1232983\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\scared.xnb
+C:\Users\1232983\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\ScoreTxt.xnb
+C:\Users\1232983\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\wasted..xnb
+C:\Users\1232983\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\wasted.xnb
+C:\Users\1232983\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\WastedSound.wma
+C:\Users\1232983\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\WastedSound.xnb
