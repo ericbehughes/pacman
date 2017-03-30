@@ -14,6 +14,7 @@ namespace Pacman.Characters.Classes
     public class ScoreAndLives
     {
         public event GameOverHandler GameOverEvent;
+        
         private GameState gamestate;
         private int lives = 1;
         private int score;
@@ -36,38 +37,35 @@ namespace Pacman.Characters.Classes
             set { this.score = value; }
         }
 
+        public bool RedrawGame { get;  set; }
+
         protected virtual void OnGameOver()
         {
-            GameOverEvent();
+            if (GameOverEvent != null)
+                 GameOverEvent();
         }
+     
+        public void GameOver()
+        {
+            RedrawGame = true;
+        }
+
 
         public void DeadPacman()
         {
             this.lives--;
-            if (lives <= 0)
+            if (lives == 0 || gamestate.Maze.CheckMembersLeft() == 0)
             {
-                // if this GameOver event is not null then call OnGameOver() 
-                // helper method which invokes GameOver event pointing to incrementscore method
-                if (GameOverEvent != null)
-                    OnGameOver();
+                OnGameOver();
             }
-            else
-            {
-                var ghosts = gamestate.GhostPack;
-                for (int i = 0; i < ghosts.Count(); i++)
-                    if (ghosts.ElementAt(i).Position == ghosts.ElementAt(i).Pacman.Position)
-                    {
-                        ghosts.ElementAt(i).Reset();
-                        gamestate.Pacman.Position = new Microsoft.Xna.Framework.Vector2(11, 17);
-                    }
-            }
+            gamestate.GhostPack.ResetGhosts();
+            gamestate.Pacman.Position = new Microsoft.Xna.Framework.Vector2(11, 17); 
+            
         }
 
-        public void incrementScore(ICollidable m)
+        public void IncrementScore(ICollidable m)
         {
             this.score += m.Points; //increment score
-            //this.gamestate.Maze.CheckMembersLeft(); 
-            // check if member is an energizer and scare ghosts
             if (m is Energizer)
             {
                 this.gamestate.GhostPack.ScareGhosts();
@@ -79,11 +77,7 @@ namespace Pacman.Characters.Classes
             }
         }
 
-        public void EndGame()
-        {
-            timer.Enabled = true;
-            timer.Elapsed += (o, e) => gamestate = GameState.Parse("map.csv");
-        }
+     
    
 
     }

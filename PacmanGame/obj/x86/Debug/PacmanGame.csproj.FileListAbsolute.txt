@@ -119,3 +119,7 @@ C:\Users\1232983\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\wa
 C:\Users\1232983\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\wasted.xnb
 C:\Users\1232983\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\WastedSound.wma
 C:\Users\1232983\Source\Repos\pacman\PacmanGame\bin\Windows\x86\Debug\Content\WastedSound.xnb
+C:\Users\ehugh\OneDrive\c#\Projects\PacmanGithub\PacmanGame\bin\Windows\x86\Debug\Content\wasted..xnb
+C:\Users\ehugh\OneDrive\c#\Projects\PacmanGithub\PacmanGame\bin\Windows\x86\Debug\Content\wasted.xnb
+C:\Users\ehugh\OneDrive\c#\Projects\PacmanGithub\PacmanGame\bin\Windows\x86\Debug\Content\WastedSound.wma
+C:\Users\ehugh\OneDrive\c#\Projects\PacmanGithub\PacmanGame\bin\Windows\x86\Debug\Content\WastedSound.xnb

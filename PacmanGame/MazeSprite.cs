@@ -28,7 +28,6 @@ namespace PacmanGame
         private Texture2D Pellet;
         private Texture2D Path;
         private string[] csv_array = { "w", "e", "x", "pw", "1", "2", "3", "4", "P", "p" };
-        //private delegate void drawSpriteDelegate(Texture2D v);
 
         public struct GameBoardDimensions
         {
@@ -60,8 +59,6 @@ namespace PacmanGame
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
             Wall = maingame.Content.Load<Texture2D>("wall");
-            //Pen = maingame.Content.Load<Texture2D>("pen");
-            //PenDoor = maingame.Content.Load<Texture2D>("penDoor");
             Energizer = maingame.Content.Load<Texture2D>("energizer");
             Pellet = maingame.Content.Load<Texture2D>("pellet");
             Path = maingame.Content.Load<Texture2D>("empty");

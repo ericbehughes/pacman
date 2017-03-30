@@ -11,7 +11,7 @@ using Pacman.Game.Classes.State;
 
 namespace Pacman.Characters.Classes
 {
-    public delegate void PacmanDiedEventHandler();
+    
     public class Ghost : IGhostState, IMovable, ICollidable
     {
 
@@ -22,11 +22,12 @@ namespace Pacman.Characters.Classes
         private Maze maze;
         public static Timer scared = new Timer();
         public static Vector2 ReleasePosition;
+        public delegate void Collision(ICollidable obj);
+        public delegate void PacmanDiedEventHandler();
         public event CollisionEventHandler CollisionEvent;
         public event PacmanDiedEventHandler PacmanDiedEvent;
         
-        public delegate void Collision(ICollidable obj);
-
+     
         public Ghost(GameState g, int x, int y, Vector2 target, GhostState start, Color colour)
         {
             this.Position = new Vector2(x, y);
@@ -100,7 +101,7 @@ namespace Pacman.Characters.Classes
         public virtual void OnCollisionEvent(ICollidable m)
         {
             if (CollisionEvent != null)
-                CollisionEvent(m);
+                CollisionEvent(m); // increment score with (m)
         }
 
         public Pacman Pacman
@@ -111,7 +112,6 @@ namespace Pacman.Characters.Classes
 
         public void Reset()
         {
-
             this.pen.AddToPen(this);
         }
         public IGhostState ICurrentState { get; private set; }

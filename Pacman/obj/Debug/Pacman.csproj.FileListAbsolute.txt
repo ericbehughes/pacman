@@ -100,3 +100,4 @@ C:\Users\Stella\Source\Repos\pacman\Pacman\bin\Debug\SharpDX.MediaFoundation.xml
 C:\Users\Stella\Source\Repos\pacman\Pacman\obj\Debug\Pacman.dll
 C:\Users\Stella\Source\Repos\pacman\Pacman\obj\Debug\Pacman.pdb
 C:\Users\Stella\Source\Repos\pacman\Pacman\obj\Debug\Pacman.csprojResolveAssemblyReference.cache
+C:\Users\ehugh\OneDrive\c#\Projects\PacmanGithub\Pacman\bin\Debug\MonoGame.Framework.xml

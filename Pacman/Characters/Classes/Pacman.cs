@@ -19,17 +19,7 @@ namespace Pacman.Characters.Classes
         }
 
         public Vector2 Position { get; set; }
-        /* Old
-            get { return new Vector2(position.X, position.Y); }
-            set { position = new Vector2(value.X, value.Y); }
-            */
-            /*
-            get { return new Vector2(position.Y, position.X); }
-            set { position = new Vector2(value.Y, value.X); }
-            */
-            
-        
-
+       
         public int Points
         {
             get

@@ -22,9 +22,6 @@ namespace PacmanGame
         private SpriteFont lives;
         private Texture2D wasted;
 
-        //private TimeSpan resetCheck = TimeSpan.FromMilliseconds(3000);
-       // private TimeSpan reset;
-
         public ScoreSprite(Game1 game) : base(game)
         {
             this.maingame = game;
@@ -47,20 +44,7 @@ namespace PacmanGame
 
         public override void Update(GameTime gameTime)
         {
-            var timer = new Timer(1000);
-            timer.Enabled = false;
-            timer.Elapsed += EndGame;
-            if (maingame.GameState.ScoreAndLives.Lives == 0)
-            {
-                timer.Enabled = true;
-                //spriteBatch.DrawString(score, "Game Over", new Vector2(125, 750), Microsoft.Xna.Framework.Color.White);
-            }
 
-            else if (maingame.GameState.Maze.MemberCount() == 0)
-            {
-                timer.Enabled = true;
-                //spriteBatch.DrawString(score, "You win", new Vector2(125, 750), Microsoft.Xna.Framework.Color.White);
-            }
             base.Update(gameTime);
         }
 
@@ -68,27 +52,43 @@ namespace PacmanGame
         {
 
             spriteBatch.Begin();
-            var Lives = maingame.GameState.ScoreAndLives.Lives;
-            if (Lives < 4 && Lives > 0)
+            if (maingame.GameState.ScoreAndLives.Lives == 0)
+            {
+
+                spriteBatch.DrawString(score, "Game Over", new Vector2(125, 750), Microsoft.Xna.Framework.Color.White);
+            }
+
+            else if (maingame.GameState.Maze.CheckMembersLeft() == 0)
+            {
+
+                spriteBatch.DrawString(score, "You win", new Vector2(125, 750), Microsoft.Xna.Framework.Color.White);
+            }
+            else
             {
                 spriteBatch.DrawString(score, "Score: " + maingame.GameState.ScoreAndLives.Score,
-                    new Vector2(50, 750), Microsoft.Xna.Framework.Color.White);
+                  new Vector2(50, 750), Microsoft.Xna.Framework.Color.White);
 
                 spriteBatch.DrawString(lives, "Lives: " + maingame.GameState.ScoreAndLives.Lives,
                     new Vector2(500, 750), Microsoft.Xna.Framework.Color.White);
             }
+
+
+            if (maingame.GameState.ScoreAndLives.RedrawGame)
+            {
+               
+             maingame.GameState = GameState.Parse("map.csv");
+        
+                maingame.GameState.ScoreAndLives.RedrawGame = false;
+               
+            }
+
             spriteBatch.End();
             base.Draw(gameTime);
 
         }
 
         
-        private void EndGame(object sender, ElapsedEventArgs e)
-        {
-            var t = sender as Timer;
-            t.Enabled = false;
-            maingame.GameState.ScoreAndLives.EndGame();
-        }
+   
         
     }
 }

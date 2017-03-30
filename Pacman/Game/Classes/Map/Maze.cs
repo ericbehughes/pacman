@@ -13,11 +13,12 @@ using static Pacman.Characters.Classes.Ghost;
 
 namespace Pacman.Game.Classes.Map
 {
-    public delegate void PacmanWonEventHandler();
+ 
+    
     public class Maze
     {
-
-        public delegate bool won();
+        public delegate void PacmanWonEventHandler();
+        public event PacmanWonEventHandler PacmanWonEvent;
         private Tile[,] maze;
         private int size;
 
@@ -30,10 +31,6 @@ namespace Pacman.Game.Classes.Map
             this.maze = tiles;
             size = maze.GetLength(0);
         }
-
-
-        public event PacmanWonEventHandler PacmanWonEvent;
-
         // indexers
         public Tile this[int x, int y]
         {
@@ -104,38 +101,36 @@ namespace Pacman.Game.Classes.Map
         }
 
 
-        protected virtual void PacmanWon()
+        protected virtual void OnPacmanWon()
         {
             if (PacmanWonEvent != null)
                 PacmanWonEvent();
         }
 
-        /* The funciton throws an event (PacmanWon()) when all the Path tiles (excluding ghosts)
-         * Are empty and have no members
-         */
-        public void CheckMembersLeft()
+        public void PacmanWon()
         {
-            if (MemberCount() == 0)
-                OnWin();
+            OnPacmanWon();
         }
 
-        /* The function will iterate through each tile in the maze and count all that aren't ghosts or Pacman */
-        public int MemberCount()
+        /* The funciton throws an event (PacmanWon()) when all the Path tiles (excluding ghosts)
+         * Are empty (have no members)
+         */
+        public int CheckMembersLeft()
         {
             int members = 0;
-            foreach (Tile tile in maze){
+            foreach (Tile tile in maze)
+            {
                 if (tile.Member == null)
                     continue;
                 else if (tile.Member is Pellet || tile.Member is Energizer)
                     members++;
+
             }
+            if (members == 0)
+                OnPacmanWon();
             return members;
         }
 
-        public virtual void OnWin()
-        {
-            if (PacmanWonEvent != null)
-                PacmanWonEvent.Invoke();
-        }   
+ 
     }
 }

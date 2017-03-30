@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Timers;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -85,8 +86,7 @@ namespace PacmanGame
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
-
+          
             base.Update(gameTime);
         }
 
@@ -97,8 +97,7 @@ namespace PacmanGame
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);
-
-            // TODO: Add your drawing code here
+            
 
             base.Draw(gameTime);
         }

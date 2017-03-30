@@ -70,6 +70,7 @@ namespace PacmanGame
         
         private void DrawSprite(Texture2D obj, int i, int j)
         {
+           // if (maingame.GameState.ScoreAndLives.Lives == 0 || maingame.GameState.Maze.CheckMembersLeft() == 0)
             spriteBatch.Draw(obj, new Rectangle(i * 32, j * 32, 32, 32), Microsoft.Xna.Framework.Color.White);
         }
         
